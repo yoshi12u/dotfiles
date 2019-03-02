@@ -1,0 +1,1 @@
+command! Reload so $MYVIMRC
