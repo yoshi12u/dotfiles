@@ -1,5 +1,5 @@
 # awesome cd movements from zshkit
-setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
+setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars correct
 DIRSTACKSIZE=5
 
 # Enable extended globbing

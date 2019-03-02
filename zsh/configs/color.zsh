@@ -1,5 +1,5 @@
 # makes color constants available
-autoload -U colors
+autoload -Uz colors
 colors
 
 # enable colored output from ls, etc. on FreeBSD-based systems

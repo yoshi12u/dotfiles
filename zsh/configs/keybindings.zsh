@@ -3,15 +3,24 @@ stty -ixon
 
 # vi mode
 bindkey -v
-bindkey "^F" vi-cmd-mode
+
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
 
 # handy keybindings
-bindkey "^A" beginning-of-line
-bindkey "^E" end-of-line
-bindkey "^K" kill-line
+bindkey "^[[3~" delete-char
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
 bindkey "^R" history-incremental-search-backward
-bindkey "^P" history-search-backward
 bindkey "^Y" accept-and-hold
-bindkey "^N" insert-last-word
+bindkey "^K" insert-last-word
 bindkey "^Q" push-line-or-edit
-bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
+
+bindkey -M viins "jj" vi-cmd-mode
+bindkey -M viins '^F'  forward-char
+bindkey -M viins '^B'  backward-char
+bindkey -M viins '^?'  backward-delete-char
+bindkey -M viins '^N'  down-line-or-history
+bindkey -M viins '^P'  up-line-or-history
+bindkey -M viins '^Y'  yank
