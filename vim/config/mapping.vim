@@ -3,6 +3,7 @@ let mapleader = "\<Space>"
 nnoremap [finder] <Nop>
 nnoremap [fugitive]  <Nop>
 nnoremap [rails] <Nop>
+nnoremap [ultisnips] <Nop>
 
 " maps using the leader key
 noremap <leader>; :Reload<CR>
@@ -10,6 +11,7 @@ nmap <leader>f [finder]
 nmap <leader>k [toggle]
 nmap <leader>g [fugitive]
 nmap <leader>r [rails]
+nmap <leader>u [ultisnips]
 
 " original maps
 nnoremap ; :
@@ -35,6 +37,9 @@ inoremap <silent> jj <Esc>
 noremap! <C-b> <Left>
 noremap! <C-f> <Right>
 
+inoremap <F6> <C-R>=strftime("%Y/%m/%d")<CR>
+nnoremap <F6> <ESC>a<C-R>=strftime("%Y/%m/%d")<CR><ESC>
+
 " plug-in key maps
 map s <Plug>(easymotion-overwin-f2)
 
@@ -49,6 +54,10 @@ augroup vimrc_vaffle
   autocmd!
   autocmd FileType vaffle call s:customize_vaffle_mappings()
 augroup END
+
+nnoremap <silent> <leader>p :PrevimOpen<CR>
+
+nnoremap <silent> [ultisnips]u :UltiSnipsEdit<CR>
 
 nnoremap <silent> [finder]f :Files<CR>
 nnoremap <silent> [finder]b :Buffers<CR>

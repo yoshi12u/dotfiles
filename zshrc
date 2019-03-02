@@ -1,6 +1,12 @@
+source ~/.zsh/plugins.zsh
+
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
+done
+
+for setting in ~/.zsh/plugin_settings/*; do
+  source $setting
 done
 
 # extra files in ~/.zsh/configs/pre , ~/.zsh/configs , and ~/.zsh/configs/post
@@ -8,7 +14,6 @@ done
 _load_settings() {
   _dir="$1"
   if [ -d "$_dir" ]; then
-
     if [ -d "$_dir/pre" ]; then
       for config in "$_dir"/pre/**/*.(zsh|zwc)(N-.); do
         . $config
@@ -31,7 +36,6 @@ _load_settings() {
         . $config
       done
     fi
-
   fi
 }
 _load_settings "$HOME/.zsh/configs"
@@ -42,6 +46,5 @@ _load_settings "$HOME/.zsh/configs"
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
-if [ ! -f ~/.zshrc.zwc ] || [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
- zcompile ~/.zshrc
-fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

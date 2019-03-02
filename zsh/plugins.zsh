@@ -1,8 +1,10 @@
+[[ ! -e ~/.zplug ]] && curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 source ~/.zplug/init.zsh
 
 zplug 'zsh-users/zsh-syntax-highlighting'
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions'
+zplug "b4b4r07/enhancd", use:init.sh
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "

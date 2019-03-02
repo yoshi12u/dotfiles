@@ -1,0 +1,2 @@
+ENHANCD_FILTER=fzf:peco
+export ENHANCD_FILTER

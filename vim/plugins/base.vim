@@ -4,6 +4,8 @@ Plug 'tpope/vim-unimpaired'
 
 Plug 'sheerun/vim-polyglot'
 
+Plug 'airblade/vim-rooter'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -32,3 +34,7 @@ Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
 
 Plug 'SirVer/ultisnips'
+
+Plug 'kannokanno/previm'
+Plug 'tyru/open-browser.vim'
+
