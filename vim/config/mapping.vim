@@ -25,6 +25,11 @@ noremap <S-Down> <C-w>-
 noremap <C-s>h :windo wincmd K<CR>
 noremap <C-s>v :windo wincmd H<CR>
 
+nnoremap <CR> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 inoremap <silent> jj <Esc>
 
 noremap! <C-b> <Left>
