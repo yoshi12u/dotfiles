@@ -23,6 +23,8 @@ set smartindent
 set history=10000
 set ttyfast
 set lazyredraw
+set fileformats=unix,dos,mac
+set fileencodings=utf-8,sjis
 syntax on
 filetype plugin indent on
 

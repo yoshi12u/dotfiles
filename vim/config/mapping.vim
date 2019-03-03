@@ -55,6 +55,8 @@ nnoremap <silent> [vim]s <c-w><c-v><c-w><c-l>:Vaffle ~/.vim<CR> cd ~/.vim<CR>
 xnoremap * :<c-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<c-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
 
+nmap <Leader>ct :call ReindexCtags()<CR>
+
 " plug-in key maps
 map s <Plug>(easymotion-overwin-f2)
 
@@ -102,4 +104,19 @@ function! s:VSetSearch()
   let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
   let @s = temp
 endfunction
+
+
+" Index ctags from any project, including those outside Rails
+function! ReindexCtags()
+  let l:ctags_hook_file = "$(git rev-parse --show-toplevel)/.git/hooks/ctags"
+  let l:ctags_hook_path = system("echo " . l:ctags_hook_file)
+  let l:ctags_hook_path = substitute(l:ctags_hook_path, '\n\+$', '', '')
+
+  if filereadable(expand(l:ctags_hook_path))
+    exec '!'. l:ctags_hook_file
+  else
+    exec "!ctags -R ."
+  endif
+endfunction
+
 
