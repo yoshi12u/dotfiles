@@ -1,6 +1,7 @@
 set nocompatible
 filetype off
 filetype plugin indent off
+set noswapfile
 set clipboard+=unnamed
 set mouse=a
 set number

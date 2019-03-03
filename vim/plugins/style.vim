@@ -6,3 +6,4 @@ Plug 'vim-scripts/AnsiEsc.vim'
 
 Plug 'airblade/vim-gitgutter'
 
+Plug 'bronson/vim-trailing-whitespace'

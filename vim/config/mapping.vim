@@ -1,9 +1,11 @@
 let mapleader = "\<Space>"
 
+nnoremap [vim] <Nop>
 nnoremap [finder] <Nop>
 nnoremap [fugitive]  <Nop>
 nnoremap [rails] <Nop>
 nnoremap [ultisnips] <Nop>
+nnoremap [substitute] <Nop>
 
 " maps using the leader key
 noremap <leader>; :Reload<CR>
@@ -12,20 +14,26 @@ nmap <leader>k [toggle]
 nmap <leader>g [fugitive]
 nmap <leader>r [rails]
 nmap <leader>u [ultisnips]
+nmap <leader>v [vim]
+nmap <leader>s [substitute]
 
 " original maps
-nnoremap ; :
-nnoremap : ;
+noremap ; :
+noremap : ;
+
 nnoremap Y y$
 
 noremap j gj
 noremap k gk
+nnoremap r gr
+nnoremap R gR
+
+nnoremap x "_x
+
 noremap <S-Right> <C-w>>
 noremap <S-Left> <C-w><
 noremap <S-Up> <C-w>+
 noremap <S-Down> <C-w>-
-noremap <C-s>h :windo wincmd K<CR>
-noremap <C-s>v :windo wincmd H<CR>
 
 nnoremap <CR> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -37,8 +45,15 @@ inoremap <silent> jj <Esc>
 noremap! <C-b> <Left>
 noremap! <C-f> <Right>
 
+nnoremap [substitute]s :%s//
+
 inoremap <F6> <C-R>=strftime("%Y/%m/%d")<CR>
 nnoremap <F6> <ESC>a<C-R>=strftime("%Y/%m/%d")<CR><ESC>
+
+nnoremap <silent> [vim]s <c-w><c-v><c-w><c-l>:Vaffle ~/.vim<CR> cd ~/.vim<CR>
+
+xnoremap * :<c-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<c-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
 
 " plug-in key maps
 map s <Plug>(easymotion-overwin-f2)
@@ -59,6 +74,8 @@ nnoremap <silent> <leader>p :PrevimOpen<CR>
 
 nnoremap <silent> [ultisnips]u :UltiSnipsEdit<CR>
 
+nnoremap <silent> [substitute]q :Qfreplace<CR>
+
 nnoremap <silent> [finder]f :Files<CR>
 nnoremap <silent> [finder]b :Buffers<CR>
 nnoremap <silent> [finder]w :Windows<CR>
@@ -78,4 +95,11 @@ nnoremap <silent> [rails]m :Emodel<CR>
 nnoremap <silent> [rails]c :Econtroller<CR>
 nnoremap <silent> [rails]s :Rserver -d<CR>
 nnoremap <silent> [rails]S :Rserver! -d<CR>
+
+function! s:VSetSearch()
+  let temp = @s
+  norm! gv"sy
+  let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
+  let @s = temp
+endfunction
 

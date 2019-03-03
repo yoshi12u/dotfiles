@@ -1,3 +1,7 @@
+Plug 'vim-jp/vimdoc-ja'
+
+Plug 'thinca/vim-qfreplace'
+
 Plug 'tpope/vim-commentary'
 
 Plug 'tpope/vim-unimpaired'
