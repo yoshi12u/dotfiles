@@ -16,5 +16,15 @@ alias s="rspec"
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
+alias reload='exec $SHELL -l'
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
+
+# Anyframe
+alias any="anyframe-widget-select-widget"
+alias ankill="anyframe-widget-kill"
+alias angit="anyframe-widget-checkout-git-branch"
+alias anghq="anyframe-widget-cd-ghq-repository"
+alias antx="anyframe-widget-tmux-attach"
+alias anhistory="anyframe-widget-execute-history"
