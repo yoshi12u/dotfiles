@@ -45,7 +45,7 @@ inoremap <silent> jj <Esc>
 noremap! <C-b> <Left>
 noremap! <C-f> <Right>
 
-nnoremap [substitute]s :%s//
+nnoremap [substitute]s :%S//
 
 inoremap <F6> <C-R>=strftime("%Y/%m/%d")<CR>
 nnoremap <F6> <ESC>a<C-R>=strftime("%Y/%m/%d")<CR><ESC>
