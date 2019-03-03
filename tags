@@ -1,0 +1,98 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+-	vim/config/mapping.vim	/^nnoremap - :Vaffle<CR>$/;"	m
+:	vim/config/mapping.vim	/^noremap : ;$/;"	m
+;	vim/config/mapping.vim	/^noremap ; :$/;"	m
+<C-H>	vim/config/mapping.vim	/^nnoremap <C-H> <C-W><C-H>$/;"	m
+<C-K>	vim/config/mapping.vim	/^nnoremap <C-K> <C-W><C-K>$/;"	m
+<C-L>	vim/config/mapping.vim	/^nnoremap <C-L> <C-W><C-L>$/;"	m
+<C-b>	vim/config/mapping.vim	/^noremap! <C-b> <Left>$/;"	m
+<C-f>	vim/config/mapping.vim	/^noremap! <C-f> <Right>$/;"	m
+<CR>	vim/config/mapping.vim	/^nnoremap <CR> <C-W><C-J>$/;"	m
+<F6>	vim/config/mapping.vim	/^inoremap <F6> <C-R>=strftime("%Y\/%m\/%d")<CR>$/;"	m
+<F6>	vim/config/mapping.vim	/^nnoremap <F6> <ESC>a<C-R>=strftime("%Y\/%m\/%d")<CR><ESC>$/;"	m
+<S-Down>	vim/config/mapping.vim	/^noremap <S-Down> <C-w>-$/;"	m
+<S-Left>	vim/config/mapping.vim	/^noremap <S-Left> <C-w><$/;"	m
+<S-Right>	vim/config/mapping.vim	/^noremap <S-Right> <C-w>>$/;"	m
+<S-Up>	vim/config/mapping.vim	/^noremap <S-Up> <C-w>+$/;"	m
+<leader>;	vim/config/mapping.vim	/^noremap <leader>; :Reload<CR>$/;"	m
+<leader>f	vim/config/mapping.vim	/^nmap <leader>f [finder]$/;"	m
+<leader>g	vim/config/mapping.vim	/^nmap <leader>g [fugitive]$/;"	m
+<leader>k	vim/config/mapping.vim	/^nmap <leader>k [toggle]$/;"	m
+<leader>p	vim/config/mapping.vim	/^nnoremap <silent> <leader>p :PrevimOpen<CR>$/;"	m
+<leader>r	vim/config/mapping.vim	/^nmap <leader>r [rails]$/;"	m
+<leader>s	vim/config/mapping.vim	/^nmap <leader>s [substitute]$/;"	m
+<leader>u	vim/config/mapping.vim	/^nmap <leader>u [ultisnips]$/;"	m
+<leader>v	vim/config/mapping.vim	/^nmap <leader>v [vim]$/;"	m
+Ctags	vim/config/commands.vim	/^command! Ctags call ReindexCtags()$/;"	c
+MyTabLabel	vim/config/tab.vim	/^fu! MyTabLabel(n)$/;"	f
+MyTabLine	vim/config/tab.vim	/^fu! MyTabLine()$/;"	f
+R	vim/config/mapping.vim	/^nnoremap R gR$/;"	m
+ReindexCtags	vim/config/commands.vim	/^function! ReindexCtags()$/;"	f
+Reload	vim/config/commands.vim	/^command! Reload so $MYVIMRC$/;"	c
+TRAPWINCH	zsh/configs/prompt.zsh	/^TRAPWINCH() {$/;"	f
+VSetSearch	vim/config/mapping.vim	/^function! s:VSetSearch()$/;"	f
+Vimrc	vim/config/commands.vim	/^command! Vimrc cd ~\/dotfiles\/vim$/;"	c
+Y	vim/config/mapping.vim	/^nnoremap Y y\$$/;"	m
+[finder]	vim/config/mapping.vim	/^nnoremap [finder] <Nop>$/;"	m
+[finder]b	vim/config/mapping.vim	/^nnoremap <silent> [finder]b :Buffers<CR>$/;"	m
+[finder]f	vim/config/mapping.vim	/^nnoremap <silent> [finder]f :Files<CR>$/;"	m
+[finder]s	vim/config/mapping.vim	/^nnoremap [finder]s :Ack! <Space>$/;"	m
+[finder]w	vim/config/mapping.vim	/^nnoremap <silent> [finder]w :Windows<CR>$/;"	m
+[fugitive]	vim/config/mapping.vim	/^nnoremap [fugitive]  <Nop>$/;"	m
+[fugitive]a	vim/config/mapping.vim	/^nnoremap <silent> [fugitive]a :Gwrite<CR>$/;"	m
+[fugitive]b	vim/config/mapping.vim	/^nnoremap <silent> [fugitive]b :Gblame<CR>$/;"	m
+[fugitive]c	vim/config/mapping.vim	/^nnoremap <silent> [fugitive]c :Gcommit-v<CR>$/;"	m
+[fugitive]d	vim/config/mapping.vim	/^nnoremap <silent> [fugitive]d :Gdiff<CR>$/;"	m
+[fugitive]g	vim/config/mapping.vim	/^nnoremap <silent> [fugitive]g :Gstatus<CR><C-w>T$/;"	m
+[fugitive]l	vim/config/mapping.vim	/^nnoremap <silent> [fugitive]l :Git log<CR>$/;"	m
+[fugitive]m	vim/config/mapping.vim	/^nnoremap <silent> [fugitive]m :Gmerge<CR>$/;"	m
+[fugitive]p	vim/config/mapping.vim	/^nnoremap <silent> [fugitive]p :Gpush origin HEAD<CR>$/;"	m
+[rails]	vim/config/mapping.vim	/^nnoremap [rails] <Nop>$/;"	m
+[rails]S	vim/config/mapping.vim	/^nnoremap <silent> [rails]S :Rserver! -d<CR>$/;"	m
+[rails]c	vim/config/mapping.vim	/^nnoremap <silent> [rails]c :Econtroller<CR>$/;"	m
+[rails]m	vim/config/mapping.vim	/^nnoremap <silent> [rails]m :Emodel<CR>$/;"	m
+[rails]s	vim/config/mapping.vim	/^nnoremap <silent> [rails]s :Rserver -d<CR>$/;"	m
+[rails]v	vim/config/mapping.vim	/^nnoremap [rails]v :Eview$/;"	m
+[substitute]	vim/config/mapping.vim	/^nnoremap [substitute] <Nop>$/;"	m
+[substitute]q	vim/config/mapping.vim	/^nnoremap <silent> [substitute]q :Qfreplace<CR>$/;"	m
+[substitute]s	vim/config/mapping.vim	/^nnoremap [substitute]s :%S\/\/$/;"	m
+[ultisnips]	vim/config/mapping.vim	/^nnoremap [ultisnips] <Nop>$/;"	m
+[ultisnips]u	vim/config/mapping.vim	/^nnoremap <silent> [ultisnips]u :UltiSnipsEdit<CR>$/;"	m
+[vim]	vim/config/mapping.vim	/^nnoremap [vim] <Nop>$/;"	m
+[vim]s	vim/config/mapping.vim	/^nnoremap <silent> [vim]s <c-w><c-v><c-w><c-l>:Vaffle ~\/.vim<CR> cd ~\/.vim<CR>$/;"	m
+_	vim/config/mapping.vim	/^nnoremap _ :TagbarToggle<CR>$/;"	m
+create_detached_session	bin/tat	/^create_detached_session() {$/;"	f
+create_if_needed_and_attach	bin/tat	/^create_if_needed_and_attach() {$/;"	f
+customize_vaffle_mappings	vim/config/mapping.vim	/^function! s:customize_vaffle_mappings() abort$/;"	f
+g:EasyMotion_smartcase	vim/plugin_settings/easymotion.vim	/^let g:EasyMotion_smartcase = 1$/;"	v
+g:EasyMotion_use_smartsign_jp	vim/plugin_settings/easymotion.vim	/^let g:EasyMotion_use_smartsign_jp = 1$/;"	v
+g:Tlist_Ctags_Cmd	vim/ctags.vim	/^let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"$/;"	v
+g:UltiSnipsEditSplit	vim/plugin_settings/ultisnips.vim	/^let g:UltiSnipsEditSplit="vertical"$/;"	v
+g:UltiSnipsExpandTrigger	vim/plugin_settings/ultisnips.vim	/^let g:UltiSnipsExpandTrigger="<tab>"$/;"	v
+g:UltiSnipsJumpBackwardTrigger	vim/plugin_settings/ultisnips.vim	/^let g:UltiSnipsJumpBackwardTrigger="<c-p>"$/;"	v
+g:UltiSnipsJumpForwardTrigger	vim/plugin_settings/ultisnips.vim	/^let g:UltiSnipsJumpForwardTrigger="<c-n>"$/;"	v
+g:UltiSnipsSnippetDirectories	vim/plugin_settings/ultisnips.vim	/^let g:UltiSnipsSnippetDirectories=[$HOME.'\/.vim\/ultisnips']$/;"	v
+g:UltiSnipsSnippetsDir	vim/plugin_settings/ultisnips.vim	/^let g:UltiSnipsSnippetsDir=$HOME.'\/dotfiles\/vim\/ultisnips'$/;"	v
+g:ackprg	vim/plugin_settings/ack.vim	/^  let g:ackprg = 'ag --vimgrep'$/;"	v
+g:indent_guides_enable_on_vim_startup	vim/plugin_settings/vim-indent-guides.vim	/^let g:indent_guides_enable_on_vim_startup = 1$/;"	v
+g:previm_open_cmd	vim/plugin_settings/previm.vim	/^let g:previm_open_cmd = 'open -a Google\\ Chrome'$/;"	v
+g:vaffle_force_delete	vim/plugin_settings/vaffle.vim	/^let g:vaffle_force_delete=1$/;"	v
+g:vaffle_show_hidden_files	vim/plugin_settings/vaffle.vim	/^let g:vaffle_show_hidden_files=1$/;"	v
+git_prompt_info	zsh/configs/prompt.zsh	/^git_prompt_info() {$/;"	f
+j	vim/config/mapping.vim	/^noremap j gj$/;"	m
+jj	vim/config/mapping.vim	/^inoremap <silent> jj <Esc>$/;"	m
+k	vim/config/mapping.vim	/^noremap k gk$/;"	m
+mapleader	vim/config/mapping.vim	/^let mapleader = "\\<Space>"$/;"	v
+not_in_tmux	bin/tat	/^not_in_tmux() {$/;"	f
+r	vim/config/mapping.vim	/^nnoremap r gr$/;"	m
+s	vim/config/mapping.vim	/^map s <Plug>(easymotion-overwin-f2)$/;"	m
+session_exists	bin/tat	/^session_exists() {$/;"	f
+vi_mode_prompt_info	zsh/configs/prompt.zsh	/^function vi_mode_prompt_info() {$/;"	f
+vimrc_vaffle	vim/config/mapping.vim	/^augroup vimrc_vaffle$/;"	a
+x	vim/config/mapping.vim	/^nnoremap x "_x$/;"	m
+zle	zsh/configs/prompt.zsh	/^function zle-line-init zle-keymap-select() {$/;"	f
