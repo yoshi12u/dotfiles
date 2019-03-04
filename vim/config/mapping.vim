@@ -59,7 +59,8 @@ xnoremap # :<c-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
 " plug-in key maps
 map s <Plug>(easymotion-overwin-f2)
 
-nnoremap - :Vaffle<CR>
+nnoremap - :Vaffle %:h<CR>
+nnoremap _ :Vaffle<CR>
 function! s:customize_vaffle_mappings() abort
   nmap <buffer> <Bslash> <Plug>(vaffle-open-root)
   nmap <buffer> t        <Plug>(vaffle-open-current-tab)
