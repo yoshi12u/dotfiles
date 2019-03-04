@@ -38,7 +38,3 @@ Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
 
 Plug 'SirVer/ultisnips'
-
-Plug 'kannokanno/previm'
-Plug 'tyru/open-browser.vim'
-
