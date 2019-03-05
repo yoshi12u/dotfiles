@@ -27,7 +27,7 @@ bindkey "^R" history-incremental-search-backward
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^Y" accept-and-hold
-bindkey "^K" insert-last-word
+# bindkey "^K" insert-last-word
 bindkey "^Q" push-line-or-edit
 
 bindkey '^IG' anyframe-widget-insert-git-branch
