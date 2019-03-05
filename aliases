@@ -25,6 +25,11 @@ alias fghq="anyframe-widget-cd-ghq-repository"
 alias ftx="anyframe-widget-tmux-attach"
 alias fhis="anyframe-widget-execute-history"
 
+alias fghq='cd $(ghq root)/$(ghq list | fzf)'
+alias fghub='hub browse $(ghq list | fzf | cut -d "/" -f 2,3)'
+
+alias ghub='hub browse'
+
 # zshmarks
 alias bm="bookmark"
 alias dbm="deletemark"
