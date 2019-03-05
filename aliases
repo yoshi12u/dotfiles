@@ -10,6 +10,7 @@ alias vim="nvim"
 alias path='echo $PATH | tr -s ":" "\n"'
 
 alias reload='exec $SHELL -l'
+alias retmux='tmux source-file ~/.tmux.conf'
 
 alias q="exit"
 

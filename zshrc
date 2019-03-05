@@ -1,3 +1,5 @@
+[[ -z "$TMUX" && ! -z "$PS1" ]] && exec tmux 
+
 source ~/.zsh/plugins.zsh
 
 # load custom executable functions
@@ -45,6 +47,3 @@ _load_settings "$HOME/.zsh/configs"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
-
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
