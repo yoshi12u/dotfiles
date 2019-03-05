@@ -1,6 +1,17 @@
 autoload -U history-search-end
+
+function _hub_browse(){
+  eval 'hub browse'
+}
+
+function _edit_dotfiles(){
+   nvim ~/dotfiles
+}
+
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
+zle -N _hub_browse
+zle -N _edit_dotfiles
 
 # give us access to ^Q
 stty -ixon
@@ -19,11 +30,20 @@ bindkey "^Y" accept-and-hold
 bindkey "^K" insert-last-word
 bindkey "^Q" push-line-or-edit
 
-bindkey '^fg' anyframe-widget-insert-git-branch
-bindkey '^f^g' anyframe-widget-insert-git-branch
+bindkey '^IG' anyframe-widget-insert-git-branch
+bindkey '^I^G' anyframe-widget-insert-git-branch
 
-bindkey '^ff' anyframe-widget-insert-filename
-bindkey '^f^f' anyframe-widget-insert-filename
+bindkey '^IF' anyframe-widget-insert-filename
+bindkey '^I^F' anyframe-widget-insert-filename
+
+bindkey '^GG' anyframe-widget-cd-ghq-repository
+bindkey '^G^G' anyframe-widget-cd-ghq-repository
+
+bindkey '^GH' _hub_browse
+bindkey '^G^H' _hub_browse
+
+bindkey '^KK' _edit_dotfiles
+bindkey '^K^K' _edit_dotfiles
 
 bindkey -M viins "jj" vi-cmd-mode
 bindkey -M viins '^F'  forward-char

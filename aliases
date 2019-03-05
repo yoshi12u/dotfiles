@@ -24,11 +24,7 @@ alias fbr="anyframe-widget-checkout-git-branch"
 alias fghq="anyframe-widget-cd-ghq-repository"
 alias ftx="anyframe-widget-tmux-attach"
 alias fhis="anyframe-widget-execute-history"
-
-alias fghq='cd $(ghq root)/$(ghq list | fzf)'
-alias fghub='hub browse $(ghq list | fzf | cut -d "/" -f 2,3)'
-
-alias ghub='hub browse'
+alias edf="nvim ~/dotfiles"
 
 # zshmarks
 alias bm="bookmark"
