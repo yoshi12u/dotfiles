@@ -9,4 +9,3 @@ zplugin light 'zsh-users/zsh-completions'
 zplugin light 'mollifier/anyframe'
 zplugin light 'uesaiso/zshmarks'
 zplugin ice pick"init.sh"
-zplugin light "b4b4r07/enhancd"
