@@ -27,4 +27,4 @@ alias fhis="anyframe-widget-execute-history"
 
 # zshmarks
 alias bm="bookmark"
-alias dm="deletemark"
+alias dbm="deletemark"

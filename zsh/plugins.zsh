@@ -1,20 +1,12 @@
-[[ ! -e ~/.zplug ]] && curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-source ~/.zplug/init.zsh
+[[ ! -e ~/.zplugin ]] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
+source "$HOME/.zplugin/bin/zplugin.zsh"
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
 
-zplug 'zsh-users/zsh-syntax-highlighting'
-zplug 'zsh-users/zsh-autosuggestions'
-zplug 'zsh-users/zsh-completions'
-zplug 'mollifier/anyframe'
-zplug 'uesaiso/zshmarks'
-zplug "b4b4r07/enhancd", use:init.sh
-
-zstyle ":anyframe:selector:" use fzf
-
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-zplug load
-
+zplugin light 'zsh-users/zsh-syntax-highlighting'
+zplugin light 'zsh-users/zsh-autosuggestions'
+zplugin light 'zsh-users/zsh-completions'
+zplugin light 'mollifier/anyframe'
+zplugin light 'uesaiso/zshmarks'
+zplugin ice pick"init.sh"
+zplugin light "b4b4r07/enhancd"

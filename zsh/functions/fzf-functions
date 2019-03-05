@@ -6,6 +6,14 @@ function fbm() {
   cd $(eval echo "$target_dir")
 }
 
+function fdbm() {
+  local marks target_dir
+  marks=$(showmarks) &&
+  target_dir=$(echo "$marks" | fzf) &&
+  target_dir=$(echo "$target_dir" | cut -f 1) &&
+  deletemark $target_dir
+}
+
 function ftk() {
   local sessoins target_sessions
   sessions=$(tmux ls) &&
