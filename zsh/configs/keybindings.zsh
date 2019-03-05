@@ -17,11 +17,11 @@ bindkey "^Y" accept-and-hold
 bindkey "^K" insert-last-word
 bindkey "^Q" push-line-or-edit
 
-bindkey '^ag' anyframe-widget-insert-git-branch
-bindkey '^a^g' anyframe-widget-insert-git-branch
+bindkey '^fg' anyframe-widget-insert-git-branch
+bindkey '^f^g' anyframe-widget-insert-git-branch
 
-bindkey '^af' anyframe-widget-insert-filename
-bindkey '^a^f' anyframe-widget-insert-filename
+bindkey '^ff' anyframe-widget-insert-filename
+bindkey '^f^f' anyframe-widget-insert-filename
 
 bindkey -M viins "jj" vi-cmd-mode
 bindkey -M viins '^F'  forward-char

@@ -19,8 +19,12 @@ alias q="exit"
 
 # Anyframe
 alias any="anyframe-widget-select-widget"
-alias ankill="anyframe-widget-kill"
-alias angit="anyframe-widget-checkout-git-branch"
-alias anghq="anyframe-widget-cd-ghq-repository"
-alias antx="anyframe-widget-tmux-attach"
-alias anhistory="anyframe-widget-execute-history"
+alias fkill="anyframe-widget-kill"
+alias fbr="anyframe-widget-checkout-git-branch"
+alias fghq="anyframe-widget-cd-ghq-repository"
+alias ftx="anyframe-widget-tmux-attach"
+alias fhis="anyframe-widget-execute-history"
+
+# zshmarks
+alias bm="bookmark"
+alias dm="deletemark"
