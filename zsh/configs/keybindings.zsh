@@ -13,6 +13,8 @@ bindkey "^[[3~" delete-char
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 bindkey "^R" history-incremental-search-backward
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
 bindkey "^Y" accept-and-hold
 bindkey "^K" insert-last-word
 bindkey "^Q" push-line-or-edit
