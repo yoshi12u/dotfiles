@@ -9,7 +9,7 @@ alias q="exit"
 
 alias reload='exec $SHELL -l'
 alias retmux='tmux source-file ~/.tmux.conf'
-alias dotfiles='cd dotfiles; $EDITOR'
+alias rc='cd dotfiles; $EDITOR'
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
