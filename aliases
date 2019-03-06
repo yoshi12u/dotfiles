@@ -5,27 +5,20 @@ alias mkdir="mkdir -p"
 alias e="$EDITOR"
 alias v="$VISUAL"
 alias vim="nvim"
+alias q="exit"
+
+alias reload='exec $SHELL -l'
+alias retmux='tmux source-file ~/.tmux.conf'
+alias dotfiles='cd dotfiles; $EDITOR'
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
-alias reload='exec $SHELL -l'
-alias retmux='tmux source-file ~/.tmux.conf'
-
-alias q="exit"
-
-# Include custom aliases
-[[ -f ~/.aliases.local ]] && source ~/.aliases.local
-
 # Anyframe
 alias any="anyframe-widget-select-widget"
 alias fkill="anyframe-widget-kill"
-alias fbr="anyframe-widget-checkout-git-branch"
 alias fghq="anyframe-widget-cd-ghq-repository"
 alias ftx="anyframe-widget-tmux-attach"
-alias fhis="anyframe-widget-execute-history"
-alias edf="nvim ~/dotfiles"
 
-# zshmarks
-alias bm="bookmark"
-alias dbm="deletemark"
+# Include custom aliases
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
