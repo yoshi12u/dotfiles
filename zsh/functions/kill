@@ -1,0 +1,8 @@
+kill(){
+if [[ $# -gt 0 ]]; then
+  builtin kill "$@"
+else
+  anyframe-widget-kill
+fi
+
+}
