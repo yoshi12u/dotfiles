@@ -9,16 +9,14 @@ alias q="exit"
 
 alias reload='exec $SHELL -l'
 alias retmux='tmux source-file ~/.tmux.conf'
-alias rc='cd dotfiles; $EDITOR'
+alias rc='$EDITOR ~/dotfiles'
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
 # Anyframe
 alias any="anyframe-widget-select-widget"
-alias fkill="anyframe-widget-kill"
-alias fghq="anyframe-widget-cd-ghq-repository"
-alias ftx="anyframe-widget-tmux-attach"
+alias c="anyframe-widget-cd-ghq-repository"
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
