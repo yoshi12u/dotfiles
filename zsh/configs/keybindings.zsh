@@ -31,32 +31,25 @@ bindkey -v
 
 # handy keybindings
 bindkey "^[[3~" delete-char
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
-bindkey "^R" history-incremental-search-backward
-bindkey "^A" beginning-of-line
-bindkey "^E" end-of-line
-bindkey "^Y" accept-and-hold
-# bindkey "^K" insert-last-word
-bindkey "^Q" push-line-or-edit
+bindkey "^p" history-beginning-search-backward-end
+bindkey "^n" history-beginning-search-forward-end
+bindkey "^r" history-incremental-search-backward
+bindkey "^a" beginning-of-line
+bindkey "^e" end-of-line
+bindkey "^y" accept-and-hold
+bindkey "^k" insert-last-word
+bindkey "^q" push-line-or-edit
 
-bindkey '^IG' anyframe-widget-insert-git-branch
-bindkey '^I^G' anyframe-widget-insert-git-branch
+bindkey '^m' do-enter
 
-bindkey '^IF' anyframe-widget-insert-filename
-bindkey '^I^F' anyframe-widget-insert-filename
+bindkey '^xg' anyframe-widget-insert-git-branch
+bindkey '^x^g' anyframe-widget-insert-git-branch
 
-bindkey '^GG' anyframe-widget-cd-ghq-repository
-bindkey '^G^G' anyframe-widget-cd-ghq-repository
-
-bindkey '^GH' _hub_browse
-bindkey '^G^H' _hub_browse
-
-bindkey '^KK' _edit_dotfiles
-bindkey '^K^K' _edit_dotfiles
+bindkey '^xf' anyframe-widget-insert-filename
+bindkey '^x^f' anyframe-widget-insert-filename
 
 bindkey -M viins "jj" vi-cmd-mode
-bindkey -M viins '^F'  forward-char
-bindkey -M viins '^B'  backward-char
+bindkey -M viins '^f'  forward-char
+bindkey -M viins '^b'  backward-char
 bindkey -M viins '^?'  backward-delete-char
-bindkey -M viins '^Y'  yank
+bindkey -M viins '^y'  yank
