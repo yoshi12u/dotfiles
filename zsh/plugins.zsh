@@ -6,4 +6,6 @@ autoload -Uz _zplugin
 zplugin light 'zsh-users/zsh-syntax-highlighting'
 zplugin light 'zsh-users/zsh-autosuggestions'
 zplugin light 'zsh-users/zsh-completions'
-zplugin light 'mollifier/anyframe'
+zplugin ice ver'use-builtin-commands'
+zplugin light 'uesaiso/anyframe'
+zplugin light "b4b4r07/enhancd"

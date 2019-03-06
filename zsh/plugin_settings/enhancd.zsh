@@ -1,0 +1,1 @@
+export ENHANCD_DISABLE_DOT=1
