@@ -7,6 +7,3 @@ zplugin light 'zsh-users/zsh-syntax-highlighting'
 zplugin light 'zsh-users/zsh-autosuggestions'
 zplugin light 'zsh-users/zsh-completions'
 zplugin light 'mollifier/anyframe'
-zplugin light 'uesaiso/zshmarks'
-zplugin ice as"program" pick"git-open"
-zplugin light "paulirish/git-open"
