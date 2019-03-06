@@ -42,6 +42,8 @@ bindkey "^q" push-line-or-edit
 
 bindkey '^m' do-enter
 
+bindkey '^g' anyframe-widget-cd-ghq-repository
+
 bindkey '^xg' anyframe-widget-insert-git-branch
 bindkey '^x^g' anyframe-widget-insert-git-branch
 
