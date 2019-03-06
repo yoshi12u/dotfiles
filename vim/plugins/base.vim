@@ -1,5 +1,7 @@
 Plug 'vim-jp/vimdoc-ja'
 
+Plug 'aserebryakov/vim-todo-lists'
+
 Plug 'thinca/vim-qfreplace'
 
 Plug 'tpope/vim-commentary'
