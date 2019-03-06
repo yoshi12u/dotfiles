@@ -6,6 +6,7 @@ nnoremap [fugitive]  <Nop>
 nnoremap [rails] <Nop>
 nnoremap [ultisnips] <Nop>
 nnoremap [substitute] <Nop>
+nnoremap [args] <Nop>
 
 " maps using the leader key
 noremap <leader>; :Reload<CR>
@@ -16,6 +17,7 @@ nmap <leader>r [rails]
 nmap <leader>u [ultisnips]
 nmap <leader>v [vim]
 nmap <leader>s [substitute]
+nmap <leader>a [args]
 
 " original maps
 noremap ; :
@@ -45,6 +47,10 @@ inoremap <silent> jj <Esc>
 noremap! <C-b> <Left>
 noremap! <C-f> <Right>
 
+nnoremap [args]a :argadd<CR>
+nnoremap [args]r :args<CR>
+nnoremap [args]d :argdelete %<CR>
+
 nnoremap [substitute]s :%S//
 
 inoremap <F6> <C-R>=strftime("%Y/%m/%d")<CR>
@@ -59,19 +65,6 @@ xnoremap # :<c-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
 " plug-in key maps
 map s <Plug>(easymotion-overwin-f2)
 
-nnoremap <silent> - :Vaffle %:p:h<CR>
-nnoremap <silent> _ :Vaffle<CR>
-function! s:customize_vaffle_mappings() abort
-  nmap <buffer> <Bslash> <Plug>(vaffle-open-root)
-  nmap <buffer> t        <Plug>(vaffle-open-current-tab)
-  nmap <buffer> s        <Plug>(vaffle-open-selected-split)
-  nmap <buffer> v        <Plug>(vaffle-open-selected-vsplit)
-endfunction
-augroup vimrc_vaffle
-  autocmd!
-  autocmd FileType vaffle call s:customize_vaffle_mappings()
-augroup END
-
 nnoremap <silent> <leader>p :PrevimOpen<CR>
 
 nnoremap <silent> [ultisnips]u :UltiSnipsEdit<CR>
@@ -84,8 +77,6 @@ nnoremap <silent> [finder]w :Windows<CR>
 nnoremap [finder]s :Ack! <Space>
 
 nnoremap <silent> [fugitive]g :Gstatus<CR><C-w>T
-nnoremap <silent> [fugitive]a :Gwrite<CR>
-nnoremap <silent> [fugitive]c :Gcommit-v<CR>
 nnoremap <silent> [fugitive]b :Gblame<CR>
 nnoremap <silent> [fugitive]d :Gdiff<CR>
 nnoremap <silent> [fugitive]m :Gmerge<CR>
@@ -97,6 +88,37 @@ nnoremap <silent> [rails]m :Emodel<CR>
 nnoremap <silent> [rails]c :Econtroller<CR>
 nnoremap <silent> [rails]s :Rserver -d<CR>
 nnoremap <silent> [rails]S :Rserver! -d<CR>
+
+nnoremap <silent> - :Vaffle %:p:h<CR>
+nnoremap <silent> _ :Vaffle<CR>
+
+function! s:customize_vaffle_mappings() abort
+  nmap <buffer> <Bslash> <Plug>(vaffle-open-root)
+  nmap <buffer> t        <Plug>(vaffle-open-current-tab)
+  nmap <buffer> s        <Plug>(vaffle-open-selected-split)
+  nmap <buffer> v        <Plug>(vaffle-open-selected-vsplit)
+endfunction
+augroup vimrc_vaffle
+  autocmd!
+  autocmd FileType vaffle call s:customize_vaffle_mappings()
+augroup END
+
+let g:VimTodoListsCustomKeyMapper = 'VimTodoListsCustomMappings'
+function! VimTodoListsCustomMappings()
+  nnoremap <buffer> s :VimTodoListsToggleItem<CR>
+  nnoremap <buffer> j :VimTodoListsGoToNextItem<CR>
+  nnoremap <buffer> k :VimTodoListsGoToPreviousItem<CR>
+  nnoremap <buffer> o :VimTodoListsCreateNewItemBelow<CR>
+  nnoremap <buffer> O :VimTodoListsCreateNewItemAbove<CR>
+  noremap <buffer> <leader>e :silent call VimTodoListsSetNormalMode()<CR>
+  nnoremap <buffer> <Tab> :VimTodoListsIncreaseIndent<CR>
+  nnoremap <buffer> <S-Tab> :VimTodoListsDecreaseIndent<CR>
+  vnoremap <buffer> <Tab> :VimTodoListsIncreaseIndent<CR>
+  vnoremap <buffer> <S-Tab> :VimTodoListsDecreaseIndent<CR>
+  inoremap <buffer> <Tab> <ESC>:VimTodoListsIncreaseIndent<CR>A
+  inoremap <buffer> <S-Tab> <ESC>:VimTodoListsDecreaseIndent<CR>A
+  noremap <buffer> <leader>e :silent call VimTodoListsSetItemMode()<CR>
+endfunction
 
 function! s:VSetSearch()
   let temp = @s
