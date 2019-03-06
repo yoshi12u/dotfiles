@@ -1,0 +1,4 @@
+tkil(){
+  target_session=$(tmux ls | fzf | cut -d ':' -f 1) &&
+  tmux kill-session -t $target_session
+}

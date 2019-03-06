@@ -1,0 +1,3 @@
+tat() {
+  anyframe-widget-tmux-attach
+}
