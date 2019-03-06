@@ -2,13 +2,13 @@
 
 source ~/.zsh/plugins.zsh
 
+for setting in ~/.zsh/plugin_settings/*; do
+  source $setting
+done
+
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
-done
-
-for setting in ~/.zsh/plugin_settings/*; do
-  source $setting
 done
 
 # extra files in ~/.zsh/configs/pre , ~/.zsh/configs , and ~/.zsh/configs/post
