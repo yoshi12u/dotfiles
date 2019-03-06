@@ -1,17 +1,27 @@
 autoload -U history-search-end
 
-function _hub_browse(){
-  eval 'hub browse'
+do-enter() {
+    if [[ -n $BUFFER ]]; then
+      zle accept-line
+      return $status
+    fi
+
+    echo
+    if [[ -d .git ]]; then
+        if [[ -n "$(git status --short)" ]]; then
+            git status
+        fi
+    else
+        # do nothing
+        :
+    fi
+
+    zle reset-prompt
 }
 
-function _edit_dotfiles(){
-   nvim ~/dotfiles
-}
-
+zle -N do-enter
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
-zle -N _hub_browse
-zle -N _edit_dotfiles
 
 # give us access to ^Q
 stty -ixon
