@@ -1,5 +1,7 @@
 Plug 'vim-jp/vimdoc-ja'
 
+Plug 'w0rp/ale'
+
 Plug 'aserebryakov/vim-todo-lists'
 
 Plug 'thinca/vim-qfreplace'
@@ -38,4 +40,5 @@ Plug 'osyo-manga/vim-anzu'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
+
 Plug 'SirVer/ultisnips'
