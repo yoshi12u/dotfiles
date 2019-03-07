@@ -8,6 +8,7 @@ Plug 'osyo-manga/vim-anzu'
 Plug 'thinca/vim-qfreplace'
 
 " style
+Plug 'ayu-theme/ayu-vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'airblade/vim-gitgutter'
