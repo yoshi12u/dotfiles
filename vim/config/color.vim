@@ -1,1 +1,2 @@
-colorscheme palenight
+set background=dark
+colorscheme solarized
