@@ -1,10 +1,10 @@
-[[ -z "$TMUX" && ! -z "$PS1" ]] && exec tmux 
-
-source ~/.zsh/plugins.zsh
+[[ -z "$TMUX" && ! -z "$PS1" ]] && exec tmux
 
 for setting in ~/.zsh/plugin_settings/*; do
   source $setting
 done
+
+source ~/.zsh/plugins.zsh
 
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
