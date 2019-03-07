@@ -12,10 +12,10 @@ alias rc='$EDITOR ~/dotfiles'
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
+alias fpath='echo $fpath | tr -s " " "\n"'
 
 # Anyframe
 alias any="anyframe-widget-select-widget"
-alias c="anyframe-widget-cd-ghq-repository"
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
