@@ -6,7 +6,6 @@ bind main    G      move-last-line
 
 bind generic <Ctrl-f> move-page-down
 bind generic <Ctrl-b> move-page-up
-a
 
 bind generic C      !git commit
 bind refs    C      !git commit

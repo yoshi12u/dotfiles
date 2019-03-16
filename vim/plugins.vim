@@ -14,10 +14,11 @@ Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
 
-" syntax/comptetion
+" syntax/completion
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': 'yarn install'}
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'slim'] }
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
+Plug 'SirVer/ultisnips'
 
 " commands
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
