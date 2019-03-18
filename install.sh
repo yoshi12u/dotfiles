@@ -6,9 +6,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
   test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
   echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
 fi
-if [ -x ! which git ]; then
-  brew install git
-fi
+mkdir ~/dotfiles
 git clone https://github.com/uesaiso/dotfiles ~/dotfiles
 cd ~/dotfiles
 brew bundle
