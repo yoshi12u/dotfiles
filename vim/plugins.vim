@@ -15,10 +15,14 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
 
 " syntax/completion
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': 'yarn install'}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'slim'] }
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 Plug 'SirVer/ultisnips'
+
+" preview
+Plug 'tyru/open-browser.vim'
+Plug 'previm/previm'
 
 " commands
 Plug '/usr/local/opt/fzf'

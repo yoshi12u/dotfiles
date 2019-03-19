@@ -65,7 +65,7 @@ xnoremap # :<c-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
 " plug-in key maps
 map s <Plug>(easymotion-overwin-f2)
 
-nnoremap <silent> <leader>p :PrevimOpen<CR>
+nnoremap <silent> <c-p> :PrevimOpen<CR>
 
 nnoremap <silent> [ultisnips]u :UltiSnipsEdit<CR>
 
