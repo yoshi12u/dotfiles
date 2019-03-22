@@ -14,7 +14,8 @@ zle -N toggl-start-todoist
 bindkey '^xts' toggl-start-todoist
 
 function toggl-stop-todoist () {
-    current_item_id=`toggl --cache --csv current | grep ID | cut -d ',' -f 2`
+    local current_item_content=`toggl --cache --csv current | grep Description | cut -d ',' -f 2`
+    local current_item_id=`todoist list | grep $current_item_content | cut -d ' ' -f 1`
     if [ ! -n "$current_item_id" ]; then
       return 0
     else
