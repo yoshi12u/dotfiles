@@ -1,5 +1,5 @@
 function toggl-start-todoist () {
-    if [ "$1" == "" ]; then
+    if [ "$1" = "" ]; then
       local selected_item_id=`todoist --project-namespace --namespace list | fzf | cut -d ' ' -f 1`
     else
       local selected_item_id=`todoist --project-namespace --namespace list --filter "#$1"| fzf | cut -d ' ' -f 1`
