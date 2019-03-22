@@ -9,6 +9,7 @@ alias q="exit"
 alias reload='exec $SHELL -l'
 alias retmux='tmux source-file ~/.tmux.conf'
 alias rc='$EDITOR ~/dotfiles'
+alias task='toggl-start-todoist'
 alias done='toggl-stop-todoist'
 
 # Pretty print the path
