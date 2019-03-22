@@ -9,9 +9,7 @@ function toggl-start-todoist () {
     fi
     local selected_item_content=`todoist --csv show ${selected_item_id} | grep Content | cut -d',' -f2- | sed s/\"//g`
     if [ -n "$selected_item_content" ]; then
-        BUFFER="toggl start \"${selected_item_content}\""
-        CURSOR=$#BUFFER
-        zle accept-line
+        toggl start $selected_item_content
     fi
 }
 zle -N toggl-start-todoist
