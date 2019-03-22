@@ -1,35 +1,24 @@
-# Updates editor information when the keymap changes.
-function zle-line-init zle-keymap-select() {
-  zle reset-prompt
-  zle -R
-}
-
-# Ensure that the prompt is redrawn when the terminal size changes.
-TRAPWINCH() {
-  zle && { zle -R; zle reset-prompt }
-}
-
-zle -N zle-line-init
-zle -N zle-keymap-select
-zle -N edit-command-line
-
-VIM_NORMAL="%{$fg_bold[cyan]%}[NORMAL] %{$reset_color%}"
-VIM_INSERT="%{$fg_bold[green]%}INSERT>> %{$reset_color%}"
-
-function vi_mode_prompt_info() {
-  echo "${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
-}
-
-# modify the prompt to contain git branch name if applicable
-git_prompt_info() {
-  current_branch=$(git current-branch 2> /dev/null)
-  if [[ -n $current_branch ]]; then
-    echo " %{$fg_bold[green]%}$current_branch%{$reset_color%}"
+prompt_toggl_current() {
+  local tgc=$(toggl --cache --csv current)
+  local tgc_time=$(echo $tgc | grep Duration | cut -d ',' -f 2)
+  local tgc_dsc=$(echo $tgc | grep Description | cut -d ',' -f 2 | cut -c 1-20)
+  local short_tgc_dsc=$(if [ $(echo $tgc_dsc | wc -m) -lt 20 ]; then echo $tgc_dsc; else echo "${tgc_dsc}.."; fi)
+  if [ ! -n "$tgc_time" ]; then
+      echo "None"
+  else
+      echo "[$tgc_time $short_tgc_dsc]"
   fi
 }
 
-setopt promptsubst
+preprompt_custom() {
+  echo ''
+}
 
-# Allow exported PS1 variable to override default prompt.
-PS1='${fg_bold[green]}>  ${SSH_CONNECTION+"${fg_bold[green]}%n@%m:"}${fg_bold[blue]}%c${fg_bold[green]}$(git_prompt_info)${reset_color}
-${fg_bold[green]}$(vi_mode_prompt_info)${reset_color}'
+preprompt_newline() {
+  echo '%F{white}Task: $(prompt_toggl_current)%f'
+}
+
+prompt_newline='%666v'
+PROMPT=" $(preprompt_custom)
+$(preprompt_newline)
+$PROMPT"
