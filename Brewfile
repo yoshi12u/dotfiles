@@ -44,5 +44,5 @@ cask "toggldesktop"
 cask "vagrant"
 cask "virtualbox"
 mas "magnet", id: 441258766
-mas "todoist" id: 585829637
-mas "toggl" id: 957734279
+mas "todoist", id: 585829637
+mas "toggl", id: 957734279
