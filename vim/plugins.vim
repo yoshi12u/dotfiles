@@ -6,6 +6,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-rooter'
 Plug 'osyo-manga/vim-anzu'
 Plug 'thinca/vim-qfreplace'
+Plug 'szw/vim-tags'
 
 " style
 Plug 'ayu-theme/ayu-vim'
