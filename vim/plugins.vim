@@ -10,7 +10,6 @@ Plug 'szw/vim-tags'
 
 " style
 Plug 'ayu-theme/ayu-vim'
-Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
@@ -22,8 +21,8 @@ Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 Plug 'SirVer/ultisnips'
 
 " preview
-Plug 'tyru/open-browser.vim'
-Plug 'previm/previm'
+Plug 'suan/vim-instant-markdown'
+
 
 " commands
 Plug '/usr/local/opt/fzf'

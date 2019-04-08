@@ -10,6 +10,7 @@ alias retmux='tmux source-file ~/.tmux.conf'
 alias rc='$EDITOR ~/dotfiles'
 alias task='toggl-start-todoist'
 alias done='toggl-stop-todoist'
+alias ctags="`brew --prefix`/bin/ctags"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
@@ -20,3 +21,4 @@ alias any="anyframe-widget-select-widget"
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
+

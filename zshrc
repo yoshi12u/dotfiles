@@ -50,3 +50,4 @@ _load_settings "$HOME/.zsh/configs"
 
 eval "$(anyenv init -)"
 eval "$(direnv hook zsh)"
+export PGDATA=/usr/local/var/postgres
