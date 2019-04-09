@@ -3,18 +3,13 @@ let mapleader = "\<Space>"
 nnoremap [vim] <Nop>
 nnoremap [finder] <Nop>
 nnoremap [fugitive]  <Nop>
-nnoremap [rails] <Nop>
-nnoremap [ultisnips] <Nop>
 nnoremap [substitute] <Nop>
 nnoremap [args] <Nop>
 
 " maps using the leader key
 noremap <leader>; :Reload<CR>
 nmap <leader>f [finder]
-nmap <leader>k [toggle]
 nmap <leader>g [fugitive]
-nmap <leader>r [rails]
-nmap <leader>u [ultisnips]
 nmap <leader>v [vim]
 nmap <leader>s [substitute]
 nmap <leader>a [args]
@@ -65,10 +60,6 @@ xnoremap # :<c-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
 " plug-in key maps
 map s <Plug>(easymotion-overwin-f2)
 
-nnoremap <silent> <c-p> :PrevimOpen<CR>
-
-nnoremap <silent> [ultisnips]u :UltiSnipsEdit<CR>
-
 nnoremap <silent> [substitute]q :Qfreplace<CR>
 
 nnoremap <silent> [finder]f :Files<CR>
@@ -82,12 +73,6 @@ nnoremap <silent> [fugitive]d :Gdiff<CR>
 nnoremap <silent> [fugitive]m :Gmerge<CR>
 nnoremap <silent> [fugitive]l :Git log<CR>
 nnoremap <silent> [fugitive]p :Gpush origin HEAD<CR>
-
-nnoremap [rails]v :Eview
-nnoremap <silent> [rails]m :Emodel<CR>
-nnoremap <silent> [rails]c :Econtroller<CR>
-nnoremap <silent> [rails]s :Rserver -d<CR>
-nnoremap <silent> [rails]S :Rserver! -d<CR>
 
 nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
@@ -112,26 +97,10 @@ augroup vimrc_vaffle
   autocmd FileType vaffle call s:customize_vaffle_mappings()
 augroup END
 
-let g:VimTodoListsCustomKeyMapper = 'VimTodoListsCustomMappings'
-function! VimTodoListsCustomMappings()
-  nnoremap <buffer> s :VimTodoListsToggleItem<CR>
-  nnoremap <buffer> j :VimTodoListsGoToNextItem<CR>
-  nnoremap <buffer> k :VimTodoListsGoToPreviousItem<CR>
-  nnoremap <buffer> o :VimTodoListsCreateNewItemBelow<CR>
-  nnoremap <buffer> O :VimTodoListsCreateNewItemAbove<CR>
-  noremap <buffer> <leader>e :silent call VimTodoListsSetNormalMode()<CR>
-  nnoremap <buffer> <Tab> :VimTodoListsIncreaseIndent<CR>
-  nnoremap <buffer> <S-Tab> :VimTodoListsDecreaseIndent<CR>
-  vnoremap <buffer> <Tab> :VimTodoListsIncreaseIndent<CR>
-  vnoremap <buffer> <S-Tab> :VimTodoListsDecreaseIndent<CR>
-  inoremap <buffer> <Tab> <ESC>:VimTodoListsIncreaseIndent<CR>A
-  inoremap <buffer> <S-Tab> <ESC>:VimTodoListsDecreaseIndent<CR>A
-  noremap <buffer> <leader>e :silent call VimTodoListsSetItemMode()<CR>
-endfunction
-
 function! s:VSetSearch()
   let temp = @s
   norm! gv"sy
   let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
   let @s = temp
 endfunction
+

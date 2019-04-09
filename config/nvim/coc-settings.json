@@ -1,0 +1,5 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "js", "vue", "ruby"],
+  "prettier.disableLanguages": [],
+  "solargraph.formatting": true
+}

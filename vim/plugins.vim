@@ -13,16 +13,16 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'itchyny/lightline.vim'
 
 " syntax/completion
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-Plug 'tpope/vim-rails', { 'for': ['ruby', 'slim'] }
+Plug 'w0rp/ale'
+Plug 'honza/vim-snippets'
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
-Plug 'SirVer/ultisnips'
 
 " preview
 Plug 'suan/vim-instant-markdown'
-
 
 " commands
 Plug '/usr/local/opt/fzf'
