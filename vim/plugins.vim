@@ -18,7 +18,10 @@ Plug 'itchyny/lightline.vim'
 " syntax/completion
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'honza/vim-snippets'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
+Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
+Plug 'tpope/vim-bundler', { 'for': 'ruby' }
 
 " preview
 Plug 'suan/vim-instant-markdown'
