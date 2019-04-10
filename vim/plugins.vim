@@ -17,7 +17,6 @@ Plug 'itchyny/lightline.vim'
 
 " syntax/completion
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-Plug 'w0rp/ale'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 
