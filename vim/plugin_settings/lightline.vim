@@ -2,8 +2,9 @@ let g:lightline = {
       \ 'colorscheme': 'one',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'cocstatus', 'readonly', 'filename', 'modified' ],
-      \             [ 'branch' ] ],
+      \             [ 'readonly', 'filename', 'modified' ],
+      \             [ 'branch' ],
+      \             [ 'cocstatus' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
       \              [ 'filetype' ],
