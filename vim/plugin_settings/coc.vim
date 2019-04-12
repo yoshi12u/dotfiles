@@ -1,4 +1,7 @@
-call coc#add_extension( 'coc-css', 'coc-emmet', 'coc-snippets', 'coc-json', 'coc-solargraph', 'coc-vetur', 'coc-yaml', 'coc-highlight' )
+call coc#add_extension( 'coc-tsserver', 'coc-css', 'coc-emmet', 'coc-snippets', 'coc-json', 'coc-solargraph', 'coc-vetur', 'coc-yaml', 'coc-highlight' )
+
+let g:coc_snippet_next = '<Tab>'
+let g:coc_snippet_prev = '<S-Tab>'
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
@@ -10,6 +13,3 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-let g:coc_snippet_next = '<Tab>'
-let g:coc_snippet_prev = '<S-Tab>'

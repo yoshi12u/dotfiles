@@ -7,6 +7,7 @@ Plug 'airblade/vim-rooter'
 Plug 'osyo-manga/vim-anzu'
 Plug 'thinca/vim-qfreplace'
 Plug 'szw/vim-tags'
+Plug 'ConradIrwin/vim-bracketed-paste'
 
 " style
 Plug 'ayu-theme/ayu-vim'
@@ -18,7 +19,6 @@ Plug 'itchyny/lightline.vim'
 " syntax/completion
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'honza/vim-snippets'
-Plug 'w0rp/ale'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
