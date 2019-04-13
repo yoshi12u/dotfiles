@@ -1,2 +1,2 @@
-EXCLUDES="Brewfile install.sh README*.md LICENSE"
+EXCLUDES="install.sh README*.md LICENSE"
 DOTFILES_DIRS="$HOME/dotfiles-local $HOME/dotfiles"
