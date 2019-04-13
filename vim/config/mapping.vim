@@ -32,10 +32,10 @@ noremap <S-Left> <C-w><
 noremap <S-Up> <C-w>+
 noremap <S-Down> <C-w>-
 
-" nnoremap <CR> <C-W><C-J>
-" nnoremap <C-K> <C-W><C-K>
-" nnoremap <C-L> <C-W><C-L>
-" nnoremap <C-H> <C-W><C-H>
+nnoremap <CR> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 nnoremap あ a
 nnoremap い i
