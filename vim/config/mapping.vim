@@ -5,6 +5,7 @@ nnoremap [finder] <Nop>
 nnoremap [fugitive]  <Nop>
 nnoremap [substitute] <Nop>
 nnoremap [args] <Nop>
+nnoremap [coc] <Nop>
 
 " maps using the leader key
 noremap <leader>; :Reload<CR>
@@ -13,6 +14,7 @@ nmap <leader>g [fugitive]
 nmap <leader>v [vim]
 nmap <leader>s [substitute]
 nmap <leader>a [args]
+nmap <leader>c [coc]
 
 " original maps
 noremap ; :
@@ -71,6 +73,10 @@ xnoremap # :<c-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
 map s <Plug>(easymotion-overwin-f2)
 
 nnoremap <silent> [substitute]q :Qfreplace<CR>
+nmap <silent> [substitute]s <Plug>(coc-rename)
+
+nmap <silent> [coc]d <Plug>(coc-diagnostic-info)
+nnoremap <silent> [coc]c :CocList<CR>
 
 nnoremap <silent> [finder]f :Files<CR>
 nnoremap <silent> [finder]b :Buffers<CR>

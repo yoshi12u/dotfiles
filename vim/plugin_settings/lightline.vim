@@ -10,6 +10,10 @@ let g:lightline = {
       \              [ 'filetype' ],
       \              [ 'pwd' ] ]
       \ },
+      \ 'tabline': {
+      \ 'left': [ [ 'tabs' ] ],
+      \ 'right': [ [ 'close' ] ]
+      \ },
       \ 'component': {
       \   'lineinfo': '%3l[%L]:%-2v'
       \ },
