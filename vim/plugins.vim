@@ -9,6 +9,9 @@ Plug 'thinca/vim-qfreplace'
 Plug 'szw/vim-tags'
 Plug 'ConradIrwin/vim-bracketed-paste'
 
+" snippets
+Plug 'honza/vim-snippets'
+
 " style
 Plug 'ayu-theme/ayu-vim'
 Plug 'vim-scripts/AnsiEsc.vim'
@@ -18,7 +21,6 @@ Plug 'itchyny/lightline.vim'
 
 " syntax/completion
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-Plug 'honza/vim-snippets'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 Plug 'tpope/vim-rbenv', { 'for': 'ruby' }

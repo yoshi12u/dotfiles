@@ -4,5 +4,6 @@
   "prettier.disableLanguages": [],
   "prettier.semi": false,
   "solargraph.formatting": true,
-  "solargraph.diagnostics": true
+  "solargraph.diagnostics": true,
+  "snippets.extends": { "ruby": ["rails"]}
 }
