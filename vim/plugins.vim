@@ -6,7 +6,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-rooter'
 Plug 'osyo-manga/vim-anzu'
 Plug 'thinca/vim-qfreplace'
-Plug 'szw/vim-tags'
+" Plug 'szw/vim-tags'
 Plug 'ConradIrwin/vim-bracketed-paste'
 
 " snippets
@@ -23,16 +23,15 @@ Plug 'itchyny/lightline.vim'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
-Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
-Plug 'tpope/vim-bundler', { 'for': 'ruby' }
+" Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
+" Plug 'tpope/vim-bundler', { 'for': 'ruby' }
 
 " preview
-Plug 'suan/vim-instant-markdown'
+" Plug 'suan/vim-instant-markdown'
 
 " commands
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'cocopon/vaffle.vim'
 Plug 'tpope/vim-abolish'

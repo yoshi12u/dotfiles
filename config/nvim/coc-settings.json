@@ -1,9 +1,11 @@
 {
   "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "js", "vue", "ruby"],
-  "codeLens.enable": true,
+  "coc.preferences.rootPatterns": [".vim", ".git", ".hg", ".projections.json", "CHANGELOG.md"],
+  "list.nextKeymap": "<C-n>",
+  "list.previousKeymap": "<C-p>",
   "prettier.disableLanguages": [],
   "prettier.semi": false,
   "solargraph.formatting": true,
   "solargraph.diagnostics": true,
-  "snippets.extends": { "ruby": ["rails"]}
+  "snippets.extends": { "ruby": ["rails"], "vue": ["javascript"]}
 }

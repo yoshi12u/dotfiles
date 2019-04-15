@@ -1,1 +1,1 @@
-let g:rooter_patterns = ['MIT-LICENSE', 'README.md', 'Rakefile', '.git/', 'CHANGELOG.md']
+let g:rooter_patterns = ['MIT-LICENSE', 'Rakefile', '.git/', 'CHANGELOG.md']

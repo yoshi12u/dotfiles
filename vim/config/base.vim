@@ -28,6 +28,7 @@ set fileencodings=utf-8,sjis
 set iskeyword+=-
 set laststatus=2
 set noshowmode
+set updatetime=300
 syntax on
 filetype plugin indent on
 

@@ -1,8 +1,7 @@
 let mapleader = "\<Space>"
 
-nnoremap [vim] <Nop>
 nnoremap [finder] <Nop>
-nnoremap [fugitive]  <Nop>
+nnoremap [git]  <Nop>
 nnoremap [substitute] <Nop>
 nnoremap [args] <Nop>
 nnoremap [coc] <Nop>
@@ -10,11 +9,10 @@ nnoremap [coc] <Nop>
 " maps using the leader key
 noremap <leader>; :Reload<CR>
 nmap <leader>f [finder]
-nmap <leader>g [fugitive]
-nmap <leader>v [vim]
+nmap <leader>g [git]
 nmap <leader>s [substitute]
 nmap <leader>a [args]
-nmap <leader>c [coc]
+nmap <leader>j [coc]
 
 " original maps
 noremap ; :
@@ -59,12 +57,8 @@ nnoremap [args]a :argadd<CR>
 nnoremap [args]r :args<CR>
 nnoremap [args]d :argdelete %<CR>
 
-nnoremap [substitute]s :%S//
-
 inoremap <F6> <C-R>=strftime("%Y/%m/%d")<CR>
 nnoremap <F6> <ESC>a<C-R>=strftime("%Y/%m/%d")<CR><ESC>
-
-nnoremap <silent> [vim]s <c-w><c-v><c-w><c-l>:Vaffle ~/.vim<CR> cd ~/.vim<CR>
 
 xnoremap * :<c-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<c-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
@@ -72,24 +66,30 @@ xnoremap # :<c-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
 
 " plug-in key maps
 map s <Plug>(easymotion-overwin-f2)
+map R <Plug>(coc-rename)
 
+nnoremap [substitute]s :%S//
 nnoremap <silent> [substitute]q :Qfreplace<CR>
-nmap <silent> [substitute]s <Plug>(coc-rename)
 
+nnoremap <silent> [coc]j :CocList<CR>
+nnoremap <silent> [coc]<CR> :CocConfig<CR>
+nnoremap <silent> [coc]c :CocList commands<CR>
+nnoremap <silent> [coc]e :CocCommand snippets.editSnippets<CR>
 nmap <silent> [coc]d <Plug>(coc-diagnostic-info)
-nnoremap <silent> [coc]c :CocList<CR>
+nmap <silent> [coc]l <Plug>(coc-codelens-action)
+nmap <silent> [coc]r <Plug>(coc-rename)
 
 nnoremap <silent> [finder]f :Files<CR>
+nnoremap <silent> [finder]s :Rg<CR>
+nnoremap <silent> [finder]m :Marks<CR>
 nnoremap <silent> [finder]b :Buffers<CR>
-nnoremap <silent> [finder]w :Windows<CR>
-nnoremap [finder]s :Ack! <Space>
+nnoremap <silent> [finder]o :CocList -A outline<CR>
+nnoremap <silent> [finder]w :CocList -A -I -R words<CR>
 
-nnoremap <silent> [fugitive]g :Gstatus<CR><C-w>T
-nnoremap <silent> [fugitive]b :Gblame<CR>
-nnoremap <silent> [fugitive]d :Gdiff<CR>
-nnoremap <silent> [fugitive]m :Gmerge<CR>
-nnoremap <silent> [fugitive]l :Git log<CR>
-nnoremap <silent> [fugitive]p :Gpush origin HEAD<CR>
+nnoremap <silent> [git]g :Gstatus<CR><C-w>T
+nnoremap <silent> [git]b :Gblame<CR>
+nnoremap <silent> [git]d :Gdiff<CR>
+nnoremap <silent> [git]l :Commits<CR>
 
 nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
