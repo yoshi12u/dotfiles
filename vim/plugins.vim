@@ -1,13 +1,15 @@
 " doc
 Plug 'vim-jp/vimdoc-ja'
+Plug 'thinca/vim-ref'
 
 " utility
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-rooter'
 Plug 'osyo-manga/vim-anzu'
 Plug 'thinca/vim-qfreplace'
-" Plug 'szw/vim-tags'
 Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'terryma/vim-expand-region'
+Plug 'tpope/vim-dispatch'
 
 " snippets
 Plug 'honza/vim-snippets'
@@ -23,11 +25,11 @@ Plug 'itchyny/lightline.vim'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
-" Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
-" Plug 'tpope/vim-bundler', { 'for': 'ruby' }
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-bundler'
 
 " preview
-" Plug 'suan/vim-instant-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 " commands
 Plug '/usr/local/opt/fzf'

@@ -3,7 +3,20 @@
   "coc.preferences.rootPatterns": [".vim", ".git", ".hg", ".projections.json", "CHANGELOG.md"],
   "list.nextKeymap": "<C-n>",
   "list.previousKeymap": "<C-p>",
-  "prettier.disableLanguages": [],
+  "languageserver": {
+    "dockerfile": {
+      "command": "docker-langserver",
+      "filetypes": ["dockerfile"],
+      "args": ["--stdio"]
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh", "zsh", "bash"],
+      "ignoredRootPaths": ["~"]
+    }
+  },
+  "prettier.disableLanguages": ["markdown"],
   "prettier.semi": false,
   "solargraph.formatting": true,
   "solargraph.diagnostics": true,

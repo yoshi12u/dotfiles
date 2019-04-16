@@ -5,6 +5,7 @@ nnoremap [git]  <Nop>
 nnoremap [substitute] <Nop>
 nnoremap [args] <Nop>
 nnoremap [coc] <Nop>
+nnoremap [lang] <Nop>
 
 " maps using the leader key
 noremap <leader>; :Reload<CR>
@@ -13,6 +14,7 @@ nmap <leader>g [git]
 nmap <leader>s [substitute]
 nmap <leader>a [args]
 nmap <leader>j [coc]
+nmap <leader><leader> [lang]
 
 " original maps
 noremap ; :
@@ -26,6 +28,10 @@ nnoremap r gr
 nnoremap R gR
 
 nnoremap x "_x
+
+nnoremap tt :tabnew<CR>
+nnoremap ]t gt
+nnoremap [t gT
 
 noremap <S-Right> <C-w>>
 noremap <S-Left> <C-w><
@@ -63,10 +69,17 @@ nnoremap <F6> <ESC>a<C-R>=strftime("%Y/%m/%d")<CR><ESC>
 xnoremap * :<c-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<c-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
 
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
 
 " plug-in key maps
 map s <Plug>(easymotion-overwin-f2)
 map R <Plug>(coc-rename)
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+nnoremap [lang]s :Server!<CR>
 
 nnoremap [substitute]s :%S//
 nnoremap <silent> [substitute]q :Qfreplace<CR>
@@ -95,9 +108,7 @@ nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
 nmap * <Plug>(anzu-star-with-echo)
 nmap # <Plug>(anzu-sharp-with-echo)
-" clear status
 nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
-" statusline
 set statusline=%{anzu#search_status()}
 
 nnoremap <silent> - :Vaffle %:p:h<CR>
