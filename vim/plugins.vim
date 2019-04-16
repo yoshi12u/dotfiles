@@ -8,7 +8,6 @@ Plug 'airblade/vim-rooter'
 Plug 'osyo-manga/vim-anzu'
 Plug 'thinca/vim-qfreplace'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-dispatch'
 
 " snippets
@@ -48,5 +47,9 @@ Plug 'tpope/vim-repeat'
 
 " textobj
 Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-entire'
-Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-entire' " e
+Plug 'kana/vim-textobj-indent' " i
+Plug 'rhysd/vim-textobj-ruby' " r
+Plug 'kana/vim-textobj-underscore' " _
+Plug 'RyanMcG/vim-textobj-dash' " -
+Plug 'thinca/vim-textobj-comment' " c

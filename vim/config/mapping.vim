@@ -76,8 +76,6 @@ nnoremap <silent> p p`]
 " plug-in key maps
 map s <Plug>(easymotion-overwin-f2)
 map R <Plug>(coc-rename)
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
 
 nnoremap [lang]s :Server!<CR>
 
