@@ -14,7 +14,7 @@ nmap <leader>g [git]
 nmap <leader>s [substitute]
 nmap <leader>a [args]
 nmap <leader>j [coc]
-nmap <leader><leader> [lang]
+nmap <leader>l [lang]
 
 " original maps
 noremap ; :
