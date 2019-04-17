@@ -20,5 +20,6 @@
   "prettier.semi": false,
   "solargraph.formatting": true,
   "solargraph.diagnostics": true,
-  "snippets.extends": { "ruby": ["rails"], "vue": ["javascript"]}
+  "snippets.extends": { "ruby": ["rails"] },
+  "yank.highlight.duration": 200
 }

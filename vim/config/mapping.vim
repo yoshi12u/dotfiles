@@ -30,8 +30,8 @@ nnoremap R gR
 nnoremap x "_x
 
 nnoremap tt :tabnew<CR>
-nnoremap ]t gt
-nnoremap [t gT
+nmap ]t gt
+nmap [t gT
 
 noremap <S-Right> <C-w>>
 noremap <S-Left> <C-w><
@@ -75,7 +75,7 @@ nnoremap <silent> p p`]
 
 " plug-in key maps
 map s <Plug>(easymotion-overwin-f2)
-map R <Plug>(coc-rename)
+map R  <Plug>(operator-replace)
 
 nnoremap [lang]s :Server!<CR>
 
@@ -84,6 +84,7 @@ nnoremap <silent> [substitute]q :Qfreplace<CR>
 
 nnoremap <silent> [coc]j :CocList<CR>
 nnoremap <silent> [coc]<CR> :CocConfig<CR>
+nnoremap <silent> [coc]y  :<C-u>CocList -A --normal yank<cr>
 nnoremap <silent> [coc]c :CocList commands<CR>
 nnoremap <silent> [coc]e :CocCommand snippets.editSnippets<CR>
 nmap <silent> [coc]d <Plug>(coc-diagnostic-info)
@@ -117,6 +118,7 @@ function! s:customize_vaffle_mappings() abort
   nmap <buffer> t        <Plug>(vaffle-open-current-tab)
   nmap <buffer> s        <Plug>(vaffle-open-selected-split)
   nmap <buffer> v        <Plug>(vaffle-open-selected-vsplit)
+  nmap <buffer> -        <Plug>(vaffle-quit)
 endfunction
 augroup vimrc_vaffle
   autocmd!

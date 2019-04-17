@@ -3,6 +3,8 @@ Plug 'vim-jp/vimdoc-ja'
 Plug 'thinca/vim-ref'
 
 " utility
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc-imselect'
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-rooter'
 Plug 'osyo-manga/vim-anzu'
@@ -20,8 +22,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'itchyny/lightline.vim'
 
-" syntax/completion
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+" ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 Plug 'tpope/vim-rails'
@@ -45,7 +46,12 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
+" operator
+Plug 'kana/vim-operator-user'
+Plug 'kana/vim-operator-replace'
+
 " textobj
+Plug 'vim-scripts/camelcasemotion'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire' " e
 Plug 'kana/vim-textobj-indent' " i
