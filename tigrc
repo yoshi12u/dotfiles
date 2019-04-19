@@ -11,11 +11,11 @@ bind generic C      !git commit
 bind refs    C      !git commit
 bind main    C      !git commit
 
-# D でブランチを削除 (マージ済みブランチのみ. 強制削除(branch -D) は `!`) (refs-view)
+# X でブランチを削除 (マージ済みブランチのみ. 強制削除(branch -D) は `!`) (refs-view)
 bind refs    X      ?git branch -d %(branch)
-# D でトラッキングされていないファイルを削除 (status-view)
+# X でトラッキングされていないファイルを削除 (status-view)
 bind status  X      ?git clean -d -f -- %(file)
-# D で stash を削除 (`!` と同じ) (stash-view)
+# X で stash を削除 (`!` と同じ) (stash-view)
 bind stash   X      ?git stash drop %(stash)
-# D でファイルを削除 (tree-view)
+# X でファイルを削除 (tree-view)
 bind tree    X      ?git rm %(file)

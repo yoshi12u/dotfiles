@@ -30,8 +30,8 @@ nnoremap R gR
 nnoremap x "_x
 
 nnoremap tt :tabnew<CR>
-nmap ]t gt
-nmap [t gT
+nnoremap ]t gt
+nnoremap [t gT
 
 noremap <S-Right> <C-w>>
 noremap <S-Left> <C-w><
@@ -74,7 +74,7 @@ vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
 " plug-in key maps
-map s <Plug>(easymotion-overwin-f2)
+map s <Plug>(easymotion-overwin-f)
 map R  <Plug>(operator-replace)
 
 nnoremap [lang]s :Server!<CR>

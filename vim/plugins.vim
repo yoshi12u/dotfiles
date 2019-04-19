@@ -4,7 +4,6 @@ Plug 'thinca/vim-ref'
 
 " utility
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-Plug 'neoclide/coc-imselect'
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-rooter'
 Plug 'osyo-manga/vim-anzu'
