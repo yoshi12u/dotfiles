@@ -10,16 +10,19 @@ Plug 'osyo-manga/vim-anzu'
 Plug 'thinca/vim-qfreplace'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'tpope/vim-dispatch'
+Plug 'Shougo/context_filetype.vim'
 
 " snippets
 Plug 'honza/vim-snippets'
 
 " style
-Plug 'ayu-theme/ayu-vim'
+Plug 'rakr/vim-one'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'itchyny/lightline.vim'
+Plug 'ap/vim-css-color'
+Plug 'Yggdroot/indentLine'
 
 " ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -39,7 +42,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 
 " mapping
-Plug 'tpope/vim-commentary'
+Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tpope/vim-surround'
@@ -58,3 +61,5 @@ Plug 'rhysd/vim-textobj-ruby' " r
 Plug 'kana/vim-textobj-underscore' " _
 Plug 'RyanMcG/vim-textobj-dash' " -
 Plug 'thinca/vim-textobj-comment' " c
+Plug 'kana/vim-textobj-function' " -f
+Plug 'haya14busa/vim-textobj-function-syntax'
