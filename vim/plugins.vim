@@ -23,6 +23,8 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
 Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/hiPairs'
+" Plug 'itchyny/vim-parenmatch'
 
 " ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
