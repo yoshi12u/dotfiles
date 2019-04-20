@@ -7,7 +7,6 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-rooter'
 Plug 'osyo-manga/vim-anzu'
-Plug 'thinca/vim-qfreplace'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'tpope/vim-dispatch'
 Plug 'Shougo/context_filetype.vim'
@@ -23,8 +22,6 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
 Plug 'Yggdroot/indentLine'
-Plug 'Yggdroot/hiPairs'
-" Plug 'itchyny/vim-parenmatch'
 
 " ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -42,6 +39,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'cocopon/vaffle.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
+Plug 'thinca/vim-qfreplace'
 
 " mapping
 Plug 'tomtom/tcomment_vim'
@@ -49,6 +47,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'justinmk/vim-sneak'
 
 " operator
 Plug 'kana/vim-operator-user'

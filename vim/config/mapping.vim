@@ -17,8 +17,8 @@ nmap <leader>j [coc]
 nmap <leader>l [lang]
 
 " original maps
-noremap ; :
-noremap : ;
+nnoremap ; :
+" nnoremap : ; " sneak
 
 nnoremap Y y$
 
@@ -74,6 +74,19 @@ vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
 " plug-in key maps
+nmap : <Plug>Sneak_;
+nmap f <Plug>Sneak_f
+nmap F <Plug>Sneak_F
+xmap f <Plug>Sneak_f
+xmap F <Plug>Sneak_F
+omap f <Plug>Sneak_f
+omap F <Plug>Sneak_F
+nmap t <Plug>Sneak_t
+nmap T <Plug>Sneak_T
+xmap t <Plug>Sneak_t
+xmap T <Plug>Sneak_T
+omap t <Plug>Sneak_t
+omap T <Plug>Sneak_T
 map s <Plug>(easymotion-overwin-f)
 map R  <Plug>(operator-replace)
 
