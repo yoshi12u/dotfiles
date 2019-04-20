@@ -1,14 +1,14 @@
 snippet blog "markdown blog template"
 ---
-title: ${0:title}
+title: ${1:title}
 categories:
-  -
+  - $2
 tags:
-  -
-date:
-filename:
+  - $3
+date: `!v strftime("%Y/%m/%d")`
+filename: $4
 ---
-# {{$frontmatter.title}}
+# {{\$frontmatter.title}}
 endsnippet
 
 snippet tag "escaped tag"
