@@ -40,18 +40,19 @@ Plug 'cocopon/vaffle.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'thinca/vim-qfreplace'
+Plug 'tpope/vim-unimpaired'
 
 " mapping
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-unimpaired'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'justinmk/vim-sneak'
 
 " operator
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-operator-replace'
+Plug 'tpope/vim-commentary'
+Plug 'suy/vim-context-commentstring'
+Plug 'tpope/vim-surround'
 
 " textobj
 Plug 'vim-scripts/camelcasemotion'
