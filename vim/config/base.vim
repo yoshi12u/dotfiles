@@ -29,6 +29,7 @@ set iskeyword+=-
 set laststatus=2
 set noshowmode
 set updatetime=300
+set wildmode=longest:full,full
 syntax on
 filetype plugin indent on
 

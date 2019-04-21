@@ -72,6 +72,8 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
+nnoremap <silent> <c-\> :!tmux split-window -v -p 27 -c $PWD<CR>
+
 " plug-in key maps
 nmap : <Plug>Sneak_;
 nmap f <Plug>Sneak_f

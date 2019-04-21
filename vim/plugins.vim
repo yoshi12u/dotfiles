@@ -9,7 +9,6 @@ Plug 'airblade/vim-rooter'
 Plug 'osyo-manga/vim-anzu'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'tpope/vim-dispatch'
-Plug 'Shougo/context_filetype.vim'
 
 " snippets
 Plug 'honza/vim-snippets'
