@@ -2,7 +2,7 @@ let g:lightline = {
       \ 'colorscheme': 'one',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified' ],
+      \             [ 'readonly', 'filepath', 'modified' ],
       \             [ 'branch' ],
       \             [ 'cocstatus' ] ],
       \   'right': [ [ 'lineinfo' ],
@@ -15,15 +15,20 @@ let g:lightline = {
       \ 'right': [ [ 'close' ] ]
       \ },
       \ 'component': {
-      \   'lineinfo': '%3l[%L]:%-2v'
+      \   'lineinfo': '%3l[%L]:%-2v',
       \ },
       \ 'component_function': {
       \   'cocstatus': 'coc#status',
       \   'branch': 'fugitive#statusline',
+      \   'filepath': 'RelativePath',
       \   'pwd': 'LightCurrentDirectory'
       \ },
       \ }
 
 function! LightCurrentDirectory()
   return winwidth(0) > 100 ? getcwd() : ''
+endfunction
+
+function! RelativePath()
+  return winwidth(0) > 100 ? expand('%:.') : expand('%:t')
 endfunction
