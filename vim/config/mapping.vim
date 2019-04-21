@@ -18,7 +18,6 @@ nmap <leader>l [lang]
 
 " original maps
 nnoremap ; :
-" nnoremap : ; " sneak
 
 nnoremap Y y$
 
@@ -91,6 +90,7 @@ map s <Plug>(easymotion-overwin-f)
 map R  <Plug>(operator-replace)
 
 nnoremap [lang]s :Server!<CR>
+nnoremap [lang]c :Console<CR>
 
 nnoremap [substitute]s :%S//
 nnoremap <silent> [substitute]q :Qfreplace<CR>
