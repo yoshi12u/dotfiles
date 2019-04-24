@@ -45,6 +45,7 @@ Plug 'thinca/vim-qfreplace'
 Plug 'tpope/vim-unimpaired'
 Plug 'junegunn/vim-slash'
 Plug 'mbbill/undotree'
+Plug 'AndrewRadev/splitjoin.vim'
 
 " mapping
 Plug 'Lokaltog/vim-easymotion'
