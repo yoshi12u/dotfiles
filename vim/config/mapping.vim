@@ -1,12 +1,5 @@
 let mapleader = "\<Space>"
 
-nnoremap [finder] <Nop>
-nnoremap [git]  <Nop>
-nnoremap [substitute] <Nop>
-nnoremap [args] <Nop>
-nnoremap [coc] <Nop>
-nnoremap [lang] <Nop>
-
 " maps using the leader key
 noremap <leader>; :Reload<CR>
 nmap <leader>f [finder]
@@ -15,6 +8,7 @@ nmap <leader>s [substitute]
 nmap <leader>a [args]
 nmap <leader>j [coc]
 nmap <leader>l [lang]
+nmap <leader>v [visual]
 
 " original maps
 nnoremap ; :
@@ -90,6 +84,10 @@ omap t <Plug>Sneak_t
 omap T <Plug>Sneak_T
 map s <Plug>(easymotion-overwin-f)
 map R  <Plug>(operator-replace)
+
+nnoremap U :UndotreeToggle<cr>
+
+noremap <plug>(slash-after) zz
 
 nnoremap [lang]s :Server!<CR>
 nnoremap [lang]c :Console<CR>

@@ -30,6 +30,10 @@ set laststatus=2
 set noshowmode
 set updatetime=300
 set wildmode=longest:full,full
+if has('persistent_undo')
+  set undodir=~/.vim/undo
+  set undofile
+endif
 syntax on
 filetype plugin indent on
 

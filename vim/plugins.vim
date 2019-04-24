@@ -10,6 +10,8 @@ Plug 'osyo-manga/vim-anzu'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'tpope/vim-dispatch'
 Plug 'markonm/traces.vim'
+Plug 'junegunn/vim-peekaboo'
+Plug 'mhinz/vim-startify'
 
 " snippets
 Plug 'honza/vim-snippets'
@@ -41,6 +43,8 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'thinca/vim-qfreplace'
 Plug 'tpope/vim-unimpaired'
+Plug 'junegunn/vim-slash'
+Plug 'mbbill/undotree'
 
 " mapping
 Plug 'Lokaltog/vim-easymotion'
@@ -65,3 +69,4 @@ Plug 'RyanMcG/vim-textobj-dash' " -
 Plug 'thinca/vim-textobj-comment' " c
 Plug 'kana/vim-textobj-function' " -f
 Plug 'haya14busa/vim-textobj-function-syntax'
+Plug 'wellle/targets.vim'
