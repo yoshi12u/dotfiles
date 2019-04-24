@@ -24,6 +24,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
 Plug 'Yggdroot/indentLine'
+Plug 'junegunn/vim-emoji'
 
 " ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
