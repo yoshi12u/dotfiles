@@ -25,3 +25,7 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile tmux.conf.local set filetype=tmux
   autocmd BufRead,BufNewFile vimrc.local set filetype=vim
 augroup END
+
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif
