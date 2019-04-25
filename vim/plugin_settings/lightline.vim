@@ -4,7 +4,8 @@ let g:lightline = {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filepath', 'modified' ],
       \             [ 'branch' ],
-      \             [ 'cocstatus' ] ],
+      \             [ 'cocstatus' ],
+      \             [ 'anzu' ]],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
       \              [ 'filetype' ],
@@ -21,7 +22,8 @@ let g:lightline = {
       \   'cocstatus': 'coc#status',
       \   'branch': 'fugitive#statusline',
       \   'filepath': 'RelativePath',
-      \   'pwd': 'LightCurrentDirectory'
+      \   'pwd': 'LightCurrentDirectory',
+      \   'anzu': 'anzu#search_status',
       \ },
       \ }
 
@@ -32,3 +34,4 @@ endfunction
 function! RelativePath()
   return winwidth(0) > 100 ? expand('%:.') : expand('%:t')
 endfunction
+" set statusline=%{anzu#search_status()}

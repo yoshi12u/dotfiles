@@ -32,6 +32,8 @@ Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 
+" node
+Plug 'moll/vim-node'
 " preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
@@ -52,6 +54,8 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tpope/vim-repeat'
 Plug 'justinmk/vim-sneak'
+Plug 'houtsnip/vim-emacscommandline'
+Plug 'bronson/vim-visual-star-search'
 
 " operator
 Plug 'kana/vim-operator-user'
@@ -59,6 +63,7 @@ Plug 'kana/vim-operator-replace'
 Plug 'tpope/vim-commentary'
 Plug 'suy/vim-context-commentstring'
 Plug 'tpope/vim-surround'
+Plug 'tommcdo/vim-exchange'
 
 " textobj
 Plug 'vim-scripts/camelcasemotion'

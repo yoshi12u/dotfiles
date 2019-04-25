@@ -48,8 +48,8 @@ nnoremap ｙｙ yy
 inoremap <silent> jj <Esc>
 inoremap <silent> ｊｊ <Esc>
 
-noremap! <C-b> <Left>
-noremap! <C-f> <Right>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
 
 inoremap <F6> <C-R>=strftime("%Y/%m/%d")<CR>
 nnoremap <F6> <ESC>a<C-R>=strftime("%Y/%m/%d")<CR><ESC>
@@ -81,6 +81,7 @@ map R  <Plug>(operator-replace)
 
 nnoremap U :UndotreeToggle<cr>
 
+
 noremap <plug>(slash-after) zz
 
 nnoremap [lang]s :Server!<CR>
@@ -89,6 +90,7 @@ nnoremap [lang]c :Console<CR>
 nnoremap [substitute]s :%S//
 nnoremap <silent> [substitute]q :Qfreplace<CR>
 
+nnoremap <silent> gd <Plug>(coc-definition)
 nnoremap <silent> [coc]j :CocList<CR>
 nnoremap <silent> [coc]<CR> :CocConfig<CR>
 nnoremap <silent> [coc]y  :<C-u>CocList -A --normal yank<cr>
@@ -115,7 +117,6 @@ nmap N <Plug>(anzu-N-with-echo)
 nmap * <Plug>(anzu-star-with-echo)
 nmap # <Plug>(anzu-sharp-with-echo)
 nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
-set statusline=%{anzu#search_status()}
 
 nnoremap <silent> - :Vaffle %:p:h<CR>
 nnoremap <silent> _ :Vaffle<CR>
