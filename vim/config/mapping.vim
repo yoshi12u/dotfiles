@@ -18,7 +18,6 @@ nnoremap Y y$
 noremap j gj
 noremap k gk
 nnoremap r gr
-nnoremap R gR
 
 nnoremap x "_x
 
@@ -52,15 +51,8 @@ inoremap <silent> ｊｊ <Esc>
 noremap! <C-b> <Left>
 noremap! <C-f> <Right>
 
-nnoremap [args]a :argadd<CR>
-nnoremap [args]r :args<CR>
-nnoremap [args]d :argdelete %<CR>
-
 inoremap <F6> <C-R>=strftime("%Y/%m/%d")<CR>
 nnoremap <F6> <ESC>a<C-R>=strftime("%Y/%m/%d")<CR><ESC>
-
-xnoremap * :<c-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
-xnoremap # :<c-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
 
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
@@ -70,19 +62,21 @@ nnoremap <silent> <c-\> :!tmux split-window -v -p 27 -c $PWD<CR>
 
 " plug-in key maps
 nmap : <Plug>Sneak_;
-nmap f <Plug>Sneak_f
-nmap F <Plug>Sneak_F
-xmap f <Plug>Sneak_f
-xmap F <Plug>Sneak_F
-omap f <Plug>Sneak_f
-omap F <Plug>Sneak_F
+nmap f <Plug>Sneak_s
+nmap F <Plug>Sneak_S
+xmap f <Plug>Sneak_s
+xmap F <Plug>Sneak_S
+omap f <Plug>Sneak_s
+omap F <Plug>Sneak_S
 nmap t <Plug>Sneak_t
 nmap T <Plug>Sneak_T
 xmap t <Plug>Sneak_t
 xmap T <Plug>Sneak_T
 omap t <Plug>Sneak_t
 omap T <Plug>Sneak_T
-map s <Plug>(easymotion-overwin-f)
+
+map s <Plug>(easymotion-overwin-f2)
+map S <Plug>(easymotion-overwin-f)
 map R  <Plug>(operator-replace)
 
 nnoremap U :UndotreeToggle<cr>
@@ -137,11 +131,3 @@ augroup vimrc_vaffle
   autocmd!
   autocmd FileType vaffle call s:customize_vaffle_mappings()
 augroup END
-
-function! s:VSetSearch()
-  let temp = @s
-  norm! gv"sy
-  let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
-  let @s = temp
-endfunction
-
