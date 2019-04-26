@@ -27,12 +27,6 @@ nnoremap tt :tabnew<CR>
 nnoremap ]t gt
 nnoremap [t gT
 
-nnoremap <C-j> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-nnoremap <CR> <C-W><C-J>
-
 nnoremap あ a
 nnoremap い i
 nnoremap う u

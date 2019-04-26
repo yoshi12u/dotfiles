@@ -34,4 +34,3 @@ endfunction
 function! RelativePath()
   return winwidth(0) > 100 ? expand('%:.') : expand('%:t')
 endfunction
-set statusline=%{anzu#search_status()}
