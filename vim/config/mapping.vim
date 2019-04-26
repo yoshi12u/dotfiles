@@ -21,14 +21,11 @@ nnoremap r gr
 
 nnoremap x "_x
 
+nmap [t <Nop>
+nmap ]t <Nop>
 nnoremap tt :tabnew<CR>
 nnoremap ]t gt
 nnoremap [t gT
-
-noremap <S-Right> <C-w>>
-noremap <S-Left> <C-w><
-noremap <S-Up> <C-w>+
-noremap <S-Down> <C-w>-
 
 nnoremap <C-j> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -63,11 +60,11 @@ nnoremap <silent> <c-\> :!tmux split-window -v -p 27 -c $PWD<CR>
 " plug-in key maps
 nmap : <Plug>Sneak_;
 nmap f <Plug>Sneak_s
-nmap F <Plug>Sneak_S
+nmap F <Plug>Sneak_F
 xmap f <Plug>Sneak_s
-xmap F <Plug>Sneak_S
+xmap F <Plug>Sneak_F
 omap f <Plug>Sneak_s
-omap F <Plug>Sneak_S
+omap F <Plug>Sneak_F
 nmap t <Plug>Sneak_t
 nmap T <Plug>Sneak_T
 xmap t <Plug>Sneak_t
