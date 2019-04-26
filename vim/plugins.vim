@@ -12,6 +12,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'markonm/traces.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-dadbod'
 
 " snippets
 Plug 'honza/vim-snippets'

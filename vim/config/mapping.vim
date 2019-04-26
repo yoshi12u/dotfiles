@@ -90,7 +90,6 @@ nnoremap [lang]c :Console<CR>
 nnoremap [substitute]s :%S//
 nnoremap <silent> [substitute]q :Qfreplace<CR>
 
-nnoremap <silent> gd <Plug>(coc-definition)
 nnoremap <silent> [coc]j :CocList<CR>
 nnoremap <silent> [coc]<CR> :CocConfig<CR>
 nnoremap <silent> [coc]y  :<C-u>CocList -A --normal yank<cr>
