@@ -21,5 +21,8 @@
   "solargraph.formatting": true,
   "solargraph.diagnostics": true,
   "snippets.extends": { "ruby": ["rails"] },
-  "yank.highlight.duration": 200
+  "yank.highlight.duration": 200,
+	"tailwind.enable": true,
+	"tailwind.shortcut": "TWCSS",
+	"tailwind.priority": 99
 }

@@ -11,7 +11,7 @@ nmap <leader>l [lang]
 nmap <leader>v [visual]
 
 " original maps
-nnoremap ; :
+noremap ; :
 
 nnoremap Y y$
 
@@ -58,7 +58,7 @@ nnoremap <silent> p p`]
 nnoremap <silent> <c-\> :!tmux split-window -v -p 27 -c $PWD<CR>
 
 " plug-in key maps
-nmap : <Plug>Sneak_;
+map : <Plug>Sneak_;
 nmap f <Plug>Sneak_s
 nmap F <Plug>Sneak_F
 xmap f <Plug>Sneak_s
@@ -78,7 +78,6 @@ map R  <Plug>(operator-replace)
 
 nnoremap U :UndotreeToggle<cr>
 
-
 noremap <plug>(slash-after) zz
 
 nnoremap [lang]s :Server!<CR>
@@ -87,6 +86,7 @@ nnoremap [lang]c :Console<CR>
 nnoremap [substitute]s :%S//
 nnoremap <silent> [substitute]q :Qfreplace<CR>
 
+nmap <silent> gd <Plug>(coc-definition)
 nnoremap <silent> [coc]j :CocList<CR>
 nnoremap <silent> [coc]<CR> :CocConfig<CR>
 nnoremap <silent> [coc]y  :<C-u>CocList -A --normal yank<cr>
