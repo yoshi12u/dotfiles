@@ -4,8 +4,7 @@ let g:lightline = {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filepath', 'modified' ],
       \             [ 'branch' ],
-      \             [ 'cocstatus' ],
-      \             [ 'anzu' ]],
+      \             [ 'cocstatus' ]],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
       \              [ 'filetype' ],
@@ -23,7 +22,6 @@ let g:lightline = {
       \   'branch': 'fugitive#statusline',
       \   'filepath': 'RelativePath',
       \   'pwd': 'LightCurrentDirectory',
-      \   'anzu': 'anzu#search_status',
       \ },
       \ }
 

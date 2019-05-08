@@ -13,6 +13,7 @@ Plug 'markonm/traces.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-dadbod'
+Plug 'kshenoy/vim-signature'
 
 " snippets
 Plug 'honza/vim-snippets'
@@ -35,6 +36,7 @@ Plug 'tpope/vim-bundler'
 
 " node
 Plug 'moll/vim-node'
+
 " preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
@@ -50,6 +52,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'junegunn/vim-slash'
 Plug 'mbbill/undotree'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'brooth/far.vim'
 
 " mapping
 Plug 'Lokaltog/vim-easymotion'

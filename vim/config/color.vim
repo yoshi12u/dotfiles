@@ -16,6 +16,3 @@ set background=dark
 call one#highlight('Normal', '', '0e1318', 'none')
 call one#highlight('VertSplit', '253240', '', 'none')
 
-" compatible with vim
-" call one#highlight('Normal', '', '121212', 'none')
-" call one#highlight('VertSplit', '3a3a3a', '', 'none')

@@ -36,6 +36,8 @@ nnoremap ｘ x
 nnoremap ｄｄ dd
 nnoremap ｙｙ yy
 
+nnoremap <c-w><CR> <c-w>j
+
 inoremap <silent> jj <Esc>
 inoremap <silent> ｊｊ <Esc>
 
@@ -54,11 +56,11 @@ nnoremap <silent> <c-\> :!tmux split-window -v -p 27 -c $PWD<CR>
 " plug-in key maps
 map : <Plug>Sneak_;
 nmap f <Plug>Sneak_s
-nmap F <Plug>Sneak_F
+nmap F <Plug>Sneak_S
 xmap f <Plug>Sneak_s
-xmap F <Plug>Sneak_F
+xmap F <Plug>Sneak_S
 omap f <Plug>Sneak_s
-omap F <Plug>Sneak_F
+omap F <Plug>Sneak_S
 nmap t <Plug>Sneak_t
 nmap T <Plug>Sneak_T
 xmap t <Plug>Sneak_t

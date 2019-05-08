@@ -3,7 +3,7 @@ filetype off
 filetype plugin indent off
 set noswapfile
 set clipboard+=unnamed
-set mouse=a
+" set mouse=a
 set number
 set cmdheight=2
 set spelllang+=cjk
