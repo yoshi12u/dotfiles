@@ -20,9 +20,7 @@
   "prettier.semi": false,
   "solargraph.formatting": true,
   "solargraph.diagnostics": true,
+  "solargraph.useBundler": true,
   "snippets.extends": { "ruby": ["rails"] },
-  "yank.highlight.duration": 200,
-	"tailwind.enable": true,
-	"tailwind.shortcut": "TWCSS",
-	"tailwind.priority": 99
+  "yank.highlight.duration": 200
 }

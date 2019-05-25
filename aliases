@@ -11,6 +11,7 @@ alias rc='$EDITOR ~/dotfiles'
 alias task='toggl-start-todoist'
 alias done='toggl-stop-todoist'
 alias ctags="`brew --prefix`/bin/ctags"
+alias rails="bundle exec rails"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'

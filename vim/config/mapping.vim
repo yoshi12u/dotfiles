@@ -21,11 +21,7 @@ nnoremap r gr
 
 nnoremap x "_x
 
-nmap [t <Nop>
-nmap ]t <Nop>
 nnoremap tt :tabnew<CR>
-nnoremap ]t gt
-nnoremap [t gT
 
 nnoremap あ a
 nnoremap い i
