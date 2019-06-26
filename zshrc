@@ -5,6 +5,8 @@ for setting in ~/.zsh/plugin_settings/*; do
 done
 
 source ~/.zsh/plugins.zsh
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
 # load custom executable functions
 for function in ~/.zsh/functions/*; do

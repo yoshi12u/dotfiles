@@ -1,4 +1,4 @@
-call coc#add_extension( 'https://github.com/andys8/vscode-jest-snippets.git#master', 'coc-word', 'coc-pairs', 'coc-tsserver', 'coc-css', 'coc-emmet', 'coc-snippets', 'coc-json', 'coc-solargraph', 'coc-yank', 'coc-vetur', 'coc-yaml' )
+call coc#add_extension( 'https://github.com/andys8/vscode-jest-snippets.git#master', 'coc-word', 'coc-pairs', 'coc-tsserver', 'coc-css', 'coc-emmet', 'coc-snippets', 'coc-json', 'coc-solargraph', 'coc-yank', 'coc-vetur', 'coc-yaml', 'coc-marketplace')
 
 let g:coc_snippet_next = '<CR>'
 let g:coc_snippet_prev = '<c-k>'

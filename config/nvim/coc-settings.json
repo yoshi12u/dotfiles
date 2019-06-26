@@ -1,21 +1,8 @@
 {
   "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "js", "vue", "ruby"],
-  "coc.preferences.rootPatterns": [".vim", ".git", ".hg", ".projections.json", "CHANGELOG.md"],
+  "coc.preferences.rootPatterns": [".vim", ".git", ".hg", ".projections.json", "CHANGELOG.md", "Gemfile"],
   "list.nextKeymap": "<C-n>",
   "list.previousKeymap": "<C-p>",
-  "languageserver": {
-    "dockerfile": {
-      "command": "docker-langserver",
-      "filetypes": ["dockerfile"],
-      "args": ["--stdio"]
-    },
-    "bash": {
-      "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh", "zsh", "bash"],
-      "ignoredRootPaths": ["~"]
-    }
-  },
   "prettier.disableLanguages": ["markdown"],
   "prettier.semi": false,
   "solargraph.formatting": true,

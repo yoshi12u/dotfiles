@@ -6,19 +6,16 @@ alias e="$EDITOR"
 alias v="$VISUAL"
 
 alias reload='exec $SHELL -l'
-alias retmux='tmux source-file ~/.tmux.conf'
-alias rc='$EDITOR ~/dotfiles'
-alias task='toggl-start-todoist'
-alias done='toggl-stop-todoist'
-alias ctags="`brew --prefix`/bin/ctags"
 alias rails="bundle exec rails"
+alias hub="git"
+alias vim="nvim"
+alias vi="nvim"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 alias fpath='echo $fpath | tr -s " " "\n"'
 
 # Anyframe
-alias any="anyframe-widget-select-widget"
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
