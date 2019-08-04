@@ -3,7 +3,7 @@ Plug 'vim-jp/vimdoc-ja'
 Plug 'thinca/vim-ref'
 
 " utility
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-rooter'
 Plug 'osyo-manga/vim-anzu'

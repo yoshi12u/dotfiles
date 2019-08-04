@@ -1,13 +1,19 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "js", "vue", "ruby"],
+  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "javascript", "vue", "ruby", "python"],
   "coc.preferences.rootPatterns": [".vim", ".git", ".hg", ".projections.json", "CHANGELOG.md", "Gemfile"],
   "list.nextKeymap": "<C-n>",
   "list.previousKeymap": "<C-p>",
-  "prettier.disableLanguages": ["markdown"],
-  "prettier.semi": false,
   "solargraph.formatting": true,
   "solargraph.diagnostics": true,
   "solargraph.useBundler": true,
   "snippets.extends": { "ruby": ["rails"] },
-  "yank.highlight.duration": 200
+  "yank.highlight.duration": 200,
+  "python.formatting.provider": "black",
+  "python.venvPath": ".venv",
+  "languageserver": {
+    "swift": {
+      "command": "sourcekit-lsp",
+      "filetypes": ["swift"]
+    }
+  }
 }
