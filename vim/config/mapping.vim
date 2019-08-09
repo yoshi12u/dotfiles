@@ -9,6 +9,7 @@ nmap <leader>a [args]
 nmap <leader>j [coc]
 nmap <leader>l [lang]
 nmap <leader>v [visual]
+nmap <leader>p [preview]
 
 " original maps
 noremap ; :
@@ -99,6 +100,8 @@ nnoremap <silent> [git]g :Gstatus<CR><C-w>T
 nnoremap <silent> [git]b :Gblame<CR>
 nnoremap <silent> [git]d :Gdiff<CR>
 nnoremap <silent> [git]l :Commits<CR>
+
+nnoremap <silent> [preview]u :PlantumlOpen<CR>
 
 nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)

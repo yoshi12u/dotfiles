@@ -38,6 +38,9 @@ Plug 'tpope/vim-bundler'
 Plug 'moll/vim-node'
 
 " preview
+Plug 'weirongxu/plantuml-previewer.vim'
+Plug 'tyru/open-browser.vim'
+Plug 'aklt/plantuml-syntax'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 " commands
