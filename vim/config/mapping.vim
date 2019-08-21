@@ -33,8 +33,6 @@ nnoremap ｘ x
 nnoremap ｄｄ dd
 nnoremap ｙｙ yy
 
-nnoremap <c-w><CR> <c-w>j
-
 inoremap <silent> jj <Esc>
 inoremap <silent> ｊｊ <Esc>
 
@@ -48,7 +46,7 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
-nnoremap <silent> <c-\> :!tmux split-window -v -p 27 -c $PWD<CR>
+nnoremap <silent> <leader>t :!tmux split-window -v -p 27 -c $PWD<CR>
 
 " plug-in key maps
 map : <Plug>Sneak_;
@@ -111,6 +109,14 @@ nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
 
 nnoremap <silent> - :Vaffle %:p:h<CR>
 nnoremap <silent> _ :Vaffle<CR>
+
+let  s:tmux_navigator_no_mappings = 1
+nnoremap <silent> <c-w>h :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-w>j :TmuxNavigateDown<cr>
+nnoremap <silent> <c-w><c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-w><CR> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-w>k :TmuxNavigateUp<cr>
+nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
 
 function! s:customize_vaffle_mappings() abort
   nmap <buffer> <Bslash> <Plug>(vaffle-open-root)

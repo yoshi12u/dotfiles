@@ -63,6 +63,7 @@ Plug 'tpope/vim-repeat'
 Plug 'justinmk/vim-sneak'
 Plug 'houtsnip/vim-emacscommandline'
 Plug 'bronson/vim-visual-star-search'
+Plug 'christoomey/vim-tmux-navigator'
 
 " operator
 Plug 'kana/vim-operator-user'
