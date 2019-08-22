@@ -45,6 +45,10 @@ nnoremap <silent> p p`]
 nnoremap <leader>t :!
 nnoremap <silent> <leader>T :!tmux split-window -v -p 27 -c $PWD<CR>
 
+let g:nremap = {"[t": "", "]t": ""}
+nnoremap <silent> [t gT
+nnoremap <silent> ]t gt
+
 " plug-in key maps
 map : <Plug>Sneak_;
 nmap f <Plug>Sneak_s
@@ -68,7 +72,7 @@ nnoremap U :UndotreeToggle<cr>
 
 noremap <plug>(slash-after) zz
 
-nnoremap [substitute]s :%S//
+nnoremap <silent> [substitute]s :Switch<CR>
 nnoremap <silent> [substitute]q :Qfreplace<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
@@ -113,7 +117,7 @@ nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
 nnoremap <silent> - :Vaffle %:p:h<CR>
 nnoremap <silent> _ :Vaffle<CR>
 
-let  s:tmux_navigator_no_mappings = 1
+let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <c-w>h :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-w>j :TmuxNavigateDown<cr>
 nnoremap <silent> <c-w><c-j> :TmuxNavigateDown<cr>
@@ -132,3 +136,4 @@ augroup vimrc_vaffle
   autocmd!
   autocmd FileType vaffle call s:customize_vaffle_mappings()
 augroup END
+

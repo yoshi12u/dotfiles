@@ -57,6 +57,7 @@ Plug 'thinca/vim-visualstar'
 Plug 'mbbill/undotree'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'brooth/far.vim'
+Plug 'AndrewRadev/switch.vim'
 
 " mapping
 Plug 'Lokaltog/vim-easymotion'
