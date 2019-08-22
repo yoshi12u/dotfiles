@@ -14,6 +14,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-dadbod'
 Plug 'kshenoy/vim-signature'
+Plug 'terryma/vim-multiple-cursors'
 
 " snippets
 Plug 'honza/vim-snippets'

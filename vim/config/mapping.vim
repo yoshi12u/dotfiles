@@ -7,12 +7,14 @@ nmap <leader>g [git]
 nmap <leader>s [substitute]
 nmap <leader>a [args]
 nmap <leader>j [coc]
-nmap <leader>l [lang]
 nmap <leader>v [visual]
 nmap <leader>p [preview]
+nmap <leader>e [E]
+nmap <leader>r [rails]
 
 " original maps
-noremap ; :
+nnoremap ; :
+nnoremap : ;
 
 nnoremap Y y$
 
@@ -33,20 +35,15 @@ nnoremap ｘ x
 nnoremap ｄｄ dd
 nnoremap ｙｙ yy
 
-inoremap <silent> jj <Esc>
-inoremap <silent> ｊｊ <Esc>
-
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
-
-inoremap <F6> <C-R>=strftime("%Y/%m/%d")<CR>
-nnoremap <F6> <ESC>a<C-R>=strftime("%Y/%m/%d")<CR><ESC>
 
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
-nnoremap <silent> <leader>t :!tmux split-window -v -p 27 -c $PWD<CR>
+nnoremap <leader>t :!
+nnoremap <silent> <leader>T :!tmux split-window -v -p 27 -c $PWD<CR>
 
 " plug-in key maps
 map : <Plug>Sneak_;
@@ -71,9 +68,6 @@ nnoremap U :UndotreeToggle<cr>
 
 noremap <plug>(slash-after) zz
 
-nnoremap [lang]s :Server!<CR>
-nnoremap [lang]c :Console<CR>
-
 nnoremap [substitute]s :%S//
 nnoremap <silent> [substitute]q :Qfreplace<CR>
 
@@ -95,9 +89,18 @@ nnoremap <silent> [finder]o :CocList -A outline<CR>
 nnoremap <silent> [finder]w :CocList -A -I -R words<CR>
 
 nnoremap <silent> [git]g :Gstatus<CR><C-w>T
-nnoremap <silent> [git]b :Gblame<CR>
 nnoremap <silent> [git]d :Gdiff<CR>
 nnoremap <silent> [git]l :Commits<CR>
+
+nnoremap <silent> [E]m :Emodel<CR>
+nnoremap <silent> [E]c :Econtroller<CR>
+nnoremap <silent> [E]p :Epolicy<CR>
+nnoremap <silent> [E]s :Eserializer<CR>
+
+nnoremap [rails]g :Generate 
+nnoremap [rails]d :Destroy 
+nnoremap [rails]s :Server!<CR>
+nnoremap [rails]c :Console<CR>
 
 nnoremap <silent> [preview]u :PlantumlOpen<CR>
 
