@@ -113,9 +113,6 @@ nmap * <Plug>(anzu-star-with-echo)
 nmap # <Plug>(anzu-sharp-with-echo)
 nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
 
-nnoremap <silent> - :Vaffle %:p:h<CR>
-nnoremap <silent> _ :Vaffle<CR>
-
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <c-w>h :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-w>j :TmuxNavigateDown<cr>
@@ -124,15 +121,16 @@ nnoremap <silent> <c-w><CR> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-w>k :TmuxNavigateUp<cr>
 nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
 
-function! s:customize_vaffle_mappings() abort
-  nmap <buffer> <Bslash> <Plug>(vaffle-open-root)
-  nmap <buffer> t        <Plug>(vaffle-open-current-tab)
-  nmap <buffer> s        <Plug>(vaffle-open-selected-split)
-  nmap <buffer> v        <Plug>(vaffle-open-selected-vsplit)
-  nmap <buffer> -        <Plug>(vaffle-quit)
+function! s:customize_dirvish_mappings() abort
+  nmap <buffer> s        o
+  nmap <buffer> v        a
+  nmap <buffer> l        <CR>
+  nmap <buffer> h        <Plug>(dirvish_up)
+  nmap <buffer> -        <Plug>(dirvish_quit)
+  nmap <buffer> q        <Plug>(dirvish_quit)
 endfunction
-augroup vimrc_vaffle
+augroup vimrc_explorer
   autocmd!
-  autocmd FileType vaffle call s:customize_vaffle_mappings()
+  autocmd FileType dirvish call s:customize_dirvish_mappings()
 augroup END
 
