@@ -10,6 +10,7 @@ alias rails="bundle exec rails"
 alias hub="git"
 alias vim="nvim"
 alias vi="nvim"
+alias gcc="gcc-9"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'

@@ -1,18 +1,19 @@
 let mapleader = "\<Space>"
 
 " maps using the leader key
-noremap <leader>; :Reload<CR>
 nmap <leader>f [finder]
 nmap <leader>g [git]
 nmap <leader>s [substitute]
 nmap <leader>a [args]
-nmap <leader>j [coc]
+nmap <leader>j [jump]
 nmap <leader>v [visual]
 nmap <leader>p [preview]
 nmap <leader>e [E]
 nmap <leader>r [rails]
 
 " original maps
+noremap <silent> <leader>; :e!<CR>
+
 nnoremap ; :
 nnoremap : ;
 
@@ -67,6 +68,7 @@ omap T <Plug>Sneak_T
 map s <Plug>(easymotion-overwin-f2)
 map S <Plug>(easymotion-overwin-f)
 map R  <Plug>(operator-replace)
+nmap <silent> r<CR> <Plug>(coc-rename)
 
 nnoremap U :UndotreeToggle<cr>
 
@@ -75,22 +77,19 @@ noremap <plug>(slash-after) zz
 nnoremap <silent> [substitute]s :Switch<CR>
 nnoremap <silent> [substitute]q :Qfreplace<CR>
 
-nmap <silent> gd <Plug>(coc-definition)
-nnoremap <silent> [coc]j :CocList<CR>
-nnoremap <silent> [coc]<CR> :CocConfig<CR>
-nnoremap <silent> [coc]y  :<C-u>CocList -A --normal yank<cr>
-nnoremap <silent> [coc]c :CocList commands<CR>
-nnoremap <silent> [coc]e :CocCommand snippets.editSnippets<CR>
-nmap <silent> [coc]d <Plug>(coc-diagnostic-info)
-nmap <silent> [coc]l <Plug>(coc-codelens-action)
-nmap <silent> [coc]r <Plug>(coc-rename)
+nmap <silent> <C-]> <Plug>(coc-definition)
+nnoremap <silent> [jump]j <Plug>(coc-definition)
+nnoremap <silent> [jump]t <Plug>(coc-type-definition)
+nnoremap <silent> [jump]i <Plug>(coc-implementation)
+nnoremap <silent> [jump]r <Plug>(coc-references)
+nnoremap <silent> [jump]<CR> :CocConfig<CR>
 
 nnoremap <silent> [finder]f :Files<CR>
 nnoremap <silent> [finder]s :Rg<CR>
 nnoremap <silent> [finder]m :Marks<CR>
 nnoremap <silent> [finder]b :Buffers<CR>
 nnoremap <silent> [finder]o :CocList -A outline<CR>
-nnoremap <silent> [finder]w :CocList -A -I -R words<CR>
+nnoremap <silent> [finder]d :CocList -A -R diagnostics<CR>
 
 nnoremap <silent> [git]g :Gstatus<CR><C-w>T
 nnoremap <silent> [git]d :Gdiff<CR>

@@ -21,6 +21,7 @@ Plug 'honza/vim-snippets'
 
 " style
 Plug 'rakr/vim-one'
+Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
@@ -28,6 +29,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/vim-emoji'
+Plug 'junegunn/goyo.vim'
 
 " ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -37,6 +39,9 @@ Plug 'tpope/vim-bundler'
 
 " node
 Plug 'moll/vim-node'
+
+" vue
+Plug 'posva/vim-vue'
 
 " preview
 Plug 'weirongxu/plantuml-previewer.vim'

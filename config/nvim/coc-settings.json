@@ -1,12 +1,24 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "javascript", "vue", "ruby", "python"],
+  "suggest.languageSourcePriority": 90,
+  "coc.source.around.priority": 88,
+  "coc.source.buffer.priority": 87,
+  "yank.priority": 85,
+  "tabnine.priority": 80,
+  "coc.source.word.priority": 0,
+
+  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "javascript", "typescript", "vue", "ruby", "python"],
   "coc.preferences.rootPatterns": [".vim", ".git", ".hg", ".projections.json", "CHANGELOG.md", "Gemfile"],
+
   "list.nextKeymap": "<C-n>",
   "list.previousKeymap": "<C-p>",
+
   "solargraph.formatting": true,
   "solargraph.diagnostics": true,
   "solargraph.useBundler": true,
-  "snippets.extends": { "ruby": ["rails"] },
+
+  "eslint.autoFixOnSave": true,
+  "eslint.filetypes": ["javascript", "typescript", "vue"],
+
   "yank.highlight.duration": 200,
   "python.formatting.provider": "black",
   "python.venvPath": ".venv",

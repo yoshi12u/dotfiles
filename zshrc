@@ -51,3 +51,5 @@ _load_settings "$HOME/.zsh/configs"
 eval "$(anyenv init -)"
 eval "$(direnv hook zsh)"
 export PGDATA=/usr/local/var/postgres
+export PIPENV_VENV_IN_PROJECT=true
+export PIPENV_SKIP_LOCK=true
