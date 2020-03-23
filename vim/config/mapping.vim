@@ -17,6 +17,9 @@ noremap <silent> <leader>; :e!<CR>
 nnoremap ; :
 nnoremap : ;
 
+nnoremap L $
+nnoremap H ^
+
 nnoremap Y y$
 
 noremap j gj

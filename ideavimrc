@@ -1,3 +1,5 @@
+let mapleader = " "
+
 set gdefault
 set history=10000
 set hlsearch
@@ -15,7 +17,10 @@ set clipboard+=unnamed
 nnoremap ; :
 nnoremap : ;
 
-noremap <Space>; :so ~/.ideavimrc<CR>
+noremap <leader>; :so ~/.ideavimrc<CR>
+
+nnoremap L $
+nnoremap H ^
 
 nnoremap Y y$
 noremap j gj
@@ -31,8 +36,8 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
-nnoremap <Space>t :!
-nnoremap <Space>T :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>t :!
+nnoremap <leader>T :action ActivateTerminalToolWindow<CR>
 
 nnoremap <silent> <c-w><CR> <c-w>j
 
@@ -61,7 +66,7 @@ nnoremap <C-i> :action Forward<CR>
 nnoremap <C-S-o> <C-o>
 nnoremap <C-S-i> <C-i>
 
-nnoremap s :action AceAction<CR>
+nnoremap <silent> s :action AceAction<CR>
 
 nnoremap g; :action JumpToLastChange<CR>
 nnoremap g, :action JumpToNextChange<CR>
@@ -75,19 +80,18 @@ nnoremap ]c :action VcsShowNextChangeMarker<CR>
 nnoremap [e :action GotoPreviousError<CR>
 nnoremap ]e :action GotoNextError<CR>
 
-nnoremap <Space>jk :action GotoDeclaration<CR>
-nnoremap <Space>ji :action GotoImplementation<CR>
-nnoremap <Space>js :action GotoSuperMethod<CR>
-nnoremap <Space>jt :action GotoTest<CR>
+nnoremap <leader>jk :action GotoDeclaration<CR>
+nnoremap <leader>ji :action GotoImplementation<CR>
+nnoremap <leader>js :action GotoSuperMethod<CR>
+nnoremap <leader>jt :action GotoTest<CR>
 nnoremap <C-k> :action ShowUsages<CR>
 
 nnoremap =ae :action ReformatCode<CR>
 
-nnoremap <Space>fo :action FileStructurePopup<CR>
-nnoremap <Space>ff :action GotoFile<CR>
-nnoremap <Space>fs :action FindInPath<CR>
+nnoremap <leader>fo :action FileStructurePopup<CR>
+nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>fs :action FindInPath<CR>
 
-nnoremap <Space>at :action ActivateTODOToolWindow<CR>
+nnoremap <leader>at :action ActivateTODOToolWindow<CR>
 
-nnoremap <Space>gb :action Git.Branches<CR>
-
+nnoremap <leader>gb :action Git.Branches<CR>
