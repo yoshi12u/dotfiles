@@ -1,4 +1,5 @@
 export GOPATH=$HOME/.go
+export FLUTTERPATH=$HOME/flutter
 
 # ensure dotfiles bin directory is loaded first
 PATH="$HOME/.bin:/usr/local/sbin:$PATH"
@@ -12,5 +13,6 @@ fi
 PATH=".git/safe/../../bin:$PATH"
 
 PATH=$PATH:$GOPATH/bin
+PATH=$PATH:$FLUTTERPATH/bin
 
 export -U PATH
