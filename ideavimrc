@@ -94,4 +94,4 @@ nnoremap <leader>fs :action FindInPath<CR>
 
 nnoremap <leader>at :action ActivateTODOToolWindow<CR>
 
-nnoremap <leader>gb :action Git.Branches<CR>
+nnoremap <leader>r :action RefactoringMenu<CR>

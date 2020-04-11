@@ -13,6 +13,7 @@ fi
 PATH=".git/safe/../../bin:$PATH"
 
 PATH=$PATH:$GOPATH/bin
-PATH=$PATH:$FLUTTERPATH/bin
+PATH=$PATH:$HOME/flutter/bin
+PATH=$PATH:$HOME/.pub-cache/bin
 
 export -U PATH
