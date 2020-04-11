@@ -34,4 +34,5 @@ rename the file to \`zprofile':
 
 MSG
 fi
+ln -sfn ~/ghq/github.com/uesaiso/dotfiles/karabiner-config/assets ~/.config/karabiner
 

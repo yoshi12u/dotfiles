@@ -1,0 +1,68 @@
+{
+  "title": "Hyperswitch",
+  "rules": [
+    {
+      "description": "command + Tab -> command + ;",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "semicolon",
+            "modifiers": {
+              "mandatory": ["left_command"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "command + quote to change windows while moving apps",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "quote",
+            "modifiers": {
+              "mandatory": ["left_command"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "option + ; to change windows within an app",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "semicolon",
+            "modifiers": {
+              "mandatory": ["option"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": ["option"]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
