@@ -11,8 +11,3 @@ endif
 
 colorscheme one
 set background=dark
-
-" ayu dark like
-call one#highlight('Normal', '', '0e1318', 'none')
-call one#highlight('VertSplit', '253240', '', 'none')
-
