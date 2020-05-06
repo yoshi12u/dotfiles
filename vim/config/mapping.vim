@@ -3,13 +3,6 @@ let mapleader = "\<Space>"
 " maps using the leader key
 nmap <leader>f [finder]
 nmap <leader>g [git]
-nmap <leader>s [substitute]
-nmap <leader>a [args]
-nmap <leader>j [jump]
-nmap <leader>v [visual]
-nmap <leader>p [preview]
-nmap <leader>e [E]
-nmap <leader>r [rails]
 
 " original maps
 noremap <silent> <leader>; :e!<CR>
@@ -53,7 +46,58 @@ let g:nremap = {"[t": "", "]t": ""}
 nnoremap <silent> [t gT
 nnoremap <silent> ]t gt
 
+
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
 " plug-in key maps
+nnoremap <silent> <leader>qf :Qfreplace<CR>
+
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+
+nnoremap <c-g> :CocList<CR>
+nnoremap <leader>ac :CocCommand actions.open<CR>
+
 map : <Plug>Sneak_;
 nmap f <Plug>Sneak_s
 nmap F <Plug>Sneak_S
@@ -71,21 +115,8 @@ omap T <Plug>Sneak_T
 map s <Plug>(easymotion-overwin-f2)
 map S <Plug>(easymotion-overwin-f)
 map R  <Plug>(operator-replace)
-nmap <silent> r<CR> <Plug>(coc-rename)
 
 nnoremap U :UndotreeToggle<cr>
-
-noremap <plug>(slash-after) zz
-
-nnoremap <silent> [substitute]s :Switch<CR>
-nnoremap <silent> [substitute]q :Qfreplace<CR>
-
-nmap <silent> <C-]> <Plug>(coc-definition)
-nnoremap <silent> [jump]j <Plug>(coc-definition)
-nnoremap <silent> [jump]t <Plug>(coc-type-definition)
-nnoremap <silent> [jump]i <Plug>(coc-implementation)
-nnoremap <silent> [jump]r <Plug>(coc-references)
-nnoremap <silent> [jump]<CR> :CocConfig<CR>
 
 nnoremap <silent> [finder]f :Files<CR>
 nnoremap <silent> [finder]s :Rg<CR>
@@ -97,18 +128,7 @@ nnoremap <silent> [finder]d :CocList -A -R diagnostics<CR>
 nnoremap <silent> [git]g :Gstatus<CR><C-w>T
 nnoremap <silent> [git]d :Gdiff<CR>
 nnoremap <silent> [git]l :Commits<CR>
-
-nnoremap <silent> [E]m :Emodel<CR>
-nnoremap <silent> [E]c :Econtroller<CR>
-nnoremap <silent> [E]p :Epolicy<CR>
-nnoremap <silent> [E]s :Eserializer<CR>
-
-nnoremap [rails]g :Generate 
-nnoremap [rails]d :Destroy 
-nnoremap [rails]s :Server!<CR>
-nnoremap [rails]c :Console<CR>
-
-nnoremap <silent> [preview]u :PlantumlOpen<CR>
+" GVも使う
 
 nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
@@ -134,4 +154,5 @@ augroup vimrc_explorer
   autocmd!
   autocmd FileType dirvish call s:customize_dirvish_mappings()
 augroup END
+
 

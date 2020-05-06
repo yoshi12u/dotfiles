@@ -11,3 +11,4 @@ endif
 
 colorscheme one
 set background=dark
+

@@ -30,10 +30,31 @@ set laststatus=2
 set noshowmode
 set updatetime=300
 set wildmode=longest:full,full
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set wrapscan
+set gdefault
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+set smartindent
+set nobackup
+set nowritebackup
+set signcolumn=yes
 if has('persistent_undo')
   set undodir=~/.vim/undo
   set undofile
 endif
+autocmd VimEnter * RainbowParentheses
+autocmd CursorHold * silent call CocActionAsync('highlight')
+augroup mygroup
+  autocmd BufWritePost * CocAction('runCommand', 'editor.action.organizeImport')
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup END
 syntax on
 filetype plugin indent on
 

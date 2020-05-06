@@ -30,11 +30,11 @@ Plug 'ap/vim-css-color'
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/vim-emoji'
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
 
 " ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
-Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 
 " node
@@ -50,7 +50,10 @@ Plug 'posva/vim-vue'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'aklt/plantuml-syntax'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+
+" git
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 
 " commands
 Plug '/usr/local/opt/fzf'
@@ -58,7 +61,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'justinmk/vim-dirvish'
 Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-fugitive'
 Plug 'thinca/vim-qfreplace'
 Plug 'tpope/vim-unimpaired'
 Plug 'thinca/vim-visualstar'
@@ -82,6 +84,7 @@ Plug 'tpope/vim-commentary'
 Plug 'suy/vim-context-commentstring'
 Plug 'tpope/vim-surround'
 Plug 'tommcdo/vim-exchange'
+Plug 'junegunn/vim-easy-align'
 
 " textobj
 Plug 'vim-scripts/camelcasemotion'

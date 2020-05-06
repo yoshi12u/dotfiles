@@ -6,7 +6,7 @@
   "tabnine.priority": 80,
   "coc.source.word.priority": 0,
 
-  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "javascript", "typescript", "vue", "ruby", "python"],
+  "coc.preferences.formatOnSaveFiletypes": ["dart", "css", "Markdown", "javascript", "typescript", "vue", "ruby", "python"],
   "coc.preferences.rootPatterns": [".vim", ".git", ".hg", ".projections.json", "CHANGELOG.md", "Gemfile"],
 
   "list.nextKeymap": "<C-n>",
@@ -26,16 +26,6 @@
     "swift": {
       "command": "sourcekit-lsp",
       "filetypes": ["swift"]
-    },
-    "dart": {
-      "command": "dart",
-      "args": [
-        "/usr/local/opt/dart/libexec/bin/snapshots/analysis_server.dart.snapshot",
-        "--lsp"
-      ],
-      "filetypes": ["dart"],
-      "disableDynamicRegister": true,
-      "trace.server": "verbose"
     }
   }
 }
