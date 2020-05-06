@@ -125,8 +125,6 @@ nnoremap <silent> <c-w>k :TmuxNavigateUp<cr>
 nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
 
 function! s:customize_dirvish_mappings() abort
-  nmap <buffer> s        o
-  nmap <buffer> v        a
   nmap <buffer> l        <CR>
   nmap <buffer> h        <Plug>(dirvish_up)
   nmap <buffer> -        <Plug>(dirvish_quit)
