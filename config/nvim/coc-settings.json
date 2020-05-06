@@ -26,6 +26,16 @@
     "swift": {
       "command": "sourcekit-lsp",
       "filetypes": ["swift"]
+    },
+    "dart": {
+      "command": "dart",
+      "args": [
+        "/usr/local/opt/dart/libexec/bin/snapshots/analysis_server.dart.snapshot",
+        "--lsp"
+      ],
+      "filetypes": ["dart"],
+      "disableDynamicRegister": true,
+      "trace.server": "verbose"
     }
   }
 }

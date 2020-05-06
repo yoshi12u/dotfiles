@@ -21,7 +21,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifiers": ["^com\\.google\\.Chrome$"]
+              "bundle_identifiers": ["^com\\.google\\.Chrome$", "^org\\.mozilla\\.firefox$"]
             }
           ]
         },
@@ -42,7 +42,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifiers": ["^com\\.google\\.Chrome$"]
+              "bundle_identifiers": ["^org\\.mozilla\\.firefox$", "^com\\.google\\.Chrome$"]
             }
           ]
         }

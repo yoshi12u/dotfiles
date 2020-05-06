@@ -40,6 +40,9 @@ Plug 'tpope/vim-bundler'
 " node
 Plug 'moll/vim-node'
 
+" dart
+Plug 'dart-lang/dart-vim-plugin'
+
 " vue
 Plug 'posva/vim-vue'
 
