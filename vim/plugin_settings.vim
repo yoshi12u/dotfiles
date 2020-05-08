@@ -1,12 +1,10 @@
 let g:extra_whitespace_ignored_filetypes = ['defx', 'mkd', 'unite']
 
+let g:webdevicons_enable_startify = 1
+
 let g:vista_default_executive = 'coc'
 let g:vista#renderer#enable_icon = 1
 let g:vista_fzf_preview = ['right:50%']
-function! NearestMethodOrFunction() abort
-  return get(b:, 'vista_nearest_method_or_function', '')
-endfunction
-autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
 let g:markdown_fenced_languages = [
       \ 'vim',
@@ -17,7 +15,7 @@ let g:peekaboo_window = 'bo 16new'
 
 let g:sneak#use_ic_scs = 1
 
-let g:startify_files_number        = 3
+let g:startify_files_number = 3
 let g:startify_lists = [
       \ { 'header': ['   '.emoji#for('file_folder').' MRU(pwd)'],     'type': 'dir' }
       \ ]
@@ -62,40 +60,4 @@ function! s:goyo_leave()
 endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
-
-let g:lightline = {
-      \ 'colorscheme': 'one',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filepath', 'modified', 'method' ],
-      \             [ 'branch' ],
-      \             [ 'cocstatus' ]],
-      \   'right': [ [ 'lineinfo' ],
-      \              [ 'percent' ],
-      \              [ 'filetype' ],
-      \              [ 'pwd' ] ]
-      \ },
-      \ 'tabline': {
-      \ 'left': [ [ 'tabs' ] ],
-      \ 'right': [ [ 'close' ] ]
-      \ },
-      \ 'component': {
-      \   'lineinfo': '%3l[%L]:%-2v',
-      \ },
-      \ 'component_function': {
-      \   'method': 'NearestMethodOrFunction',
-      \   'cocstatus': 'coc#status',
-      \   'branch': 'fugitive#statusline',
-      \   'filepath': 'RelativePath',
-      \   'pwd': 'LightCurrentDirectory',
-      \ },
-      \ }
-
-function! LightCurrentDirectory()
-  return winwidth(0) > 100 ? getcwd() : ''
-endfunction
-
-function! RelativePath()
-  return winwidth(0) > 100 ? expand('%:.') : expand('%:t')
-endfunction
 

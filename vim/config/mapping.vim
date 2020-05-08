@@ -44,6 +44,7 @@ let g:nremap = {"[t": "", "]t": ""}
 nnoremap <silent> ]t gt
 nnoremap <silent> [t gT
 
+nnoremap <leader>rr bufdo e!
 
 " plug-in key maps
 " Use `[g` and `]g` to navigate diagnostics
@@ -123,7 +124,7 @@ endfunction
 
 augroup coc
   autocmd!
-  autocmd VimEnter call s:start_coc()
+  autocmd VimEnter * call s:start_coc()
 augroup END
 
 
@@ -195,4 +196,5 @@ nnoremap <silent> <c-w>k :TmuxNavigateUp<cr>
 nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
 
 nnoremap <silent> - :NERDTreeToggle<CR>
+let g:NERDTreeMapActivateNode = 'l'
 

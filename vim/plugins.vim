@@ -18,6 +18,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'liuchengxu/vista.vim'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'kassio/neoterm'
 
 " snippets
 Plug 'honza/vim-snippets'
@@ -45,6 +46,7 @@ Plug 'moll/vim-node'
 
 " dart
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'reisub0/hot-reload.vim'
 Plug 'natebosch/vim-lsc'
 Plug 'natebosch/vim-lsc-dart'
 
