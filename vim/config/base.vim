@@ -49,7 +49,9 @@ if has('persistent_undo')
   set undodir=~/.vim/undo
   set undofile
 endif
+autocmd BufWritePre * :%s/\s\+$//e
 autocmd VimEnter * RainbowParentheses
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd CursorHold * silent call CocActionAsync('highlight')
 augroup mygroup
   " autocmd BufWritePost * call CocActionAsync('runCommand', 'editor.action.sortMembers')

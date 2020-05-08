@@ -23,5 +23,7 @@
 
   "yank.highlight.duration": 200,
   "python.formatting.provider": "black",
-  "python.venvPath": ".venv"
+  "python.venvPath": ".venv",
+
+  "flutter.lsp.debug": true
 }

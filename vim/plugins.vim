@@ -1,5 +1,3 @@
-Plug 'cocopon/vaffle.vim'
-
 " doc
 Plug 'vim-jp/vimdoc-ja'
 Plug 'thinca/vim-ref'
@@ -11,7 +9,6 @@ Plug 'airblade/vim-rooter'
 Plug 'osyo-manga/vim-anzu'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'tpope/vim-dispatch'
-
 Plug 'markonm/traces.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mhinz/vim-startify'
@@ -19,6 +16,8 @@ Plug 'tpope/vim-dadbod'
 Plug 'kshenoy/vim-signature'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'liuchengxu/vista.vim'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " snippets
 Plug 'honza/vim-snippets'
@@ -28,7 +27,6 @@ Plug 'rakr/vim-one'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'bronson/vim-trailing-whitespace'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
 Plug 'Yggdroot/indentLine'
