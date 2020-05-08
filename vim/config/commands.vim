@@ -1,5 +1,4 @@
-command! Reload so $MYVIMRC
-command! Vimrc cd ~/dotfiles/vim
+command! So so $MYVIMRC
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \ 'rg --column --line-number --hidden --smart-case --no-heading --color=always '.shellescape(<q-args>), 1,

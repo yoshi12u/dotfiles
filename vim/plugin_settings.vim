@@ -1,7 +1,4 @@
 let g:vista_default_executive = 'coc'
-let g:vista_executive_for = {
-  \ 'dart': 'vim_lsc',
-  \ }
 let g:vista#renderer#enable_icon = 1
 let g:vista_fzf_preview = ['right:50%']
 function! NearestMethodOrFunction() abort
@@ -25,7 +22,7 @@ let g:startify_lists = [
 
 let g:coc_snippet_next = '<CR>'
 let g:coc_snippet_prev = '<c-k>'
-call coc#add_extension( 'coc-word', 'coc-pairs', 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-css', 'coc-emmet', 'coc-json', 'coc-solargraph', 'coc-yank', 'coc-vetur', 'coc-yaml', 'coc-marketplace', 'coc-tabnine')
+call coc#add_extension( 'coc-word', 'coc-pairs', 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-css', 'coc-emmet', 'coc-json', 'coc-solargraph', 'coc-yank', 'coc-vetur', 'coc-yaml', 'coc-marketplace')
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'

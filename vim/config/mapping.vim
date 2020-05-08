@@ -47,9 +47,89 @@ nnoremap <silent> [t gT
 
 " plug-in key maps
 
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [d <Plug>(coc-diagnostic-prev)
-nmap <silent> ]d <Plug>(coc-diagnostic-next)
+
+function! s:start_coc() abort
+  LSClientDisable
+  CocStart
+  " Use `[g` and `]g` to navigate diagnostics
+  nmap <silent> [d <Plug>(coc-diagnostic-prev)
+  nmap <silent> ]d <Plug>(coc-diagnostic-next)
+  " Use tab for trigger completion with characters ahead and navigate.
+  inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
+  if exists('*complete_info')
+    inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+  else
+    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  endif
+  " GoTo code navigation.
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references)
+  " Use K to show documentation in preview window.
+  nnoremap <silent> K :call <SID>show_documentation()<CR>
+  function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+      execute 'h '.expand('<cword>')
+    else
+      call CocAction('doHover')
+    endif
+  endfunction
+  " Symbol renaming.
+  nmap <leader>rn <Plug>(coc-rename)
+  nmap <leader>rf <Plug>(coc-refactor)
+  xmap if <Plug>(coc-funcobj-i)
+  xmap af <Plug>(coc-funcobj-a)
+  omap if <Plug>(coc-funcobj-i)
+  omap af <Plug>(coc-funcobj-a)
+  nnoremap <c-l> :CocList<CR>
+  nnoremap ga :CocCommand actions.open<CR>
+  nnoremap <silent> [finder]d :CocList -A -R diagnostics<CR>
+  nnoremap <silent> [finder]o :Vista<cr>
+  nnoremap <silent> [finder]o :CocList -A outline<CR>
+  let g:lsc_auto_map = {}
+  let g:vista_default_executive = 'coc'
+endfunction
+
+
+function! s:start_lsc() abort
+  CocDisable
+  LSClientEnable
+  let g:lsc_auto_map = {
+    \ 'GoToDefinition': 'gd',
+    \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
+    \ 'FindReferences': 'gr',
+    \ 'NextReference': ']r',
+    \ 'PreviousReference': '[r',
+    \ 'FindImplementations': 'gi',
+    \ 'FindCodeActions': 'ga',
+    \ 'Rename': '<leader>rn',
+    \ 'ShowHover': 'K',
+    \ 'DocumentSymbol': 'go',
+    \ 'WorkspaceSymbol': 'gS',
+    \ 'SignatureHelp': 'gm',
+    \ 'Completion': 'completefunc',
+    \}
+  let g:vista_default_executive = 'vim_lsc'
+  nnoremap <silent> [finder]o :Vista<cr>
+endfunction
+
+augroup coc
+  autocmd!
+  autocmd VimEnter call s:start_coc()
+augroup END
+
+
+command! Lsc call s:start_lsc()
+command! Coc call s:start_coc()
 
 nnoremap <silent> <leader>qf :Qfreplace<CR>
 
@@ -69,49 +149,6 @@ xmap <silent> i<leader>b <Plug>CamelCaseMotion_ib
 omap <silent> i<leader>e <Plug>CamelCaseMotion_ie
 xmap <silent> i<leader>e <Plug>CamelCaseMotion_ie
 
-" Use tab for trigger completion with characters ahead and navigate.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-nmap <leader>rf <Plug>(coc-refactor)
-
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
-
-nnoremap <c-l> :CocList<CR>
-nnoremap ga :CocCommand actions.open<CR>
 
 map : <Plug>Sneak_;
 nmap f <Plug>Sneak_s
@@ -138,8 +175,6 @@ nnoremap <silent> [finder]f :Files<CR>
 nnoremap <silent> [finder]s :Rg<CR>
 nnoremap <silent> [finder]m :Marks<CR>
 nnoremap <silent> [finder]b :Buffers<CR>
-nnoremap <silent> [finder]o :Vista<cr>
-nnoremap <silent> [finder]d :CocList -A -R diagnostics<CR>
 
 nnoremap <silent> [git]g :Gstatus<CR><C-w>T
 nnoremap <silent> [git]d :Gdiff<CR>
@@ -164,6 +199,7 @@ nnoremap <silent> - :Vaffle<CR>
 function! s:customize_vaffle_mappings() abort
   nmap <buffer> - <Plug>(vaffle-quit)
 endfunction
+
 augroup vimrc_explorer
   autocmd!
   autocmd FileType vaffle call s:customize_vaffle_mappings()
