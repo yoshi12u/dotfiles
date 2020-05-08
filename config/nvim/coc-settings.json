@@ -1,13 +1,15 @@
 {
-  "suggest.languageSourcePriority": 90,
-  "coc.source.around.priority": 88,
-  "coc.source.buffer.priority": 87,
-  "yank.priority": 85,
-  "tabnine.priority": 80,
+  "suggest.languageSourcePriority": 100,
+  "coc.source.around.priority": 20,
+  "coc.source.buffer.priority": 10,
+  "yank.priority": 15,
   "coc.source.word.priority": 0,
 
+  "diagnostic.virtualText": true,
+  "coc.preferences.currentFunctionSymbolAutoUpdate":true,
+
   "coc.preferences.formatOnSaveFiletypes": ["dart", "css", "Markdown", "javascript", "typescript", "vue", "ruby", "python"],
-  "coc.preferences.rootPatterns": [".vim", ".git", ".hg", ".projections.json", "CHANGELOG.md", "Gemfile"],
+  "coc.preferences.rootPatterns": [".git", ".hg", ".projections.json"],
 
   "list.nextKeymap": "<C-n>",
   "list.previousKeymap": "<C-p>",
@@ -21,11 +23,5 @@
 
   "yank.highlight.duration": 200,
   "python.formatting.provider": "black",
-  "python.venvPath": ".venv",
-  "languageserver": {
-    "swift": {
-      "command": "sourcekit-lsp",
-      "filetypes": ["swift"]
-    }
-  }
+  "python.venvPath": ".venv"
 }

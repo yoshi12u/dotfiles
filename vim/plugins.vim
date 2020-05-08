@@ -1,3 +1,5 @@
+Plug 'cocopon/vaffle.vim'
+
 " doc
 Plug 'vim-jp/vimdoc-ja'
 Plug 'thinca/vim-ref'
@@ -9,12 +11,14 @@ Plug 'airblade/vim-rooter'
 Plug 'osyo-manga/vim-anzu'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'tpope/vim-dispatch'
+
 Plug 'markonm/traces.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-dadbod'
 Plug 'kshenoy/vim-signature'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'liuchengxu/vista.vim'
 
 " snippets
 Plug 'honza/vim-snippets'
@@ -31,6 +35,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'junegunn/vim-emoji'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'ryanoasis/vim-devicons'
 
 " ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -42,6 +47,8 @@ Plug 'moll/vim-node'
 
 " dart
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
 
 " vue
 Plug 'posva/vim-vue'
@@ -59,7 +66,6 @@ Plug 'junegunn/gv.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-eunuch'
-Plug 'justinmk/vim-dirvish'
 Plug 'tpope/vim-abolish'
 Plug 'thinca/vim-qfreplace'
 Plug 'tpope/vim-unimpaired'

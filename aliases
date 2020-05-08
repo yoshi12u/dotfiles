@@ -1,4 +1,5 @@
 # Unix
+alias ls="exa"
 alias ll="ls -al"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
@@ -15,8 +16,6 @@ alias gcc="gcc-9"
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 alias fpath='echo $fpath | tr -s " " "\n"'
-
-# Anyframe
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local

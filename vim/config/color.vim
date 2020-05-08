@@ -11,4 +11,6 @@ endif
 
 colorscheme one
 set background=dark
+highlight CocHighlightText ctermfg=Red  guifg=#ff0000
+
 

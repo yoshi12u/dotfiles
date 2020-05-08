@@ -12,6 +12,8 @@ export LANG=ja_JP.UTF-8
 export VISUAL=nvim
 export EDITOR=$VISUAL
 export PAGER='less'
+export LESS="-MR"
+export LESSOPEN="| src-hilite-lesspipe.sh %s"
 
 local _old_path="$PATH"
 

@@ -52,7 +52,7 @@ endif
 autocmd VimEnter * RainbowParentheses
 autocmd CursorHold * silent call CocActionAsync('highlight')
 augroup mygroup
-  autocmd BufWritePost * CocAction('runCommand', 'editor.action.organizeImport')
+  " autocmd BufWritePost * call CocActionAsync('runCommand', 'editor.action.sortMembers')
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup END
 syntax on

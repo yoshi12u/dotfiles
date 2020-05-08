@@ -5,8 +5,6 @@ nmap <leader>f [finder]
 nmap <leader>g [git]
 
 " original maps
-noremap <silent> <leader>; :e!<CR>
-
 nnoremap ; :
 nnoremap : ;
 
@@ -43,9 +41,33 @@ nnoremap <leader>t :!
 nnoremap <silent> <leader>T :!tmux split-window -v -p 27 -c $PWD<CR>
 
 let g:nremap = {"[t": "", "]t": ""}
-nnoremap <silent> [t gT
 nnoremap <silent> ]t gt
+nnoremap <silent> [t gT
 
+
+" plug-in key maps
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [d <Plug>(coc-diagnostic-prev)
+nmap <silent> ]d <Plug>(coc-diagnostic-next)
+
+nnoremap <silent> <leader>qf :Qfreplace<CR>
+
+let g:camelcasemotion_key = '<leader>'
+map <silent> <leader>w <Plug>CamelCaseMotion_w
+map <silent> <leader>b <Plug>CamelCaseMotion_b
+map <silent> <leader>e <Plug>CamelCaseMotion_e
+map <silent> <leader>ge <Plug>CamelCaseMotion_ge
+sunmap <leader>w
+sunmap <leader>b
+sunmap <leader>e
+sunmap <leader>ge
+omap <silent> i<leader>w <Plug>CamelCaseMotion_iw
+xmap <silent> i<leader>w <Plug>CamelCaseMotion_iw
+omap <silent> i<leader>b <Plug>CamelCaseMotion_ib
+xmap <silent> i<leader>b <Plug>CamelCaseMotion_ib
+omap <silent> i<leader>e <Plug>CamelCaseMotion_ie
+xmap <silent> i<leader>e <Plug>CamelCaseMotion_ie
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
@@ -62,14 +84,6 @@ if exists('*complete_info')
 else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
-
-" plug-in key maps
-nnoremap <silent> <leader>qf :Qfreplace<CR>
-
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -89,14 +103,15 @@ endfunction
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>rf <Plug>(coc-refactor)
 
 xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
-nnoremap <c-g> :CocList<CR>
-nnoremap <leader>ac :CocCommand actions.open<CR>
+nnoremap <c-l> :CocList<CR>
+nnoremap ga :CocCommand actions.open<CR>
 
 map : <Plug>Sneak_;
 nmap f <Plug>Sneak_s
@@ -118,11 +133,12 @@ map R  <Plug>(operator-replace)
 
 nnoremap U :UndotreeToggle<cr>
 
+nnoremap <silent> <c-p> :Files<CR>
 nnoremap <silent> [finder]f :Files<CR>
 nnoremap <silent> [finder]s :Rg<CR>
 nnoremap <silent> [finder]m :Marks<CR>
 nnoremap <silent> [finder]b :Buffers<CR>
-nnoremap <silent> [finder]o :CocList -A outline<CR>
+nnoremap <silent> [finder]o :Vista<cr>
 nnoremap <silent> [finder]d :CocList -A -R diagnostics<CR>
 
 nnoremap <silent> [git]g :Gstatus<CR><C-w>T
@@ -144,15 +160,12 @@ nnoremap <silent> <c-w><CR> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-w>k :TmuxNavigateUp<cr>
 nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
 
-function! s:customize_dirvish_mappings() abort
-  nmap <buffer> l        <CR>
-  nmap <buffer> h        <Plug>(dirvish_up)
-  nmap <buffer> -        <Plug>(dirvish_quit)
-  nmap <buffer> q        <Plug>(dirvish_quit)
+nnoremap <silent> - :Vaffle<CR>
+function! s:customize_vaffle_mappings() abort
+  nmap <buffer> - <Plug>(vaffle-quit)
 endfunction
 augroup vimrc_explorer
   autocmd!
-  autocmd FileType dirvish call s:customize_dirvish_mappings()
+  autocmd FileType vaffle call s:customize_vaffle_mappings()
 augroup END
-
 
