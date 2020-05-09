@@ -6,6 +6,8 @@
   "coc.source.word.priority": 0,
 
   "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "diagnostic.virtualTextLines": 99,
   "coc.preferences.currentFunctionSymbolAutoUpdate":true,
 
   "coc.preferences.formatOnSaveFiletypes": ["dart", "css", "Markdown", "javascript", "typescript", "vue", "ruby", "python"],
@@ -25,5 +27,7 @@
   "python.formatting.provider": "black",
   "python.venvPath": ".venv",
 
-  "flutter.lsp.debug": true
+  "flutter.lsp.debug": true,
+  "flutter.enabled": true,
+  "smartf.timeout": 1500
 }

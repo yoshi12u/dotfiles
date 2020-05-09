@@ -11,6 +11,21 @@ endif
 
 colorscheme one
 set background=dark
+
 highlight CocHighlightText ctermfg=Red  guifg=#ff0000
+
+function! s:SmartfEnterHighlight() abort
+  highlight Conceal ctermfg=Red  guifg=#ff0000 term=bold
+endfunction
+
+function! s:SmartfLeaveHighlight() abort
+  highlight Conceal ctermfg=239 guifg=#504945
+endfunction
+
+augroup Smartf
+  autocmd User SmartfEnter call s:SmartfEnterHighlight()
+  autocmd User SmartfLeave call s:SmartfLeaveHighlight()
+augroup end
+
 
 

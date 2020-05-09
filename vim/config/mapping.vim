@@ -71,8 +71,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> ga :CocCommand actions.open<CR>
-nmap <silent> gD :CocList -A -R diagnostics<CR>
-nmap <silent> go :CocList -A outline<CR>
+nnoremap <silent> gD :CocList -A -R diagnostics<CR>
+nnoremap <silent> go :CocList -A outline<CR>
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
@@ -91,35 +91,49 @@ omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 nnoremap <c-l> :CocList<CR>
 
+let g:lsc_auto_map = {
+      \ 'GoToDefinition': 'gd',
+      \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
+      \ 'FindReferences': 'gr',
+      \ 'NextReference': ']r',
+      \ 'PreviousReference': '[r',
+      \ 'FindImplementations': 'gi',
+      \ 'FindCodeActions': 'ga',
+      \ 'Rename': '<leader>rn',
+      \ 'ShowHover': 'K',
+      \ 'DocumentSymbol': 'go',
+      \ 'WorkspaceSymbol': 'gS',
+      \ 'SignatureHelp': 'gm',
+      \ 'Completion': 'completefunc',
+      \}
+
 function! s:start_coc() abort
   LSClientDisable
   CocStart
   let g:lsc_auto_map = {}
   let g:vista_default_executive = 'coc'
-  nmap <silent> go :CocList -A outline<CR>
 endfunction
 
 
 function! s:start_lsc() abort
   CocDisable
   LSClientEnable
-  let g:lsc_auto_map = {
-    \ 'GoToDefinition': 'gd',
-    \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
-    \ 'FindReferences': 'gr',
-    \ 'NextReference': ']r',
-    \ 'PreviousReference': '[r',
-    \ 'FindImplementations': 'gi',
-    \ 'FindCodeActions': 'ga',
-    \ 'Rename': '<leader>rn',
-    \ 'ShowHover': 'K',
-    \ 'DocumentSymbol': 'go',
-    \ 'WorkspaceSymbol': 'gS',
-    \ 'SignatureHelp': 'gm',
-    \ 'Completion': 'completefunc',
-    \}
   let g:vista_default_executive = 'vim_lsc'
-  nnoremap <silent> go :Vista<cr>
+  let g:lsc_auto_map = {
+      \ 'GoToDefinition': 'gd',
+      \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
+      \ 'FindReferences': 'gr',
+      \ 'NextReference': ']r',
+      \ 'PreviousReference': '[r',
+      \ 'FindImplementations': 'gi',
+      \ 'FindCodeActions': 'ga',
+      \ 'Rename': '<leader>rn',
+      \ 'ShowHover': 'K',
+      \ 'DocumentSymbol': 'go',
+      \ 'WorkspaceSymbol': 'gS',
+      \ 'SignatureHelp': 'gm',
+      \ 'Completion': 'completefunc',
+      \}
 endfunction
 
 augroup coc
@@ -150,22 +164,11 @@ omap <silent> i<leader>e <Plug>CamelCaseMotion_ie
 xmap <silent> i<leader>e <Plug>CamelCaseMotion_ie
 
 
-map : <Plug>Sneak_;
-nmap f <Plug>Sneak_s
-nmap F <Plug>Sneak_S
-xmap f <Plug>Sneak_s
-xmap F <Plug>Sneak_S
-omap f <Plug>Sneak_s
-omap F <Plug>Sneak_S
-nmap t <Plug>Sneak_t
-nmap T <Plug>Sneak_T
-xmap t <Plug>Sneak_t
-xmap T <Plug>Sneak_T
-omap t <Plug>Sneak_t
-omap T <Plug>Sneak_T
+nmap f <Plug>(coc-smartf-forward)
+nmap F <Plug>(coc-smartf-backward)
+nmap : <Plug>(coc-smartf-repeat)
+nmap , <Plug>(coc-smartf-repeat-opposite)
 
-map s <Plug>(easymotion-overwin-f2)
-map S <Plug>(easymotion-overwin-f)
 map R  <Plug>(operator-replace)
 
 nnoremap U :UndotreeToggle<cr>

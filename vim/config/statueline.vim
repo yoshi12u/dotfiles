@@ -14,9 +14,6 @@ let g:lightline = {
       \ 'left': [ [ 'tabs' ] ],
       \ 'right': [ [ 'close' ] ]
       \ },
-      \ 'component': {
-      \   'lineinfo': '%3l[%L]:%-2v',
-      \ },
       \ 'component_function': {
       \   'method': 'StatuslineVista',
       \   'readonly': 'StatuslineReadonly',
@@ -26,8 +23,6 @@ let g:lightline = {
       \   'filepath': 'StatuslineRelativePath',
       \   'pwd': 'StatuslinePwd',
       \ },
-      \ 'separator': { 'left':  ' ', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
       \ }
 
 let g:lightline.tab_component_function = {

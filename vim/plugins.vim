@@ -12,7 +12,6 @@ Plug 'tpope/vim-dispatch'
 Plug 'markonm/traces.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mhinz/vim-startify'
-Plug 'tpope/vim-dadbod'
 Plug 'kshenoy/vim-signature'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'liuchengxu/vista.vim'
@@ -25,7 +24,6 @@ Plug 'honza/vim-snippets'
 
 " style
 Plug 'rakr/vim-one'
-Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
@@ -35,23 +33,6 @@ Plug 'junegunn/vim-emoji'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'ryanoasis/vim-devicons'
-
-" ruby
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-Plug 'tpope/vim-endwise', { 'for': 'ruby' }
-Plug 'tpope/vim-bundler'
-
-" node
-Plug 'moll/vim-node'
-
-" dart
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'reisub0/hot-reload.vim'
-Plug 'natebosch/vim-lsc'
-Plug 'natebosch/vim-lsc-dart'
-
-" vue
-Plug 'posva/vim-vue'
 
 " preview
 Plug 'weirongxu/plantuml-previewer.vim'
@@ -76,9 +57,7 @@ Plug 'brooth/far.vim'
 Plug 'AndrewRadev/switch.vim'
 
 " mapping
-Plug 'Lokaltog/vim-easymotion'
 Plug 'tpope/vim-repeat'
-Plug 'justinmk/vim-sneak'
 Plug 'houtsnip/vim-emacscommandline'
 Plug 'bronson/vim-visual-star-search'
 Plug 'christoomey/vim-tmux-navigator'
@@ -104,3 +83,20 @@ Plug 'thinca/vim-textobj-comment' " c
 Plug 'kana/vim-textobj-function' " -f
 Plug 'haya14busa/vim-textobj-function-syntax'
 Plug 'wellle/targets.vim'
+
+" ruby
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'tpope/vim-endwise', { 'for': 'ruby' }
+Plug 'tpope/vim-bundler'
+
+" node
+Plug 'moll/vim-node'
+
+" dart
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'reisub0/hot-reload.vim'
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
+
+" vue
+Plug 'posva/vim-vue'

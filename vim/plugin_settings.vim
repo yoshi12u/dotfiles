@@ -29,10 +29,6 @@ function! s:check_back_space() abort
 endfunction
 
 
-let g:EasyMotion_smartcase = 1
-let g:EasyMotion_use_smartsign_jp = 1
-let g:EasyMotion_do_mapping = 0
-
 function! s:goyo_enter()
   set spell
   set noci
