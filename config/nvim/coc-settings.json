@@ -29,5 +29,13 @@
 
   "flutter.lsp.debug": true,
   "flutter.enabled": true,
-  "smartf.timeout": 1500
+  "smartf.timeout": 1500,
+  "explorer.width": 32,
+  "explorer.icon.enableVimDevicons": true,
+  "explorer.openAction.strategy": "previousBuffer",
+  "explorer.file.showHiddenFiles": true,
+  "explorer.file.child.template": "[git | 2] [selection | clip | 1] [indent][icon | 1] [diagnosticWarning & 1][diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]",
+  "explorer.keyMappings": {
+    "<cr>": ["expandable?", "expand", "open"]
+  }
 }

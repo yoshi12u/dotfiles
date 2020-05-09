@@ -50,7 +50,6 @@ if has('persistent_undo')
   set undofile
 endif
 augroup mygroup
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   autocmd CursorHold * silent call CocActionAsync('highlight')
   autocmd BufWritePost * call CocActionAsync('runCommand', 'editor.action.sortMembers')
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')

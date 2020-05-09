@@ -198,6 +198,5 @@ nnoremap <silent> <c-w><CR> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-w>k :TmuxNavigateUp<cr>
 nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
 
-nnoremap <silent> - :NERDTreeToggle<CR>
-let g:NERDTreeMapActivateNode = 'l'
+nnoremap <silent> - :CocCommand explorer<CR>
 

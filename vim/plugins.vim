@@ -15,8 +15,6 @@ Plug 'mhinz/vim-startify'
 Plug 'kshenoy/vim-signature'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'liuchengxu/vista.vim'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'kassio/neoterm'
 
 " snippets
