@@ -1,8 +1,8 @@
 let g:lightline = {
-      \ 'colorscheme': 'eleline',
+      \ 'colorscheme': 'custom',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'filepath', 'modified', 'method' ],
+      \             [ 'readonly', 'filepath', 'modified', 'method' ],
       \             [ 'branch'],
       \             [ 'status'],
       \             [ 'cocstatus' ]],
@@ -18,14 +18,34 @@ let g:lightline = {
       \   'lineinfo': '%3l[%L]:%-2v',
       \ },
       \ 'component_function': {
-      \   'branch': 'StatuslineGitBranch',
       \   'method': 'StatuslineVista',
+      \   'readonly': 'StatuslineReadonly',
       \   'cocstatus': 'StatuslineCoc',
+      \   'branch': 'StatuslineGitBranch',
       \   'status': 'StatuslineGitStatus',
-      \   'filepath': 'StatuslineCurFname',
+      \   'filepath': 'StatuslineRelativePath',
       \   'pwd': 'StatuslinePwd',
       \ },
+      \ 'separator': { 'left':  ' ', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
       \ }
+
+let g:lightline.tab_component_function = {
+      \ 'filename': 'TablineFilename',
+      \ 'modified': 'lightline#tab#modified',
+      \ 'readonly': 'StatuslineReadonly',
+      \ 'tabnum': 'lightline#tab#tabnum' }
+
+function! TablineFilename(n) abort
+  let buflist = tabpagebuflist(a:n)
+  let winnr = tabpagewinnr(a:n)
+  let _ = expand('#'.buflist[winnr - 1].':t')
+  return _ !=# '' ? WebDevIconsGetFileTypeSymbol(_).' '._ : '[No Name]'
+endfunction
+
+function! StatuslineReadonly()
+  return &readonly ? '' : ''
+endfunction
 
 function! s:IsTempFile()
   if !empty(&buftype) | return 1 | endif
@@ -36,14 +56,13 @@ function! s:IsTempFile()
   return 0
 endfunction
 
-function! StatuslinePwd()
-  return winwidth(0) > 100 ? getcwd() : ''
+function! StatuslineRelativePath() abort
+  let l:ft= (strlen(&filetype) ? WebDevIconsGetFileTypeSymbol() : '')
+  return l:ft . ' '. (winwidth(0) > 100 ? expand('%:.') : expand('%:t'))
 endfunction
 
-function! StatuslineCurFname() abort
-  let l:readonly = (&readonly ? "" : '')
-  let l:ft= (strlen(&filetype) ? WebDevIconsGetFileTypeSymbol() : '')
-  return l:readonly . ' '. l:ft . ' '. (winwidth(0) > 100 ? expand('%:.') : expand('%:t'))
+function! StatuslinePwd()
+  return winwidth(0) > 100 ? getcwd() : ''
 endfunction
 
 function! StatuslineGitBranch(...) abort
@@ -89,7 +108,7 @@ let s:left2 = [ s:fg2, s:gray3, 'bold' ]
 let s:left3 = [ s:yellow2, s:gray2, 'bold' ]
 
 let s:right  = [ s:fg2, s:bg, 'bold' ]
-let s:right2 = [ s:fg, s:gray3 ]
+let s:right2 = [ s:fg, s:bg ]
 
 let s:p.inactive.left   = [ [ s:gray1,  s:bg ], [ s:gray1, s:bg ] ]
 let s:p.inactive.middle = [ [ s:gray1, s:gray2 ] ]
@@ -112,5 +131,5 @@ let s:p.tabline.tabsel = [ [ s:bg, s:purple, 'bold' ] ]
 let s:p.tabline.middle = [ [ s:gray3, s:gray2 ] ]
 let s:p.tabline.right  = copy(s:p.normal.right)
 
-let g:lightline#colorscheme#eleline#palette = lightline#colorscheme#flatten(s:p)
+let g:lightline#colorscheme#custom#palette = lightline#colorscheme#flatten(s:p)
 
