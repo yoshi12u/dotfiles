@@ -10,8 +10,6 @@
   "diagnostic.virtualTextLines": 99,
   "coc.preferences.currentFunctionSymbolAutoUpdate":true,
 
-  "snippets.textmateSnippetsRoots": ["~/ghq/github.com/uesaiso/dotfiles/vim/snippets"],
-
   "smartf.timeout": 1500,
 
   "explorer.width": 32,
