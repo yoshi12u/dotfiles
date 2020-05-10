@@ -9,7 +9,9 @@ nnoremap ; :
 nnoremap : ;
 
 nnoremap L $
+vnoremap L $
 nnoremap H ^
+vnoremap H ^
 
 nnoremap Y y$
 
@@ -65,16 +67,16 @@ if exists('*complete_info')
 else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> ga :CocCommand actions.open<CR>
-nnoremap <silent> gD :CocList -A -R diagnostics<CR>
-nnoremap <silent> go :CocList -A outline<CR>
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" Symbol renaming.
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+nnoremap <leader><leader>l :CocList<CR>
+nnoremap <leader><leader>L :CocListResume<CR>
+nnoremap <leader><leader>c :CocCommand<CR>
+nnoremap <leader><leader>a :CocAction<CR>
+
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -82,65 +84,77 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-" Symbol renaming.
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> ga :CocCommand actions.open<CR>
+nnoremap <silent> gD :CocList -A -R diagnostics<CR>
+nnoremap <silent> go :CocList -A outline<CR>
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>rf <Plug>(coc-refactor)
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
-nnoremap <c-l> :CocList<CR>
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-let g:lsc_auto_map = {
-      \ 'GoToDefinition': 'gd',
-      \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
-      \ 'FindReferences': 'gr',
-      \ 'NextReference': ']r',
-      \ 'PreviousReference': '[r',
-      \ 'FindImplementations': 'gi',
-      \ 'FindCodeActions': 'ga',
-      \ 'Rename': '<leader>rn',
-      \ 'ShowHover': 'K',
-      \ 'DocumentSymbol': 'go',
-      \ 'WorkspaceSymbol': 'gS',
-      \ 'SignatureHelp': 'gm',
-      \ 'Completion': 'completefunc',
-      \}
+let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_prev = '<c-k>'
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 
-function! s:start_coc() abort
-  LSClientDisable
-  CocStart
-  let g:lsc_auto_map = {}
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+let g:coc_snippet_next = '<tab>'
+
+function! s:start_coc()
   let g:vista_default_executive = 'coc'
+  let g:lsc_auto_map = {}
+  call coc#config('diagnostic', {
+        \ 'enable': 1,
+        \})
+  let l:lsc_status = LSCServerStatus()
+  if (lsc_status == 'running')
+    LSClientDisable
+  endif
 endfunction
 
-
-function! s:start_lsc() abort
-  CocDisable
-  LSClientEnable
+function! s:start_lsc()
   let g:vista_default_executive = 'vim_lsc'
   let g:lsc_auto_map = {
-      \ 'GoToDefinition': 'gd',
-      \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
-      \ 'FindReferences': 'gr',
-      \ 'NextReference': ']r',
-      \ 'PreviousReference': '[r',
-      \ 'FindImplementations': 'gi',
-      \ 'FindCodeActions': 'ga',
-      \ 'Rename': '<leader>rn',
-      \ 'ShowHover': 'K',
-      \ 'DocumentSymbol': 'go',
-      \ 'WorkspaceSymbol': 'gS',
-      \ 'SignatureHelp': 'gm',
-      \ 'Completion': 'completefunc',
-      \}
+        \ 'defaults': v:true,
+        \ 'NextReference': ']r',
+        \ 'PreviousReference': '[r',
+        \ 'GoToDefinition': 'gd',
+        \ 'FindImplementations': 'gi',
+        \ 'Rename': '<leader>rn',
+        \}
+  call coc#config('diagnostic', {
+        \ 'enable': 0,
+        \})
+  let l:lsc_status = LSCServerStatus()
+  if (l:lsc_status != 'running')
+    LSClientEnable
+  endif
 endfunction
 
-augroup coc
-  autocmd!
-  autocmd VimEnter * call s:start_coc()
-augroup END
+function! s:mode_change()
+  if (&filetype ==# 'dart')
+    call s:start_lsc()
+  else
+    call s:start_coc()
+  endif
+endfunction
 
+augroup mode_change
+  autocmd!
+  autocmd bufenter * call s:mode_change()
+augroup END
 
 command! Lsc call s:start_lsc()
 command! Coc call s:start_coc()

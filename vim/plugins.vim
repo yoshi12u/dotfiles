@@ -18,6 +18,8 @@ Plug 'liuchengxu/vista.vim'
 Plug 'kassio/neoterm'
 
 " snippets
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'honza/vim-snippets'
 
 " style

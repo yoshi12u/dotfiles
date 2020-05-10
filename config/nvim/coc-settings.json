@@ -10,6 +10,30 @@
   "diagnostic.virtualTextLines": 99,
   "coc.preferences.currentFunctionSymbolAutoUpdate":true,
 
+  "snippets.textmateSnippetsRoots": ["~/ghq/github.com/uesaiso/dotfiles/vim/snippets"],
+
+  "smartf.timeout": 1500,
+
+  "explorer.width": 32,
+  "explorer.icon.enableVimDevicons": true,
+  "explorer.file.showHiddenFiles": true,
+  "explorer.file.child.template": "[git | 2] [selection | clip | 1] [indent][icon | 1] [diagnosticWarning & 1][diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]",
+  "explorer.keyMappings": {
+    "<cr>": ["expandable?", "expand", "open"],
+    "<tab>": "toggleSelection",
+    "mm": "actionMenu"
+  },
+  "explorer.sources": [
+    {
+      "name": "buffer",
+      "expand": true
+    },
+    {
+      "name": "file",
+      "expand": true
+    }
+  ],
+
   "coc.preferences.formatOnSaveFiletypes": ["dart", "css", "Markdown", "javascript", "typescript", "vue", "ruby", "python"],
   "coc.preferences.rootPatterns": [".git", ".hg", ".projections.json"],
 
@@ -28,14 +52,5 @@
   "python.venvPath": ".venv",
 
   "flutter.lsp.debug": true,
-  "flutter.enabled": true,
-  "smartf.timeout": 1500,
-  "explorer.width": 32,
-  "explorer.icon.enableVimDevicons": true,
-  "explorer.openAction.strategy": "previousBuffer",
-  "explorer.file.showHiddenFiles": true,
-  "explorer.file.child.template": "[git | 2] [selection | clip | 1] [indent][icon | 1] [diagnosticWarning & 1][diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]",
-  "explorer.keyMappings": {
-    "<cr>": ["expandable?", "expand", "open"]
-  }
+  "flutter.enabled": true
 }
