@@ -6,7 +6,6 @@
     "coc-emmet": ">=1.1.4",
     "coc-eslint": ">=1.2.6",
     "coc-explorer": ">=0.6.2",
-    "coc-floaterm": ">=0.0.7",
     "coc-flutter": ">=1.2.4",
     "coc-git": ">=1.7.12",
     "coc-gitignore": ">=0.0.4",

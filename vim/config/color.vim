@@ -80,9 +80,9 @@ let s:p.tabline.right  = copy(s:p.normal.right)
 let g:lightline#colorscheme#custom#palette = lightline#colorscheme#flatten(s:p)
 
 function! g:BuffetSetCustomColors()
-hi! BuffetCurrentBuffer cterm=bold gui=bold ctermbg=176 ctermfg=235 guibg=#c678dd guifg=#282c34
-hi! BuffetActiveBuffer cterm=NONE gui=bold ctermbg=240 ctermfg=176 guibg=#3e4452 guifg=#c678dd
-hi! BuffetBuffer cterm=NONE ctermbg=235 ctermfg=145 guibg=#282c34 guifg=#af87d7
-hi! BuffetTab cterm=NONE ctermbg=241 ctermfg=235 guibg=#5c6370 guifg=#282c34
+  hi! BuffetCurrentBuffer cterm=bold gui=bold ctermbg=176 ctermfg=235 guibg=#c678dd guifg=#282c34
+  hi! BuffetActiveBuffer cterm=NONE gui=bold ctermbg=240 ctermfg=176 guibg=#3e4452 guifg=#c678dd
+  hi! BuffetBuffer cterm=NONE ctermbg=235 ctermfg=145 guibg=#282c34 guifg=#af87d7
+  hi! BuffetTab cterm=NONE ctermbg=241 ctermfg=235 guibg=#5c6370 guifg=#282c34
 endfunction
 

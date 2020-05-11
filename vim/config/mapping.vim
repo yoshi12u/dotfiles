@@ -39,16 +39,15 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
-nnoremap <silent> <c-t> :FloatermToggle<CR>
-nnoremap <silent> <leader>t :FloatermNew<CR>
-
 let g:nremap = {"[t": "", "]t": ""}
 nnoremap <silent> ]t gt
 nnoremap <silent> [t gT
+nmap [g <Plug>(coc-git-prevchunk)
+nmap ]g <Plug>(coc-git-nextchunk)
 
 nnoremap <leader>rr bufdo e!
 
-" plug-in key maps
+
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [d <Plug>(coc-diagnostic-prev)
 nmap <silent> ]d <Plug>(coc-diagnostic-next)
@@ -67,11 +66,6 @@ if exists('*complete_info')
 else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
-" Symbol renaming.
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
 
 nnoremap <leader>l :CocList<CR>
 nnoremap <leader>L :CocListResume<CR>
@@ -190,6 +184,7 @@ nnoremap <silent> [finder]f :Files<CR>
 nnoremap <silent> [finder]s :Rg<CR>
 nnoremap <silent> [finder]m :Marks<CR>
 nnoremap <silent> [finder]t :CocList floaterm<CR>
+nnoremap <silent> [finder]y :CocList yank<CR>
 
 nnoremap <silent> [git]g :Gstatus<CR><C-w>T
 nnoremap <silent> [git]d :CocCommand git.chunkInfo<CR>
@@ -219,8 +214,19 @@ nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
 
 nnoremap <silent> - :CocCommand explorer<CR>
 
+nnoremap <silent> <leader>t :FloatermToggle<CR>
+nnoremap <silent> <leader>T :FloatermNew<CR>
 augroup floaterm
   autocmd!
   autocmd FileType floaterm tnoremap <silent> <buffer> <Esc> <C-\><c-n>:FloatermHide<CR>
 augroup END
+
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+omap ig <Plug>(coc-git-chunk-inner)
+xmap ig <Plug>(coc-git-chunk-inner)
+omap ag <Plug>(coc-git-chunk-outer)
+xmap ag <Plug>(coc-git-chunk-outer)
 
