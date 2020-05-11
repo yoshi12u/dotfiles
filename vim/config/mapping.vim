@@ -39,7 +39,8 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
-nnoremap <leader>t :!
+tnoremap <silent> <Esc> <C-\><c-n>:FloatermHide<CR>
+nnoremap <silent> <leader>t :FloatermToggle<CR>
 nnoremap <silent> <leader>T :!tmux split-window -v -p 27 -c $PWD<CR>
 
 let g:nremap = {"[t": "", "]t": ""}

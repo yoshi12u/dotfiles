@@ -1,3 +1,6 @@
+let g:floaterm_autoclose = 1
+let g:floaterm_rootmarkers = ['pubspec.lock', '.project', '.git', '.hg', '.svn', '.root', '.gitignore']
+
 let g:extra_whitespace_ignored_filetypes = ['defx', 'mkd', 'unite']
 
 let g:rainbow_active = 1

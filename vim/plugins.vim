@@ -15,8 +15,8 @@ Plug 'mhinz/vim-startify'
 Plug 'kshenoy/vim-signature'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'liuchengxu/vista.vim'
-Plug 'kassio/neoterm'
 Plug 'bagrat/vim-buffet'
+Plug 'voldikss/vim-floaterm'
 
 " snippets
 Plug 'hrsh7th/vim-vsnip'
