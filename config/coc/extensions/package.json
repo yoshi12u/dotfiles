@@ -18,7 +18,6 @@
     "coc-smartf": ">=1.1.10",
     "coc-snippets": ">=2.1.26",
     "coc-solargraph": ">=1.1.6",
-    "coc-tabnine": ">=1.2.2",
     "coc-tailwindcss": ">=0.6.0",
     "coc-todolist": ">=1.2.7",
     "coc-tslint": ">=1.0.17",
