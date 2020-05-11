@@ -49,6 +49,21 @@ nnoremap <silent> ]d <Plug>(coc-diagnostic-next)
 nnoremap <silent> [g <Plug>(coc-git-prevchunk)
 nnoremap <silent> ]g <Plug>(coc-git-nextchunk)
 
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+omap ig <Plug>(coc-git-chunk-inner)
+xmap ig <Plug>(coc-git-chunk-inner)
+omap ag <Plug>(coc-git-chunk-outer)
+xmap ag <Plug>(coc-git-chunk-outer)
+omap i<leader>w <Plug>CamelCaseMotion_iw
+xmap i<leader>w <Plug>CamelCaseMotion_iw
+omap i<leader>b <Plug>CamelCaseMotion_ib
+xmap i<leader>b <Plug>CamelCaseMotion_ib
+omap i<leader>e <Plug>CamelCaseMotion_ie
+xmap i<leader>e <Plug>CamelCaseMotion_ie
+
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
@@ -162,13 +177,6 @@ sunmap <leader>w
 sunmap <leader>b
 sunmap <leader>e
 sunmap <leader>ge
-omap <silent> i<leader>w <Plug>CamelCaseMotion_iw
-xmap <silent> i<leader>w <Plug>CamelCaseMotion_iw
-omap <silent> i<leader>b <Plug>CamelCaseMotion_ib
-xmap <silent> i<leader>b <Plug>CamelCaseMotion_ib
-omap <silent> i<leader>e <Plug>CamelCaseMotion_ie
-xmap <silent> i<leader>e <Plug>CamelCaseMotion_ie
-
 
 nmap f <Plug>(coc-smartf-forward)
 nmap F <Plug>(coc-smartf-backward)
@@ -179,7 +187,7 @@ nnoremap U :UndotreeToggle<cr>
 
 nnoremap <silent> <c-p> :Files<CR>
 nnoremap <silent> [finder]f :Files<CR>
-nnoremap <silent> [finder]w :Rg<CR>
+nnoremap <silent> [finder]s :Rg<CR>
 nnoremap <silent> [finder]l :BLines<CR>
 nnoremap <silent> [finder]m :Marks<CR>
 nnoremap <silent> [finder]t :CocList floaterm<CR>
@@ -221,12 +229,4 @@ augroup floaterm
   autocmd FileType floaterm tnoremap <silent> <buffer> <Esc> <C-\><c-n>:FloatermHide<CR>
 augroup END
 
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
-omap ig <Plug>(coc-git-chunk-inner)
-xmap ig <Plug>(coc-git-chunk-inner)
-omap ag <Plug>(coc-git-chunk-outer)
-xmap ag <Plug>(coc-git-chunk-outer)
 
