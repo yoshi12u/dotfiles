@@ -179,7 +179,8 @@ nnoremap U :UndotreeToggle<cr>
 
 nnoremap <silent> <c-p> :Files<CR>
 nnoremap <silent> [finder]f :Files<CR>
-nnoremap <silent> [finder]s :Rg<CR>
+nnoremap <silent> [finder]w :Rg<CR>
+nnoremap <silent> [finder]l :BLines<CR>
 nnoremap <silent> [finder]m :Marks<CR>
 nnoremap <silent> [finder]t :CocList floaterm<CR>
 nnoremap <silent> [finder]y :CocList yank<CR>
