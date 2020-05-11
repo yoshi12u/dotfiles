@@ -55,7 +55,6 @@ augroup mygroup
   autocmd BufWritePost * call CocActionAsync('runCommand', 'editor.action.sortMembers')
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
   autocmd BufWritePre * :%s/\s\+$//e
-  autocmd VimEnter * RainbowParentheses
 augroup END
 syntax on
 filetype plugin indent on

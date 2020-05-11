@@ -16,13 +16,14 @@ highlight CocHighlightText ctermfg=Red  guifg=#ff0000
 
 function! s:SmartfEnterHighlight() abort
   syntax off
+  highlight Normal ctermfg=Gray  guifg=#777777
   highlight Conceal ctermfg=Red  guifg=#ff0000 term=bold
-  highlight Normal ctermfg=Gray  guifg=#777777 term=bold
 endfunction
 
 function! s:SmartfLeaveHighlight() abort
   colorscheme one
   syntax on
+  call lightline#colorscheme()
 endfunction
 
 augroup Smartf

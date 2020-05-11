@@ -98,8 +98,9 @@ nmap <leader>rf <Plug>(coc-refactor)
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_next = '<CR>'
 let g:coc_snippet_prev = '<c-k>'
+
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
@@ -194,8 +195,12 @@ nnoremap <silent> [finder]m :Marks<CR>
 nnoremap <silent> [finder]b :Buffers<CR>
 
 nnoremap <silent> [git]g :Gstatus<CR><C-w>T
-nnoremap <silent> [git]d :Gdiff<CR>
+nnoremap <silent> [git]d :CocCommand git.chunkInfo<CR>
 nnoremap <silent> [git]l :Commits<CR>
+nnoremap <silent> [git]c :CocCommand git.showCommit<CR>
+nnoremap <silent> [git]X :CocCommand git.chunkUndo<CR>
+nnoremap <silent> [git]x :CocCommand git.browserOpen<CR>
+
 " GVも使う
 
 nmap n <Plug>(anzu-n-with-echo)
@@ -203,6 +208,9 @@ nmap N <Plug>(anzu-N-with-echo)
 nmap * <Plug>(anzu-star-with-echo)
 nmap # <Plug>(anzu-sharp-with-echo)
 nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
+
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
 
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <c-w>h :TmuxNavigateLeft<cr>
@@ -213,4 +221,5 @@ nnoremap <silent> <c-w>k :TmuxNavigateUp<cr>
 nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
 
 nnoremap <silent> - :CocCommand explorer<CR>
+
 

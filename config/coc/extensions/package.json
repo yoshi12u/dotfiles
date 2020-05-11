@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "coc-actions": ">=1.4.0",
+    "coc-browser": ">=1.2.6",
+    "coc-css": ">=1.2.3",
+    "coc-emmet": ">=1.1.4",
+    "coc-eslint": ">=1.2.6",
+    "coc-explorer": ">=0.6.2",
+    "coc-flutter": ">=1.2.4",
+    "coc-git": ">=1.7.12",
+    "coc-gitignore": ">=0.0.4",
+    "coc-json": ">=1.2.5",
+    "coc-marketplace": ">=1.7.0",
+    "coc-pairs": ">=1.2.21",
+    "coc-prettier": ">=1.1.12",
+    "coc-python": ">=1.2.12",
+    "coc-smartf": ">=1.1.10",
+    "coc-snippets": ">=2.1.26",
+    "coc-solargraph": ">=1.1.6",
+    "coc-tailwindcss": ">=0.6.0",
+    "coc-todolist": ">=1.2.7",
+    "coc-tslint": ">=1.0.17",
+    "coc-tsserver": ">=1.5.1",
+    "coc-utils": ">=0.0.13",
+    "coc-vetur": ">=1.1.10",
+    "coc-vimlsp": ">=0.8.0",
+    "coc-word": ">=1.2.2",
+    "coc-yaml": ">=1.0.4",
+    "coc-yank": ">=1.1.4"
+  }
+}

@@ -50,5 +50,8 @@
   "python.venvPath": ".venv",
 
   "flutter.lsp.debug": true,
-  "flutter.enabled": true
+  "flutter.enabled": true,
+
+  "git.addGBlameToVirtualText": true,
+  "git.showCommitInFloating": true
 }

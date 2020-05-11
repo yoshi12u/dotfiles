@@ -1,5 +1,7 @@
 let g:extra_whitespace_ignored_filetypes = ['defx', 'mkd', 'unite']
 
+let g:rainbow_active = 1
+
 let g:webdevicons_enable_startify = 1
 
 let g:vista_default_executive = 'coc'
@@ -19,15 +21,6 @@ let g:startify_files_number = 3
 let g:startify_lists = [
       \ { 'header': ['   '.emoji#for('file_folder').' MRU(pwd)'],     'type': 'dir' }
       \ ]
-
-let g:coc_snippet_next = '<CR>'
-let g:coc_snippet_prev = '<c-k>'
-call coc#add_extension( 'coc-word', 'coc-pairs', 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-css', 'coc-emmet', 'coc-json', 'coc-solargraph', 'coc-yank', 'coc-vetur', 'coc-yaml', 'coc-marketplace')
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
 
 function! s:goyo_enter()
   set spell

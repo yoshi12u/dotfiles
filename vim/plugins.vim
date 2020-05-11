@@ -16,6 +16,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'liuchengxu/vista.vim'
 Plug 'kassio/neoterm'
+Plug 'bagrat/vim-buffet'
 
 " snippets
 Plug 'hrsh7th/vim-vsnip'
@@ -25,13 +26,11 @@ Plug 'honza/vim-snippets'
 " style
 Plug 'rakr/vim-one'
 Plug 'vim-scripts/AnsiEsc.vim'
-Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/vim-emoji'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'luochen1990/rainbow'
 Plug 'ryanoasis/vim-devicons'
 
 " preview
