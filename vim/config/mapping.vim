@@ -39,9 +39,8 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
-tnoremap <silent> <Esc> <C-\><c-n>:FloatermHide<CR>
-nnoremap <silent> <leader>t :FloatermToggle<CR>
-nnoremap <silent> <leader>T :!tmux split-window -v -p 27 -c $PWD<CR>
+nnoremap <silent> <c-t> :FloatermToggle<CR>
+nnoremap <silent> <leader>t :FloatermNew<CR>
 
 let g:nremap = {"[t": "", "]t": ""}
 nnoremap <silent> ]t gt
@@ -73,10 +72,10 @@ xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
-nnoremap <leader><leader>l :CocList<CR>
-nnoremap <leader><leader>L :CocListResume<CR>
-nnoremap <leader><leader>c :CocCommand<CR>
-nnoremap <leader><leader>a :CocAction<CR>
+nnoremap <leader>l :CocList<CR>
+nnoremap <leader>L :CocListResume<CR>
+nnoremap <leader>c :CocCommand<CR>
+nnoremap <leader>a :CocAction<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -193,7 +192,7 @@ nnoremap <silent> <c-p> :Files<CR>
 nnoremap <silent> [finder]f :Files<CR>
 nnoremap <silent> [finder]s :Rg<CR>
 nnoremap <silent> [finder]m :Marks<CR>
-nnoremap <silent> [finder]b :Buffers<CR>
+nnoremap <silent> [finder]t :CocList floaterm<CR>
 
 nnoremap <silent> [git]g :Gstatus<CR><C-w>T
 nnoremap <silent> [git]d :CocCommand git.chunkInfo<CR>
@@ -223,4 +222,8 @@ nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
 
 nnoremap <silent> - :CocCommand explorer<CR>
 
+augroup floaterm
+  autocmd!
+  autocmd FileType floaterm tnoremap <silent> <buffer> <Esc> <C-\><c-n>:FloatermHide<CR>
+augroup END
 
