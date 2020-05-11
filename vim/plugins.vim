@@ -4,6 +4,8 @@ Plug 'thinca/vim-ref'
 
 " utility
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-rooter'
 Plug 'osyo-manga/vim-anzu'
@@ -13,7 +15,6 @@ Plug 'markonm/traces.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mhinz/vim-startify'
 Plug 'kshenoy/vim-signature'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'liuchengxu/vista.vim'
 Plug 'bagrat/vim-buffet'
 Plug 'voldikss/vim-floaterm'
@@ -43,8 +44,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 
 " commands
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-abolish'
 Plug 'thinca/vim-qfreplace'

@@ -72,11 +72,24 @@ xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
+
 nnoremap <leader>l :CocList<CR>
 nnoremap <leader>L :CocListResume<CR>
 nnoremap <leader>c :CocCommand<CR>
-nnoremap <leader>a :CocAction<CR>
+nnoremap <silent> <leader>a :CocCommand actions.open<CR>
+nnoremap <silent> <leader>o :Vista<CR>
+nnoremap <leader>d :CocList -A -R diagnostics<CR>
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>rf <Plug>(coc-refactor)
 
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -85,33 +98,19 @@ function! s:show_documentation()
   endif
 endfunction
 
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nnoremap <silent> ga :CocCommand actions.open<CR>
-nnoremap <silent> gD :CocList -A -R diagnostics<CR>
-nnoremap <silent> go :CocList -A outline<CR>
-nmap <leader>rn <Plug>(coc-rename)
-nmap <leader>rf <Plug>(coc-refactor)
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
 let g:coc_snippet_next = '<CR>'
 let g:coc_snippet_prev = '<c-k>'
-
+let g:coc_snippet_next = '<tab>'
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-let g:coc_snippet_next = '<tab>'
+
 
 function! s:start_coc()
   let g:vista_default_executive = 'coc'
@@ -181,8 +180,6 @@ xmap <silent> i<leader>e <Plug>CamelCaseMotion_ie
 
 nmap f <Plug>(coc-smartf-forward)
 nmap F <Plug>(coc-smartf-backward)
-nmap : <Plug>(coc-smartf-repeat)
-nmap , <Plug>(coc-smartf-repeat-opposite)
 
 map R  <Plug>(operator-replace)
 
