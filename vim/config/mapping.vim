@@ -39,18 +39,17 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
+nnoremap <leader>rr bufdo e!
+
 let g:nremap = {"[t": "", "]t": ""}
 nnoremap <silent> ]t gt
 nnoremap <silent> [t gT
-nmap [g <Plug>(coc-git-prevchunk)
-nmap ]g <Plug>(coc-git-nextchunk)
+nnoremap <silent> [d <Plug>(coc-diagnostic-prev)
+nnoremap <silent> ]d <Plug>(coc-diagnostic-next)
+nnoremap <silent> [g <Plug>(coc-git-prevchunk)
+nnoremap <silent> ]g <Plug>(coc-git-nextchunk)
 
-nnoremap <leader>rr bufdo e!
 
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [d <Plug>(coc-diagnostic-prev)
-nmap <silent> ]d <Plug>(coc-diagnostic-next)
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -72,7 +71,6 @@ nnoremap <leader>L :CocListResume<CR>
 nnoremap <leader>c :CocCommand<CR>
 nnoremap <silent> <leader>a :CocCommand actions.open<CR>
 nnoremap <silent> <leader>o :Vista<CR>
-nnoremap <leader>d :CocList -A -R diagnostics<CR>
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>rf <Plug>(coc-refactor)
 
@@ -185,6 +183,7 @@ nnoremap <silent> [finder]s :Rg<CR>
 nnoremap <silent> [finder]m :Marks<CR>
 nnoremap <silent> [finder]t :CocList floaterm<CR>
 nnoremap <silent> [finder]y :CocList yank<CR>
+nnoremap <silent> [finder]d :CocList -A -R diagnostics<CR>
 
 nnoremap <silent> [git]g :Gstatus<CR><C-w>T
 nnoremap <silent> [git]d :CocCommand git.chunkInfo<CR>
