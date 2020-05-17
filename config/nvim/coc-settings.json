@@ -5,14 +5,34 @@
   "yank.priority": 15,
   "coc.source.word.priority": 0,
 
+  "coc.preferences.currentFunctionSymbolAutoUpdate":true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "css",
+    "Markdown",
+    "dart",
+    "ruby",
+    "python"
+  ],
+  "coc.preferences.rootPatterns": [".git"],
+
+  "list.nextKeymap": "<C-n>",
+  "list.previousKeymap": "<C-p>",
+
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.virtualTextLines": 99,
-  "coc.preferences.currentFunctionSymbolAutoUpdate":true,
 
   "smartf.timeout": 1500,
 
-  "explorer.width": 32,
+  "git.addGBlameToVirtualText": true,
+  "git.showCommitInFloating": true,
+
+  "explorer.position": "floating",
   "explorer.icon.enableVimDevicons": true,
   "explorer.file.showHiddenFiles": true,
   "explorer.file.child.template": "[git | 2] [selection | clip | 1] [indent][icon | 1] [diagnosticWarning & 1][diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]",
@@ -21,37 +41,24 @@
     "<tab>": "toggleSelection",
     "mm": "actionMenu"
   },
-  "explorer.sources": [
-    {
-      "name": "buffer",
-      "expand": true
-    },
-    {
-      "name": "file",
-      "expand": true
-    }
-  ],
-
-  "coc.preferences.formatOnSaveFiletypes": ["dart", "css", "Markdown", "javascript", "typescript", "vue", "ruby", "python"],
-  "coc.preferences.rootPatterns": [".git", ".hg", ".projections.json"],
-
-  "list.nextKeymap": "<C-n>",
-  "list.previousKeymap": "<C-p>",
-
-  "solargraph.formatting": true,
-  "solargraph.diagnostics": true,
-  "solargraph.useBundler": true,
 
   "eslint.autoFixOnSave": true,
-  "eslint.filetypes": ["javascript", "typescript", "vue"],
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "prettier.disableSuccessMessage": true,
+
+  "flutter.lsp.debug": true,
+  "flutter.enabled": true,
 
   "yank.highlight.duration": 200,
   "python.formatting.provider": "black",
   "python.venvPath": ".venv",
 
-  "flutter.lsp.debug": true,
-  "flutter.enabled": true,
-
-  "git.addGBlameToVirtualText": true,
-  "git.showCommitInFloating": true
+  "solargraph.formatting": true,
+  "solargraph.diagnostics": true,
+  "solargraph.useBundler": true
 }

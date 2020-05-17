@@ -50,10 +50,10 @@ if has('persistent_undo')
   set undofile
 endif
 augroup mygroup
+  autocmd!
   autocmd User Startified setlocal buflisted
   autocmd bufenter * if (winnr("$") == 1 && &filetype ==# 'coc-explorer') | q | endif
   autocmd CursorHold * silent call CocActionAsync('highlight')
-  autocmd BufWritePost * call CocActionAsync('runCommand', 'editor.action.sortMembers')
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
   autocmd BufWritePre * :%s/\s\+$//e
 augroup END

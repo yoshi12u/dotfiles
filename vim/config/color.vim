@@ -12,24 +12,10 @@ endif
 colorscheme one
 set background=dark
 
-highlight CocHighlightText ctermfg=Red  guifg=#ff0000
-
-function! s:SmartfEnterHighlight() abort
-  syntax off
-  highlight Normal ctermfg=Gray  guifg=#777777
-  highlight Conceal ctermfg=Red  guifg=#ff0000 term=bold
-endfunction
-
-function! s:SmartfLeaveHighlight() abort
-  colorscheme one
-  syntax on
-  call lightline#colorscheme()
-  call g:BuffetSetCustomColors()
-endfunction
 
 augroup Smartf
-  autocmd User SmartfEnter call s:SmartfEnterHighlight()
-  autocmd User SmartfLeave call s:SmartfLeaveHighlight()
+  autocmd User SmartfEnter :hi Conceal ctermfg=Red  guifg=#ff0000 term=bold
+  autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945
 augroup end
 
 let s:blue   = [ '#61afef', 75 ]

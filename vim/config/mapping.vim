@@ -150,19 +150,6 @@ function! s:start_lsc()
   endif
 endfunction
 
-function! s:mode_change()
-  if (&filetype ==# 'dart')
-    call s:start_lsc()
-  else
-    call s:start_coc()
-  endif
-endfunction
-
-augroup mode_change
-  autocmd!
-  autocmd bufenter * call s:mode_change()
-augroup END
-
 command! Lsc call s:start_lsc()
 command! Coc call s:start_coc()
 
@@ -200,8 +187,6 @@ nnoremap <silent> [git]l :Commits<CR>
 nnoremap <silent> [git]c :CocCommand git.showCommit<CR>
 nnoremap <silent> [git]X :CocCommand git.chunkUndo<CR>
 nnoremap <silent> [git]x :CocCommand git.browserOpen<CR>
-
-" GVも使う
 
 nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
