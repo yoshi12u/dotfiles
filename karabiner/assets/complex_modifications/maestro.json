@@ -1,0 +1,77 @@
+{
+  "title": "Run Launchers by Keyboard Maestro Macro",
+  "rules": [
+    {
+      "description": "Launch VSCode",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "v",
+            "modifiers": {
+              "mandatory": [
+                "right_command"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "osascript -e 'tell application \"Keyboard Maestro Engine\" to do script \"D7A73C28-D7D7-4827-8E95-DA9E499770D6\"'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Launch Chrome",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c",
+            "modifiers": {
+              "mandatory": [
+                "right_command"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "osascript -e 'tell application \"Keyboard Maestro Engine\" to do script \"53A304B9-0857-4149-99F9-5DBF935CB264\"'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Launch iTerm2",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "i",
+            "modifiers": {
+              "mandatory": [
+                "right_command"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "osascript -e 'tell application \"Keyboard Maestro Engine\" to do script \"BC0D9B30-70A0-4495-A653-6041F40752D7\"'"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

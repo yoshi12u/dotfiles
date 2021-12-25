@@ -4,7 +4,7 @@ Plug 'thinca/vim-ref'
 
 " utility
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug '/usr/local/opt/fzf'
+Plug '/opt/homebrew/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-rooter'

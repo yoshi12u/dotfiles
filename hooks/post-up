@@ -1,7 +1,5 @@
 #!/bin/sh
 
-touch "$HOME"/.psqlrc.local
-
 if [ -e "$HOME"/.vim/autoload/plug.vim ]; then
   vim -E -s +PlugUpgrade +qa
 else
@@ -34,5 +32,5 @@ rename the file to \`zprofile':
 
 MSG
 fi
-ln -sfn ~/ghq/github.com/uesaiso/dotfiles/karabiner-config/assets ~/.config/karabiner
+ln -sfn ../karabiner ~/.config
 

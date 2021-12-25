@@ -1,3 +1,5 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 [[ -z "$TMUX" && ! -z "$PS1" ]] && exec tmux
 
 for setting in ~/.zsh/plugin_settings/*; do
@@ -48,11 +50,7 @@ _load_settings "$HOME/.zsh/configs"
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
-eval "$(anyenv init -)"
 eval "$(direnv hook zsh)"
-export PGDATA=/usr/local/var/postgres
-export PIPENV_VENV_IN_PROJECT=true
-export PIPENV_SKIP_LOCK=true
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm

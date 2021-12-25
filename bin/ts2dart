@@ -1,7 +1,0 @@
-#!/bin/sh
-
-export TYPED_PATH=$HOME/ghq/github.com/DefinitelyTyped/DefinitelyTyped/types
-export TYPED_DART=$HOME/ghq/github.com/uesaiso/dart-types
-typed_path=$TYPED_PATH/$1
-desination_path=$TYPED_DART/$1
-node $HOME\/ghq\/github\.com\/dart-lang\/js_facade_gen\/index\.js --destination=$desination_path --base-path=$typed_path $(ls -R $typed_path | grep .d.ts)

@@ -33,32 +33,13 @@
   "git.showCommitInFloating": true,
 
   "explorer.position": "floating",
-  "explorer.icon.enableVimDevicons": true,
   "explorer.file.showHiddenFiles": true,
   "explorer.file.child.template": "[git | 2] [selection | clip | 1] [indent][icon | 1] [diagnosticWarning & 1][diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]",
-  "explorer.keyMappings": {
+  "explorer.keyMappings.global": {
     "<cr>": ["expandable?", "expand", "open"],
     "<tab>": "toggleSelection",
     "mm": "actionMenu"
   },
 
-  "eslint.autoFixOnSave": true,
-  "eslint.filetypes": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "prettier.disableSuccessMessage": true,
-
-  "flutter.lsp.debug": true,
-  "flutter.enabled": true,
-
-  "yank.highlight.duration": 200,
-  "python.formatting.provider": "black",
-  "python.venvPath": ".venv",
-
-  "solargraph.formatting": true,
-  "solargraph.diagnostics": true,
-  "solargraph.useBundler": true
+  "yank.highlight.duration": 200
 }
