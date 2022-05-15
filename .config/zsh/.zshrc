@@ -45,10 +45,10 @@ _load_settings() {
 _load_settings "$ZDOTDIR/configs"
 
 # Local config
-[[ -f $ZDOTDIR/.zshrc.local ]] && source $ZDOTDIR/.zshrc.local
+source $ZDOTDIR/.zshrc.local
 
 # aliases
-[[ -f ~/.aliases ]] && source ~/.aliases
+source $ZDOTDIR/aliases
 
 eval "$(direnv hook zsh)"
 
