@@ -42,7 +42,7 @@ _load_settings() {
     fi
   fi
 }
-_load_settings "$HOME/.zsh/configs"
+_load_settings "$ZDOTDIR/configs"
 
 # Local config
 [[ -f $ZDOTDIR/.zshrc.local ]] && source $ZDOTDIR/.zshrc.local
