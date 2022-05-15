@@ -45,10 +45,6 @@ set smartindent
 set nobackup
 set nowritebackup
 set signcolumn=yes
-if has('persistent_undo')
-  set undodir=~/.vim/undo
-  set undofile
-endif
 augroup mygroup
   autocmd!
   autocmd User Startified setlocal buflisted
