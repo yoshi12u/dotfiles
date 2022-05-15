@@ -2,7 +2,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 [[ -z "$TMUX" && ! -z "$PS1" ]] && exec tmux
 
-for setting in /plugin_settings/*; do
+for setting in $ZDOTDIR/plugin_settings/*; do
   source $setting
 done
 
