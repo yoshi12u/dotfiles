@@ -10,6 +10,7 @@ call plug#end()
 
 runtime! plugin_settings.vim
 runtime! config/*.vim
+runtime! theme/**/*.vim
 
 augroup vimrcEx
   autocmd!

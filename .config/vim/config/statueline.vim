@@ -1,5 +1,4 @@
 let g:lightline = {
-      \ 'colorscheme': 'custom',
 			\ 'enable': { 'tabline': 0 },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],

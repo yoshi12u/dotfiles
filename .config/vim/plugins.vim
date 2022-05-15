@@ -24,7 +24,6 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'honza/vim-snippets'
 
 " style
-Plug 'rakr/vim-one'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
