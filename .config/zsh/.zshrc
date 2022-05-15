@@ -2,18 +2,18 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 [[ -z "$TMUX" && ! -z "$PS1" ]] && exec tmux
 
-for setting in ~/.zsh/plugin_settings/*; do
+for setting in /plugin_settings/*; do
   source $setting
 done
 
-source ~/.zsh/plugins.zsh
+source $ZDOTDIR/plugins.zsh
 
 # load custom executable functions
-for function in ~/.zsh/functions/*; do
+for function in $ZDOTDIR/functions/*; do
   source $function
 done
 
-# extra files in ~/.zsh/configs/pre , ~/.zsh/configs , and ~/.zsh/configs/post
+# extra files in $ZDOTDIR/configs/pre , $ZDOTDIR/configs , and $ZDOTDIR/configs/post
 # these are loaded first, second, and third, respectively.
 _load_settings() {
   _dir="$1"
@@ -45,7 +45,7 @@ _load_settings() {
 _load_settings "$HOME/.zsh/configs"
 
 # Local config
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+[[ -f $ZDOTDIR/.zshrc.local ]] && source $ZDOTDIR/.zshrc.local
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
