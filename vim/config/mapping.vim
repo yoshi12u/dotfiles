@@ -181,7 +181,7 @@ nnoremap <silent> [finder]t :CocList floaterm<CR>
 nnoremap <silent> [finder]y :CocList yank<CR>
 nnoremap <silent> [finder]d :CocList -A -R diagnostics<CR>
 
-nnoremap <silent> [git]g :Gstatus<CR><C-w>T
+nnoremap <silent> [git]g :Git<CR>
 nnoremap <silent> [git]d :CocCommand git.chunkInfo<CR>
 nnoremap <silent> [git]l :Commits<CR>
 nnoremap <silent> [git]c :CocCommand git.showCommit<CR>
