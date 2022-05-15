@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@themerdev/colors-default": "^1.0.11",
+    "@themerdev/colors-one": "^1.0.9",
+    "@themerdev/vim": "^3.3.1",
+    "@themerdev/vim-lightline": "^3.2.0",
+    "themer": "^3.3.9"
+  },
+  "scripts": {
+    "build": "themer -c @themerdev/colors-one -t @themerdev/vim -t @themerdev/vim-lightline -o $XDG_CONFIG_HOME/vim/theme"
+  }
+}
