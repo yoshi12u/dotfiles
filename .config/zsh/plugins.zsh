@@ -16,6 +16,4 @@ zinit light 'zsh-users/zsh-autosuggestions'
 zinit light 'zsh-users/zsh-completions'
 zinit ice ver'use-builtin-commands'
 zinit light "b4b4r07/enhancd"
-zinit ice pick"async.zsh" src"pure.zsh"
-zinit light 'sindresorhus/pure'
 zinit light 'mollifier/anyframe'
