@@ -1,3 +1,0 @@
-EXCLUDES="install.sh README*.md karabiner-config "
-DOTFILES_DIRS="~/ghq/github.com/uesaiso/dotfiles"
-UNDOTTED="Brewfile"

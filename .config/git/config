@@ -27,12 +27,8 @@
   path = ~/.gitconfig.local
 [diff]
   colorMoved = zebra
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [user]
 	name = uesaiso
 	email = ysmsuehr@gmail.com
+[credential]
+	helper = osxkeychain
