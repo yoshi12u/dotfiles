@@ -41,8 +41,6 @@ nnoremap <silent> p p`]
 
 nnoremap <leader>rr bufdo e!
 
-nnoremap <silent> <leader><leader> :%s/\s\+//g<cr>
-
 let g:nremap = {"[t": "", "]t": ""}
 nnoremap <silent> ]t gt
 nnoremap <silent> [t gT

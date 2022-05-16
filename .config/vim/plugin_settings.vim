@@ -26,7 +26,3 @@ let g:startify_files_number = 3
 let g:startify_lists = [
       \ { 'header': ['   '.emoji#for('file_folder').' MRU(pwd)'],     'type': 'dir' }
       \ ]
-
-let g:surround_44 = "{{c1::\r}}"
-nmap , ysiw,
-vmap , S,
