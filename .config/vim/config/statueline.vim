@@ -1,6 +1,10 @@
+let g:lightline#bufferline#unnamed      = '[No Name]'
+let g:lightline#bufferline#enable_devicons = 1
+let g:lightline#bufferline#read_only = ' '
+let g:lightline#bufferline#clickable = 1
+
 let g:lightline = {
-      \ 'colorscheme': 'custom',
-			\ 'enable': { 'tabline': 0 },
+      \ 'colorscheme': 'one',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filepath', 'modified', 'method' ],
@@ -12,8 +16,14 @@ let g:lightline = {
       \              [ 'pwd' ] ]
       \ },
       \ 'tabline': {
-      \ 'left': [ [ 'tabs' ] ],
-      \ 'right': [ [ 'close' ] ]
+      \   'left': [ [ 'buffers' ] ],
+      \   'right': [ [ 'close' ] ]
+      \ },
+      \ 'component_expand': {
+      \   'buffers': 'lightline#bufferline#buffers'
+      \ },
+      \ 'component_type': {
+      \   'buffers': 'tabsel'
       \ },
       \ 'component_function': {
       \   'method': 'StatuslineVista',
@@ -22,22 +32,10 @@ let g:lightline = {
       \   'branch': 'StatuslineGitBranch',
       \   'status': 'StatuslineGitStatus',
       \   'filepath': 'StatuslineRelativePath',
-      \   'pwd': 'StatuslinePwd',
+      \   'pwd': 'StatuslinePwd'
       \ },
+      \ 'component_raw': {'buffers': 1}
       \ }
-
-let g:lightline.tab_component_function = {
-      \ 'filename': 'TablineFilename',
-      \ 'modified': 'lightline#tab#modified',
-      \ 'readonly': 'StatuslineReadonly',
-      \ 'tabnum': 'lightline#tab#tabnum' }
-
-function! TablineFilename(n) abort
-  let buflist = tabpagebuflist(a:n)
-  let winnr = tabpagewinnr(a:n)
-  let _ = expand('#'.buflist[winnr - 1].':t')
-  return _ !=# '' ? WebDevIconsGetFileTypeSymbol(_).' '._ : '[No Name]'
-endfunction
 
 function! StatuslineReadonly()
   return &readonly ? '' : ''
