@@ -1,3 +1,11 @@
+let data_dir = has('nvim') ? stdpath('data') . '/site' : $XDG_CONFIG_HOME . '/vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+
 " doc
 Plug 'vim-jp/vimdoc-ja'
 Plug 'thinca/vim-ref'
@@ -101,3 +109,6 @@ Plug 'natebosch/vim-lsc-dart'
 
 " vue
 Plug 'posva/vim-vue'
+
+call plug#end()
+
