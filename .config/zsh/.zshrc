@@ -2,17 +2,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 [[ -z "$TMUX" && ! -z "$PS1" && $TERM_PROGRAM != "vscode" ]] && tmux
 
-for setting in $ZDOTDIR/plugin_settings/*; do
-  source $setting
-done
-
-source $ZDOTDIR/plugins.zsh
-
-# load custom executable functions
-for function in $ZDOTDIR/functions/*; do
-  source $function
-done
-
 # extra files in $ZDOTDIR/configs/pre , $ZDOTDIR/configs , and $ZDOTDIR/configs/post
 # these are loaded first, second, and third, respectively.
 _load_settings() {
@@ -42,13 +31,12 @@ _load_settings() {
     fi
   fi
 }
+_load_settings "$ZDOTDIR/plugins"
+_load_settings "$ZDOTDIR/functions"
 _load_settings "$ZDOTDIR/configs"
 
 # Local config
 source $ZDOTDIR/.zshrc.local
-
-# aliases
-source $ZDOTDIR/aliases
 
 eval "$(direnv hook zsh)"
 
