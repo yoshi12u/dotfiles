@@ -1,2 +1,0 @@
-#!/bin/sh
-kill -9 $(lsof -i:"$1" | fzf | awk '{ print $2 }')
