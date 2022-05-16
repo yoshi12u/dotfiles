@@ -2,6 +2,9 @@
 Plug 'vim-jp/vimdoc-ja'
 Plug 'thinca/vim-ref'
 
+" sanitize
+Plug 'tpope/vim-sensible'
+
 " utility
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug '/opt/homebrew/opt/fzf'

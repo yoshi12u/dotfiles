@@ -20,9 +20,6 @@
   ],
   "coc.preferences.rootPatterns": [".git"],
 
-  "list.nextKeymap": "<C-n>",
-  "list.previousKeymap": "<C-p>",
-
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.virtualTextLines": 99,
