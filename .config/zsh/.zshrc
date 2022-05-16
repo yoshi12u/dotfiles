@@ -1,7 +1,5 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-[[ -z "$TMUX" && ! -z "$PS1" && $TERM_PROGRAM != "vscode" ]] && tmux
-
 # extra files in $ZDOTDIR/configs/pre , $ZDOTDIR/configs , and $ZDOTDIR/configs/post
 # these are loaded first, second, and third, respectively.
 _load_settings() {
@@ -37,13 +35,3 @@ _load_settings "$ZDOTDIR/configs"
 
 # Local config
 source $ZDOTDIR/.zshrc.local
-
-eval "$(direnv hook zsh)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
-
-eval "$(starship init zsh)"
