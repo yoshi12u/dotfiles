@@ -36,6 +36,9 @@ _load_settings() {
     fi
   fi
 }
+
+_load_settings "$ZDOTDIR/plugins"
+_load_settings "$ZDOTDIR/functions"
 _load_settings "$ZDOTDIR/configs"
 
 # Local config
