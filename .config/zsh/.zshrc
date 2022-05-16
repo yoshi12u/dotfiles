@@ -47,11 +47,6 @@ _load_settings "$ZDOTDIR/configs"
 # Local config
 source $ZDOTDIR/.zshrc.local
 
-# aliases
-source $ZDOTDIR/aliases
-
-eval "$(direnv hook zsh)"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
