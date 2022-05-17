@@ -15,7 +15,6 @@
   d = diff
   s = status
 [core]
-  excludesfile = ~/.gitignore
   autocrlf = input
 [merge]
   ff = only
