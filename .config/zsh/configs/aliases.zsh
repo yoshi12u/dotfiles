@@ -1,11 +1,11 @@
+alias cat="bat"
 alias ls="exa --classify"
+alias grep="rg"
+alias diff="colordiff -u"
 alias ps="procs"
 alias find="fd"
-alias ll="ls -al"
-alias ln="ln -v"
-alias mkdir="mkdir -p"
+
 alias e="$EDITOR"
-alias v="$VISUAL"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'

@@ -2,25 +2,32 @@ tap "homebrew/core"
 tap "homebrew/cask"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
-tap "thoughtbot/formulae"
-brew "rcm"
-brew "bat"
-brew "exa"
-brew "nnn"
-brew "ripgrep"
-brew "colordiff"
-brew "fzf"
+
+# alternative unix commands
+brew "bat" # cat
+brew "exa" # ls
+brew "ripgrep" # grep
+brew "colordiff" # diff
+brew "procs" # ps
+brew "fd" # find
+
+# essentials
+brew "yadm"
 brew "git"
+brew "zsh"
+brew "neovim"
+brew "tmux"
+brew "fzf"
+brew "starship"
+brew "node" # for coc.nvim
+
+# utilities
+brew "nnn"
+brew "ghq"
 brew "lazygit"
 brew "tig"
-brew "gibo"
-brew "ghq"
-brew "neovim"
-brew "docker"
-brew "direnv"
-brew "tmux"
-brew "reattach-to-user-namespace"
-brew "node"
-brew "trash"
+
 cask "homebrew/cask-fonts/font-fira-code"
 cask "font-hack-nerd-font"
+
+# vim:set filetype=Brewfile:
