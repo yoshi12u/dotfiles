@@ -1,3 +1,8 @@
-!bin
-**/*.todo
+*
+
+!.git*
+!.config/*
+!.*##*
+!.zshenv
+
 **/.DS_Store
