@@ -1,7 +1,6 @@
 alias cat="bat"
 alias ls="exa --classify"
 alias grep="rg"
-alias diff="colordiff -u"
 alias ps="procs"
 alias find="fd"
 

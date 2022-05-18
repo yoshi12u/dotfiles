@@ -7,7 +7,7 @@ tap "homebrew/cask-fonts"
 brew "bat" # cat
 brew "exa" # ls
 brew "ripgrep" # grep
-brew "colordiff" # diff
+brew "git-delta" # diff
 brew "procs" # ps
 brew "fd" # find
 
