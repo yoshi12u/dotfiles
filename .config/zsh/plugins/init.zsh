@@ -11,17 +11,17 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-zinit snippet PZT::modules/environment/init.zsh
-zinit snippet PZT::modules/terminal/init.zsh
-zinit snippet PZT::modules/editor/init.zsh
-zinit snippet PZT::modules/history/init.zsh
-zinit snippet PZT::modules/directory/init.zsh
-zinit snippet PZT::modules/spectrum/init.zsh
-zinit snippet PZT::modules/utility/init.zsh
-zinit snippet PZT::modules/completion/init.zsh
-zinit snippet PZT::modules/tmux/init.zsh
-zinit light 'zsh-users/zsh-syntax-highlighting'
-zinit light 'zsh-users/zsh-history-substring-search'
-zinit light 'zsh-users/zsh-autosuggestions'
-zinit light "b4b4r07/enhancd"
-zinit light 'mollifier/anyframe'
+zinit snippet PZTM::environment
+zinit snippet PZTM::terminal
+zinit snippet PZTM::editor
+zinit snippet PZTM::history
+zinit snippet PZTM::directory
+zinit snippet PZTM::spectrum
+zinit snippet PZTM::utility
+zinit snippet PZTM::completion
+zinit snippet PZTM::tmux
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-history-substring-search
+zinit light zsh-users/zsh-autosuggestions
+zinit light b4b4r07/enhancd
+zinit light mollifier/anyframe
