@@ -35,7 +35,7 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'honza/vim-snippets'
 
 " style
-Plug 'rakr/vim-one'
+Plug 'ayu-theme/ayu-vim'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
