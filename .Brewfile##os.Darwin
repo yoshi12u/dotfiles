@@ -5,7 +5,7 @@ tap "homebrew/cask-fonts"
 
 # alternative unix commands
 brew "bat" # cat
-brew "exa" # ls
+brew "lsd" # ls
 brew "ripgrep" # grep
 brew "git-delta" # diff
 brew "procs" # ps
@@ -26,6 +26,7 @@ brew "nnn"
 brew "ghq"
 brew "lazygit"
 brew "tig"
+brew "zoxide"
 
 cask "homebrew/cask-fonts/font-fira-code"
 cask "font-hack-nerd-font"

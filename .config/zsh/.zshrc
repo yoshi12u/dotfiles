@@ -35,3 +35,5 @@ _load_settings "$ZDOTDIR/configs"
 
 # Local config
 source $ZDOTDIR/.zshrc.local
+
+source /Users/yoshimasauehara/.config/broot/launcher/bash/br
