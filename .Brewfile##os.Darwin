@@ -22,7 +22,7 @@ brew "starship"
 brew "node" # for coc.nvim
 
 # utilities
-brew "nnn"
+brew "xplr"
 brew "ghq"
 brew "lazygit"
 brew "tig"
