@@ -26,7 +26,7 @@ zi ice wait lucid
 zi light mollifier/anyframe
 
 # Completions
-zi ice lucid wait as'completion' blockf for \
+zi ice wait lucid as'completion' blockf for \
     zsh-users/zsh-completions \
     pick'src/go' src'src/zsh' zchee/zsh-completions \
     has'ghq' https://github.com/x-motemen/ghq/blob/master/misc/zsh/_ghq \
@@ -40,8 +40,17 @@ zi ice lucid wait as'completion' blockf for \
 zstyle ':fzf-tab:complete:*' fzf-bindings 'tab:toggle' 'ctrl-a:toggle-all'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -1 --icon=always --color=always -a -X $realpath'
 zstyle ':fzf-tab:*' switch-group ',' '.'
-zi ice lucid wait has'fzf'
-zi light Aloxaf/fzf-tab
+
+zi lucid wait for\
+    has'fzf' Aloxaf/fzf-tab \
+    https://github.com/zimfw/completion/blob/master/init.zsh
+zstyle ':completion:*:*' format '-- %d --'
+
+
+# zsh settings
+zi wait lucid for \
+    https://github.com/zimfw/input/blob/master/init.zsh \
+    https://github.com/zimfw/fzf/blob/master/init.zsh 
 
 zi wait lucid light-mode for \
         z-shell/zsh-navigation-tools \
@@ -58,7 +67,3 @@ zi wait lucid light-mode for \
     depth=1 \
         jeffreytse/zsh-vi-mode
 
-zi wait lucid for \
-    https://github.com/zimfw/input/blob/master/init.zsh \
-    https://github.com/zimfw/completion/blob/master/init.zsh \
-    https://github.com/zimfw/fzf/blob/master/init.zsh 
