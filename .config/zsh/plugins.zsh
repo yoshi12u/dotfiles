@@ -19,6 +19,12 @@ zi wait lucid for \
  PZTM::directory \
  PZTM::tmux
 
+# outside of zsh
+fpath=($ZDOTDIR/anyframe_custom(N-/) $fpath)
+zstyle ":anyframe:selector:" use fzf
+zi ice wait lucid 
+zi light mollifier/anyframe
+
 # Completions
 zi ice lucid wait as'completion' blockf for \
     zsh-users/zsh-completions \
@@ -29,8 +35,11 @@ zi ice lucid wait as'completion' blockf for \
     has 'fd' https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/fd/_fd \
     has 'zoxide' https://github.com/ajeetdsouza/zoxide/blob/main/contrib/completions/_zoxide \
     has 'tig' https://github.com/jonas/tig/blob/master/contrib/tig-completion.zsh \
-    has 'delta' mv'completion.zsh -> _delta' https://github.com/dandavison/delta/blob/master/etc/completion/completion.zsh
+    has 'delta' mv'completion.zsh -> _delta' https://github.com/dandavison/delta/blob/master/etc/completion/completion.zsh \
 
+zstyle ':fzf-tab:complete:*' fzf-bindings 'tab:toggle' 'ctrl-a:toggle-all'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -1 --icon=always --color=always -a -X $realpath'
+zstyle ':fzf-tab:*' switch-group ',' '.'
 zi ice lucid wait has'fzf'
 zi light Aloxaf/fzf-tab
 
@@ -45,24 +54,11 @@ zi wait lucid light-mode for \
     blockf atpull'zinit creinstall -q .' \
         zsh-users/zsh-completions \
     pick'autopair.zsh' \
-        hlissner/zsh-autopair
+        hlissner/zsh-autopair \
+    depth=1 \
+        jeffreytse/zsh-vi-mode
 
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
---color=fg:#cbccc6,bg:#1f2430,hl:#707a8c
---color=fg+:#707a8c,bg+:#191e2a,hl+:#ffcc66
---color=info:#73d0ff,prompt:#707a8c,pointer:#cbccc6
---color=marker:#73d0ff,spinner:#73d0ff,header:#d4bfff
---reverse
-'
 zi wait lucid for \
     https://github.com/zimfw/input/blob/master/init.zsh \
     https://github.com/zimfw/completion/blob/master/init.zsh \
-    https://github.com/zimfw/fzf/blob/master/init.zsh
-
-# outside of zsh
-export ENHANCD_DISABLE_DOT=1
-zi light b4b4r07/enhancd
-
-fpath=($ZDOTDIR/anyframe_custom(N-/) $fpath)
-zstyle ":anyframe:selector:" use fzf
-zi light mollifier/anyframe
+    https://github.com/zimfw/fzf/blob/master/init.zsh 
