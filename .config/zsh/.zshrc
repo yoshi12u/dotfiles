@@ -1,5 +1,3 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # extra files in $ZDOTDIR/configs/pre , $ZDOTDIR/configs , and $ZDOTDIR/configs/post
 # these are loaded first, second, and third, respectively.
 _load_settings() {
@@ -35,5 +33,3 @@ _load_settings "$ZDOTDIR/configs"
 
 # Local config
 source $ZDOTDIR/.zshrc.local
-
-source /Users/yoshimasauehara/.config/broot/launcher/bash/br
