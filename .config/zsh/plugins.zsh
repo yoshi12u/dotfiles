@@ -64,6 +64,4 @@ zi wait lucid light-mode for \
         zsh-users/zsh-completions \
     pick'autopair.zsh' \
         hlissner/zsh-autopair \
-    depth=1 \
-        jeffreytse/zsh-vi-mode
 
