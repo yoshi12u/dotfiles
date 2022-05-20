@@ -55,7 +55,6 @@ zi wait lucid for \
 zi wait lucid light-mode for \
         z-shell/zsh-navigation-tools \
         zsh-users/zsh-history-substring-search \
-        z-shell/H-S-MW \
     atinit"ZI[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" \
         z-shell/F-Sy-H \
     atload"_zsh_autosuggest_start" \

@@ -1,8 +1,0 @@
-anyframe-source-ghq-repository \
-  | anyframe-selector-auto \
-  | anyframe-action-execute $EDITOR --
-
-# Local Variables:
-# mode: Shell-Script
-# End:
-# vim: ft=zsh

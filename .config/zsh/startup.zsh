@@ -9,7 +9,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=fg+:#707a8c,bg+:#191e2a,hl+:#ffcc66
 --color=info:#73d0ff,prompt:#707a8c,pointer:#cbccc6
 --color=marker:#73d0ff,spinner:#73d0ff,header:#d4bfff
---reverse
+--height 60% --reverse
 '
 
 eval "$(starship init zsh)"
@@ -17,6 +17,12 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh --no-cmd)"
 builtin unalias cd &>/dev/null || builtin true
 function cd {
-    __zoxide_zi "$@"
+    if [ $# -eq 0 ]
+    then
+        echo "empty"
+        __zoxide_zi "$@"
+    else
+        builtin cd "$@" &>/dev/null || __zoxide_zi "$@"
+    fi
 }
 
