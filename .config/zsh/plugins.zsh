@@ -37,7 +37,7 @@ zi ice wait lucid as'completion' blockf for \
     has 'tig' https://github.com/jonas/tig/blob/master/contrib/tig-completion.zsh \
     has 'delta' mv'completion.zsh -> _delta' https://github.com/dandavison/delta/blob/master/etc/completion/completion.zsh \
 
-zstyle ':fzf-tab:complete:*' fzf-bindings 'tab:toggle' 'ctrl-a:toggle-all'
+zstyle ':fzf-tab:complete:*' fzf-bindings 'space:toggle' 'ctrl-a:toggle-all'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -1 --icon=always --color=always -a -X $realpath'
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
@@ -46,7 +46,7 @@ zi lucid wait for\
     https://github.com/zimfw/completion/blob/master/init.zsh
 zstyle ':completion:*:*' format '-- %d --'
 
-
+zvm_config() { ZVM_INIT_MODE=sourcing }
 # zsh settings
 zi wait lucid for \
     https://github.com/zimfw/input/blob/master/init.zsh \
@@ -64,4 +64,7 @@ zi wait lucid light-mode for \
         zsh-users/zsh-completions \
     pick'autopair.zsh' \
         hlissner/zsh-autopair \
+    depth=1 \
+        jeffreytse/zsh-vi-mode
+
 
