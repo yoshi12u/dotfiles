@@ -201,4 +201,4 @@ nnoremap <silent> <c-w><CR> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-w>k :TmuxNavigateUp<cr>
 nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
 
-nnoremap <silent> - :FloatermNew xplr<CR>
+nnoremap <silent> - :FloatermNew lf<CR>

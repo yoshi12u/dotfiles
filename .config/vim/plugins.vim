@@ -23,17 +23,11 @@ Plug 'osyo-manga/vim-anzu'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'tpope/vim-dispatch'
 Plug 'markonm/traces.vim'
-Plug 'mhinz/vim-startify'
 Plug 'kshenoy/vim-signature'
-Plug 'liuchengxu/vista.vim'
 Plug 'bagrat/vim-buffet'
-
-let g:floaterm_opener='edit'
-let g:floaterm_autoclose=1
-augroup floaterm
-  autocmd!
-  autocmd FileType floaterm tnoremap <silent> <buffer> <Esc> <C-\><c-n>:FloatermHide<CR>
-augroup END
+Plug 'mhinz/vim-startify'
+Plug 'liuchengxu/vista.vim'
+Plug 'bronson/vim-trailing-whitespace'
 Plug 'voldikss/vim-floaterm'
 
 " snippets
@@ -47,10 +41,9 @@ Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'ap/vim-css-color'
-Plug 'Yggdroot/indentLine'
 Plug 'junegunn/vim-emoji'
-Plug 'luochen1990/rainbow'
 Plug 'ryanoasis/vim-devicons'
+Plug 'luochen1990/rainbow'
 
 " preview
 Plug 'weirongxu/plantuml-previewer.vim'
@@ -76,8 +69,6 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'tpope/vim-repeat'
 Plug 'houtsnip/vim-emacscommandline'
 Plug 'bronson/vim-visual-star-search'
-
-let g:tmux_navigator_no_mappings = 1
 Plug 'christoomey/vim-tmux-navigator'
 
 " operator

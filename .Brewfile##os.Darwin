@@ -22,10 +22,10 @@ brew "starship"
 brew "node" # for coc.nvim
 
 # utilities
-brew "xplr"
-brew "ghq"
+brew "lf"
 brew "lazygit"
 brew "zoxide"
+brew "ghq"
 
 cask "homebrew/cask-fonts/font-fira-code"
 cask "font-hack-nerd-font"

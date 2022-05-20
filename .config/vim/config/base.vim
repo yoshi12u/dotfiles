@@ -46,3 +46,4 @@ endif
 set background=dark
 let ayucolor="mirage"
 colorscheme ayu
+
