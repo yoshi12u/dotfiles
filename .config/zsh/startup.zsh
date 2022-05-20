@@ -19,7 +19,6 @@ builtin unalias cd &>/dev/null || builtin true
 function cd {
     if [ $# -eq 0 ]
     then
-        echo "empty"
         __zoxide_zi "$@"
     else
         builtin cd "$@" &>/dev/null || __zoxide_zi "$@"
