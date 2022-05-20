@@ -27,6 +27,13 @@ Plug 'mhinz/vim-startify'
 Plug 'kshenoy/vim-signature'
 Plug 'liuchengxu/vista.vim'
 Plug 'bagrat/vim-buffet'
+
+let g:floaterm_opener='edit'
+let g:floaterm_autoclose=1
+augroup floaterm
+  autocmd!
+  autocmd FileType floaterm tnoremap <silent> <buffer> <Esc> <C-\><c-n>:FloatermHide<CR>
+augroup END
 Plug 'voldikss/vim-floaterm'
 
 " snippets
@@ -69,6 +76,8 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'tpope/vim-repeat'
 Plug 'houtsnip/vim-emacscommandline'
 Plug 'bronson/vim-visual-star-search'
+
+let g:tmux_navigator_no_mappings = 1
 Plug 'christoomey/vim-tmux-navigator'
 
 " operator

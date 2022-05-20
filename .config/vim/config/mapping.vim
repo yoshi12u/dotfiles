@@ -177,14 +177,11 @@ nnoremap <silent> [finder]f :Files<CR>
 nnoremap <silent> [finder]s :Rg<CR>
 nnoremap <silent> [finder]l :BLines<CR>
 nnoremap <silent> [finder]m :Marks<CR>
-nnoremap <silent> [finder]t :CocList floaterm<CR>
 nnoremap <silent> [finder]y :CocList yank<CR>
 nnoremap <silent> [finder]d :CocList -A -R diagnostics<CR>
 
-nnoremap <silent> [git]g :Git<CR>
+nnoremap <silent> [git]g :FloatermNew lazygit<CR>
 nnoremap <silent> [git]d :CocCommand git.chunkInfo<CR>
-nnoremap <silent> [git]l :Commits<CR>
-nnoremap <silent> [git]c :CocCommand git.showCommit<CR>
 nnoremap <silent> [git]X :CocCommand git.chunkUndo<CR>
 nnoremap <silent> [git]x :CocCommand git.browserOpen<CR>
 
@@ -197,7 +194,6 @@ nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
-let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <c-w>h :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-w>j :TmuxNavigateDown<cr>
 nnoremap <silent> <c-w><c-j> :TmuxNavigateDown<cr>
@@ -205,13 +201,4 @@ nnoremap <silent> <c-w><CR> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-w>k :TmuxNavigateUp<cr>
 nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
 
-nnoremap <silent> - :CocCommand explorer<CR>
-
-nnoremap <silent> <leader>t :FloatermToggle<CR>
-nnoremap <silent> <leader>T :FloatermNew<CR>
-augroup floaterm
-  autocmd!
-  autocmd FileType floaterm tnoremap <silent> <buffer> <Esc> <C-\><c-n>:FloatermHide<CR>
-augroup END
-
-
+nnoremap <silent> - :FloatermNew xplr<CR>
