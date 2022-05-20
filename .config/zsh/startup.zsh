@@ -13,4 +13,10 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 '
 
 eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
+
+eval "$(zoxide init zsh --no-cmd)"
+builtin unalias cd &>/dev/null || builtin true
+function cd {
+    __zoxide_zi "$@"
+}
+
