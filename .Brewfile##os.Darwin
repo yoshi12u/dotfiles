@@ -25,7 +25,6 @@ brew "node" # for coc.nvim
 brew "xplr"
 brew "ghq"
 brew "lazygit"
-brew "tig"
 brew "zoxide"
 
 cask "homebrew/cask-fonts/font-fira-code"

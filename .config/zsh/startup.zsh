@@ -18,7 +18,7 @@ eval "$(zoxide init zsh --no-cmd)"
 function cd {
     if [ $# -eq 0 ]
     then
-        __zoxide_zi "$@"
+        __zoxide_zi
     else
         builtin cd "$@" &>/dev/null || __zoxide_zi "$@"
     fi
