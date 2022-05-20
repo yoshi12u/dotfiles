@@ -24,5 +24,5 @@ bindkey '^P' history-substring-search-up
 bindkey '^N' history-substring-search-down
 
 bindkey '^v' anyframe-widget-edit-yadm
-bindkey '^g' anyframe-widget-cd-ghq-repository
+bindkey '^g' anyframe-widget-builtin-cd-ghq-repository
 bindkey '^r' anyframe-widget-put-history
