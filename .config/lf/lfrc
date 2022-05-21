@@ -1,0 +1,144 @@
+# See https://github.com/gokcehan/lf/blob/master/etc/lfrc.example
+# See https://github.com/BrodieRobertson/dotfiles/blob/master/config/lf/lfrc
+#
+# interpreter for shell commands
+set shell zsh
+set shellopts '-euy'
+set ifs "\n"
+set filesep "\n"  # default already
+set previewer ~/.config/lf/preview
+set preview true
+set hidden true
+set drawbox true
+set icons true
+set ignorecase true
+set scrolloff 10
+
+map <delete> delete
+
+# Custom Functions
+cmd open ${{
+    case $(file --mime-type "$f" -bL) in
+        text/*|application/json) $EDITOR "$f";;
+        *) xdg-open "$f" ;;
+    esac
+}}
+
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  touch $ans
+}}
+
+cmd chmod ${{
+  printf "Mode Bits: "
+  read ans
+
+  for file in "$fx"
+  do
+    chmod $ans $file
+  done
+
+  lf -remote 'send reload'
+}}
+
+cmd git_root ${{
+  if $(git rev-parse --is-inside-work-tree 2>/dev/null); then
+    lf -remote "send $id cd $(git rev-parse --show-toplevel)"
+  else
+    lf -remote "send $id cd $HOME"
+  fi
+}}
+
+cmd delete ${{
+    set -f
+    printf "$fx\n"
+    printf "delete?[y/n]"
+    read ans
+    [ "$ans" = "y" ] && rm -rf $fx
+}}
+
+cmd fzf_jump ${{
+  res="$(fzfile)"
+  if [ -f "$res" ]; then
+    cmd="select"
+  elif [ -d "$res" ]; then
+    cmd="cd"
+  fi
+  lf -remote "send $id $cmd \"$res\""
+}}
+
+cmd rg_jump ${{
+  res="$(fzgrep)"
+  lf -remote "send $id select \"$res\""
+}}
+
+cmd zi ${{
+    res="$(zoxide query -i --)"
+    lf -remote "send ${id} cd '${res}'"
+}}
+
+cmd dot_jump ${{
+  res="$(fzdot)"
+  lf -remote "send $id select \"$res\""
+}}
+
+cmd ghq_repo ${{
+  res="$(fzghq)"
+  if [ -d "$res" ]; then
+    lf -remote "send $id cd \"$res\""
+  fi
+}}
+
+# Bindings
+# Remove some defaults
+map m
+map o
+map n
+map "'"
+map '"'
+map d
+map c
+map e
+map f
+map X
+map H
+map <space>
+
+map \; read
+map - quit
+
+# File Openers
+map e $$EDITOR "$f"
+
+# Basic Functions
+map <tab> toggle
+map . set hidden!
+map o mkdir
+map i mkfile
+map X delete
+map p paste
+map d cut
+map y copy
+map <enter> open
+map r rename
+map R reload
+map C clear
+map U unselect
+map ~ cd ~
+map H git_root
+map <esc> quit
+
+# Fuzzy jump
+map z zi
+map <c-p> fzf_jump
+map <space>fs rg_jump
+map <c-g> ghq_repo
+map <c-v> dot_jump
+

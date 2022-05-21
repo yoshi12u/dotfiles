@@ -1,7 +1,4 @@
-yadm list -a \
-  | anyframe-selector-auto \
-  | { read x; echo "$HOME/$x"; } \
-  | anyframe-action-execute $EDITOR --
+ fzdot | anyframe-action-execute $EDITOR
 
 # Local Variables:
 # mode: Shell-Script

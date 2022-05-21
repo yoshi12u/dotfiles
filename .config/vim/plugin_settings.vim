@@ -13,9 +13,11 @@ let g:vista_fzf_preview = ['right:50%']
 let g:floaterm_opener='edit'
 let g:floaterm_autoclose=1
 let g:floaterm_rootmarkers   = ['.git']
+let g:floaterm_width = 0.8
+let g:floaterm_height = 0.8
 augroup floaterm
   autocmd!
-  autocmd FileType floaterm tnoremap <silent> <buffer> <Esc> <C-\><c-n>:FloatermHide<CR>
+  " autocmd FileType floaterm tnoremap <silent> <buffer> <Esc> <C-\><c-n>:FloatermHide<CR>
 augroup END
 
 let g:rainbow_active = 1
@@ -26,5 +28,4 @@ augroup Smartf
   autocmd User SmartfEnter :hi Conceal ctermfg=Red  guifg=#ff0000 term=bold
   autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945
 augroup end
-
 

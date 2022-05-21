@@ -5,6 +5,7 @@ export NVM_DIR="$HOME/.nvm"
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+--ansi
 --color=fg:#cbccc6,bg:#1f2430,hl:#707a8c
 --color=fg+:#707a8c,bg+:#191e2a,hl+:#ffcc66
 --color=info:#73d0ff,prompt:#707a8c,pointer:#cbccc6
@@ -15,10 +16,22 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 eval "$(starship init zsh)"
 
 eval "$(zoxide init zsh --no-cmd)"
+function lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
 function cd {
-    if [ $# -eq 0 ]
-    then
-        __zoxide_zi
+    if [ $# -eq 0 ]; then
+        lfcd
     else
         builtin cd "$@" &>/dev/null || __zoxide_zi "$@"
     fi

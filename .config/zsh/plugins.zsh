@@ -26,28 +26,47 @@ zi ice wait lucid
 zi light mollifier/anyframe
 
 # Completions
-zi ice wait lucid as'completion' blockf for \
-    zsh-users/zsh-completions \
-    pick'src/go' src'src/zsh' zchee/zsh-completions \
-    has'ghq' https://github.com/x-motemen/ghq/blob/master/misc/zsh/_ghq \
-    has'rg' https://github.com/BurntSushi/ripgrep/blob/master/complete/_rg \
-    has 'yadm' https://github.com/TheLocehiliosan/yadm/blob/master/completion/zsh/_yadm \
-    has 'fd' https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/fd/_fd \
-    has 'zoxide' https://github.com/ajeetdsouza/zoxide/blob/main/contrib/completions/_zoxide \
-    has 'tig' https://github.com/jonas/tig/blob/master/contrib/tig-completion.zsh \
-    has 'delta' mv'completion.zsh -> _delta' https://github.com/dandavison/delta/blob/master/etc/completion/completion.zsh \
+zi ice lucid wait as'completion' blockf has'ghq'
+zi snippet https://github.com/x-motemen/ghq/blob/master/misc/zsh/_ghq
+
+zi ice lucid wait as'completion' blockf has'rg'
+zi snippet https://github.com/BurntSushi/ripgrep/blob/master/complete/_rg
+
+zi ice lucid wait as'completion' blockf has'yadm'
+zi snippet https://github.com/TheLocehiliosan/yadm/blob/master/completion/zsh/_yadm
+
+zi ice lucid wait as'completion' blockf has'fd'
+zi snippet https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/fd/_fd
+
+zi ice lucid wait as'completion' blockf has'zoxide'
+zi snippet https://github.com/ajeetdsouza/zoxide/blob/main/contrib/completions/_zoxide 
+
+zi ice lucid wait as'completion' blockf has 'tig' mv'tig-completion.zsh -> _tig'
+zi snippet https://github.com/jonas/tig/blob/master/contrib/tig-completion.zsh
+
+zi ice lucid wait as'completion' blockf has 'delta' mv'completion.zsh -> _delta' 
+zi snippet https://github.com/dandavison/delta/blob/master/etc/completion/completion.zsh
+
+zi ice lucid wait as'completion' blockf has 'lf' mv'lf.zsh -> _lf' 
+zi snippet https://github.com/gokcehan/lf/blob/master/etc/lf.zsh
+
+zi ice lucid wait as'completion' blockf pick'src/go' src'src/zsh'
+zi light zchee/zsh-completions
+
+zi ice lucid wait as'completion'
+zi light zsh-users/zsh-completions
 
 zstyle ':fzf-tab:complete:*' fzf-bindings 'space:toggle' 'ctrl-a:toggle-all'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -1 --icon=always --color=always -a -X $realpath'
 zstyle ':fzf-tab:*' switch-group ',' '.'
-
+zstyle ':fzf-tab:*' fzf-flags '--header=Completions'
 zi lucid wait for\
     has'fzf' Aloxaf/fzf-tab \
     https://github.com/zimfw/completion/blob/master/init.zsh
 zstyle ':completion:*:*' format '-- %d --'
 
-zvm_config() { ZVM_INIT_MODE=sourcing }
 # zsh settings
+zvm_config() { ZVM_INIT_MODE=sourcing }
 zi wait lucid for \
     https://github.com/zimfw/input/blob/master/init.zsh \
     https://github.com/zimfw/fzf/blob/master/init.zsh 
@@ -65,5 +84,4 @@ zi wait lucid light-mode for \
         hlissner/zsh-autopair \
     depth=1 \
         jeffreytse/zsh-vi-mode
-
 

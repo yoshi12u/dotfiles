@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+IFS=: read -ra selected < <(
+ghq list --full-path |
+    fzf --preview 'lsd -1 --icon=always --color=always -a -X {}'
+)
+[ -n "${selected[0]}" ] && echo "${selected[0]}"
+

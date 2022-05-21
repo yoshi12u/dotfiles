@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+IFS=: read -ra selected < <(
+fd -c always -H --no-ignore-vcs -E .git -tf "${*:-}" |
+    fzf --preview 'bat --color=always --line-range :500 {}'
+)
+[ -n "${selected[0]}" ] && echo "${selected[0]}"
+
