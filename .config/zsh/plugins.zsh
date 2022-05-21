@@ -11,6 +11,12 @@ autoload -Uz _zi
 # examples here -> https://z.digitalclouds.dev/ecosystem/annexes
 zicompinit # <- https://z.digitalclouds.dev/docs/guides/commands
 
+# outside of zsh
+fpath=($ZDOTDIR/anyframe_custom(N-/) $fpath)
+zstyle ":anyframe:selector:" use fzf
+zi ice wait lucid
+zi light mollifier/anyframe
+
 zstyle ':prezto:module:tmux:auto-start' local 'yes'
 zi wait lucid for \
  PZTM::environment \
@@ -19,42 +25,20 @@ zi wait lucid for \
  PZTM::directory \
  PZTM::tmux
 
-# outside of zsh
-fpath=($ZDOTDIR/anyframe_custom(N-/) $fpath)
-zstyle ":anyframe:selector:" use fzf
-zi ice wait lucid 
-zi light mollifier/anyframe
-
 # Completions
-zi ice lucid wait as'completion' blockf has'ghq'
-zi snippet https://github.com/x-motemen/ghq/blob/master/misc/zsh/_ghq
+zi lucid wait as'completion' blockf for \
+  has'ghq' https://github.com/x-motemen/ghq/blob/master/misc/zsh/_ghq \
+  has'rg' https://github.com/BurntSushi/ripgrep/blob/master/complete/_rg \
+  has'yadm' https://github.com/TheLocehiliosan/yadm/blob/master/completion/zsh/_yadm \
+  has'fd' https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/fd/_fd \
+  has'zoxide' https://github.com/ajeetdsouza/zoxide/blob/main/contrib/completions/_zoxide \
+  has'tig' mv'tig-completion.zsh -> _tig' https://github.com/jonas/tig/blob/master/contrib/tig-completion.zsh \
+  has'delta' mv'completion.zsh -> _delta' https://github.com/dandavison/delta/blob/master/etc/completion/completion.zsh \
+  has'lf' mv'lf.zsh -> _lf' https://github.com/gokcehan/lf/blob/master/etc/lf.zsh 
 
-zi ice lucid wait as'completion' blockf has'rg'
-zi snippet https://github.com/BurntSushi/ripgrep/blob/master/complete/_rg
-
-zi ice lucid wait as'completion' blockf has'yadm'
-zi snippet https://github.com/TheLocehiliosan/yadm/blob/master/completion/zsh/_yadm
-
-zi ice lucid wait as'completion' blockf has'fd'
-zi snippet https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/fd/_fd
-
-zi ice lucid wait as'completion' blockf has'zoxide'
-zi snippet https://github.com/ajeetdsouza/zoxide/blob/main/contrib/completions/_zoxide 
-
-zi ice lucid wait as'completion' blockf has 'tig' mv'tig-completion.zsh -> _tig'
-zi snippet https://github.com/jonas/tig/blob/master/contrib/tig-completion.zsh
-
-zi ice lucid wait as'completion' blockf has 'delta' mv'completion.zsh -> _delta' 
-zi snippet https://github.com/dandavison/delta/blob/master/etc/completion/completion.zsh
-
-zi ice lucid wait as'completion' blockf has 'lf' mv'lf.zsh -> _lf' 
-zi snippet https://github.com/gokcehan/lf/blob/master/etc/lf.zsh
-
-zi ice lucid wait as'completion' blockf pick'src/go' src'src/zsh'
-zi light zchee/zsh-completions
-
-zi ice lucid wait as'completion'
-zi light zsh-users/zsh-completions
+zi lucid wait as'completion' light-mode blockf for \
+  pick'src/go' src'src/zsh' zchee/zsh-completions \
+  zsh-users/zsh-completions
 
 zstyle ':fzf-tab:complete:*' fzf-bindings 'space:toggle' 'ctrl-a:toggle-all'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -1 --icon=always --color=always -a -X $realpath'
@@ -64,6 +48,7 @@ zi lucid wait for\
     has'fzf' Aloxaf/fzf-tab \
     https://github.com/zimfw/completion/blob/master/init.zsh
 zstyle ':completion:*:*' format '-- %d --'
+
 
 # zsh settings
 zvm_config() { ZVM_INIT_MODE=sourcing }

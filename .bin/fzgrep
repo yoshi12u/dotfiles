@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-IFS=: read -ra selected < <(
-rg --color=always --line-number --no-heading --smart-case "${*:-}" |
+rg --color=always --line-number --no-heading --smart-case --hidden "${*:-}" |
   fzf --delimiter : \
-  --preview 'bat --color=always {1} --highlight-line {2}' \
-)
-[ -n "${selected[0]}" ] && echo "${selected[0]}"
+  --preview 'bat --color=always --style=numbers,changes,rule --highlight-line {2} {1} ' |
+  awk -F: '{ print $1 }'
+

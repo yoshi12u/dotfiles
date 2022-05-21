@@ -6,7 +6,7 @@ set shell zsh
 set shellopts '-euy'
 set ifs "\n"
 set filesep "\n"  # default already
-set previewer ~/.config/lf/preview
+set previewer preview
 set preview true
 set hidden true
 set drawbox true
@@ -20,7 +20,7 @@ map <delete> delete
 cmd open ${{
     case $(file --mime-type "$f" -bL) in
         text/*|application/json) $EDITOR "$f";;
-        *) xdg-open "$f" ;;
+        *) open "$f" ;;
     esac
 }}
 
@@ -64,8 +64,11 @@ cmd delete ${{
     [ "$ans" = "y" ] && rm -rf $fx
 }}
 
-cmd fzf_jump ${{
-  res="$(fzfile)"
+
+cmd jump_search ${{
+  f=$(mktemp)
+  res="$(fztree)"
+  rm -f "$f"
   if [ -f "$res" ]; then
     cmd="select"
   elif [ -d "$res" ]; then
@@ -137,7 +140,7 @@ map <esc> quit
 
 # Fuzzy jump
 map z zi
-map <c-p> fzf_jump
+map <c-p> jump_search
 map <space>fs rg_jump
 map <c-g> ghq_repo
 map <c-v> dot_jump

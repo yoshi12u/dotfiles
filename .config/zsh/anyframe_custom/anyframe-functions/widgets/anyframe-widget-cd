@@ -1,0 +1,6 @@
+fzdir | anyframe-action-execute cd
+
+# Local Variables:
+# mode: Shell-Script
+# End:
+# vim: ft=zsh
