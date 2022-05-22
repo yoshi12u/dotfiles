@@ -1,4 +1,4 @@
-fzdir | anyframe-action-execute cd
+ldir |anyframe-selector-fzf-with-preview| anyframe-action-execute cd
 
 # Local Variables:
 # mode: Shell-Script

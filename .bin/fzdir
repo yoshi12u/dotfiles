@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-fd --follow --type d --hidden --exclude .git --exclude .Trash -d 5 |
-    fzf --preview 'preview {}'

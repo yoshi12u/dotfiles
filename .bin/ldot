@@ -4,5 +4,4 @@ yadm list -a |
     while read -r line
     do
         echo "$HOME/$line"
-    done |
-    fzf --preview 'preview {}'
+    done

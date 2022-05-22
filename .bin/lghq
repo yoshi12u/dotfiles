@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ghq list --full-path

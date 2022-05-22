@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rg --color=always --line-number --no-heading --smart-case --hidden "${*:-}"
+

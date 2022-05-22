@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-ghq list --full-path |
-    fzf --preview 'preview {}'
-

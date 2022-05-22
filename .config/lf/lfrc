@@ -67,7 +67,7 @@ cmd delete ${{
 
 cmd jump_search ${{
   f=$(mktemp)
-  res="$(fztree)"
+  res="$(ltree | fzf --preview 'preview {}' --height 100%)"
   rm -f "$f"
   if [ -f "$res" ]; then
     cmd="select"
@@ -78,7 +78,7 @@ cmd jump_search ${{
 }}
 
 cmd rg_jump ${{
-  res="$(fzgrep)"
+  res="$(lgrep ''| fzf --delimiter : --height 100% --preview 'preview_line {1} {2}' | awk -F: '{ print $1 }')"
   lf -remote "send $id select \"$res\""
 }}
 
@@ -88,12 +88,12 @@ cmd zi ${{
 }}
 
 cmd dot_jump ${{
-  res="$(fzdot)"
+  res="$(ldot | fzf --preview 'preview {}' --height 100%)"
   lf -remote "send $id select \"$res\""
 }}
 
 cmd ghq_repo ${{
-  res="$(fzghq)"
+  res="$(lghq | fzf --preview 'preview {}' --height 100%)"
   if [ -d "$res" ]; then
     lf -remote "send $id cd \"$res\""
   fi

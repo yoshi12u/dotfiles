@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+fd --follow --hidden --exclude .git --exclude .Trash -d 5

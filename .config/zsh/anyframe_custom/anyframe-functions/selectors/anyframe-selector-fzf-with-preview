@@ -1,0 +1,9 @@
+local fzf_path
+zstyle -s ":anyframe:selector:fzf:" command fzf_path || fzf_path='fzf'
+
+${=fzf_path} --preview 'preview {}'
+
+# Local Variables:
+# mode: Shell-Script
+# End:
+# vim: ft=zsh

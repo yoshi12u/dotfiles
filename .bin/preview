@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+CENTER="$1"
+START_LINE="$(( CENTER - FZF_PREVIEW_LINES / 2 ))"
+if (( START_LINE <= 0 )); then
+    START_LINE=1
+fi
+END_LINE="$(( START_LINE + FZF_PREVIEW_LINES - 1 ))"
+
+
 if [ -f "$1" ]; then
   case "$1" in
     *.[1-8]) man "$1" | col -b ;;

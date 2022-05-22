@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-fd -c always -H --no-ignore-vcs -E .git -tf "${*:-}" |
-    fzf --preview 'preview {}'
