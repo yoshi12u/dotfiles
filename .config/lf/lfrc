@@ -78,7 +78,7 @@ cmd jump_search ${{
 }}
 
 cmd rg_jump ${{
-  res="$(lgrep ''| fzf --delimiter : --height 100% --preview 'preview_line {1} {2}' | awk -F: '{ print $1 }')"
+  res="$(lgrep '' | fzf --delimiter : --height 100% --preview 'preview_line {1} {2}' | awk -F: '{ print $1 }')"
   lf -remote "send $id select \"$res\""
 }}
 
@@ -101,11 +101,6 @@ cmd ghq_repo ${{
 
 # Bindings
 # Remove some defaults
-map m
-map o
-map n
-map "'"
-map '"'
 map d
 map c
 map e

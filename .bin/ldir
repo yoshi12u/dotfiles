@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+fd --follow --type d --hidden --exclude .Trash -d 5

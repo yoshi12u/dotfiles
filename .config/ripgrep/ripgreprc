@@ -1,0 +1,4 @@
+--glob
+!git/*
+--smart-case
+--color=always
