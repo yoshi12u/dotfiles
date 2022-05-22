@@ -18,6 +18,6 @@ function cd {
     else
         builtin cd "$@" &>/dev/null || __zoxide_zi "$@"
     fi
+    lsd
 }
 
-alias z=__zoxide_zi

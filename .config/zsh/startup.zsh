@@ -16,4 +16,3 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 eval "$(starship init zsh)"
 
 eval "$(zoxide init zsh --no-cmd)"
-
