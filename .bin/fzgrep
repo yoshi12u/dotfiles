@@ -2,6 +2,5 @@
 
 rg --color=always --line-number --no-heading --smart-case --hidden "${*:-}" |
   fzf --delimiter : \
-  --preview 'bat --color=always --style=numbers,changes,rule --highlight-line {2} {1} ' |
+  --preview 'preview_line {1} {2}' |
   awk -F: '{ print $1 }'
-

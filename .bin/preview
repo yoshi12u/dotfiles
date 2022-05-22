@@ -9,4 +9,3 @@ if [ -f "$1" ]; then
 elif [ -d "$1" ]; then
   lsd -1 --icon=always --color=always -A -X "$1"
 fi
-
