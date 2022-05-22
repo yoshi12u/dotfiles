@@ -10,14 +10,11 @@ call plug#begin()
 Plug 'vim-jp/vimdoc-ja'
 Plug 'thinca/vim-ref'
 
-" sanitize
-Plug 'tpope/vim-sensible'
-
 " utility
+Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug '/opt/homebrew/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-rooter'
 Plug 'osyo-manga/vim-anzu'
 Plug 'ConradIrwin/vim-bracketed-paste'

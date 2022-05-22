@@ -41,7 +41,7 @@ zi lucid wait as'completion' light-mode blockf for \
   zsh-users/zsh-completions
 
 zstyle ':fzf-tab:complete:*' fzf-bindings 'space:toggle' 'ctrl-a:toggle-all'
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -1 --icon=always --color=always -a -X $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'preview $realpath'
 zstyle ':fzf-tab:*' switch-group ',' '.'
 zstyle ':fzf-tab:*' fzf-flags '--header=Completions'
 zi lucid wait for\
