@@ -27,6 +27,7 @@ brew "lf"
 brew "lazygit"
 brew "zoxide"
 brew "ghq"
+brew "navi"
 
 cask "homebrew/cask-fonts/font-fira-code"
 cask "font-hack-nerd-font"
