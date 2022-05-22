@@ -5,3 +5,13 @@ runtime! plugin_settings.vim
 runtime! config/*.vim
 runtime! projects/*.vim
 
+augroup vimrc-local
+  autocmd BufNewFile,BufReadPost * call s:vimrc_local()
+augroup END
+
+function! s:vimrc_local()
+  let l:local_file = FindRootDirectory() . "/.vimrc.local"
+  if filereadable(l:local_file)
+    source `=l:local_file`
+  endif
+endfunction
