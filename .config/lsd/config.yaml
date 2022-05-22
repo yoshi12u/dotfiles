@@ -1,0 +1,9 @@
+color:
+  when: always
+
+icons:
+  when: always
+
+ignore-globs:
+  - .git
+  - .DS_Store
