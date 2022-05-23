@@ -34,7 +34,6 @@ let g:lightline = {
       \   'filepath': 'StatuslineRelativePath',
       \   'pwd': 'StatuslinePwd'
       \ },
-      \ 'component_raw': {'buffers': 1}
       \ }
 
 function! StatuslineReadonly()
@@ -79,5 +78,3 @@ function! StatuslineCoc() abort
   endif
   return ''
 endfunction
-
-
