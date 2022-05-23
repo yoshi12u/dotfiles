@@ -15,9 +15,6 @@ let g:floaterm_autoclose=1
 let g:floaterm_rootmarkers   = ['.git']
 let g:floaterm_width = 0.9
 let g:floaterm_height = 0.7
-augroup floaterm
-  autocmd!
-augroup END
 
 let g:rainbow_active = 1
 
@@ -27,4 +24,9 @@ augroup Smartf
   autocmd User SmartfEnter :hi Conceal ctermfg=Red  guifg=#ff0000 term=bold
   autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945
 augroup end
+
+augroup indent_line
+  autocmd!
+  autocmd FileType floaterm,startify IndentLinesDisable
+augroup END
 

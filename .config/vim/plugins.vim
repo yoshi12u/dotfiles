@@ -41,6 +41,7 @@ Plug 'ap/vim-css-color'
 Plug 'junegunn/vim-emoji'
 Plug 'ryanoasis/vim-devicons'
 Plug 'luochen1990/rainbow'
+Plug 'Yggdroot/indentLine/'
 
 " preview
 Plug 'weirongxu/plantuml-previewer.vim'
