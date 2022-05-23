@@ -34,7 +34,8 @@ zi lucid wait as'completion' blockf for \
   has'zoxide' https://github.com/ajeetdsouza/zoxide/blob/main/contrib/completions/_zoxide \
   has'tig' mv'tig-completion.zsh -> _tig' https://github.com/jonas/tig/blob/master/contrib/tig-completion.zsh \
   has'delta' mv'completion.zsh -> _delta' https://github.com/dandavison/delta/blob/master/etc/completion/completion.zsh \
-  has'lf' mv'lf.zsh -> _lf' https://github.com/gokcehan/lf/blob/master/etc/lf.zsh 
+  has'lf' mv'lf.zsh -> _lf' https://github.com/gokcehan/lf/blob/master/etc/lf.zsh  \
+  has'docker' https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
 
 zi lucid wait as'completion' light-mode blockf for \
   pick'src/go' src'src/zsh' zchee/zsh-completions \
