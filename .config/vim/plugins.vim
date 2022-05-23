@@ -26,6 +26,7 @@ Plug 'mhinz/vim-startify'
 Plug 'liuchengxu/vista.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'voldikss/vim-floaterm'
+Plug 'junegunn/goyo.vim'
 
 " snippets
 Plug 'hrsh7th/vim-vsnip'
@@ -41,7 +42,7 @@ Plug 'ap/vim-css-color'
 Plug 'junegunn/vim-emoji'
 Plug 'ryanoasis/vim-devicons'
 Plug 'luochen1990/rainbow'
-Plug 'Yggdroot/indentLine/'
+Plug 'Yggdroot/indentLine'
 
 " preview
 Plug 'weirongxu/plantuml-previewer.vim'
@@ -83,7 +84,7 @@ Plug 'vim-scripts/camelcasemotion'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire' " e
 Plug 'kana/vim-textobj-indent' " i
-Plug 'rhysd/vim-textobj-ruby' " r
+Plug 'rhysd/vim-textobj-ruby', {'for': 'ruby'} " r
 Plug 'kana/vim-textobj-underscore' " _
 Plug 'RyanMcG/vim-textobj-dash' " -
 Plug 'thinca/vim-textobj-comment' " c
@@ -91,22 +92,25 @@ Plug 'kana/vim-textobj-function' " -f
 Plug 'haya14busa/vim-textobj-function-syntax'
 Plug 'wellle/targets.vim'
 
+" html
+Plug 'AndrewRadev/tagalong.vim', {'for': 'html'}
+
 " ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
-Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-bundler', { 'for': 'ruby' }
 
 " node
-Plug 'moll/vim-node'
+Plug 'moll/vim-node', { 'for': ['js', 'ts', 'jsx', 'tsx', 'vue'] }
 
 " dart
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'reisub0/hot-reload.vim'
-Plug 'natebosch/vim-lsc'
-Plug 'natebosch/vim-lsc-dart'
+Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
+Plug 'reisub0/hot-reload.vim', {'for': 'dart'}
+Plug 'natebosch/vim-lsc', {'for': 'dart'}
+Plug 'natebosch/vim-lsc-dart', {'for': 'dart'}
 
 " vue
-Plug 'posva/vim-vue'
+Plug 'posva/vim-vue', {'for': 'vue'}
 
 call plug#end()
 
