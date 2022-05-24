@@ -32,6 +32,7 @@ set smartindent
 set nobackup
 set nowritebackup
 set signcolumn=yes
+set showtabline=2
 set autoread
 augroup vimrc-checktime
   autocmd!
