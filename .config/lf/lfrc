@@ -18,10 +18,14 @@ map <delete> delete
 
 # Custom Functions
 cmd open ${{
-    case $(file --mime-type "$f" -bL) in
-        text/*|application/json) $EDITOR "$f";;
-        *) open "$f" ;;
-    esac
+  case $(file --mime-type "$f" -bL) in
+    text/*|application/json) $EDITOR "$f";;
+    *) open "$f" ;;
+  esac
+}}
+
+cmd c ${{
+	echo "$PWD" > "$LF_SHELLCD_TEMPDIR/changecwd"
 }}
 
 cmd mkdir ${{
@@ -139,4 +143,3 @@ map <c-p> jump_search
 map <space>fs rg_jump
 map <c-g> ghq_repo
 map <c-v> dot_jump
-

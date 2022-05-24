@@ -1,17 +1,3 @@
-function lc () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        if [ -d "$dir" ]; then
-            if [ "$dir" != "$(pwd)" ]; then
-                cd "$dir"
-            fi
-        fi
-    fi
-}
-
 function cd {
     if [ $# -eq 0 ]; then
         anyframe-widget-cd
@@ -21,3 +7,18 @@ function cd {
     lsd
 }
 
+function lfcd() {
+    LF_SHELLCD_TEMPDIR="$(mktemp -d -t lf-shellcd-XXXXXX)"
+    export LF_SHELLCD_TEMPDIR
+    lf "$@"
+    if [ -e "$LF_SHELLCD_TEMPDIR/changecwd" ] && \
+        dir="$(cat "$LF_SHELLCD_TEMPDIR/changecwd")" 2>/dev/null; then
+            if [ -d "$dir" ]; then
+                cd "$dir"
+            fi
+    fi
+    rm -rf "$LF_SHELLCD_TEMPDIR"
+    unset LF_SHELLCD_TEMPDIR
+}
+
+alias lf=lfcd
