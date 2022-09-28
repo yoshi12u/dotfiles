@@ -2,8 +2,6 @@
   "suggest.languageSourcePriority": 100,
   "coc.source.around.priority": 20,
   "coc.source.buffer.priority": 10,
-  "yank.priority": 15,
-  "coc.source.word.priority": 0,
 
   "coc.preferences.currentFunctionSymbolAutoUpdate":true,
   "coc.preferences.formatOnSaveFiletypes": [
@@ -30,14 +28,6 @@
   "git.addGBlameToVirtualText": true,
   "git.showCommitInFloating": true,
 
-  "explorer.position": "floating",
-  "explorer.file.showHiddenFiles": true,
-  "explorer.file.child.template": "[git | 2] [selection | clip | 1] [indent][icon | 1] [diagnosticWarning & 1][diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]",
-  "explorer.keyMappings.global": {
-    "<cr>": ["expandable?", "expand", "open"],
-    "<tab>": "toggleSelection",
-    "mm": "actionMenu"
-  },
-
-  "yank.highlight.duration": 200
+  "python.pythonPath": "$XDG_CONFIG_HOME/nvim/pyright_conda",
+  "python.analysis.diagnosticMode": "workspace"
 }
