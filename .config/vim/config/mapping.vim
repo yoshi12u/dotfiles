@@ -64,6 +64,8 @@ xmap i<leader>b <Plug>CamelCaseMotion_ib
 omap i<leader>e <Plug>CamelCaseMotion_ie
 xmap i<leader>e <Plug>CamelCaseMotion_ie
 
+nmap <CR> <Plug>(edgemotion-j)
+nmap <C-k> <Plug>(edgemotion-k)
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>

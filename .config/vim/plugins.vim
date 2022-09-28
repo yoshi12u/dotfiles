@@ -26,6 +26,9 @@ Plug 'liuchengxu/vista.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'voldikss/vim-floaterm'
 Plug 'junegunn/goyo.vim'
+Plug 'machakann/vim-highlightedyank'
+Plug 'haya14busa/vim-edgemotion'
+Plug 'tpope/vim-fugitive'
 
 " snippets
 Plug 'hrsh7th/vim-vsnip'
@@ -93,6 +96,7 @@ Plug 'wellle/targets.vim'
 
 " html
 Plug 'AndrewRadev/tagalong.vim', {'for': 'html'}
+Plug 'mattn/emmet-vim', { 'for': ['js', 'ts', 'jsx', 'tsx', 'vue'] }
 
 " ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }

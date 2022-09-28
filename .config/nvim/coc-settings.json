@@ -16,7 +16,8 @@
     "Markdown",
     "dart",
     "ruby",
-    "python"
+    "python",
+    "html"
   ],
   "coc.preferences.rootPatterns": [".git"],
 

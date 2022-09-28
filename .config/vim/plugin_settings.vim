@@ -20,13 +20,25 @@ let g:rainbow_active = 1
 
 let g:tmux_navigator_no_mappings = 1
 
+let g:highlightedyank_highlight_duration = 150
+
 augroup Smartf
   autocmd User SmartfEnter :hi Conceal ctermfg=Red  guifg=#ff0000 term=bold
   autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945
 augroup end
 
-augroup indent_line
+augroup floaterm
   autocmd!
-  autocmd FileType floaterm,startify IndentLinesDisable
+  autocmd FileType floaterm noh
+  autocmd FileType floaterm IndentLinesDisable
 augroup END
 
+augroup startify
+  autocmd!
+  autocmd FileType startify IndentLinesDisable
+augroup END
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case --hidden -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
