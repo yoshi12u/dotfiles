@@ -19,7 +19,6 @@ Plug 'antoinemadec/coc-fzf'
 Plug 'airblade/vim-rooter'
 Plug 'osyo-manga/vim-anzu'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'tpope/vim-dispatch'
 Plug 'markonm/traces.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'mhinz/vim-startify'
@@ -29,7 +28,6 @@ Plug 'voldikss/vim-floaterm'
 Plug 'junegunn/goyo.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'haya14busa/vim-edgemotion'
-Plug 'tpope/vim-fugitive'
 
 " snippets
 Plug 'hrsh7th/vim-vsnip'
@@ -49,12 +47,11 @@ Plug 'Yggdroot/indentLine'
 
 " preview
 Plug 'weirongxu/plantuml-previewer.vim'
-Plug 'tyru/open-browser.vim'
 Plug 'aklt/plantuml-syntax'
+Plug 'tyru/open-browser.vim'
 
 " git
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
 
 " commands
 Plug 'tpope/vim-eunuch'
@@ -64,7 +61,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'thinca/vim-visualstar'
 Plug 'mbbill/undotree'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'brooth/far.vim'
 Plug 'AndrewRadev/switch.vim'
 
 " mapping

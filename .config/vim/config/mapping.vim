@@ -153,7 +153,7 @@ endfunction
 command! Lsc call s:start_lsc()
 command! Coc call s:start_coc()
 
-nnoremap <silent> <leader>qf :Qfreplace<CR>
+nnoremap <silent> qf :Qfreplace<CR>
 
 let g:camelcasemotion_key = '<leader>'
 map <silent> <leader>w <Plug>CamelCaseMotion_w
