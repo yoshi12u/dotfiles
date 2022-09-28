@@ -31,6 +31,7 @@ augroup floaterm
   autocmd!
   autocmd FileType floaterm noh
   autocmd FileType floaterm IndentLinesDisable
+  autocmd QuitPre * FloatermKill!
 augroup END
 
 augroup startify
@@ -42,3 +43,4 @@ command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case --hidden -- '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
+

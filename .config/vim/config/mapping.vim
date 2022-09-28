@@ -3,6 +3,8 @@ let mapleader = "\<Space>"
 " maps using the leader key
 nmap <leader>f [finder]
 nmap <leader>g [git]
+nmap <leader>t [terminal]
+tmap <leader>t [terminal]
 
 " original maps
 nnoremap ; :
@@ -49,10 +51,6 @@ nnoremap <silent> ]d <Plug>(coc-diagnostic-next)
 nnoremap <silent> [g <Plug>(coc-git-prevchunk)
 nnoremap <silent> ]g <Plug>(coc-git-nextchunk)
 
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
 omap ig <Plug>(coc-git-chunk-inner)
 xmap ig <Plug>(coc-git-chunk-inner)
 omap ag <Plug>(coc-git-chunk-outer)
@@ -179,8 +177,7 @@ nnoremap <silent> [finder]f :Files<CR>
 nnoremap <silent> [finder]s :Rg<CR>
 nnoremap <silent> [finder]l :BLines<CR>
 nnoremap <silent> [finder]m :Marks<CR>
-nnoremap <silent> [finder]y :CocList yank<CR>
-nnoremap <silent> [finder]d :CocList -A -R diagnostics<CR>
+nnoremap <silent> [finder]d :CocFzfList diagnostics<CR>
 
 nnoremap <silent> [git]g :FloatermNew lazygit<CR>
 nnoremap <silent> [git]d :CocCommand git.chunkInfo<CR>
@@ -204,3 +201,8 @@ nnoremap <silent> <c-w>k :TmuxNavigateUp<cr>
 nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
 
 nnoremap <silent> - :FloatermNew lf<CR>
+
+nnoremap <silent> [terminal]t :FloatermToggle<CR>
+nnoremap <silent> [terminal]k :FloatermKill!<CR>
+tnoremap <silent> [terminal]t <C-\><C-n>:FloatermToggle<CR>
+tnoremap <silent> [terminal]k <C-\><C-n>:FloatermKill!<CR>

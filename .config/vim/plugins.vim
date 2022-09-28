@@ -15,6 +15,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug '/opt/homebrew/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'antoinemadec/coc-fzf'
 Plug 'airblade/vim-rooter'
 Plug 'osyo-manga/vim-anzu'
 Plug 'ConradIrwin/vim-bracketed-paste'
