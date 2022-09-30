@@ -29,14 +29,13 @@ augroup end
 
 augroup floaterm
   autocmd!
-  autocmd FileType floaterm noh
-  autocmd FileType floaterm IndentLinesDisable
+  autocmd FileType floaterm IndentBlanklineDisable
   autocmd QuitPre * FloatermKill!
 augroup END
 
 augroup startify
   autocmd!
-  autocmd FileType startify IndentLinesDisable
+  autocmd FileType startify IndentBlanklineDisable
 augroup END
 
 command! -bang -nargs=* Rg

@@ -28,6 +28,8 @@
   "git.addGBlameToVirtualText": true,
   "git.showCommitInFloating": true,
 
-  "python.pythonPath": "$XDG_CONFIG_HOME/nvim/pyright_conda",
-  "python.analysis.diagnosticMode": "workspace"
+  "python.pythonPath": "$XDG_CONFIG_HOME/nvim/coc-pyright",
+  "python.analysis.diagnosticMode": "workspace",
+
+  "stylua.styluaPath": "$XDG_CONFIG_HOME/nvim/coc-stylua"
 }
