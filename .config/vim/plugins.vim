@@ -11,7 +11,9 @@ Plug 'vim-jp/vimdoc-ja'
 Plug 'thinca/vim-ref'
 
 " utility
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
+let g:coc_start_at_startup = v:false
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug '/opt/homebrew/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -29,21 +31,13 @@ Plug 'junegunn/goyo.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'haya14busa/vim-edgemotion'
 
-" snippets
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'honza/vim-snippets'
-
 " style
-Plug 'ayu-theme/ayu-vim'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
-Plug 'ap/vim-css-color'
 Plug 'junegunn/vim-emoji'
 Plug 'ryanoasis/vim-devicons'
 Plug 'luochen1990/rainbow'
-Plug 'Yggdroot/indentLine'
 
 " preview
 Plug 'weirongxu/plantuml-previewer.vim'
@@ -51,7 +45,7 @@ Plug 'aklt/plantuml-syntax'
 Plug 'tyru/open-browser.vim'
 
 " git
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 
 " commands
 Plug 'tpope/vim-eunuch'
@@ -64,32 +58,10 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 
 " mapping
-Plug 'tpope/vim-repeat'
 Plug 'houtsnip/vim-emacscommandline'
 Plug 'bronson/vim-visual-star-search'
 Plug 'christoomey/vim-tmux-navigator'
 
-" operator
-Plug 'kana/vim-operator-user'
-Plug 'kana/vim-operator-replace'
-Plug 'tpope/vim-commentary'
-Plug 'suy/vim-context-commentstring'
-Plug 'tpope/vim-surround'
-Plug 'tommcdo/vim-exchange'
-Plug 'junegunn/vim-easy-align'
-
-" textobj
-Plug 'vim-scripts/camelcasemotion'
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-entire' " e
-Plug 'kana/vim-textobj-indent' " i
-Plug 'rhysd/vim-textobj-ruby', {'for': 'ruby'} " r
-Plug 'kana/vim-textobj-underscore' " _
-Plug 'RyanMcG/vim-textobj-dash' " -
-Plug 'thinca/vim-textobj-comment' " c
-Plug 'kana/vim-textobj-function' " -f
-Plug 'haya14busa/vim-textobj-function-syntax'
-Plug 'wellle/targets.vim'
 
 " html
 Plug 'AndrewRadev/tagalong.vim', {'for': 'html'}
