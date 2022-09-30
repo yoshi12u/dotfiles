@@ -56,6 +56,7 @@ return require("packer").startup(function(use)
 	use({ "neoclide/coc.nvim", branch = "release" })
 	use("/opt/homebrew/opt/fzf")
 	use("junegunn/fzf.vim")
+  use 'ibhagwan/fzf-lua'
 	use("antoinemadec/coc-fzf")
 	use("airblade/vim-rooter")
 	use("ConradIrwin/vim-bracketed-paste")
@@ -66,14 +67,6 @@ return require("packer").startup(function(use)
 	use("junegunn/goyo.vim")
 	use("haya14busa/vim-edgemotion")
 	use("junegunn/vim-easy-align")
-	use({
-		"ahmedkhalf/project.nvim",
-		config = function()
-			require("project_nvim").setup({
-				show_hidden = true,
-			})
-		end,
-	})
 	use({
 		"windwp/nvim-autopairs",
 		config = function()
@@ -110,15 +103,6 @@ return require("packer").startup(function(use)
 	use({
 		{ "tpope/vim-surround", event = "User ActuallyEditing" },
 		{ "andymass/vim-matchup", setup = [[require('config.matchup')]], event = "User ActuallyEditing" },
-	})
-	use({
-		"AckslD/nvim-neoclip.lua",
-		requires = {
-			{ "nvim-telescope/telescope.nvim" },
-		},
-		config = function()
-			require("neoclip").setup()
-		end,
 	})
 	use("kshenoy/vim-signature")
 	use({
@@ -180,10 +164,6 @@ return require("packer").startup(function(use)
 		config = function()
 			require("substitute").setup({})
 		end,
-	})
-	use({
-		"kana/vim-operator-replace",
-		requires = "kana/vim-operator-user",
 	})
 
 	-- Git
