@@ -55,12 +55,6 @@ omap ig <Plug>(coc-git-chunk-inner)
 xmap ig <Plug>(coc-git-chunk-inner)
 omap ag <Plug>(coc-git-chunk-outer)
 xmap ag <Plug>(coc-git-chunk-outer)
-omap i<leader>w <Plug>CamelCaseMotion_iw
-xmap i<leader>w <Plug>CamelCaseMotion_iw
-omap i<leader>b <Plug>CamelCaseMotion_ib
-xmap i<leader>b <Plug>CamelCaseMotion_ib
-omap i<leader>e <Plug>CamelCaseMotion_ie
-xmap i<leader>e <Plug>CamelCaseMotion_ie
 
 nmap <CR> <Plug>(edgemotion-j)
 nmap <C-k> <Plug>(edgemotion-k)
@@ -155,21 +149,6 @@ command! Coc call s:start_coc()
 
 nnoremap <silent> qf :Qfreplace<CR>
 
-let g:camelcasemotion_key = '<leader>'
-map <silent> <leader>w <Plug>CamelCaseMotion_w
-map <silent> <leader>b <Plug>CamelCaseMotion_b
-map <silent> <leader>e <Plug>CamelCaseMotion_e
-map <silent> <leader>ge <Plug>CamelCaseMotion_ge
-sunmap <leader>w
-sunmap <leader>b
-sunmap <leader>e
-sunmap <leader>ge
-
-nmap f <Plug>(coc-smartf-forward)
-nmap F <Plug>(coc-smartf-backward)
-
-map R  <Plug>(operator-replace)
-
 nnoremap U :UndotreeToggle<cr>
 
 nnoremap <silent> <c-p> :Files<CR>
@@ -183,12 +162,6 @@ nnoremap <silent> [git]g :FloatermNew lazygit<CR>
 nnoremap <silent> [git]d :CocCommand git.chunkInfo<CR>
 nnoremap <silent> [git]X :CocCommand git.chunkUndo<CR>
 nnoremap <silent> [git]x :CocCommand git.browserOpen<CR>
-
-nmap n <Plug>(anzu-n-with-echo)
-nmap N <Plug>(anzu-N-with-echo)
-nmap * <Plug>(anzu-star-with-echo)
-nmap # <Plug>(anzu-sharp-with-echo)
-nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
 
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
