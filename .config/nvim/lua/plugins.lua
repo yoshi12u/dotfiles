@@ -59,9 +59,16 @@ return require("packer").startup(function(use)
 	use("airblade/vim-rooter")
 	use("ConradIrwin/vim-bracketed-paste")
 	use("mhinz/vim-startify")
-	use("liuchengxu/vista.vim")
+	use("simrat39/symbols-outline.nvim")
 	use("bronson/vim-trailing-whitespace")
 	use("voldikss/vim-floaterm")
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "*",
+		config = function()
+			require("toggleterm").setup()
+		end,
+	})
 	use("junegunn/goyo.vim")
 	use("haya14busa/vim-edgemotion")
 	use("junegunn/vim-easy-align")
@@ -96,7 +103,7 @@ return require("packer").startup(function(use)
 		"tpope/vim-surround",
 		"andymass/vim-matchup",
 	})
-	use("kshenoy/vim-signature")
+	use("chentoast/marks.nvim")
 	use({
 		"mbbill/undotree",
 		cmd = "UndotreeToggle",
