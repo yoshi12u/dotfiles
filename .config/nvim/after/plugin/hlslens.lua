@@ -1,3 +1,8 @@
+local status_ok, hlslens = pcall(require, "hlslens")
+if not status_ok then
+  return
+end
+
 local kopts = { noremap = true, silent = true }
 
 vim.api.nvim_set_keymap(

@@ -19,13 +19,11 @@ return require("packer").startup(function(use)
 	use("thinca/vim-ref")
 	use("vim-scripts/AnsiEsc.vim")
 
--- Pretty UI
+	-- Pretty UI
 	use({
-		"Shatur/neovim-ayu",
+		"folke/tokyonight.nvim",
 		config = function()
-			require("ayu").setup({
-				mirage = true,
-			})
+			vim.cmd([[colorscheme tokyonight-moon]])
 		end,
 	})
 	use("ryanoasis/vim-devicons")
@@ -33,27 +31,21 @@ return require("packer").startup(function(use)
 	use("itchyny/lightline.vim")
 	use("mengelbrecht/lightline-bufferline")
 	use("junegunn/vim-emoji")
+	use("RRethy/vim-illuminate")
 	use({
 		"norcalli/nvim-colorizer.lua",
 		ft = { "css", "javascript", "vim", "html" },
 		config = [[require('colorizer').setup {'css', 'javascript', 'vim', 'html'}]],
 	})
-	use({
-		"lukas-reineke/indent-blankline.nvim",
-		config = function()
-			require("indent_blankline").setup()
-		end,
-	})
+	use({ "lukas-reineke/indent-blankline.nvim", config = [[require("indent_blankline").setup()]] })
 	use("stevearc/dressing.nvim")
-	use({"rcarriga/nvim-notify", config = [[vim.notify = require("notify")]]})
+	use({ "rcarriga/nvim-notify", config = [[vim.notify = require("notify")]] })
 	use("vigoux/notifier.nvim")
-	use({ "gelguy/wilder.nvim", config = [[require('config.wilder')]] })
 
 	-- utils
 	use({ "neoclide/coc.nvim", branch = "release" })
 	use("/opt/homebrew/opt/fzf")
 	use("junegunn/fzf.vim")
-  use 'ibhagwan/fzf-lua'
 	use("antoinemadec/coc-fzf")
 	use("airblade/vim-rooter")
 	use("ConradIrwin/vim-bracketed-paste")
@@ -64,12 +56,10 @@ return require("packer").startup(function(use)
 	use("junegunn/goyo.vim")
 	use("haya14busa/vim-edgemotion")
 	use("junegunn/vim-easy-align")
-  use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" , config = [[require('config.ufo')]]})
+	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 	use({
 		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup({})
-		end,
+		config = [[ require("nvim-autopairs").setup({}) ]],
 	})
 	use({ "chaoren/vim-wordmotion", config = [[vim.g.wordmotion_prefix = '<space>']] })
 	use({
@@ -87,19 +77,15 @@ return require("packer").startup(function(use)
 	})
 	use({
 		"ethanholz/nvim-lastplace",
-		config = function()
-			require("nvim-lastplace").setup({})
-		end,
+		config = [[require("nvim-lastplace").setup({})]],
 	})
 	use({
 		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
-		end,
+		config = [[require("Comment").setup({})]],
 	})
 	use({
-		{ "tpope/vim-surround" },
-		{ "andymass/vim-matchup", setup = [[require('config.matchup')]] },
+		"tpope/vim-surround",
+		"andymass/vim-matchup",
 	})
 	use("kshenoy/vim-signature")
 	use({
@@ -113,9 +99,7 @@ return require("packer").startup(function(use)
 		"kevinhwang91/nvim-bqf",
 		{
 			"https://gitlab.com/yorickpeterse/nvim-pqf",
-			config = function()
-				require("pqf").setup()
-			end,
+			config = [[require("pqf").setup({})]],
 		},
 	})
 
@@ -131,11 +115,8 @@ return require("packer").startup(function(use)
 	use("tpope/vim-repeat")
 	use("houtsnip/vim-emacscommandline")
 	use("christoomey/vim-tmux-navigator")
-	use({ "kevinhwang91/nvim-hlslens", config = [[require('config.hlslens')]] })
-	use({
-		"folke/which-key.nvim",
-		config = [[require('config.whichkey')]],
-	})
+	use("kevinhwang91/nvim-hlslens")
+	use("folke/which-key.nvim")
 
 	-- Filer
 	use({
@@ -156,26 +137,12 @@ return require("packer").startup(function(use)
 		requires = "kana/vim-textobj-user",
 	})
 	-- Operator
-	use({
-		"gbprod/substitute.nvim",
-		config = function()
-			require("substitute").setup({})
-		end,
-	})
+	use({ "gbprod/substitute.nvim", config = [[require("substitute").setup({})]] })
 
 	-- Git
-	use({
-		{
-			"lewis6991/gitsigns.nvim",
-			config = [[require('config.gitsigns')]],
-		},
-		{
-			"akinsho/git-conflict.nvim",
-			config = function()
-				require("git-conflict").setup()
-			end,
-		},
-	})
+	use("lewis6991/gitsigns.nvim")
+	use("sindrets/diffview.nvim")
+
 	-- Tree-sitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -184,15 +151,59 @@ return require("packer").startup(function(use)
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			"RRethy/nvim-treesitter-endwise",
 			"p00f/nvim-ts-rainbow",
-      'joosepalviste/nvim-ts-context-commentstring',
+			"joosepalviste/nvim-ts-context-commentstring",
 		},
 		run = ":TSUpdate",
 	})
 
-	-- snippets
-	use("hrsh7th/vim-vsnip")
-	use("hrsh7th/vim-vsnip-integ")
-	use("honza/vim-snippets")
+	-- -- LSP
+	use({
+		"neovim/nvim-lspconfig",
+		"williamboman/mason.nvim",
+		"hrsh7th/cmp-nvim-lsp",
+		"williamboman/mason-lspconfig.nvim",
+	})
+
+	-- Snippets
+	use({
+		{
+			"L3MON4D3/LuaSnip",
+			-- event = "InsertEnter",
+			config = function()
+				require("luasnip.loaders.from_vscode").lazy_load()
+			end,
+		},
+		"rafamadriz/friendly-snippets",
+	})
+
+	-- Completion
+	use({
+		"lukas-reineke/cmp-under-comparator",
+		"onsails/lspkind.nvim",
+		"saadparwaiz1/cmp_luasnip",
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-nvim-lsp-signature-help",
+		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-nvim-lua",
+		"hrsh7th/cmp-nvim-lsp-document-symbol",
+		{
+			"hrsh7th/cmp-cmdline",
+			-- event = "CmdlineEnter"
+		},
+	})
+	use({
+		"hrsh7th/nvim-cmp",
+		-- after = "LuaSnip"
+	})
+
+	-- Diagnostics
+	use({
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+	})
+
+	-- Format
+	use({ "jose-elias-alvarez/null-ls.nvim" })
 
 	-- html
 	use({ "mattn/emmet-vim", ft = { "js", "ts", "jsx", "tsx", "vue" } })

@@ -4,6 +4,7 @@ let g:startify_lists = [
       \ { 'header': ['   '.emoji#for('file_folder').' MRU(pwd)'],     'type': 'dir' }
       \ ]
 
+ let g:coc_start_at_startup = v:false
 let g:vista_default_executive = 'coc'
 let g:vista#renderer#enable_icon = 1
 let g:vista_fzf_preview = ['right:50%']

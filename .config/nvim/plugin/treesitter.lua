@@ -8,7 +8,7 @@ require('nvim-treesitter.configs').setup {
   textsubjects = {
     enable = true,
     lookahead = true,
-    prev_selection = ',',
+    -- prev_selection = ',',
     keymaps = {
       ['.'] = 'textsubjects-smart',
       [';'] = 'textsubjects-container-outer',
