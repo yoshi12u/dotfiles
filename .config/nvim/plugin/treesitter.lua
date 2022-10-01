@@ -1,8 +1,10 @@
 require('nvim-treesitter.configs').setup {
+  ensure_installed = {'json', 'yaml', 'css', 'html', 'lua', 'python', 'toml'},
+  sync_install = false,
   auto_install = true,
   highlight = { enable = true },
   indent = { enable = true },
-  incremental_selection = { enable = false, },
+  incremental_selection = { enable = true, },
   textsubjects = {
     enable = true,
     lookahead = true,
@@ -24,6 +26,8 @@ require('nvim-treesitter.configs').setup {
         ['ic'] = '@class.inner',
         ['ip'] = '@parameter.inner',
         ['ap'] = '@parameter.outer',
+        ['ib'] = '@block.inner',
+        ['ab'] = '@block.outer',
       },
     },
   },
@@ -31,5 +35,8 @@ require('nvim-treesitter.configs').setup {
   rainbow = {
     enable = true,
     extended_mode = true,
+  },
+  context_commentstring = {
+    enable = true
   }
 }

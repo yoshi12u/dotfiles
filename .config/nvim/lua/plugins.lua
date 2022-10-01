@@ -19,7 +19,7 @@ return require("packer").startup(function(use)
 	use("thinca/vim-ref")
 	use("vim-scripts/AnsiEsc.vim")
 
-	-- 	-- Pretty UI
+-- Pretty UI
 	use({
 		"Shatur/neovim-ayu",
 		config = function()
@@ -45,14 +45,11 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use("stevearc/dressing.nvim")
-	use("rcarriga/nvim-notify")
+	use({"rcarriga/nvim-notify", config = [[vim.notify = require("notify")]]})
 	use("vigoux/notifier.nvim")
-	use({
-		"gelguy/wilder.nvim",
-		config = [[require('config.wilder')]],
-	})
+	use({ "gelguy/wilder.nvim", config = [[require('config.wilder')]] })
 
-	-- Utils
+	-- utils
 	use({ "neoclide/coc.nvim", branch = "release" })
 	use("/opt/homebrew/opt/fzf")
 	use("junegunn/fzf.vim")
@@ -67,6 +64,7 @@ return require("packer").startup(function(use)
 	use("junegunn/goyo.vim")
 	use("haya14busa/vim-edgemotion")
 	use("junegunn/vim-easy-align")
+  use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" , config = [[require('config.ufo')]]})
 	use({
 		"windwp/nvim-autopairs",
 		config = function()
@@ -82,7 +80,6 @@ return require("packer").startup(function(use)
 			config = function()
 				require("flit").setup({
 					labeled_modes = "nv",
-					keys = { f = "f", F = "F", t = "t", T = "T" },
 					multiline = true,
 				})
 			end,
@@ -101,8 +98,8 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use({
-		{ "tpope/vim-surround", event = "User ActuallyEditing" },
-		{ "andymass/vim-matchup", setup = [[require('config.matchup')]], event = "User ActuallyEditing" },
+		{ "tpope/vim-surround" },
+		{ "andymass/vim-matchup", setup = [[require('config.matchup')]] },
 	})
 	use("kshenoy/vim-signature")
 	use({
@@ -185,8 +182,9 @@ return require("packer").startup(function(use)
 		requires = {
 			"RRethy/nvim-treesitter-textsubjects",
 			"nvim-treesitter/nvim-treesitter-textobjects",
-			"p00f/nvim-ts-rainbow",
 			"RRethy/nvim-treesitter-endwise",
+			"p00f/nvim-ts-rainbow",
+      'joosepalviste/nvim-ts-context-commentstring',
 		},
 		run = ":TSUpdate",
 	})

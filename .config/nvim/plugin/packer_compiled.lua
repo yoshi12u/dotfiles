@@ -74,16 +74,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["AnsiEsc.vim"] = {
+  ["ansiesc.vim"] = {
     loaded = true,
-    path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/AnsiEsc.vim",
-    url = "https://github.com/vim-scripts/AnsiEsc.vim"
-  },
-  ["Comment.nvim"] = {
-    config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0" },
-    loaded = true,
-    path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/Comment.nvim",
-    url = "https://github.com/numToStr/Comment.nvim"
+    path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/ansiesc.vim",
+    url = "https://github.com/vim-scripts/ansiesc.vim"
   },
   ["coc-fzf"] = {
     loaded = true,
@@ -94,6 +88,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
+  },
+  ["comment.nvim"] = {
+    config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fcomment\frequire\0" },
+    loaded = true,
+    path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/comment.nvim",
+    url = "https://github.com/numtostr/comment.nvim"
   },
   ["dressing.nvim"] = {
     loaded = true,
@@ -108,7 +108,7 @@ _G.packer_plugins = {
     url = "https://github.com/mattn/emmet-vim"
   },
   ["flit.nvim"] = {
-    config = { "\27LJ\2\nu\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\tkeys\1\0\4\6F\6F\6t\6t\6T\6T\6f\6f\1\0\2\14multiline\2\18labeled_modes\anv\nsetup\tflit\frequire\0" },
+    config = { "\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\14multiline\2\18labeled_modes\anv\nsetup\tflit\frequire\0" },
     loaded = true,
     path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/flit.nvim",
     url = "https://github.com/ggandor/flit.nvim"
@@ -181,7 +181,7 @@ _G.packer_plugins = {
     config = { "\27LJ\2\n@\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\vmirage\2\nsetup\bayu\frequire\0" },
     loaded = true,
     path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/neovim-ayu",
-    url = "https://github.com/Shatur/neovim-ayu"
+    url = "https://github.com/shatur/neovim-ayu"
   },
   ["notifier.nvim"] = {
     loaded = true,
@@ -191,7 +191,7 @@ _G.packer_plugins = {
   ["nui.nvim"] = {
     loaded = true,
     path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/nui.nvim",
-    url = "https://github.com/MunifTanjim/nui.nvim"
+    url = "https://github.com/muniftanjim/nui.nvim"
   },
   ["nvim-autopairs"] = {
     config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
@@ -243,7 +243,7 @@ _G.packer_plugins = {
   ["nvim-treesitter-endwise"] = {
     loaded = true,
     path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/nvim-treesitter-endwise",
-    url = "https://github.com/RRethy/nvim-treesitter-endwise"
+    url = "https://github.com/rrethy/nvim-treesitter-endwise"
   },
   ["nvim-treesitter-textobjects"] = {
     loaded = true,
@@ -253,12 +253,23 @@ _G.packer_plugins = {
   ["nvim-treesitter-textsubjects"] = {
     loaded = true,
     path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textsubjects",
-    url = "https://github.com/RRethy/nvim-treesitter-textsubjects"
+    url = "https://github.com/rrethy/nvim-treesitter-textsubjects"
+  },
+  ["nvim-ts-context-commentstring"] = {
+    loaded = true,
+    path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
+    url = "https://github.com/joosepalviste/nvim-ts-context-commentstring"
   },
   ["nvim-ts-rainbow"] = {
     loaded = true,
     path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
     url = "https://github.com/p00f/nvim-ts-rainbow"
+  },
+  ["nvim-ufo"] = {
+    config = { "require('config.ufo')" },
+    loaded = true,
+    path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/nvim-ufo",
+    url = "https://github.com/kevinhwang91/nvim-ufo"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -275,10 +286,15 @@ _G.packer_plugins = {
     path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["promise-async"] = {
+    loaded = true,
+    path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/promise-async",
+    url = "https://github.com/kevinhwang91/promise-async"
+  },
   ["splitjoin.vim"] = {
     loaded = true,
     path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/splitjoin.vim",
-    url = "https://github.com/AndrewRadev/splitjoin.vim"
+    url = "https://github.com/andrewradev/splitjoin.vim"
   },
   ["substitute.nvim"] = {
     config = { "\27LJ\2\n<\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\15substitute\frequire\0" },
@@ -289,14 +305,14 @@ _G.packer_plugins = {
   ["switch.vim"] = {
     loaded = true,
     path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/switch.vim",
-    url = "https://github.com/AndrewRadev/switch.vim"
+    url = "https://github.com/andrewradev/switch.vim"
   },
   ["tagalong.vim"] = {
     loaded = false,
     needs_bufread = false,
     only_cond = false,
     path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/opt/tagalong.vim",
-    url = "https://github.com/AndrewRadev/tagalong.vim"
+    url = "https://github.com/andrewradev/tagalong.vim"
   },
   ["targets.vim"] = {
     loaded = true,
@@ -304,8 +320,8 @@ _G.packer_plugins = {
     url = "https://github.com/wellle/targets.vim"
   },
   undotree = {
-    commands = { "UndotreeToggle" },
-    config = { "vim.g.undotree_SetFocusWhenToggle = 1" },
+    commands = { "undotreetoggle" },
+    config = { "vim.g.undotree_setfocuswhentoggle = 1" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -320,7 +336,7 @@ _G.packer_plugins = {
   ["vim-bracketed-paste"] = {
     loaded = true,
     path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/vim-bracketed-paste",
-    url = "https://github.com/ConradIrwin/vim-bracketed-paste"
+    url = "https://github.com/conradirwin/vim-bracketed-paste"
   },
   ["vim-devicons"] = {
     loaded = true,
@@ -401,10 +417,8 @@ _G.packer_plugins = {
     url = "https://github.com/mhinz/vim-startify"
   },
   ["vim-surround"] = {
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/opt/vim-surround",
+    loaded = true,
+    path = "/Users/yoshimasauehara/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
   },
   ["vim-textobj-entire"] = {
@@ -481,18 +495,58 @@ time([[Setup for vim-matchup]], false)
 time([[Config for substitute.nvim]], true)
 try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\15substitute\frequire\0", "config", "substitute.nvim")
 time([[Config for substitute.nvim]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
--- Config for: flit.nvim
-time([[Config for flit.nvim]], true)
-try_loadstring("\27LJ\2\nu\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\tkeys\1\0\4\6F\6F\6t\6t\6T\6T\6f\6f\1\0\2\14multiline\2\18labeled_modes\anv\nsetup\tflit\frequire\0", "config", "flit.nvim")
-time([[Config for flit.nvim]], false)
+-- Config for: neo-tree.nvim
+time([[Config for neo-tree.nvim]], true)
+vim.g.neo_tree_remove_legacy_commands = true
+time([[Config for neo-tree.nvim]], false)
+-- Config for: nvim-lastplace
+time([[Config for nvim-lastplace]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-lastplace\frequire\0", "config", "nvim-lastplace")
+time([[Config for nvim-lastplace]], false)
+-- Config for: git-conflict.nvim
+time([[Config for git-conflict.nvim]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17git-conflict\frequire\0", "config", "git-conflict.nvim")
+time([[Config for git-conflict.nvim]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+try_loadstring("\27LJ\2\n>\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\21indent_blankline\frequire\0", "config", "indent-blankline.nvim")
+time([[Config for indent-blankline.nvim]], false)
+-- Config for: nvim-ufo
+time([[Config for nvim-ufo]], true)
+require('config.ufo')
+time([[Config for nvim-ufo]], false)
+-- Config for: comment.nvim
+time([[Config for comment.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fcomment\frequire\0", "config", "comment.nvim")
+time([[Config for comment.nvim]], false)
+-- Config for: vim-wordmotion
+time([[Config for vim-wordmotion]], true)
+vim.g.wordmotion_prefix = '<space>'
+time([[Config for vim-wordmotion]], false)
+-- Config for: neovim-ayu
+time([[Config for neovim-ayu]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\vmirage\2\nsetup\bayu\frequire\0", "config", "neovim-ayu")
+time([[Config for neovim-ayu]], false)
+-- Config for: nvim-hlslens
+time([[Config for nvim-hlslens]], true)
+require('config.hlslens')
+time([[Config for nvim-hlslens]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+require('config.gitsigns')
+time([[Config for gitsigns.nvim]], false)
+-- Config for: wilder.nvim
+time([[Config for wilder.nvim]], true)
+require('config.wilder')
+time([[Config for wilder.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+-- Config for: flit.nvim
+time([[Config for flit.nvim]], true)
+try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\14multiline\2\18labeled_modes\anv\nsetup\tflit\frequire\0", "config", "flit.nvim")
+time([[Config for flit.nvim]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 require('config.whichkey')
@@ -501,65 +555,29 @@ time([[Config for which-key.nvim]], false)
 time([[Config for nvim-pqf]], true)
 try_loadstring("\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\bpqf\frequire\0", "config", "nvim-pqf")
 time([[Config for nvim-pqf]], false)
--- Config for: vim-wordmotion
-time([[Config for vim-wordmotion]], true)
-vim.g.wordmotion_prefix = '<space>'
-time([[Config for vim-wordmotion]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-require('config.gitsigns')
-time([[Config for gitsigns.nvim]], false)
--- Config for: neo-tree.nvim
-time([[Config for neo-tree.nvim]], true)
-vim.g.neo_tree_remove_legacy_commands = true
-time([[Config for neo-tree.nvim]], false)
--- Config for: git-conflict.nvim
-time([[Config for git-conflict.nvim]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17git-conflict\frequire\0", "config", "git-conflict.nvim")
-time([[Config for git-conflict.nvim]], false)
--- Config for: wilder.nvim
-time([[Config for wilder.nvim]], true)
-require('config.wilder')
-time([[Config for wilder.nvim]], false)
--- Config for: nvim-lastplace
-time([[Config for nvim-lastplace]], true)
-try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-lastplace\frequire\0", "config", "nvim-lastplace")
-time([[Config for nvim-lastplace]], false)
--- Config for: nvim-hlslens
-time([[Config for nvim-hlslens]], true)
-require('config.hlslens')
-time([[Config for nvim-hlslens]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-try_loadstring("\27LJ\2\n>\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\21indent_blankline\frequire\0", "config", "indent-blankline.nvim")
-time([[Config for indent-blankline.nvim]], false)
--- Config for: neovim-ayu
-time([[Config for neovim-ayu]], true)
-try_loadstring("\27LJ\2\n@\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\vmirage\2\nsetup\bayu\frequire\0", "config", "neovim-ayu")
-time([[Config for neovim-ayu]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file UndotreeToggle lua require("packer.load")({'undotree'}, { cmd = "UndotreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file undotreetoggle lua require("packer.load")({'undotree'}, { cmd = "undotreetoggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType ts ++once lua require("packer.load")({'emmet-vim'}, { ft = "ts" }, _G.packer_plugins)]]
-vim.cmd [[au FileType css ++once lua require("packer.load")({'nvim-colorizer.lua'}, { ft = "css" }, _G.packer_plugins)]]
-vim.cmd [[au FileType javascript ++once lua require("packer.load")({'nvim-colorizer.lua'}, { ft = "javascript" }, _G.packer_plugins)]]
-vim.cmd [[au FileType html ++once lua require("packer.load")({'tagalong.vim', 'nvim-colorizer.lua'}, { ft = "html" }, _G.packer_plugins)]]
+vim.cmd [[au FileType js ++once lua require("packer.load")({'emmet-vim'}, { ft = "js" }, _G.packer_plugins)]]
+vim.cmd [[au FileType html ++once lua require("packer.load")({'nvim-colorizer.lua', 'tagalong.vim'}, { ft = "html" }, _G.packer_plugins)]]
 vim.cmd [[au FileType jsx ++once lua require("packer.load")({'emmet-vim'}, { ft = "jsx" }, _G.packer_plugins)]]
 vim.cmd [[au FileType tsx ++once lua require("packer.load")({'emmet-vim'}, { ft = "tsx" }, _G.packer_plugins)]]
+vim.cmd [[au FileType css ++once lua require("packer.load")({'nvim-colorizer.lua'}, { ft = "css" }, _G.packer_plugins)]]
+vim.cmd [[au FileType javascript ++once lua require("packer.load")({'nvim-colorizer.lua'}, { ft = "javascript" }, _G.packer_plugins)]]
 vim.cmd [[au FileType vue ++once lua require("packer.load")({'emmet-vim'}, { ft = "vue" }, _G.packer_plugins)]]
 vim.cmd [[au FileType vim ++once lua require("packer.load")({'nvim-colorizer.lua'}, { ft = "vim" }, _G.packer_plugins)]]
-vim.cmd [[au FileType js ++once lua require("packer.load")({'emmet-vim'}, { ft = "js" }, _G.packer_plugins)]]
+vim.cmd [[au FileType ts ++once lua require("packer.load")({'emmet-vim'}, { ft = "ts" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au User ActuallyEditing ++once lua require("packer.load")({'vim-matchup', 'vim-surround'}, { event = "User ActuallyEditing" }, _G.packer_plugins)]]
+vim.cmd [[au user actuallyediting ++once lua require("packer.load")({'vim-matchup'}, { event = "user actuallyediting" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 
