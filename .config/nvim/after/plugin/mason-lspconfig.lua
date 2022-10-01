@@ -1,7 +1,10 @@
-local mason_lspconfig = require("mason-lspconfig")
-
 local status_ok1, mason = pcall(require, "mason")
 if not status_ok1 then
+	return
+end
+
+local status_ok2, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not status_ok2 then
 	return
 end
 

@@ -28,8 +28,17 @@ return require("packer").startup(function(use)
 	})
 	use("ryanoasis/vim-devicons")
 	use("kyazdani42/nvim-web-devicons")
-	use("itchyny/lightline.vim")
-	use("mengelbrecht/lightline-bufferline")
+	use("nvim-lualine/lualine.nvim")
+	use({
+		"noib3/nvim-cokeline",
+		config = function()
+			require("cokeline").setup()
+		end,
+	})
+	-- use({ "akinsho/bufferline.nvim" })
+	-- use("romgrk/barbar.nvim")
+	-- use("itchyny/lightline.vim")
+	-- use("mengelbrecht/lightline-bufferline")
 	use("junegunn/vim-emoji")
 	use("RRethy/vim-illuminate")
 	use({

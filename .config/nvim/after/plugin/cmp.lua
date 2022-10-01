@@ -1,8 +1,14 @@
-local cmp = require("cmp")
-local luasnip = require("luasnip")
-
-local status_ok_, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
+local status_ok, cmp = pcall(require, "cmp")
+if not status_ok then
+	return
+end
+local status_ok_, luasnip = pcall(require, "luasnip")
 if not status_ok_ then
+	return
+end
+
+local status_ok__, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
+if not status_ok__ then
 	return
 end
 
@@ -47,7 +53,7 @@ cmp.setup({
 	mapping = cmp.mapping.preset.insert({
 		["<C-p>"] = cmp.mapping.select_prev_item(),
 		["<C-n>"] = cmp.mapping.select_next_item(),
-		["<C-l>"] = cmp.mapping.complete(),
+		["<tab>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 	}),
