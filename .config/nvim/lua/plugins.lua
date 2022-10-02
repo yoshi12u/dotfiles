@@ -35,10 +35,6 @@ return require("packer").startup(function(use)
 			require("cokeline").setup()
 		end,
 	})
-	-- use({ "akinsho/bufferline.nvim" })
-	-- use("romgrk/barbar.nvim")
-	-- use("itchyny/lightline.vim")
-	-- use("mengelbrecht/lightline-bufferline")
 	use("junegunn/vim-emoji")
 	use("RRethy/vim-illuminate")
 	use({
@@ -57,7 +53,6 @@ return require("packer").startup(function(use)
 	use("junegunn/fzf.vim")
 	use("antoinemadec/coc-fzf")
 	use("ConradIrwin/vim-bracketed-paste")
-	-- use("mhinz/vim-startify")
 	use({
 		"goolord/alpha-nvim",
 		requires = { "kyazdani42/nvim-web-devicons" },
