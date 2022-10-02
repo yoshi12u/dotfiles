@@ -22,7 +22,7 @@ local lfpicker = Terminal:new({
 	on_close = function(term)
 		local file = io.open(temp_path, "r")
 		if file ~= nil then
-			vim.cmd("tabe " .. file:read("*a"))
+			vim.cmd("bd!|e " .. file:read("*a"))
 			file:close()
 			os.remove(temp_path)
 		end

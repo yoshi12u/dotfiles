@@ -56,7 +56,6 @@ return require("packer").startup(function(use)
 	use("/opt/homebrew/opt/fzf")
 	use("junegunn/fzf.vim")
 	use("antoinemadec/coc-fzf")
-	use("airblade/vim-rooter")
 	use("ConradIrwin/vim-bracketed-paste")
 	-- use("mhinz/vim-startify")
 	use({
@@ -108,6 +107,18 @@ return require("packer").startup(function(use)
 	use({
 		"kylechui/nvim-surround",
 		tag = "*",
+	})
+	use({
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("project_nvim").setup({})
+		end,
+	})
+	use({
+		"klen/nvim-config-local",
+		config = function()
+			require("config-local").setup({})
+		end,
 	})
 	use({
 		"andymass/vim-matchup",

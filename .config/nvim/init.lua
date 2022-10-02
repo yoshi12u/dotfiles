@@ -1,4 +1,5 @@
 require("impatient")
+require("base")
 require("plugins")
 vim.cmd("source $XDG_CONFIG_HOME/vim/vimrc")
 

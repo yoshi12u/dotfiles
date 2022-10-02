@@ -1,11 +1,1 @@
-{
-  "dependencies": {
-    "coc-html": ">=1.7.0",
-    "coc-json": ">=1.6.1",
-    "coc-lua": ">=1.0.1",
-    "coc-pyright": ">=1.1.272",
-    "coc-snippets": ">=3.1.2",
-    "coc-stylua": ">=0.0.11",
-    "coc-yaml": ">=1.8.0"
-  }
-}
+{"dependencies":{}}

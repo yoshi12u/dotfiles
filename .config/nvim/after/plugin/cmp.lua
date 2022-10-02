@@ -2,6 +2,7 @@ local status_ok, cmp = pcall(require, "cmp")
 if not status_ok then
 	return
 end
+
 local status_ok_, luasnip = pcall(require, "luasnip")
 if not status_ok_ then
 	return
