@@ -25,7 +25,8 @@ local leader_mappings = {
 
 	f = {
 		name = "Find",
-		b = { "<cmd>lua require('fzf-lua').git_branches<CR>", "Checkout branch" },
+		a = { "<cmd>lua require('fzf-lua').lsp_code_actions()<CR>", "Code Action" },
+		b = { "<cmd>lua require('fzf-lua').git_branches()<CR>", "Checkout branch" },
 		f = {
 			[[<cmd>lua require('fzf-lua').files()<CR>]],
 			"Find files",
@@ -33,6 +34,10 @@ local leader_mappings = {
 		s = {
 			"<cmd>lua require('fzf-lua').live_grep()<CR>",
 			"Find String",
+		},
+		S = {
+			"<cmd>lua require('fzf-lua').lsp_live_workspace_symbols<CR>",
+			"Find Symbols",
 		},
 		k = {
 			"<cmd>lua require('fzf-lua').keymaps()<CR>",
@@ -47,13 +52,29 @@ local leader_mappings = {
 			"Find Yanked",
 		},
 		d = {
-			"<cmd>TroubleToggle document_diagnostics<cr>",
+			"<cmd>lua require('fzf-lua').diagnostics_document()<CR>",
 			"Find Diagnostic",
+		},
+	},
+
+	l = {
+		name = "LSP",
+		l = { "<cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" },
+		d = {
+			"<cmd>TroubleToggle document_diagnostics<cr>",
+			"Document Diff",
 		},
 		D = {
 			"<cmd>TroubleToggle workspace_diagnostics<cr>",
-			"Find Diagnostic",
+			"Workspace Diff",
 		},
+		s = { "<cmd>lua require('fzf-lua').lsp_document_symbols<CR>", "Document Symbols" },
+		S = {
+			"<cmd>lua require('fzf-lua').lsp_live_workspace_symbols<CR>",
+			"Workspace Symbols",
+		},
+		r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+		o = { "<cmd>SymbolsOutline<CR>", "Outline" },
 	},
 
 	g = {
@@ -76,28 +97,6 @@ local leader_mappings = {
 			"Document Diff",
 		},
 		s = { "<cmd> lua require('fzf-lua').git_status()<CR>", "Git Status" },
-	},
-
-	l = {
-		name = "LSP",
-		a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
-		l = { "<cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" },
-		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", "Diagnostic Quickfix" },
-		d = {
-			"<cmd>lua require('fzf-lua').diagnostics_document()<CR>",
-			"Document Diff",
-		},
-		D = {
-			"<cmd>lua require('fzf-lua').diagnostics_workspace()<CR>",
-			"Workspace Diff",
-		},
-		s = { "<cmd>lua require('fzf-lua').lsp_document_symbols<CR>", "Document Symbols" },
-		S = {
-			"<cmd>lua require('fzf-lua').lsp_dynamic_workspace_symbols<CR>",
-			"Workspace Symbols",
-		},
-		r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-		o = { "<cmd>SymbolsOutline<CR>", "Outline" },
 	},
 
 	["n"] = { "<cmd>noh<CR>", "Clear Highlight" },

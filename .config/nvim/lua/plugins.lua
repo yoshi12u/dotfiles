@@ -45,6 +45,12 @@ return require("packer").startup(function(use)
 	use("stevearc/dressing.nvim")
 	use({ "rcarriga/nvim-notify", config = [[vim.notify = require("notify")]] })
 	use("vigoux/notifier.nvim")
+	use({
+		"j-hui/fidget.nvim",
+		config = function()
+			require("fidget").setup({})
+		end,
+	})
 
 	-- utils
 	use("ConradIrwin/vim-bracketed-paste")
