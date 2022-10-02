@@ -18,6 +18,7 @@ local options = {
 	cursorline = true,
 	signcolumn = "yes",
 	showtabline = 2,
+	ignorecase = true,
 	smartcase = true,
 	softtabstop = 2,
 	timeoutlen = 1000,

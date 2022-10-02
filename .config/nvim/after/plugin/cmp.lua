@@ -64,18 +64,15 @@ cmp.setup({
 })
 
 cmp.setup.cmdline({ "/", "?" }, {
-	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
 		{ name = "buffer" },
 	},
 })
 
 cmp.setup.cmdline(":", {
-	mapping = cmp.mapping.preset.cmdline(),
-	sources = cmp.config.sources({
-		{ name = "path" },
-	}, {
+	sources = {
 		{ name = "cmdline" },
-	}),
+		{ name = "path" },
+	},
 })
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
