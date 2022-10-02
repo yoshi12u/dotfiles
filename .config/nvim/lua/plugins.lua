@@ -58,9 +58,15 @@ return require("packer").startup(function(use)
 	use("antoinemadec/coc-fzf")
 	use("airblade/vim-rooter")
 	use("ConradIrwin/vim-bracketed-paste")
-	use("mhinz/vim-startify")
+	-- use("mhinz/vim-startify")
+	use({
+		"goolord/alpha-nvim",
+		requires = { "kyazdani42/nvim-web-devicons" },
+		config = function()
+			require("alpha").setup(require("alpha.themes.startify").config)
+		end,
+	})
 	use("simrat39/symbols-outline.nvim")
-	use("bronson/vim-trailing-whitespace")
 	use("voldikss/vim-floaterm")
 	use({
 		"akinsho/toggleterm.nvim",
@@ -100,7 +106,10 @@ return require("packer").startup(function(use)
 		config = [[require("Comment").setup({})]],
 	})
 	use({
-		"tpope/vim-surround",
+		"kylechui/nvim-surround",
+		tag = "*",
+	})
+	use({
 		"andymass/vim-matchup",
 	})
 	use("chentoast/marks.nvim")

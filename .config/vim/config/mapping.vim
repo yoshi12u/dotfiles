@@ -158,7 +158,7 @@ nnoremap <silent> [finder]l :BLines<CR>
 nnoremap <silent> [finder]m :Marks<CR>
 nnoremap <silent> [finder]d :CocFzfList diagnostics<CR>
 
-nnoremap <silent> [git]g :FloatermNew lazygit<CR>
+" nnoremap <silent> [git]g :FloatermNew lazygit<CR>
 nnoremap <silent> [git]d :CocCommand git.chunkInfo<CR>
 nnoremap <silent> [git]X :CocCommand git.chunkUndo<CR>
 nnoremap <silent> [git]x :CocCommand git.browserOpen<CR>
@@ -173,9 +173,9 @@ nnoremap <silent> <c-w><CR> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-w>k :TmuxNavigateUp<cr>
 nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
 
-nnoremap <silent> - :FloatermNew lf<CR>
+" nnoremap <silent> - :FloatermNew lf<CR>
 
-nnoremap <silent> [terminal]t :FloatermToggle<CR>
-nnoremap <silent> [terminal]k :FloatermKill!<CR>
-tnoremap <silent> [terminal]t <C-\><C-n>:FloatermToggle<CR>
-tnoremap <silent> [terminal]k <C-\><C-n>:FloatermKill!<CR>
+" nnoremap <silent> [terminal]t :FloatermToggle<CR>
+" nnoremap <silent> [terminal]k :FloatermKill!<CR>
+" tnoremap <silent> [terminal]t <C-\><C-n>:FloatermToggle<CR>
+" tnoremap <silent> [terminal]k <C-\><C-n>:FloatermKill!<CR>
