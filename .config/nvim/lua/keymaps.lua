@@ -59,3 +59,31 @@ keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
 keymap("n", "qf", ":Qfreplace<CR>", opts)
 keymap("n", "R", "<cmd>lua require('substitute').operator()<cr>", opts)
 keymap("x", "R", "<cmd>lua require('substitute').visual()<cr>", opts)
+
+keymap(
+	"",
+	"f",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>",
+	{}
+)
+keymap(
+	"",
+	"F",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>",
+	{}
+)
+keymap(
+	"",
+	"t",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false, hint_offset = -1 })<cr>",
+	{}
+)
+keymap(
+	"",
+	"T",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false, hint_offset = 1 })<cr>",
+	{}
+)
+
+keymap("o", "m", "<C-U>lua require('tsht').nodes()<CR>", opts_noremap)
+keymap("x", "m", "lua require('tsht').nodes()<CR>", opts_noremap)

@@ -80,14 +80,11 @@ return require("packer").startup(function(use)
 	})
 	use({ "chaoren/vim-wordmotion", config = [[vim.g.wordmotion_prefix = '<space>']] })
 	use({
-		{ "ggandor/leap.nvim", requires = "tpope/vim-repeat" },
-		{
-			"ggandor/flit.nvim",
-			requires = "ggandor/leap.nvim",
-			config = function()
-				require("flit").setup({ labeled_modes = "nv", multiline = true })
-			end,
-		},
+		"phaazon/hop.nvim",
+		branch = "v2",
+		config = function()
+			require("hop").setup({})
+		end,
 	})
 	use({
 		"ethanholz/nvim-lastplace",
@@ -176,6 +173,9 @@ return require("packer").startup(function(use)
 		"williamboman/mason.nvim",
 		"neovim/nvim-lspconfig",
 		"williamboman/mason-lspconfig.nvim",
+	})
+	use({
+		"ray-x/lsp_signature.nvim",
 	})
 
 	-- Snippets
