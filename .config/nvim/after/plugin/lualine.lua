@@ -10,8 +10,7 @@ end
 local icon = { "filetype", padding = { left = 1 }, icon_only = true }
 local filename = {
 	"filename",
-	path = 1,
-	padding = { left = 1, right = 1 },
+	path = 0,
 }
 
 local diagnostics = {
@@ -52,7 +51,6 @@ local branch = {
 
 local location = {
 	"location",
-	padding = 0,
 }
 
 lualine.setup({
@@ -70,7 +68,7 @@ lualine.setup({
 		lualine_c = { diagnostics },
 		lualine_x = { branch, diff, filetype },
 		lualine_y = { location },
-		lualine_z = { progress },
+		lualine_z = { "progress" },
 	},
 	inactive_sections = {
 		lualine_a = {},

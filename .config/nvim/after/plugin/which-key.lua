@@ -46,6 +46,14 @@ local leader_mappings = {
 			"<cmd>lua require('neoclip.fzf')()<CR>",
 			"Find Yanked",
 		},
+		d = {
+			"<cmd>TroubleToggle document_diagnostics<cr>",
+			"Find Diagnostic",
+		},
+		D = {
+			"<cmd>TroubleToggle workspace_diagnostics<cr>",
+			"Find Diagnostic",
+		},
 	},
 
 	g = {
@@ -56,7 +64,7 @@ local leader_mappings = {
 		p = { "<cmd>lua require 'gitsigns'.preview_hunk()<CR>", "Preview Hunk" },
 		r = { "<cmd>lua require 'gitsigns'.reset_hunk()<CR>", "Reset Hunk" },
 		R = { "<cmd>lua require 'gitsigns'.reset_buffer()<CR>", "Reset Buffer" },
-		s = { "<cmd>lua require 'gitsigns'.stage_hunk()<CR>", "Stage Hunk" },
+		a = { "<cmd>lua require 'gitsigns'.stage_hunk()<CR>", "Stage Hunk" },
 		u = {
 			"<cmd>lua require 'gitsigns'.undo_stage_hunk()<CR>",
 			"Undo Stage Hunk",
@@ -67,14 +75,14 @@ local leader_mappings = {
 			"<cmd>lua require('gitsigns').diffthis()<CR>",
 			"Document Diff",
 		},
-		D = { "<cmd> lua require('fzf-lua').git_status()<CR>", "Workspace Diff" },
+		s = { "<cmd> lua require('fzf-lua').git_status()<CR>", "Git Status" },
 	},
 
 	l = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
 		l = { "<cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" },
-		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", "Quickfix" },
+		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", "Diagnostic Quickfix" },
 		d = {
 			"<cmd>lua require('fzf-lua').diagnostics_document()<CR>",
 			"Document Diff",

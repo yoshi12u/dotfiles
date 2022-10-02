@@ -1,10 +1,14 @@
 local status_ok, hlslens = pcall(require, "hlslens")
 if not status_ok then
-  return
+	return
 end
 
-local kopts = { noremap = true, silent = true }
+hlslens.setup({
+	calm_down = true,
+	nearest_only = true,
+})
 
+local kopts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap(
 	"n",
 	"n",
@@ -21,5 +25,3 @@ vim.api.nvim_set_keymap("n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], 
 vim.api.nvim_set_keymap("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 vim.api.nvim_set_keymap("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
 vim.api.nvim_set_keymap("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
-
-vim.api.nvim_set_keymap("n", "<Leader>l", ":noh<CR>", kopts)

@@ -8,11 +8,6 @@ if not status_ok_ then
 	return
 end
 
-local status_ok__, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
-if not status_ok__ then
-	return
-end
-
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -51,7 +46,10 @@ cmp.setup({
 		{ name = "luasnip" },
 		{ name = "nvim_lua" },
 	},
-	mapping = cmp.mapping.preset.insert(),
+	mapping = cmp.mapping.preset.insert({
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		["<Tab>"] = cmp.mapping.confirm({ select = true }),
+	}),
 	experimental = {
 		ghost_text = true,
 	},
@@ -68,7 +66,6 @@ cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline({
 		["<Tab>"] = {
 			c = function()
-				local cmp = require("cmp")
 				if cmp.visible() then
 					cmp.select_next_item()
 				else
@@ -88,4 +85,4 @@ cmp.setup.cmdline(":", {
 		{ name = "path" },
 	},
 })
-cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+cmp.event:on("confirm_done", require("nvim-autopairs.completion.cmp").on_confirm_done())

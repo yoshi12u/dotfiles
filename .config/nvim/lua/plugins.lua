@@ -26,7 +26,6 @@ return require("packer").startup(function(use)
 			vim.cmd([[colorscheme tokyonight-moon]])
 		end,
 	})
-	use("ryanoasis/vim-devicons")
 	use("kyazdani42/nvim-web-devicons")
 	use("nvim-lualine/lualine.nvim")
 	use({
@@ -80,10 +79,7 @@ return require("packer").startup(function(use)
 			"ggandor/flit.nvim",
 			requires = "ggandor/leap.nvim",
 			config = function()
-				require("flit").setup({
-					labeled_modes = "nv",
-					multiline = true,
-				})
+				require("flit").setup({ labeled_modes = "nv", multiline = true })
 			end,
 		},
 	})

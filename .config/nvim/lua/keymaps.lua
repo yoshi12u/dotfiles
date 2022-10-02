@@ -33,8 +33,8 @@ keymap("n", "j", "gj", opts_silent)
 keymap("n", "k", "gk", opts_silent)
 keymap("n", "r", "gr", opts_silent)
 
-keymap("n", "<c-b>", "<Left>", opts)
-keymap("n", "<c-f>", "<Right>", opts)
+keymap("i", "<c-b>", "<Left>", opts)
+keymap("i", "<c-f>", "<Right>", opts)
 
 keymap("n", "p", "p`]", opts)
 keymap("v", "p", "p`]", opts)

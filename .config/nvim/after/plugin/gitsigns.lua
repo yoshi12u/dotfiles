@@ -1,6 +1,6 @@
-local status_ok, gitsigns= pcall(require, "gitsigns")
+local status_ok, gitsigns = pcall(require, "gitsigns")
 if not status_ok then
-  return
+	return
 end
 
 gitsigns.setup({
@@ -8,7 +8,7 @@ gitsigns.setup({
 	current_line_blame_opts = {
 		virt_text = true,
 		virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
-		delay = 200,
+		delay = 0,
 		ignore_whitespace = false,
 	},
 	current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>",
