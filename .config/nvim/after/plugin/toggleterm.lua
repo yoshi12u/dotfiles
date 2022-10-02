@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 local Terminal = toggleterm.Terminal
+
 local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
 
 function _lazygit_toggle()

@@ -1,4 +1,0 @@
-set runtimepath^=$XDG_CONFIG_HOME/vim
-
-runtime! plugin_settings.vim
-runtime! config/*.vim

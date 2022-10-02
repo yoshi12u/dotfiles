@@ -51,25 +51,38 @@ cmp.setup({
 		{ name = "luasnip" },
 		{ name = "nvim_lua" },
 	},
-	mapping = cmp.mapping.preset.insert({
-		["<C-p>"] = cmp.mapping.select_prev_item(),
-		["<C-n>"] = cmp.mapping.select_next_item(),
-		["<tab>"] = cmp.mapping.complete(),
-		["<C-e>"] = cmp.mapping.abort(),
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
-	}),
+	mapping = cmp.mapping.preset.insert(),
 	experimental = {
 		ghost_text = true,
 	},
 })
 
 cmp.setup.cmdline({ "/", "?" }, {
+	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
 		{ name = "buffer" },
 	},
 })
 
 cmp.setup.cmdline(":", {
+	mapping = cmp.mapping.preset.cmdline({
+		["<Tab>"] = {
+			c = function()
+				local cmp = require("cmp")
+				if cmp.visible() then
+					cmp.select_next_item()
+				else
+					cmp.complete()
+				end
+			end,
+		},
+	}),
+	completion = {
+		autocomplete = false,
+		completeopt = "menu,menuone,noselect",
+		keyword_pattern = [[\%(-\?\d\+\%(\.\d\+\)\?\|\h\w*\%(-\w*\)*\)]],
+		keyword_length = 1,
+	},
 	sources = {
 		{ name = "cmdline" },
 		{ name = "path" },

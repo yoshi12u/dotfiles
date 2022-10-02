@@ -7,10 +7,11 @@ local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
 
-local buffer = {
-	"buffers",
-	show_filename_only = true, -- Shows shortened relative path when set to false.
-	hide_filename_extension = false, -- Hide filename extension when set to true.
+local icon = { "filetype", padding = { left = 1 }, icon_only = true }
+local filename = {
+	"filename",
+	path = 1,
+	padding = { left = 1, right = 1 },
 }
 
 local diagnostics = {
@@ -65,7 +66,7 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = { mode },
-		lualine_b = { buffer },
+		lualine_b = { icon, filename },
 		lualine_c = { diagnostics },
 		lualine_x = { branch, diff, filetype },
 		lualine_y = { location },

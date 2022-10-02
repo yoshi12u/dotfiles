@@ -1,8 +1,7 @@
 vim.cmd("autocmd!")
-
 vim.scriptencoding = "utf-8"
-
 vim.wo.number = true
+vim.g.mapleader = " "
 
 local options = {
 	encoding = "utf-8",
@@ -15,18 +14,16 @@ local options = {
 	whichwrap = "b,s,[,],<,>",
 	clipboard = "unnamedplus",
 	hlsearch = true,
-	cursorline = true,
 	signcolumn = "yes",
 	showtabline = 2,
 	ignorecase = true,
 	smartcase = true,
 	softtabstop = 2,
-	timeoutlen = 1000,
+	timeoutlen = 500,
 	updatetime = 300,
 	writebackup = false,
 	backup = false,
 	swapfile = false,
-	undofile = true,
 	cmdheight = 2,
 	expandtab = true,
 	mouse = "a",
@@ -54,4 +51,15 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 vim.api.nvim_create_autocmd("InsertLeave", {
 	pattern = "*",
 	command = "set nopaste",
+})
+
+vim.cmd([[
+  augroup highlight_yank
+  autocmd!
+  au TextYankPost * silent! lua vim.highlight.on_yank({timeout=200})
+  augroup END
+]])
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	border = "single",
 })

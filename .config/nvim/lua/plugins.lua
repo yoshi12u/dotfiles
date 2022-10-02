@@ -48,10 +48,6 @@ return require("packer").startup(function(use)
 	use("vigoux/notifier.nvim")
 
 	-- utils
-	use({ "neoclide/coc.nvim", branch = "release" })
-	use("/opt/homebrew/opt/fzf")
-	use("junegunn/fzf.vim")
-	use("antoinemadec/coc-fzf")
 	use("ConradIrwin/vim-bracketed-paste")
 	use({
 		"goolord/alpha-nvim",
@@ -95,14 +91,8 @@ return require("packer").startup(function(use)
 		"ethanholz/nvim-lastplace",
 		config = [[require("nvim-lastplace").setup({})]],
 	})
-	use({
-		"numToStr/Comment.nvim",
-		config = [[require("Comment").setup({})]],
-	})
-	use({
-		"kylechui/nvim-surround",
-		tag = "*",
-	})
+	use({ "numToStr/Comment.nvim", config = [[require("Comment").setup({})]] })
+	use({ "kylechui/nvim-surround", tag = "*" })
 	use({
 		"ahmedkhalf/project.nvim",
 		config = function()
@@ -115,15 +105,10 @@ return require("packer").startup(function(use)
 			require("config-local").setup({})
 		end,
 	})
-	use({
-		"andymass/vim-matchup",
-	})
+	use({ "AckslD/nvim-neoclip.lua" })
+	use({ "andymass/vim-matchup" })
 	use("chentoast/marks.nvim")
-	use({
-		"mbbill/undotree",
-		cmd = "UndotreeToggle",
-		config = [[vim.g.undotree_SetFocusWhenToggle = 1]],
-	})
+	use({ "mbbill/undotree", cmd = "UndotreeToggle", config = [[vim.g.undotree_SetFocusWhenToggle = 1]] })
 
 	-- QuickFix
 	use({
@@ -145,7 +130,7 @@ return require("packer").startup(function(use)
 	-- mapping
 	use("tpope/vim-repeat")
 	use("houtsnip/vim-emacscommandline")
-	use("christoomey/vim-tmux-navigator")
+	use({ "christoomey/vim-tmux-navigator", config = [[vim.g.tmux_navigator_no_mappings = 1]] })
 	use("kevinhwang91/nvim-hlslens")
 	use("folke/which-key.nvim")
 
@@ -163,10 +148,7 @@ return require("packer").startup(function(use)
 
 	-- Text objects
 	use("wellle/targets.vim")
-	use({
-		"kana/vim-textobj-entire",
-		requires = "kana/vim-textobj-user",
-	})
+	use({ "kana/vim-textobj-entire", requires = "kana/vim-textobj-user" })
 	-- Operator
 	use({ "gbprod/substitute.nvim", config = [[require("substitute").setup({})]] })
 
@@ -189,9 +171,8 @@ return require("packer").startup(function(use)
 
 	-- -- LSP
 	use({
-		"neovim/nvim-lspconfig",
 		"williamboman/mason.nvim",
-		"hrsh7th/cmp-nvim-lsp",
+		"neovim/nvim-lspconfig",
 		"williamboman/mason-lspconfig.nvim",
 	})
 
@@ -212,6 +193,7 @@ return require("packer").startup(function(use)
 		"lukas-reineke/cmp-under-comparator",
 		"onsails/lspkind.nvim",
 		"saadparwaiz1/cmp_luasnip",
+		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-nvim-lsp-signature-help",
 		"hrsh7th/cmp-path",
@@ -235,6 +217,10 @@ return require("packer").startup(function(use)
 
 	-- Format
 	use({ "jose-elias-alvarez/null-ls.nvim" })
+
+	-- Selector
+	use({ "ibhagwan/fzf-lua", requires = { "kyazdani42/nvim-web-devicons" } })
+	use({ "junegunn/fzf", run = "./install --bin" })
 
 	-- html
 	use({ "mattn/emmet-vim", ft = { "js", "ts", "jsx", "tsx", "vue" } })
