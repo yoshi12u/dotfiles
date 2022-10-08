@@ -58,10 +58,9 @@ local location = {
 	"location",
 }
 
-local navi_info  = {
-         navic.get_location, cond = function ()
-                return navic.is_available() and vim.fn.winwidth(0) > 100
-         end
+local navi_info = {
+	navic.get_location,
+	cond = navic.is_available,
 }
 
 lualine.setup({
@@ -79,13 +78,16 @@ lualine.setup({
 			"Outline",
 			"spectre_panel",
 			"toggleterm",
+			"neo-tree",
+			"neo-tree-popup",
 		},
 		always_divide_middle = true,
+		globalstatus = true,
 	},
 	sections = {
 		lualine_a = { mode },
 		lualine_b = { icon, filename },
-		lualine_c = { diagnostics, navi_info},
+		lualine_c = { diagnostics, navi_info },
 		lualine_x = { branch, diff, filetype },
 		lualine_y = { location },
 		lualine_z = { "progress" },
