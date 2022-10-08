@@ -172,7 +172,7 @@ return require("packer").startup(function(use)
 		run = ":TSUpdate",
 	})
 
-	-- -- LSP
+	-- LSP
 	use({
 		"williamboman/mason.nvim",
 		"neovim/nvim-lspconfig",
