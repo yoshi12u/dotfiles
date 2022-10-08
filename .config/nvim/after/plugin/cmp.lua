@@ -41,7 +41,6 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "buffer" },
 		{ name = "path" },
-		{ name = "cmdline" },
 		{ name = "nvim_lsp_signature_help" },
 		{ name = "luasnip" },
 		{ name = "nvim_lua" },
@@ -79,25 +78,10 @@ cmp.setup.cmdline({ "/", "?" }, {
 })
 
 cmp.setup.cmdline(":", {
-	mapping = cmp.mapping.preset.cmdline({
-		["<Tab>"] = {
-			c = function()
-				if cmp.visible() then
-					cmp.select_next_item()
-				else
-					cmp.complete()
-				end
-			end,
-		},
-	}),
-	completion = {
-		autocomplete = false,
-		completeopt = "menu,menuone,noselect",
-		keyword_pattern = [[\%(-\?\d\+\%(\.\d\+\)\?\|\h\w*\%(-\w*\)*\)]],
-		keyword_length = 1,
-	},
+	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
-		{ name = "cmdline" },
+		{ name = "cmdline", keyword_pattern = [=[[^[:blank:]\!]*]=] },
+		{ name = "cmdline_history" },
 		{ name = "path" },
 	},
 })

@@ -8,6 +8,7 @@ export PAGER="less"
 
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
-path=("$HOME/.bin" "$path[@]")
+path=("$HOME/.bin" "$HOME/.local/bin" "$path[@]")
+
 export PATH
 

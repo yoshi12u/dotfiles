@@ -203,6 +203,7 @@ return require("packer").startup(function(use)
 		"hrsh7th/cmp-nvim-lsp-document-symbol",
 		{
 			"hrsh7th/cmp-cmdline",
+			"dmitmel/cmp-cmdline-history",
 			-- event = "CmdlineEnter"
 		},
 	})
