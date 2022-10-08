@@ -29,6 +29,10 @@ return require("packer").startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 	use("nvim-lualine/lualine.nvim")
 	use({
+		"SmiteshP/nvim-navic",
+		requires = "neovim/nvim-lspconfig",
+	})
+	use({
 		"noib3/nvim-cokeline",
 		config = function()
 			require("cokeline").setup()
@@ -201,6 +205,7 @@ return require("packer").startup(function(use)
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-nvim-lua",
 		"hrsh7th/cmp-nvim-lsp-document-symbol",
+		"ray-x/cmp-treesitter",
 		{
 			"hrsh7th/cmp-cmdline",
 			"dmitmel/cmp-cmdline-history",
@@ -228,6 +233,9 @@ return require("packer").startup(function(use)
 	-- html
 	use({ "mattn/emmet-vim", ft = { "js", "ts", "jsx", "tsx", "vue" } })
 	use({ "AndrewRadev/tagalong.vim", ft = { "html" } })
+
+	-- zsh
+	use("zdharma-continuum/zinit-vim-syntax")
 
 	if packer_bootstrap then
 		require("packer").sync()

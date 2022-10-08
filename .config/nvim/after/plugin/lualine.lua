@@ -3,6 +3,11 @@ if not status_ok then
 	return
 end
 
+local status_ok_, navic = pcall(require, "nvim-navic")
+if not status_ok_ then
+	return
+end
+
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
@@ -26,7 +31,7 @@ local diagnostics = {
 local diff = {
 	"diff",
 	colored = true,
-	symbols = { added = "+ ", modified = "~ ", removed = "- " }, -- changes diff symbols
+	symbols = { added = "+ ", modified = "~ ", removed = "- " },
 	cond = hide_in_width,
 }
 
@@ -53,19 +58,34 @@ local location = {
 	"location",
 }
 
+local navi_info  = {
+         navic.get_location, cond = function ()
+                return navic.is_available() and vim.fn.winwidth(0) > 100
+         end
+}
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = "auto",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
-		disabled_filetypes = { "alpha", "dashboard", "Outline" },
+		disabled_filetypes = {
+			"startify",
+			"dashboard",
+			"NvimTree",
+			"Trouble",
+			"alpha",
+			"Outline",
+			"spectre_panel",
+			"toggleterm",
+		},
 		always_divide_middle = true,
 	},
 	sections = {
 		lualine_a = { mode },
 		lualine_b = { icon, filename },
-		lualine_c = { diagnostics },
+		lualine_c = { diagnostics, navi_info},
 		lualine_x = { branch, diff, filetype },
 		lualine_y = { location },
 		lualine_z = { "progress" },
