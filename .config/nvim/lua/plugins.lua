@@ -49,7 +49,6 @@ return require("packer").startup(function(use)
 	use({ "lukas-reineke/indent-blankline.nvim", config = [[require("indent_blankline").setup()]] })
 	use("stevearc/dressing.nvim")
 	use({ "rcarriga/nvim-notify", config = [[vim.notify = require("notify")]] })
-	use("vigoux/notifier.nvim")
 	use({
 		"j-hui/fidget.nvim",
 		config = function()
