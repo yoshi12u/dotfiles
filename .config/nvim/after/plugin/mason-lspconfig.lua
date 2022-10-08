@@ -20,6 +20,11 @@ mason_lspconfig.setup_handlers({
 			on_attach = function(client, bufnr)
 				navic.attach(client, bufnr)
 			end,
+			settings = {
+				Lua = {
+					diagnostics = { globals = { "vim" } },
+				},
+			},
 		})
 	end,
 })
