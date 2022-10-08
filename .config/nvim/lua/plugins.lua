@@ -12,6 +12,7 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
+	use({ "nvim-lua/plenary.nvim" })
 	use("wbthomason/packer.nvim")
 	use("lewis6991/impatient.nvim")
 
@@ -73,6 +74,10 @@ return require("packer").startup(function(use)
 		config = function()
 			require("toggleterm").setup()
 		end,
+	})
+	use({
+		"lmburns/lf.nvim",
+		requires = { "nvim-lua/plenary.nvim", "akinsho/toggleterm.nvim" },
 	})
 	use("junegunn/goyo.vim")
 	use("haya14busa/vim-edgemotion")

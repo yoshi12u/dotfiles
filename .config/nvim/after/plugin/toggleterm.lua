@@ -8,28 +8,3 @@ local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "floa
 function _lazygit_toggle()
 	lazygit:toggle()
 end
-
-local temp_path = "/tmp/lfpickerpath"
-local lfpicker = Terminal:new({
-	cmd = "cd $NVIM_BUFPATH && lf -selection-path " .. temp_path,
-	direction = "float",
-	hidden = true,
-	on_close = function(term)
-		local file = io.open(temp_path, "r")
-		if file ~= nil then
-			vim.cmd("bd!|e " .. file:read("*a"))
-			file:close()
-			os.remove(temp_path)
-		end
-	end,
-})
-function _lfpicker_toggle()
-	lfpicker:toggle()
-end
-
-vim.api.nvim_set_keymap(
-	"n",
-	"-",
-	"<cmd>lua vim.env.NVIM_BUFPATH=vim.fn.expand('%:p:h'); _lfpicker_toggle()<CR>",
-	{ noremap = true, silent = true }
-)

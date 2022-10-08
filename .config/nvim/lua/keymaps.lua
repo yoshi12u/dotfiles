@@ -87,3 +87,5 @@ keymap(
 
 keymap("o", "m", "<C-U>lua require('tsht').nodes()<CR>", opts_noremap)
 keymap("x", "m", "lua require('tsht').nodes()<CR>", opts_noremap)
+
+keymap("n", "-", ":Lf<CR>", opts)
