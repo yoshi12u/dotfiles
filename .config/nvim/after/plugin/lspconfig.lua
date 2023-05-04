@@ -14,5 +14,5 @@ capabilities.textDocument.foldingRange = {
 	lineFoldingOnly = true,
 }
 lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
-	capabilities = cmp_nvim_lsp.update_capabilities(capabilities),
+	capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
 })

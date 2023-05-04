@@ -1,4 +1,3 @@
-require("impatient")
-require("base")
 require("plugins")
-require("keymaps")
+require("core.settings")
+require("core.mappings")
