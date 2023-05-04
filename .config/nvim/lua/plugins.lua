@@ -17,6 +17,7 @@ return require("packer").startup(function(use)
 
     -- Utility libraries
     use "nvim-lua/plenary.nvim" -- General utility functions
+    use 'lewis6991/impatient.nvim' -- Speed up plugin loading
 
     -- Editing
     use("RRethy/vim-illuminate") -- Highlight matching words under cursor
@@ -39,13 +40,8 @@ return require("packer").startup(function(use)
             require("hop").setup({})
         end
     })
-    use({
-        "andymass/vim-matchup",
-
-    }) -- Better matchit support for % key
-    use({
-        "chentoast/marks.nvim",
-    }) -- Better marks handling
+    use({"andymass/vim-matchup"}) -- Better matchit support for % key
+    use({"chentoast/marks.nvim"}) -- Better marks handling
     use({
         "ethanholz/nvim-lastplace", -- Reopen files at last position
         config = [[require("nvim-lastplace").setup({})]]
@@ -73,7 +69,7 @@ return require("packer").startup(function(use)
     }) -- Substitution operator
     use({
         "kylechui/nvim-surround",
-        tag = "*",
+        tag = "*"
     }) -- Surround text with brackets, quotes, etc.
     use({
         "numToStr/Comment.nvim",
@@ -96,7 +92,7 @@ return require("packer").startup(function(use)
         })
         use({
             "nvim-lualine/lualine.nvim", -- Statusline
-            cond = not vim.g.vscode,
+            cond = not vim.g.vscode
         })
         use({
             "noib3/nvim-cokeline", -- Buffer line
@@ -152,20 +148,20 @@ return require("packer").startup(function(use)
         -- LSP
         use({
             "williamboman/mason.nvim",
-            cond = not vim.g.vscode,
+            cond = not vim.g.vscode
         })
         use({
             "williamboman/mason-lspconfig.nvim",
-            cond = not vim.g.vscode,
+            cond = not vim.g.vscode
 
         })
         use({
             "neovim/nvim-lspconfig",
-            cond = not vim.g.vscode,
+            cond = not vim.g.vscode
         })
         use({
             "ray-x/lsp_signature.nvim",
-            cond = not vim.g.vscode,
+            cond = not vim.g.vscode
         })
         use({
             "folke/trouble.nvim", -- Diagnostics viewer
@@ -174,11 +170,11 @@ return require("packer").startup(function(use)
         })
         use({
             "jose-elias-alvarez/null-ls.nvim", -- Language server for linters and formatters
-            cond = not vim.g.vscode,
+            cond = not vim.g.vscode
         })
         use({
             "simrat39/symbols-outline.nvim", -- Symbols outline
-            cond = not vim.g.vscode,
+            cond = not vim.g.vscode
         })
 
         -- Snippets
@@ -224,7 +220,7 @@ return require("packer").startup(function(use)
         -- Git
         use({
             "lewis6991/gitsigns.nvim", -- Git signs in the sign column
-            cond = not vim.g.vscode,
+            cond = not vim.g.vscode
         })
         use({
             "sindrets/diffview.nvim", -- Git diff view
@@ -268,8 +264,8 @@ return require("packer").startup(function(use)
         })
         use({
             "folke/which-key.nvim", -- Keybinding display
-            cond = not vim.g.vscode,
-        }) 
+            cond = not vim.g.vscode
+        })
 
         -- Utils
         use({
@@ -285,7 +281,7 @@ return require("packer").startup(function(use)
         })
         use({
             "kevinhwang91/nvim-hlslens", -- Better search highlighting
-            cond = not vim.g.vscode,
+            cond = not vim.g.vscode
         })
         use({
             "junegunn/vim-emoji",
@@ -309,7 +305,7 @@ return require("packer").startup(function(use)
         })
         use({
             "AckslD/nvim-neoclip.lua", -- Clipboard history
-            cond = not vim.g.vscode,
+            cond = not vim.g.vscode
         })
         use({
             "ahmedkhalf/project.nvim", -- Project management
