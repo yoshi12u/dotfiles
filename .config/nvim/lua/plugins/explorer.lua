@@ -4,7 +4,7 @@ return {
     keys = {
       {
         "-",
-        ":Neotree toggle=true<CR>",
+        ":Neotree position=float toggle=true<CR>",
         silent = true,
       },
     },
