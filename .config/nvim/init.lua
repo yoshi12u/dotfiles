@@ -1,4 +1,2 @@
-vim.loader.enable()
-
-require("core.settings")
-require("core.mappings")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
