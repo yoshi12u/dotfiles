@@ -1,4 +1,4 @@
-require("plugins")
-require('impatient')
+vim.loader.enable()
+
 require("core.settings")
 require("core.mappings")

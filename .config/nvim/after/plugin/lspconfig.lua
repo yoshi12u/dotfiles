@@ -16,3 +16,14 @@ capabilities.textDocument.foldingRange = {
 lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
 	capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
 })
+lspconfig.pylsp.setup({
+	settings = {
+		pylsp = {
+			plugins = {
+				ruff = {
+					enabled = true,
+				},
+			},
+		},
+	},
+})

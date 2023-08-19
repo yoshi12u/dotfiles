@@ -1,12 +1,12 @@
 local opts = {
-    noremap = true,
-    silent = true
+	noremap = true,
+	silent = true,
 }
 local opts_noremap = {
-    noremap = true
+	noremap = true,
 }
 local opts_silent = {
-    silent = true
+	silent = true,
 }
 
 -- Shorten function name
@@ -72,41 +72,51 @@ keymap("n", "R", "<cmd>lua require('substitute').operator()<cr>", opts)
 keymap("x", "R", "<cmd>lua require('substitute').visual()<cr>", opts)
 
 -- Hop plugin mappings
-keymap("", "f",
-    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>",
-    {})
-keymap("", "F",
-    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>",
-    {})
-keymap("", "t",
-    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false, hint_offset = -1 })<cr>",
-    {})
-keymap("", "T",
-    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false, hint_offset = 1 })<cr>",
-    {})
+keymap(
+	"",
+	"f",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>",
+	{}
+)
+keymap(
+	"",
+	"F",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>",
+	{}
+)
+keymap(
+	"",
+	"t",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false, hint_offset = -1 })<cr>",
+	{}
+)
+keymap(
+	"",
+	"T",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false, hint_offset = 1 })<cr>",
+	{}
+)
 
 -- Only for native Neovim
 if not vim.g.vscode then
-    -- Tree-sitter highlighting text object mappings
-    keymap("o", "m", "<C-U>lua require('tsht').nodes()<CR>", opts_noremap)
-    keymap("x", "m", "lua require('tsht').nodes()<CR>", opts_noremap)
+	-- Tree-sitter highlighting text object mappings
+	keymap("o", "m", "<C-U>lua require('tsht').nodes()<CR>", opts_noremap)
+	keymap("x", "m", "lua require('tsht').nodes()<CR>", opts_noremap)
 
-    -- Tmux navigator mappings
-    keymap("n", "<c-w>h", ":TmuxNavigateLeft<CR>", opts)
-    keymap("n", "<c-w>j", ":TmuxNavigateDown<CR>", opts)
-    keymap("n", "<c-w><c-j>", ":TmuxNavigateDown<CR>", opts)
-    keymap("n", "<c-w><CR>", ":TmuxNavigateDown<CR>", opts)
-    keymap("n", "<c-w>k", ":TmuxNavigateUp<CR>", opts)
-    keymap("n", "<c-w>l", ":TmuxNavigateRight<CR>", opts)
+	-- Tmux navigator mappings
+	keymap("n", "<c-w>h", ":TmuxNavigateLeft<CR>", opts)
+	keymap("n", "<c-w>j", ":TmuxNavigateDown<CR>", opts)
+	keymap("n", "<c-w><c-j>", ":TmuxNavigateDown<CR>", opts)
+	keymap("n", "<c-w><CR>", ":TmuxNavigateDown<CR>", opts)
+	keymap("n", "<c-w>k", ":TmuxNavigateUp<CR>", opts)
+	keymap("n", "<c-w>l", ":TmuxNavigateRight<CR>", opts)
 
-    -- LSP hover mapping
-    keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
+	-- LSP hover mapping
+	keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
 
-    -- Qfreplace plugin mapping
-    keymap("n", "qf", ":Qfreplace<CR>", opts)
+	-- Qfreplace plugin mapping
+	keymap("n", "qf", ":Qfreplace<CR>", opts)
 
-    -- Lf plugin mapping
-    keymap("n", "-", ":Lf<CR>", opts)
-
+	-- Lf plugin mapping
+	keymap("n", "-", ":NeoTreeFloatToggle<CR>", opts)
 end
-
