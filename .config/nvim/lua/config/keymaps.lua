@@ -67,8 +67,20 @@ map("v", "y", "y`]", opts)
 -- Delete without yanking
 map("n", "x", '"_x', opts)
 
--- LSP hover mapping
-map("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
-
--- Qfreplace plugin mapping
-map("n", "qf", ":Qfreplace<CR>", opts)
+if not vim.g.vscode then
+  map("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
+  map("n", "<leader>r", "<cmd>lua vim.lsp.rename()<cr>", opts)
+else
+  map("n", "<leader>ff", "<cmd>Find<cr>")
+  map("n", "<leader>fb", [[<cmd>call VSCodeNotify('workbench.action.findInFiles')<cr>]])
+  map("n", "gd", [[<cmd>call VSCodeNotify('editor.action.revealDefinition')<cr>]])
+  map("n", "gD", [[<cmd>call VSCodeNotify('editor.action.goToTypeDefinition')<cr>]])
+  map("n", "gI", [[<cmd>call VSCodeNotify('editor.action.goToImplementation')<cr>]])
+  map("n", "gr", [[<cmd>call VSCodeNotify('editor.action.goToReferences')<cr>]])
+  map("n", "K", [[<cmd>call VSCodeNotify('editor.action.showHover')<cr>]])
+  map("n", "<c-w><c-h>", "<c-w>h")
+  map("n", "<c-w><c-j>", "<c-w>j")
+  map("n", "<c-w><CR>", "<c-w>j")
+  map("n", "<c-w><c-k>", "<c-w>k")
+  map("n", "<c-w><c-l>", "<c-w>l")
+end

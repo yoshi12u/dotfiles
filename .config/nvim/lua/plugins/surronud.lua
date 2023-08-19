@@ -7,15 +7,16 @@ return {
   {
     "echasnovski/mini.surround",
     enable = false,
+    vscode = true,
     opts = {
       mappings = {
         add = "ys",
         delete = "ds",
-        -- find = "<",
-        -- find_left = "gsF",
-        -- highlight = "gsh",
+        find = "gsf",
+        find_left = "gsF",
+        highlight = "gsh",
         replace = "cs",
-        -- update_n_lines = "gsn",
+        update_n_lines = "cns",
       },
     },
   },

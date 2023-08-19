@@ -1,6 +1,7 @@
 return {
   {
     "gbprod/substitute.nvim",
+    vscode = true,
     keys = {
       {
         "R",
