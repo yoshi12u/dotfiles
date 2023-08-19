@@ -1,3 +1,5 @@
+vim.g.wordmotion_prefix = "<leader>"
+
 return {
   {
     "haya14busa/vim-edgemotion",
@@ -7,8 +9,8 @@ return {
       { "<c-k>", "<Plug>(edgemotion-k)" },
     },
   },
-  -- {
-  --   "chaoren/vim-wordmotion",
-  --   event = "VeryLazy",
-  -- },
+  {
+    "chaoren/vim-wordmotion",
+    event = "VeryLazy",
+  },
 }
