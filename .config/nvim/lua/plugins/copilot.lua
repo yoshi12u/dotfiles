@@ -1,22 +1,59 @@
 return {
-  "zbirenbaum/copilot.lua",
-  opts = {
-    filetypes = {
-      python = true,
-      lua = true,
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+    event = "InsertEnter",
+    opts = {
+      suggestion = {
+        auto_trigger = true,
+        keymap = {
+          accept = "<M-l>",
+          accept_word = "<M-j>",
+          accept_line = "<M-k>",
+          next = "<M-]>",
+          prev = "<M-[>",
+          dismiss = false,
+        },
+      },
+      filetypes = {
+        python = true,
+        lua = true,
+        markdown = true,
+        help = true,
+      },
     },
   },
   {
-    "nvim-cmp",
+    "nvim-lualine/lualine.nvim",
+    optional = true,
+    event = "VeryLazy",
     opts = function(_, opts)
-      table.insert(opts.sources, 1, {
-        name = "copilot",
-        priority = 100,
-        group_index = 1,
-        keyword_length = 0,
+      local Util = require("lazyvim.util")
+      local colors = {
+        [""] = Util.fg("Special"),
+        ["Normal"] = Util.fg("Special"),
+        ["Warning"] = Util.fg("DiagnosticError"),
+        ["InProgress"] = Util.fg("DiagnosticWarn"),
+      }
+      table.insert(opts.sections.lualine_x, 2, {
+        function()
+          local icon = require("lazyvim.config").icons.kinds.Copilot
+          local status = require("copilot.api").status.data
+          return icon .. (status.message or "")
+        end,
+        cond = function()
+          local ok, clients = pcall(vim.lsp.get_active_clients, { name = "copilot", bufnr = 0 })
+          return ok and #clients > 0
+        end,
+        color = function()
+          if not package.loaded["copilot"] then
+            return
+          end
+          local status = require("copilot.api").status.data
+          return colors[status.status] or colors[""]
+        end,
       })
-      opts.sorting = opts.sorting or require("cmp.config.default")().sorting
-      table.insert(opts.sorting.comparators, 1, require("copilot_cmp.comparators").prioritize)
     end,
   },
 }

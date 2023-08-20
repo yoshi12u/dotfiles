@@ -32,6 +32,7 @@ local options = {
   cmdheight = 2, -- Set the command-line height
   showmode = false, -- Disable showing the mode
   pumheight = 10, -- Set the maximum height of the popup menu
+  cursorline = false, -- Disable cursorline highlight
 
   -- Tab and indent options
   expandtab = true, -- Use spaces instead of tabs
