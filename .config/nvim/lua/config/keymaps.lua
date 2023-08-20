@@ -78,6 +78,7 @@ else
   map("n", "gI", [[<cmd>call VSCodeNotify('editor.action.goToImplementation')<cr>]])
   map("n", "gr", [[<cmd>call VSCodeNotify('editor.action.goToReferences')<cr>]])
   map("n", "K", [[<cmd>call VSCodeNotify('editor.action.showHover')<cr>]])
+  map("n", "<leader>r", [[<cmd>call VSCodeNotify('editor.action.rename')<cr>]])
   map("n", "<c-w><c-h>", "<c-w>h")
   map("n", "<c-w><c-j>", "<c-w>j")
   map("n", "<c-w><CR>", "<c-w>j")
