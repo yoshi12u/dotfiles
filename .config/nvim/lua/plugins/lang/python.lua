@@ -55,8 +55,11 @@ return {
   },
   {
     "linux-cultist/venv-selector.nvim",
+    dependencies = { "mfussenegger/nvim-dap-python" },
     cmd = "VenvSelect",
-    opts = {},
+    opts = {
+      dap_enabled = true,
+    },
     keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv" } },
   },
 }

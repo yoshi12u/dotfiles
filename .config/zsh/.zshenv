@@ -12,3 +12,6 @@ path=("$HOME/.bin" "$HOME/.local/bin" "$path[@]")
 
 export PATH
 
+if command -v conda &> /dev/null && [[ -z "$CONDA_PREFIX" ]]; then
+  export CONDA_PREFIX=$(conda info --base)
+fi

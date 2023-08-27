@@ -21,6 +21,7 @@ return {
         lua = true,
         markdown = true,
         help = true,
+        sh = true,
       },
     },
   },
