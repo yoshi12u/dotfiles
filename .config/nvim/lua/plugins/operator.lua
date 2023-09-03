@@ -1,5 +1,21 @@
 return {
   {
+    "echasnovski/mini.surround",
+    enable = false,
+    vscode = true,
+    opts = {
+      mappings = {
+        add = "ys",
+        delete = "ds",
+        find = "gsf",
+        find_left = "gsF",
+        highlight = "gsh",
+        replace = "cs",
+        update_n_lines = "cns",
+      },
+    },
+  },
+  {
     "gbprod/substitute.nvim",
     vscode = true,
     keys = {

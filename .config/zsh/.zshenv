@@ -8,10 +8,7 @@ export PAGER="less"
 
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
-path=("$HOME/.bin" "$HOME/.local/bin" "$path[@]")
+path=($SPARK_HOME/bin "$HOME/.bin" "$HOME/.local/bin" "$path[@]")
 
 export PATH
 
-if command -v conda &> /dev/null && [[ -z "$CONDA_PREFIX" ]]; then
-  export CONDA_PREFIX=$(conda info --base)
-fi

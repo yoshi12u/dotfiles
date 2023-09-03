@@ -19,7 +19,6 @@ local options = {
   mouse = "a", -- Enable mouse support for all modes
   background = "dark", -- Set the background to dark
   termguicolors = true, -- Enable true color support
-  foldlevel = 99,
 
   -- Search options
   hlsearch = true, -- Highlight search matches
@@ -49,6 +48,8 @@ local options = {
   -- Timing options
   timeoutlen = 500, -- Set the timeout length for mapped sequences
   updatetime = 300, -- Set the update time for swap files and CursorHold event
+
+  exrc = true, -- Enable loading of local vimrc files
 }
 
 -- Apply options
