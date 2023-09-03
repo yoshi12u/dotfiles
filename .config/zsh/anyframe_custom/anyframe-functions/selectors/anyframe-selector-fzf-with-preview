@@ -7,3 +7,4 @@ ${=fzf_path} --preview 'preview {}'
 # mode: Shell-Script
 # End:
 # vim: ft=zsh
+

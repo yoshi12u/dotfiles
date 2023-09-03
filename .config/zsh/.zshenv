@@ -6,9 +6,9 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export PAGER="less"
 
-export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
-
-path=($SPARK_HOME/bin "$HOME/.bin" "$HOME/.local/bin" "$path[@]")
+path=("$HOME/.bin" "$HOME/.local/bin" "$path[@]")
 
 export PATH
+
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
