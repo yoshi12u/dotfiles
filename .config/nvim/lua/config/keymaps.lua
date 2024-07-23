@@ -67,10 +67,13 @@ map("v", "y", "y`]", opts)
 -- Delete without yanking
 map("n", "x", '"_x', opts)
 
-if not vim.g.vscode then
-  map("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
-  map("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-else
+map("n", "<c-w><c-h>", "<c-w>h")
+map("n", "<c-w><c-j>", "<c-w>j")
+map("n", "<c-w><CR>", "<c-w>j")
+map("n", "<c-w><c-k>", "<c-w>k")
+map("n", "<c-w><c-l>", "<c-w>l")
+
+if vim.g.vscode then
   map("n", "<leader>ff", "<cmd>Find<cr>")
   map("n", "<leader>fb", [[<cmd>call VSCodeNotify('workbench.action.findInFiles')<cr>]])
   map("n", "gd", [[<cmd>call VSCodeNotify('editor.action.revealDefinition')<cr>]])
@@ -79,9 +82,4 @@ else
   map("n", "gr", [[<cmd>call VSCodeNotify('editor.action.goToReferences')<cr>]])
   map("n", "K", [[<cmd>call VSCodeNotify('editor.action.showHover')<cr>]])
   map("n", "<leader>r", [[<cmd>call VSCodeNotify('editor.action.rename')<cr>]])
-  map("n", "<c-w><c-h>", "<c-w>h")
-  map("n", "<c-w><c-j>", "<c-w>j")
-  map("n", "<c-w><CR>", "<c-w>j")
-  map("n", "<c-w><c-k>", "<c-w>k")
-  map("n", "<c-w><c-l>", "<c-w>l")
 end

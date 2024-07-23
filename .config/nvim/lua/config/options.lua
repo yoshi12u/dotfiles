@@ -19,6 +19,7 @@ local options = {
   mouse = "a", -- Enable mouse support for all modes
   background = "dark", -- Set the background to dark
   termguicolors = true, -- Enable true color support
+  foldlevel = 99, -- Unfold all folds by default
 
   -- Search options
   hlsearch = true, -- Highlight search matches
