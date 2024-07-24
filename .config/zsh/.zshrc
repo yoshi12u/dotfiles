@@ -6,7 +6,9 @@ function zvm_after_init() {
     source $ZDOTDIR/keybindings.zsh
 }
 
+fpath+=~/.zfunc
+autoload -Uz compinit && compinit
+
 # Local config
 [[ -f $ZDOTDIR/.zshrc.local ]] && source $ZDOTDIR/.zshrc.local
 
-builtin source "$HOME/.rye/env"

@@ -70,4 +70,3 @@ zi wait lucid light-mode for \
         hlissner/zsh-autopair \
     depth=1 \
         jeffreytse/zsh-vi-mode
-

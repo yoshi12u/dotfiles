@@ -6,9 +6,9 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export PAGER="less"
 
-path=("$HOME/.bin" "$HOME/.local/bin" "$path[@]")
-
-export PATH
-
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
+path=("$HOME/.bin" "$HOME/.local/bin" "$path[@]" "$SPARK_HOME", "$JAVA_HOME", "/opt/homebrew/opt/openjdk@11/bin", "/Applications/Docker.app/Contents/Resources/bin:$PATH")
+export PATH
+
+builtin source "$HOME/.rye/env"

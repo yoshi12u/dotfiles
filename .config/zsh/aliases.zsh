@@ -3,6 +3,9 @@ alias ls="lsd"
 alias grep="rg"
 alias ps="procs"
 alias find="fd"
+alias cdk="npx aws-cdk"
+alias reload='source ~/.zshrc'
+alias lg='lazygit'
 
 alias e="$EDITOR"
 
