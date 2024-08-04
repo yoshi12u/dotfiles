@@ -26,7 +26,7 @@ zi wait lucid for \
  PZTM::tmux
 
 # Completions
-zi lucid wait as'completion' blockf for \
+zi lucid as'completion' blockf for \
   has'ghq' https://github.com/x-motemen/ghq/blob/master/misc/zsh/_ghq \
   has'rg' https://github.com/BurntSushi/ripgrep/blob/master/complete/_rg \
   has'yadm' https://github.com/TheLocehiliosan/yadm/blob/master/completion/zsh/_yadm \
