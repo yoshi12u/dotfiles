@@ -1,6 +1,0 @@
-ldir |anyframe-selector-fzf-with-preview| anyframe-action-execute builtin cd
-
-# Local Variables:
-# mode: Shell-Script
-# End:
-# vim: ft=zsh

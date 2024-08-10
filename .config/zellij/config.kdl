@@ -1,0 +1,40 @@
+default_mode "locked"
+
+keybinds {
+    locked {
+        bind "Ctrl s" { SwitchToMode "Normal"; }
+    }
+    normal {
+        bind "v" "Ctrl v" {NewPane "Down"; SwitchToMode "Locked";}
+        bind "s" "Ctrl s" {NewPane "Right"; SwitchToMode "Locked";}
+        bind "d" "Ctrl d" {NewTab; SwitchToMode "Locked";}
+        bind "h" "Ctrl h" {MoveFocus "Left"; SwitchToMode "Locked";}
+        bind "j" "Ctrl j" "Enter" {MoveFocus "Down"; SwitchToMode "Locked";}
+        bind "k" "Ctrl k" {MoveFocus "Up"; SwitchToMode "Locked";}
+        bind "l" "Ctrl l" {MoveFocus "Right"; SwitchToMode "Locked";}
+        bind "]" "Ctrl ]" {GoToNextTab; SwitchToMode "Locked";}
+        bind "[" "Ctrl [" {GoToPreviousTab; SwitchToMode "Locked";}
+        bind "r" "Ctrl r" {SwitchToMode "RenameTab"; TabNameInput 0;}
+    }
+    shared_except "locked" {
+        bind  "Esc" "Ctrl c" {SwitchToMode "Locked";}
+        bind "1 "{SwitchToMode "Pane";}
+        bind "2" {SwitchToMode "Tab";}
+        bind "3" {SwitchToMode "Resize";}
+        bind "4" {SwitchToMode "Move";}
+        bind "5" {SwitchToMode "Search";}
+        bind "6" {SwitchToMode "Session";}
+    }
+    shared {
+        unbind "Ctrl g"
+        unbind "Ctrl p"
+        unbind "Ctrl t"
+        unbind "Ctrl s"
+        unbind "Ctrl n"
+        unbind "Ctrl o"
+        unbind "Ctrl q"
+        unbind "Ctrl h"
+        unbind "Ctrl b"
+    }
+}
+

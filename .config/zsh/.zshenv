@@ -7,6 +7,6 @@ export VISUAL="nvim"
 export PAGER="less"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
-path=("$HOME/.bin" "$HOME/.local/bin" "$path[@]" "$SPARK_HOME", "$JAVA_HOME", "/opt/homebrew/opt/openjdk@11/bin", "/Applications/Docker.app/Contents/Resources/bin:$PATH")
+path=("$path[@]", "/Applications/Docker.app/Contents/Resources/bin:$PATH")
 export PATH
 

@@ -1,6 +1,0 @@
-ldot | anyframe-selector-fzf-with-preview | anyframe-action-execute $EDITOR
-
-# Local Variables:
-# mode: Shell-Script
-# End:
-# vim: ft=zsh
