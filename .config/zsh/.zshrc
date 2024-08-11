@@ -11,7 +11,6 @@ alias ps="procs"
 alias find="fd"
 alias cdk="npx aws-cdk"
 
-
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --ansi
 --height 60% --reverse
