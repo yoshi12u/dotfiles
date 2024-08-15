@@ -1,6 +1,0 @@
-[submodule ".tmux/plugins/tpm"]
-	path = .tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
-[submodule ".warp/themes"]
-	path = .warp/themes
-	url = https://github.com/warpdotdev/themes.git

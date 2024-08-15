@@ -80,6 +80,7 @@ require("lazy").setup({
     {
       import = "lazyvim.plugins.extras.lang.git",
     },
+    { import = "lazyvim.plugins.extras.lang.nix" },
     {
       import = "lazyvim.plugins.extras.formatting.prettier",
     },

@@ -1,7 +1,0 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# Local Variables:
-# mode: Shell-Script
-# End:
-# vim: ft=zsh
-
