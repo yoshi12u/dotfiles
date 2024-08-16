@@ -11,7 +11,11 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    {
+      nixpkgs,
+      home-manager,
+      ...
+    }:
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -20,7 +24,9 @@
       homeConfigurations."yoshimasauehara" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
-        modules = [ ./home.nix ];
+        modules = [
+          ./home.nix
+        ];
 
       };
     };

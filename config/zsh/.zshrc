@@ -31,8 +31,3 @@ bindkey '^F' forward-char
 bindkey '^B' backward-char
 
 
-fpath+=($ZDOTDIR/completions)
-autoload bashcompinit && bashcompinit
-autoload -Uz compinit && compinit
-[ -f "$(which aws_completer)" ] && complete -C "$(which aws_completer)" aws
-

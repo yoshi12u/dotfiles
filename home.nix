@@ -6,8 +6,12 @@
   home.stateVersion = "24.05";
 
   home.packages = [
-    pkgs.less
+    pkgs.gcc
+    pkgs.nodePackages.npm
+    pkgs.nodejs
+    pkgs.cargo
     pkgs.wget
+    pkgs.less
     pkgs.git
     pkgs.ghq
     pkgs.zellij
@@ -22,6 +26,8 @@
     pkgs.bat
     pkgs.lsd
     pkgs.fd
+    pkgs.yazi
+    pkgs.gh
   ];
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -29,7 +35,6 @@
     PAGER = "less";
     LANG = "ja_JP.UTF-8";
   };
-
   xdg.configFile = {
     nvim = {
       source = ./config/nvim;
@@ -50,21 +55,19 @@
     "starship.toml" = {
       source = ./config/starship.toml;
     };
-
   };
-  programs.home-manager.enable = true;
   programs.zsh = {
     enable = true;
-    zplug = {
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    historySubstringSearch.enable = true;
+    autocd = true;
+    antidote = {
       enable = true;
       plugins = [
-        { name = "zsh-users/zsh-autosuggestions"; }
-        { name = "zsh-users/zsh-syntax-highlighting"; }
-        { name = "zsh-users/zsh-completions"; }
-        { name = "zsh-users/zsh-history-substring-search"; }
-        { name = "Aloxaf/fzf-tab"; }
-        { name = "hlissner/zsh-autopair"; }
-        { name = "jeffreytse/zsh-vi-mode"; }
+        "Aloxaf/fzf-tab"
+        "hlissner/zsh-autopair"
+        "jeffreytse/zsh-vi-mode"
       ];
     };
     initExtra = ''
