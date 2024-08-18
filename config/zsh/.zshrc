@@ -1,3 +1,4 @@
+eval "$(zoxide init zsh)"
 eval "$(zellij setup --generate-auto-start zsh)"
 eval "$(starship init zsh)"
 
@@ -23,7 +24,6 @@ function _fzf_cd_ghq() {
     [ -n "${repo}" ] && cd "${dir}"
     zle accept-line
     zle reset-prompt
-
 }
 zle -N _fzf_cd_ghq
 bindkey "^g" _fzf_cd_ghq

@@ -15,6 +15,11 @@
     pkgs.less
     pkgs.git
     pkgs.ghq
+    pkgs.lazygit
+    pkgs.docker
+    pkgs.docker-buildx
+    pkgs.colima
+    pkgs.lazydocker
     pkgs.zellij
     pkgs.zsh
     pkgs.starship
@@ -22,7 +27,6 @@
     pkgs.neovim
     pkgs.nerdfonts
     pkgs.zoxide
-    pkgs.lazygit
     pkgs.ripgrep
     pkgs.bat
     pkgs.lsd
@@ -76,7 +80,6 @@
       source ${config.home.homeDirectory}/.config/zsh/.zshrc
     '';
   };
-
   programs.ripgrep = {
     enable = true;
     arguments = [
@@ -109,4 +112,5 @@
       notARepository = "skip";
     };
   };
+
 }
