@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 {
-  home.username = "yoshimasauehara";
-  home.homeDirectory = "/Users/yoshimasauehara";
-
   programs.home-manager.enable = true;
-  home.stateVersion = "24.05";
 
   home.packages = [
     pkgs.gcc
@@ -18,7 +14,6 @@
     pkgs.lazygit
     pkgs.docker
     pkgs.docker-buildx
-    pkgs.colima
     pkgs.lazydocker
     pkgs.zellij
     pkgs.zsh
