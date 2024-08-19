@@ -1,5 +1,4 @@
 eval "$(zoxide init zsh)"
-eval "$(zellij setup --generate-auto-start zsh)"
 eval "$(starship init zsh)"
 
 alias e="$EDITOR"

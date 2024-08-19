@@ -15,13 +15,6 @@
       home-manager,
       ...
     }:
-    let
-      home = {
-        username = "yoshimasauehara";
-        homeDirectory = "/Users/yoshimasauehara";
-        stateVersion = "24.05";
-      };
-    in
     {
       homeConfigurations = {
         "aarch64-darwin" = home-manager.lib.homeManagerConfiguration {
@@ -31,19 +24,27 @@
             (
               { config, pkgs, ... }:
               {
-                inherit home;
+                home = {
+                  username = "yoshimasauehara";
+                  homeDirectory = "/Users/yoshimasauehara";
+                  stateVersion = "24.05";
+                };
               }
             )
           ];
         };
-        "x86_64-linux" = home-manager.lib.homeManagerConfiguration {
+        "x86_64-lima" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           modules = [
             ./home/linux.nix
             (
               { config, pkgs, ... }:
               {
-                inherit home;
+                home = {
+                  username = "yoshimasauehara";
+                  homeDirectory = "/home/yoshimasauehara.linux";
+                  stateVersion = "24.05";
+                };
               }
             )
           ];
