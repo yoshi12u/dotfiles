@@ -3,6 +3,7 @@
   programs.home-manager.enable = true;
 
   home.packages = [
+    pkgs.unzip
     pkgs.gcc
     pkgs.nodePackages.npm
     pkgs.nodejs
