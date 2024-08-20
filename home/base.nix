@@ -10,7 +10,6 @@
     pkgs.wget
     pkgs.jq
     pkgs.less
-    pkgs.delta
     pkgs.git
     pkgs.ghq
     pkgs.lazygit

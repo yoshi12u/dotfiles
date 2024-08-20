@@ -5,16 +5,6 @@
   default = current
 [color]
   ui = auto
-[alias]
-  aa = add --all
-  au = add -u
-  co = checkout
-  c = commit -v
-  d = diff
-  s = status -sb
-[core]
-  autocrlf = input
-  pager = delta
 [pull]
   ff = only
 [commit]
@@ -25,17 +15,6 @@
   autosquash = true
 [include]
   path = ~/.gitconfig.local
-[user]
-	name = yoshi12u
-	email = ysmsuehr@gmail.com
-[credential]
-	helper = osxkeychain
-[interactive]
-    diffFilter = delta --color-only
-[delta]
-    navigate = true
-    light = false
-    line-numbers = true
 [merge]
     conflictstyle = diff3
 [diff]
