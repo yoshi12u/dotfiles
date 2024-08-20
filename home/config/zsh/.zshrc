@@ -8,7 +8,6 @@ alias ls="lsd"
 alias grep="rg"
 alias ps="procs"
 alias find="fd"
-alias cdk="npx aws-cdk"
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --ansi

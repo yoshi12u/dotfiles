@@ -33,7 +33,7 @@
             )
           ];
         };
-        "x86_64-lima" = home-manager.lib.homeManagerConfiguration {
+        "x86_64-devcontainer" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           modules = [
             ./home/linux.nix
@@ -41,8 +41,8 @@
               { config, pkgs, ... }:
               {
                 home = {
-                  username = "yoshimasauehara";
-                  homeDirectory = "/home/yoshimasauehara.linux";
+                  username = "vscode";
+                  homeDirectory = "/home/vscode";
                   stateVersion = "24.05";
                 };
               }

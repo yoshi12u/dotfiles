@@ -17,7 +17,6 @@
     pkgs.starship
     pkgs.fzf
     pkgs.neovim
-    pkgs.nerdfonts
     pkgs.zoxide
     pkgs.ripgrep
     pkgs.bat

@@ -4,6 +4,7 @@
     ./base.nix
   ];
   home.packages = [
+    pkgs.nerdfonts
     pkgs.docker
     pkgs.docker-compose
     pkgs.docker-buildx
