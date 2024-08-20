@@ -9,6 +9,8 @@
     pkgs.docker-compose
     pkgs.docker-buildx
     pkgs.lazydocker
+    pkgs.mutagen
+    pkgs.mutagen-compose
     # Devpod Desktop is installed manually
     pkgs.devpod
     pkgs.lima
