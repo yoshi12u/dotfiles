@@ -9,7 +9,6 @@
     pkgs.docker-compose
     pkgs.docker-buildx
     pkgs.lazydocker
-    pkgs.zellij
     # Devpod Desktop is installed manually
     pkgs.devpod
     pkgs.lima
