@@ -8,14 +8,11 @@
     pkgs.nodejs
     pkgs.cargo
     pkgs.wget
+    pkgs.jq
     pkgs.less
     pkgs.git
     pkgs.ghq
     pkgs.lazygit
-    pkgs.docker
-    pkgs.docker-buildx
-    pkgs.lazydocker
-    pkgs.zellij
     pkgs.zsh
     pkgs.starship
     pkgs.fzf

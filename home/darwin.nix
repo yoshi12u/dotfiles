@@ -4,8 +4,17 @@
     ./base.nix
   ];
   home.packages = [
+    pkgs.docker
+    pkgs.docker-compose
+    pkgs.docker-buildx
+    pkgs.lazydocker
+    pkgs.zellij
+    # Devpod Desktop is installed manually
+    pkgs.devpod
     pkgs.lima
     pkgs.colima
+    # awscli2 is installed via homebrew
+    pkgs.google-cloud-sdk
   ];
   programs.zsh = {
     antidote = {
