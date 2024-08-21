@@ -15,6 +15,9 @@
   autosquash = true
 [include]
   path = ~/.gitconfig.local
+[user]
+	name = yoshi12u
+	email = ysmsuehr@gmail.com
 [merge]
     conflictstyle = diff3
 [diff]
