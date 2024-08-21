@@ -24,7 +24,6 @@
     pkgs.lsd
     pkgs.fd
     pkgs.yazi
-    pkgs.gh
     pkgs.zellij
   ];
   home.sessionVariables = {

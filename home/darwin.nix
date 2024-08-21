@@ -9,10 +9,7 @@
     pkgs.docker-compose
     pkgs.docker-buildx
     pkgs.lazydocker
-    pkgs.mutagen
-    pkgs.mutagen-compose
-    # Devpod Desktop is installed manually
-    pkgs.devpod
+    pkgs.gh
     pkgs.lima
     pkgs.colima
     # awscli2 is installed via homebrew
