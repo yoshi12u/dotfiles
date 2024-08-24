@@ -15,6 +15,11 @@
     # awscli2 is installed via homebrew
     pkgs.google-cloud-sdk
   ];
+  home.file.".hammerspoon" = {
+    recursive = true;
+    source = ./config/hammerspoon;
+
+  };
   programs.zsh = {
     antidote = {
       plugins = [
