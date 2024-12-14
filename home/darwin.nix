@@ -4,8 +4,7 @@
     ./base.nix
   ];
   home.packages = [
-    pkgs.nixfmt-rfc-style 
-    pkgs.nerdfonts
+    pkgs.nixfmt-rfc-style
     pkgs.docker
     pkgs.docker-compose
     pkgs.docker-buildx

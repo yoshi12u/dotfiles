@@ -27,7 +27,7 @@
                 home = {
                   username = "yoshimasauehara";
                   homeDirectory = "/Users/yoshimasauehara";
-                  stateVersion = "24.05";
+                  stateVersion = "24.11";
                 };
               }
             )
@@ -43,7 +43,7 @@
                 home = {
                   username = "vscode";
                   homeDirectory = "/home/vscode";
-                  stateVersion = "24.05";
+                  stateVersion = "24.11";
                 };
               }
             )
@@ -59,7 +59,7 @@
                 home = {
                   username = "yoshimasauehara";
                   homeDirectory = "/home/yoshimasauehara";
-                  stateVersion = "24.05";
+                  stateVersion = "24.11";
                 };
               }
             )
