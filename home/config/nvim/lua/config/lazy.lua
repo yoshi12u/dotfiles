@@ -20,12 +20,8 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
     },
-    {
-      import = "lazyvim.plugins.extras.coding.copilot",
-    },
-    {
-      import = "lazyvim.plugins.extras.coding.copilot-chat",
-    },
+    { import = "lazyvim.plugins.extras.ai.copilot" },
+    { import = "lazyvim.plugins.extras.ai.copilot-chat" },
     {
       import = "lazyvim.plugins.extras.coding.mini-surround",
     },
@@ -81,6 +77,8 @@ require("lazy").setup({
       import = "lazyvim.plugins.extras.lang.git",
     },
     { import = "lazyvim.plugins.extras.lang.nix" },
+    { import = "lazyvim.plugins.extras.lang.tailwind" },
+    { import = "lazyvim.plugins.extras.lang.prisma" },
     {
       import = "lazyvim.plugins.extras.formatting.prettier",
     },
