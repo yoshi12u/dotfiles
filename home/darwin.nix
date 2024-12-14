@@ -4,6 +4,7 @@
     ./base.nix
   ];
   home.packages = [
+    pkgs.nixfmt-rfc-style 
     pkgs.nerdfonts
     pkgs.docker
     pkgs.docker-compose
@@ -19,12 +20,5 @@
     recursive = true;
     source = ./config/hammerspoon;
 
-  };
-  programs.zsh = {
-    antidote = {
-      plugins = [
-        "zellij-org/zellij path:zellij-utils/assets/shell"
-      ];
-    };
   };
 }

@@ -27,5 +27,6 @@ zle -N _fzf_cd_ghq
 bindkey "^g" _fzf_cd_ghq
 bindkey '^F' forward-char
 bindkey '^B' backward-char
+bindkey -s '^D' 'exit\n'
 
 
