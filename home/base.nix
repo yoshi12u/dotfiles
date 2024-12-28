@@ -11,6 +11,7 @@
     pkgs.wget
     pkgs.jq
     pkgs.less
+    pkgs.procs
     pkgs.git
     pkgs.ghq
     pkgs.lazygit
