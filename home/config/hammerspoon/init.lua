@@ -1,5 +1,5 @@
 hs.hotkey.bind({ "ctrl" }, ";", function()
-	local appName = "iTerm"
+	local appName = "Wezterm"
 	local app = hs.application.find(appName)
 
 	if app:isFrontmost() then

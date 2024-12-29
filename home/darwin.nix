@@ -9,7 +9,6 @@
     pkgs.docker-compose
     pkgs.docker-buildx
     pkgs.lazydocker
-    pkgs.gh
     pkgs.lima
     pkgs.colima
     pkgs.kubectl
@@ -20,6 +19,5 @@
   home.file.".hammerspoon" = {
     recursive = true;
     source = ./config/hammerspoon;
-
   };
 }

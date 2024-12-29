@@ -4,6 +4,7 @@ theme "tokyo-night"
 
 keybinds {
     locked {
+        unbind "Ctrl g"
         bind "Ctrl s" { SwitchToMode "Normal"; }
     }
     normal {
@@ -22,9 +23,13 @@ keybinds {
     shared_except "locked" {
         bind "Ctrl s" { SwitchToMode "Locked"; }
         bind "Esc" {SwitchToMode "Locked";}
-    }
-    shared {
-        unbind "Ctrl g"
+        bind "Ctrl t" {
+          LaunchOrFocusPlugin "https://github.com/rvcas/room/releases/latest/download/room.wasm" {
+            floating true
+            ignore_case true
+            quick_jump true
+          }; 
+          SwitchToMode "Locked";
+        }
     }
 }
-

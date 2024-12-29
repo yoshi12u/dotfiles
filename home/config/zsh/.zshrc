@@ -1,6 +1,3 @@
-eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
-
 alias e="$EDITOR"
 alias vim="nvim"
 alias cat="bat"
@@ -8,11 +5,6 @@ alias ls="lsd"
 alias grep="rg"
 alias ps="procs"
 alias find="fd"
-
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
---ansi
---height 60% --reverse
-'
 
 bindkey -v
 function _fzf_cd_ghq() {
@@ -27,6 +19,6 @@ zle -N _fzf_cd_ghq
 bindkey "^g" _fzf_cd_ghq
 bindkey '^F' forward-char
 bindkey '^B' backward-char
-bindkey -s '^D' 'exit\n'
-
+bindkey -r '^D'
+bindkey '^D' exit
 

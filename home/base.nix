@@ -10,48 +10,31 @@
     pkgs.cargo
     pkgs.wget
     pkgs.jq
-    pkgs.less
     pkgs.procs
-    pkgs.git
     pkgs.ghq
-    pkgs.lazygit
-    pkgs.zsh
-    pkgs.starship
-    pkgs.fzf
-    pkgs.neovim
-    pkgs.zoxide
-    pkgs.ripgrep
-    pkgs.bat
-    pkgs.lsd
-    pkgs.fd
-    pkgs.yazi
-    pkgs.zellij
   ];
   home.sessionVariables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
-    PAGER = "less";
     LANG = "ja_JP.UTF-8";
   };
   xdg.configFile = {
-    nvim = {
-      source = ./config/nvim;
-      recursive = true;
-    };
-    git = {
-      source = ./config/git;
-      recursive = true;
-    };
     zsh = {
       source = ./config/zsh;
       recursive = true;
     };
+    nvim = {
+      source = ./config/nvim;
+      recursive = true;
+    };
+    karabiner = {
+      source = ./config/karabiner;
+      recursive = true;
+    };
+    "git/config.include" = {
+      source = ./config/git/config;
+    };
     zellij = {
       source = ./config/zellij;
       recursive = true;
-    };
-    "starship.toml" = {
-      source = ./config/starship.toml;
     };
   };
   programs.zsh = {
@@ -70,7 +53,7 @@
     };
     initExtra = ''
       zvm_after_init_commands+=("bindkey '^p' history-substring-search-up && bindkey '^n' history-substring-search-down")
-      source ${config.home.homeDirectory}/.config/zsh/.zshrc
+      source ${config.xdg.configHome}/zsh/.zshrc
     '';
   };
   programs.ripgrep = {
@@ -104,6 +87,62 @@
     settings = {
       notARepository = "skip";
     };
+  };
+  programs.gh = {
+    enable = true;
+    settings = {
+      prompt = "enabled";
+      clone_path = "${config.home.homeDirectory}/ghq";
+    };
+  };
+  programs.wezterm = {
+    enable = true;
+    enableZshIntegration = true;
+    extraConfig = builtins.readFile ./config/wezterm/wezterm.lua;
+  };
+  programs.carapace = {
+    enable = true;
+  };
+  programs.git = {
+    enable = true;
+    delta.enable = true;
+    extraConfig.include.path = "${config.xdg.configHome}/git/config.include";
+  };
+  programs.zellij = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    extraLuaConfig = ''
+      require("config.lazy")
+    '';
+  };
+  programs.less = {
+    enable = true;
+  };
+  programs.fd = {
+    enable = true;
+  };
+  programs.bat = {
+    enable = true;
+  };
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+  programs.yazi = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
 }

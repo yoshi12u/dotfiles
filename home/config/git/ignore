@@ -1,7 +1,0 @@
-*~
-.DS_Store
-.envrc
-node_modules/
-tmp/
-tags
-.rubocop_todo.yml
