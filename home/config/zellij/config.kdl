@@ -23,7 +23,7 @@ keybinds {
     shared_except "locked" {
         bind "Ctrl s" { SwitchToMode "Locked"; }
         bind "Esc" {SwitchToMode "Locked";}
-        bind "Ctrl t" {
+        bind "Ctrl t" "t" {
           LaunchOrFocusPlugin "https://github.com/rvcas/room/releases/latest/download/room.wasm" {
             floating true
             ignore_case true
@@ -31,5 +31,11 @@ keybinds {
           }; 
           SwitchToMode "Locked";
         }
+        bind "Ctrl y" {
+        LaunchOrFocusPlugin "https://github.com/karimould/zellij-forgot/releases/download/0.4.1/zellij_forgot.wasm" {
+          "LOAD_ZELLIJ_BINDINGS" "true"
+          floating true
+        }
+      }
     }
 }
