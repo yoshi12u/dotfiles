@@ -9,7 +9,6 @@
     pkgs.nodejs
     pkgs.cargo
     pkgs.wget
-    pkgs.jq
     pkgs.procs
     pkgs.ghq
   ];
@@ -25,16 +24,12 @@
       source = ./config/nvim;
       recursive = true;
     };
-    karabiner = {
-      source = ./config/karabiner;
+    zellij = {
+      source = ./config/zellij;
       recursive = true;
     };
     "git/config.include" = {
       source = ./config/git/config;
-    };
-    zellij = {
-      source = ./config/zellij;
-      recursive = true;
     };
   };
   programs.zsh = {
@@ -97,8 +92,8 @@
   };
   programs.wezterm = {
     enable = true;
-    enableZshIntegration = true;
     extraConfig = builtins.readFile ./config/wezterm/wezterm.lua;
+    enableZshIntegration = true;
   };
   programs.carapace = {
     enable = true;
@@ -139,6 +134,11 @@
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
+    defaultOptions = [
+      "--ansi"
+      "--height 60%"
+      "--reverse"
+    ];
   };
   programs.zoxide = {
     enable = true;

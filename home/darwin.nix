@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./base.nix
@@ -16,6 +16,12 @@
     # awscli2 is installed via homebrew
     pkgs.google-cloud-sdk
   ];
+  xdg.configFile = {
+    karabiner = {
+      source = ./config/karabiner;
+      recursive = true;
+    };
+  };
   home.file.".hammerspoon" = {
     recursive = true;
     source = ./config/hammerspoon;
