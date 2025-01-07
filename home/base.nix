@@ -11,6 +11,7 @@
     pkgs.wget
     pkgs.procs
     pkgs.ghq
+    pkgs.viddy
   ];
   home.sessionVariables = {
     LANG = "ja_JP.UTF-8";
@@ -144,5 +145,9 @@
     enable = true;
     enableZshIntegration = true;
   };
-
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
 }

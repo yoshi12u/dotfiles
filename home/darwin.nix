@@ -12,9 +12,8 @@
     pkgs.lima
     pkgs.colima
     pkgs.kubectl
-    pkgs.k9s
-    # awscli2 is installed via homebrew
-    pkgs.google-cloud-sdk
+    pkgs.kdash
+    pkgs.kustomize
   ];
   xdg.configFile = {
     karabiner = {

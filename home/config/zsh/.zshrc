@@ -5,6 +5,8 @@ alias ls="lsd"
 alias grep="rg"
 alias ps="procs"
 alias find="fd"
+alias watch="viddy"
+alias kube="kubectl"
 
 bindkey -v
 function _fzf_cd_ghq() {
