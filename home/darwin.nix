@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   imports = [
     ./base.nix
@@ -14,15 +14,29 @@
     pkgs.kubectl
     pkgs.kdash
     pkgs.kustomize
+    pkgs.python312
+    pkgs.python312Packages.numpy
+    pkgs.nodejs
   ];
   xdg.configFile = {
     karabiner = {
       source = ./config/karabiner;
       recursive = true;
     };
+    zellij = {
+      source = ./config/zellij;
+      recursive = true;
+    };
   };
   home.file.".hammerspoon" = {
     recursive = true;
     source = ./config/hammerspoon;
+  };
+  programs.wezterm = {
+    enable = true;
+    extraConfig = builtins.readFile ./config/wezterm/wezterm.lua;
+  };
+  programs.zellij = {
+    enable = true;
   };
 }

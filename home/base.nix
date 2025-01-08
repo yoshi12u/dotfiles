@@ -6,7 +6,6 @@
     pkgs.unzip
     pkgs.gcc
     pkgs.nodePackages.npm
-    pkgs.nodejs
     pkgs.cargo
     pkgs.wget
     pkgs.procs
@@ -23,10 +22,6 @@
     };
     nvim = {
       source = ./config/nvim;
-      recursive = true;
-    };
-    zellij = {
-      source = ./config/zellij;
       recursive = true;
     };
     "git/config.include" = {
@@ -51,6 +46,11 @@
       zvm_after_init_commands+=("bindkey '^p' history-substring-search-up && bindkey '^n' history-substring-search-down")
       source ${config.xdg.configHome}/zsh/.zshrc
     '';
+  };
+  programs.nushell = {
+    enable = true;
+    configFile.source = ./config/nushell/config.nu;
+    envFile.source = ./config/nushell/env.nu;
   };
   programs.ripgrep = {
     enable = true;
@@ -84,29 +84,15 @@
       notARepository = "skip";
     };
   };
-  programs.gh = {
-    enable = true;
-    settings = {
-      prompt = "enabled";
-      clone_path = "${config.home.homeDirectory}/ghq";
-    };
-  };
-  programs.wezterm = {
-    enable = true;
-    extraConfig = builtins.readFile ./config/wezterm/wezterm.lua;
-    enableZshIntegration = true;
-  };
   programs.carapace = {
     enable = true;
+    enableZshIntegration = true;
+    enableNushellIntegration = true;
   };
   programs.git = {
     enable = true;
     delta.enable = true;
     extraConfig.include.path = "${config.xdg.configHome}/git/config.include";
-  };
-  programs.zellij = {
-    enable = true;
-    enableZshIntegration = true;
   };
   programs.neovim = {
     enable = true;
@@ -127,10 +113,23 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
+    enableNushellIntegration = true;
   };
   programs.yazi = {
     enable = true;
     enableZshIntegration = true;
+    enableNushellIntegration = true;
+  };
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+    enableNushellIntegration = true;
+  };
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    enableNushellIntegration = true;
+    nix-direnv.enable = true;
   };
   programs.fzf = {
     enable = true;
@@ -141,13 +140,11 @@
       "--reverse"
     ];
   };
-  programs.zoxide = {
+  programs.gh = {
     enable = true;
-    enableZshIntegration = true;
-  };
-  programs.direnv = {
-    enable = true;
-    enableZshIntegration = true;
-    nix-direnv.enable = true;
+    settings = {
+      prompt = "enabled";
+      clone_path = "${config.home.homeDirectory}/ghq";
+    };
   };
 }
