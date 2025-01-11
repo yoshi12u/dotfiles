@@ -1,5 +1,4 @@
 [init]
-  templatedir = ~/.git_template
 	defaultBranch = main
 [push]
   default = current
@@ -7,14 +6,10 @@
   ui = auto
 [pull]
   ff = only
-[commit]
-  template = ~/.gitmessage
 [fetch]
   prune = true
 [rebase]
   autosquash = true
-[include]
-  path = ~/.gitconfig.local
 [user]
 	name = yoshi12u
 	email = ysmsuehr@gmail.com

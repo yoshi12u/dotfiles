@@ -17,6 +17,7 @@
     pkgs.python312
     pkgs.python312Packages.numpy
     pkgs.nodejs
+    pkgs.uv
   ];
   xdg.configFile = {
     karabiner = {

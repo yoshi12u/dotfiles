@@ -1,7 +1,7 @@
 default_mode "locked"
 simplified_ui true
 theme "tokyo-night"
-default_shell "nu"
+default_shell "zsh"
 
 keybinds {
     locked {
