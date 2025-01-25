@@ -14,10 +14,8 @@
     pkgs.kubectl
     pkgs.kdash
     pkgs.kustomize
-    pkgs.python312
-    pkgs.python312Packages.numpy
+    pkgs.plandex
     pkgs.nodejs
-    pkgs.uv
   ];
   xdg.configFile = {
     karabiner = {

@@ -4,5 +4,6 @@ $env.FZF_DEFAULT_OPTS = "--ansi --height 60% --layout=reverse --border --inline-
 # Extend PATH
 $env.PATH = ($env.PATH | 
     append "/nix/var/nix/profiles/default/bin" | 
+    append "/opt/homebrew/bin" |
     str join (char esep)
 )
