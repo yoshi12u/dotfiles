@@ -129,6 +129,7 @@
     enable = true;
     enableZshIntegration = true;
     enableNushellIntegration = true;
+    silent = true;
     nix-direnv.enable = true;
   };
   programs.fzf = {

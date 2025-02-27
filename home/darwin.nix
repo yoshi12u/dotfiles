@@ -26,6 +26,9 @@
       source = ./config/zellij;
       recursive = true;
     };
+    "nushell/env.darwin.nu" = {
+      source = ./config/nushell/env.darwin.nu;
+    };
   };
   home.file.".hammerspoon" = {
     recursive = true;
@@ -37,5 +40,10 @@
   };
   programs.zellij = {
     enable = true;
+  };
+  programs.nushell = {
+    extraEnv = ''
+      source ${config.xdg.configHome}/nushell/env.darwin.nu
+    '';
   };
 }
