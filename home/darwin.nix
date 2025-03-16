@@ -16,6 +16,8 @@
     pkgs.kustomize
     pkgs.plandex
     pkgs.nodejs
+    pkgs.pnpm
+    pkgs.awscli2
   ];
   xdg.configFile = {
     karabiner = {
@@ -28,6 +30,9 @@
     };
     "nushell/env.darwin.nu" = {
       source = ./config/nushell/env.darwin.nu;
+    };
+    "nushell/config.darwin.nu" = {
+      source = ./config/nushell/config.darwin.nu;
     };
   };
   home.file.".hammerspoon" = {
@@ -44,6 +49,9 @@
   programs.nushell = {
     extraEnv = ''
       source ${config.xdg.configHome}/nushell/env.darwin.nu
+    '';
+    extraConfig = ''
+      source ${config.xdg.configHome}/nushell/config.darwin.nu
     '';
   };
 }
