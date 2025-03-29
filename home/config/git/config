@@ -1,0 +1,22 @@
+[init]
+	defaultBranch = main
+[push]
+  default = current
+[color]
+  ui = auto
+[pull]
+  ff = only
+[fetch]
+  prune = true
+[rebase]
+  autosquash = true
+[user]
+	name = yoshi12u
+	email = ysmsuehr@gmail.com
+[merge]
+    conflictstyle = diff3
+    ff = false
+[diff]
+    colorMoved = default
+[commit]
+    template = ~/.config/git/commit-template.txt
