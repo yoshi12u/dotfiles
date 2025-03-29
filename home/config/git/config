@@ -17,3 +17,5 @@
     conflictstyle = diff3
 [diff]
     colorMoved = default
+[commit]
+    template = ~/.config/git/commit-template.txt
