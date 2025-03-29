@@ -1,0 +1,15 @@
+# <type>: <subject> (Max 50 char)
+# |<---- Using a maximum of 50 characters ---->|
+
+# <body> (Optional, wrap at 72 chars)
+# |<---- Using a maximum of 72 characters ---------------------------------------------------->|
+#
+# Explain *what* and *why* this change was made (not *how*).
+# Examples of <type>:
+#   feat     (new feature)
+#   fix      (bug fix)
+#   docs     (documentation changes)
+#   style    (formatting, etc; no code change)
+#   refactor (refactoring code)
+#   test     (adding tests, refactoring tests)
+#   chore    (updating dependencies, build tasks, etc)

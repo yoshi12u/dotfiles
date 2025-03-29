@@ -24,6 +24,9 @@
       source = ./config/nvim;
       recursive = true;
     };
+    "git/commit-template.txt" = {
+      source = ./config/git/commit-template.txt;
+    };
     "git/config.include" = {
       source = ./config/git/config;
     };
