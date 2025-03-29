@@ -1,8 +1,4 @@
-$ARGUMENTS
-
-Following is the workflow guide for GitLab Flow workflow.
-
-# GitLab Flow Workflow Guide
+# Workflow Guide
 
 ## Overview
 
@@ -37,6 +33,8 @@ This document outlines the Git workflow based on GitLab Flow methodology.
 
 1. Issue Management - 3-Tier Approach
 
+   - Create GitHub Issues using template
+
    a. Epic (High-Level)
 
    - Create epics for large initiatives
@@ -59,6 +57,25 @@ This document outlines the Git workflow based on GitLab Flow methodology.
 2. Branch Creation
 
 3. Development
+   - Create commits using template
+
+```
+# <type>: <subject> (Max 50 char)
+# |<---- Using a maximum of 50 characters ---->|
+
+# <body> (Optional, wrap at 72 chars)
+# |<---- Using a maximum of 72 characters ---------------------------------------------------->|
+#
+# Explain *what* and *why* this change was made (not *how*).
+# Examples of <type>:
+#   feat     (new feature)
+#   fix      (bug fix)
+#   docs     (documentation changes)
+#   style    (formatting, etc; no code change)
+#   refactor (refactoring code)
+#   test     (adding tests, refactoring tests)
+#   chore    (updating dependencies, build tasks, etc)
+```
 
 4. Pull Request (Pull Request)
 

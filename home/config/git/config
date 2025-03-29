@@ -15,6 +15,7 @@
 	email = ysmsuehr@gmail.com
 [merge]
     conflictstyle = diff3
+    ff = false
 [diff]
     colorMoved = default
 [commit]
