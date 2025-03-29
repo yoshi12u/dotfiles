@@ -39,6 +39,9 @@
     recursive = true;
     source = ./config/hammerspoon;
   };
+  home.file.".codeium/windsurf/mcp_config.json" = {
+    text = builtins.readFile (builtins.toPath "/Users/yoshimasauehara/ghq/github.com/yoshi12u/dotfiles/dist/mcp_config.json");
+  };
   programs.wezterm = {
     enable = true;
     extraConfig = builtins.readFile ./config/wezterm/wezterm.lua;
