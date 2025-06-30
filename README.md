@@ -13,3 +13,14 @@ Personal dotfiles managed with Nix and Home Manager.
   - Zellij
   - Git
 
+
+## Codex Development Setup
+
+This repository includes a devcontainer definition for the Codex environment. To get started:
+
+```bash
+# Launch the devcontainer or run the setup script manually
+./setup_codex.sh
+```
+
+The script installs Nix if needed and applies the `x86_64-devcontainer` Home Manager configuration.
