@@ -5,7 +5,6 @@
   home.packages = [
     pkgs.unzip
     pkgs.gcc
-    pkgs.nodePackages.npm
     pkgs.cargo
     pkgs.wget
     pkgs.procs
@@ -66,20 +65,16 @@
       "--color=always"
     ];
   };
-  programs.lsd = {
+  programs.eza = {
     enable = true;
-    settings = {
-      color = {
-        when = "always";
-      };
-      icons = {
-        when = "always";
-      };
-      ignore-globs = [
-        ".git"
-        ".DS_Store"
-      ];
-    };
+    enableZshIntegration = true;
+    enableNushellIntegration = true;
+    colors = "auto";
+    icons = "always";
+    git = true;
+    extraOptions = [
+      "--ignore-glob=.git|.DS_Store"
+    ];
   };
   programs.lazygit = {
     enable = true;
@@ -150,5 +145,9 @@
       prompt = "enabled";
       clone_path = "${config.home.homeDirectory}/ghq";
     };
+  };
+  programs.mise = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }

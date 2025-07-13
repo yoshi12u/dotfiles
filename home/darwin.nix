@@ -12,12 +12,7 @@
     pkgs.lima
     pkgs.colima
     pkgs.kubectl
-    pkgs.kdash
     pkgs.kustomize
-    pkgs.plandex
-    pkgs.nodejs
-    pkgs.pnpm
-    pkgs.awscli2
   ];
   xdg.configFile = {
     karabiner = {
@@ -39,10 +34,6 @@
     recursive = true;
     source = ./config/hammerspoon;
   };
-  home.file.".claude" = {
-    recursive = true;
-    source = ./config/claude;
-  };
   programs.wezterm = {
     enable = true;
     extraConfig = builtins.readFile ./config/wezterm/wezterm.lua;
@@ -57,5 +48,16 @@
     extraConfig = ''
       source ${config.xdg.configHome}/nushell/config.darwin.nu
     '';
+  };
+  programs.mise = {
+    globalConfig = {
+      tools = {
+        node = "lts";
+        pnpm = "latest";
+        aws-cli = "2";
+        claude = "latest";
+        gemini-cli = "latest";
+      };
+    };
   };
 }

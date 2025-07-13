@@ -70,7 +70,7 @@ require("lazy").setup({
     neovim = false,
   },
   install = {
-    colorscheme = { "tokyonight", "habamax" },
+    colorscheme = { "tokyonight" },
   },
   checker = {
     enabled = true, -- check for plugin updates periodically
