@@ -69,6 +69,9 @@ require("lazy").setup({
     lazyvim = false,
     neovim = false,
   },
+  install = {
+    colorscheme = { "tokyonight" },
+  },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update

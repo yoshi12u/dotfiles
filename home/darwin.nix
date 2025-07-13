@@ -12,11 +12,7 @@
     pkgs.lima
     pkgs.colima
     pkgs.kubectl
-    pkgs.kdash
     pkgs.kustomize
-    pkgs.nodejs
-    pkgs.pnpm
-    pkgs.awscli2
   ];
   xdg.configFile = {
     karabiner = {
@@ -52,5 +48,16 @@
     extraConfig = ''
       source ${config.xdg.configHome}/nushell/config.darwin.nu
     '';
+  };
+  programs.mise = {
+    globalConfig = {
+      tools = {
+        node = "lts";
+        pnpm = "latest";
+        aws-cli = "2";
+        claude = "latest";
+        gemini-cli = "latest";
+      };
+    };
   };
 }
