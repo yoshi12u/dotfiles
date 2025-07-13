@@ -8,5 +8,11 @@ return {
         floats = "transparent",
       },
     },
+    {
+      "LazyVim/LazyVim",
+      opts = {
+        colorscheme = "tokyonight",
+      },
+    },
   },
 }
