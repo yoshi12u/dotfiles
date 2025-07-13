@@ -14,7 +14,6 @@
     pkgs.kubectl
     pkgs.kdash
     pkgs.kustomize
-    pkgs.plandex
     pkgs.nodejs
     pkgs.pnpm
     pkgs.awscli2
@@ -38,10 +37,6 @@
   home.file.".hammerspoon" = {
     recursive = true;
     source = ./config/hammerspoon;
-  };
-  home.file.".claude" = {
-    recursive = true;
-    source = ./config/claude;
   };
   programs.wezterm = {
     enable = true;
