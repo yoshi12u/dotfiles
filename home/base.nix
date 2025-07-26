@@ -3,6 +3,7 @@
   programs.home-manager.enable = true;
 
   home.packages = [
+    pkgs.git-filter-repo
     pkgs.unzip
     pkgs.gcc
     pkgs.cargo
@@ -44,7 +45,7 @@
         "jeffreytse/zsh-vi-mode"
       ];
     };
-    initExtra = ''
+    initContent = ''
       zvm_after_init_commands+=("bindkey '^p' history-substring-search-up && bindkey '^n' history-substring-search-down")
       source ${config.xdg.configHome}/zsh/.zshrc
     '';
@@ -149,5 +150,11 @@
   programs.mise = {
     enable = true;
     enableZshIntegration = true;
+    enableNushellIntegration = true;
+    globalConfig = {
+      settings = {
+        idiomatic_version_file_enable_tools = [ "python" ];
+      };
+    };
   };
 }
