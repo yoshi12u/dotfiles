@@ -1,7 +1,7 @@
 return {
   {
     "saghen/blink.cmp",
-    dependencies = { "Exafunction/windsurf.nvim", "saghen/blink.compat" },
+    dependencies = { "Exafunction/windsurf.nvim", "saghen/blink.compat", "giuxtaposition/blink-cmp-copilot" },
     opts = {
       completion = {
         trigger = {
@@ -21,6 +21,7 @@ return {
             kind = "Copilot",
             score_offset = 100,
             async = true,
+            min_keyword_length = 0,
             transform_items = function(_, items)
               for _, item in ipairs(items) do
                 item.kind_icon = ""

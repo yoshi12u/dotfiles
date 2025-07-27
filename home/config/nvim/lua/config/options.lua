@@ -77,3 +77,4 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 })
 
 vim.o.shell = "nu"
+vim.g.ai_cmp = false
