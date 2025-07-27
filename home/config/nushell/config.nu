@@ -66,4 +66,3 @@ $env.config = {
 alias e = nvim
 alias vim = nvim
 alias watch = viddy
-alias kube = kubectl

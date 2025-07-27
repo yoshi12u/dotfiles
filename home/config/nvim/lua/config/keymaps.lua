@@ -85,6 +85,14 @@ map("i", "<c-h>", "<BS>", {
   silent = true,
 })
 
+-- Terminal mode cursor movement
+map("t", "<C-b>", "<C-b>", { noremap = true, silent = true })
+map("t", "<C-f>", "<C-f>", { noremap = true, silent = true })
+
+-- Terminal mode delete and backspace
+map("t", "<C-d>", "<C-d>", { noremap = true, silent = true })
+map("t", "<C-h>", "<C-h>", { noremap = true, silent = true })
+
 -- Yank and paste with automatic adjustment of cursor position
 map("n", "p", "p`]", {
   noremap = true,

@@ -20,3 +20,6 @@
     colorMoved = default
 [commit]
     template = ~/.config/git/commit-template.txt
+    verbose = true
+[core]
+    editor = nvim

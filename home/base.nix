@@ -14,6 +14,8 @@
   ];
   home.sessionVariables = {
     LANG = "ja_JP.UTF-8";
+    VISUAL = "nvim";
+    EDITOR = "nvim";
   };
   xdg.configFile = {
     zsh = {
