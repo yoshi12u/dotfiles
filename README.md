@@ -12,4 +12,3 @@ Personal dotfiles managed with Nix and Home Manager.
   - WezTerm
   - Zellij
   - Git
-
