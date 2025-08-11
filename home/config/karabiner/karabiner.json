@@ -4,9 +4,10 @@
       "complex_modifications": {
         "rules": [
           {
-            "description": "Emacs key bindings [control+keys] (rev 10)",
+            "description": "Emacs key bindings - Control key combinations for text navigation and editing",
             "manipulators": [
               {
+                "description": "Ctrl+D: Delete character forward (except in terminal apps)",
                 "conditions": [
                   {
                     "bundle_identifiers": [
@@ -30,6 +31,7 @@
                 "type": "basic"
               },
               {
+                "description": "Ctrl+H: Backspace/delete character backward (except in terminal apps)",
                 "conditions": [
                   {
                     "bundle_identifiers": [
@@ -53,6 +55,7 @@
                 "type": "basic"
               },
               {
+                "description": "Ctrl+[: Send Escape key (ANSI/ISO keyboards)",
                 "conditions": [
                   {
                     "keyboard_types": ["ansi", "iso"],
@@ -70,6 +73,7 @@
                 "type": "basic"
               },
               {
+                "description": "Ctrl+]: Send Escape key (JIS keyboards)",
                 "conditions": [
                   {
                     "keyboard_types": ["jis"],
@@ -87,6 +91,7 @@
                 "type": "basic"
               },
               {
+                "description": "Ctrl+]: Send Escape key (Altair by ai03 Design Studio)",
                 "conditions": [
                   {
                     "type": "device_if",
@@ -110,6 +115,7 @@
                 "type": "basic"
               },
               {
+                "description": "Ctrl+M: Send Return/Enter key",
                 "from": {
                   "key_code": "m",
                   "modifiers": {
@@ -121,6 +127,7 @@
                 "type": "basic"
               },
               {
+                "description": "Ctrl+B: Move cursor backward/left (except in terminal apps)",
                 "conditions": [
                   {
                     "bundle_identifiers": [
@@ -144,6 +151,7 @@
                 "type": "basic"
               },
               {
+                "description": "Ctrl+F: Move cursor forward/right (except in terminal apps)",
                 "conditions": [
                   {
                     "bundle_identifiers": [
@@ -167,6 +175,7 @@
                 "type": "basic"
               },
               {
+                "description": "Ctrl+N: Move cursor down (except in terminal apps)",
                 "conditions": [
                   {
                     "bundle_identifiers": [
@@ -190,6 +199,7 @@
                 "type": "basic"
               },
               {
+                "description": "Ctrl+P: Move cursor up (except in terminal apps)",
                 "conditions": [
                   {
                     "bundle_identifiers": [
@@ -213,6 +223,7 @@
                 "type": "basic"
               },
               {
+                "description": "Ctrl+V: Page down (except in terminal apps)",
                 "conditions": [
                   {
                     "bundle_identifiers": [
@@ -236,6 +247,7 @@
                 "type": "basic"
               },
               {
+                "description": "Ctrl+A: Move to beginning of line (Microsoft Office apps only)",
                 "conditions": [
                   {
                     "bundle_identifiers": [
@@ -257,6 +269,7 @@
                 "type": "basic"
               },
               {
+                "description": "Ctrl+E: Move to end of line (Microsoft Office apps only)",
                 "conditions": [
                   {
                     "bundle_identifiers": [
@@ -278,6 +291,7 @@
                 "type": "basic"
               },
               {
+                "description": "Ctrl+A: Move to beginning of line using Cmd+Left (Eclipse IDE only)",
                 "conditions": [
                   {
                     "bundle_identifiers": ["^org\\.eclipse\\.platform\\.ide$"],
@@ -300,6 +314,7 @@
                 "type": "basic"
               },
               {
+                "description": "Ctrl+E: Move to end of line using Cmd+Right (Eclipse IDE only)",
                 "conditions": [
                   {
                     "bundle_identifiers": ["^org\\.eclipse\\.platform\\.ide$"],
@@ -322,6 +337,7 @@
                 "type": "basic"
               },
               {
+                "description": "Ctrl+J: Send Return/Enter key",
                 "from": {
                   "key_code": "j",
                   "modifiers": {
@@ -335,9 +351,10 @@
             ]
           },
           {
-            "description": "コマンドキーを単体で押したときに、英数・かなキーを送信する。（左コマンドキーは英数、右コマンドキーはかな） (rev 3)",
+            "description": "Command key language switching - Single press sends language keys (Left Cmd = Eisuu/English, Right Cmd = Kana/Japanese)",
             "manipulators": [
               {
+                "description": "Left Command key: English/Eisuu when pressed alone, Command when held",
                 "from": {
                   "key_code": "left_command",
                   "modifiers": { "optional": ["any"] }
@@ -356,6 +373,7 @@
                 "type": "basic"
               },
               {
+                "description": "Right Command key: Japanese/Kana when pressed alone, Command when held",
                 "from": {
                   "key_code": "right_command",
                   "modifiers": { "optional": ["any"] }
@@ -379,6 +397,7 @@
       },
       "devices": [
         {
+          "description": "Apple Internal Keyboard (Product ID: 641) - Caps Lock ↔ Control swap",
           "identifiers": {
             "is_keyboard": true,
             "product_id": 641,
@@ -396,6 +415,7 @@
           ]
         },
         {
+          "description": "External Keyboard (Vendor ID: 76, Product ID: 615) - Caps Lock ↔ Control swap",
           "identifiers": {
             "is_keyboard": true,
             "product_id": 615,
@@ -411,23 +431,6 @@
               "to": [{ "key_code": "caps_lock" }]
             }
           ]
-        },
-        {
-          "identifiers": {
-            "is_keyboard": true,
-            "product_id": 3354,
-            "vendor_id": 5840
-          },
-          "ignore": true
-        },
-        {
-          "identifiers": {
-            "is_keyboard": true,
-            "is_pointing_device": true,
-            "product_id": 21,
-            "vendor_id": 41219
-          },
-          "ignore": false
         }
       ],
       "name": "Default profile",

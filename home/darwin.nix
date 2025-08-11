@@ -13,6 +13,8 @@
     pkgs.colima
     pkgs.kubectl
     pkgs.kustomize
+    pkgs.qmk
+    pkgs.gcc-arm-embedded
   ];
   xdg.configFile = {
     karabiner = {
