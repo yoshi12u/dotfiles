@@ -39,33 +39,6 @@ map("v", "H", "^", {
 map("n", "Y", "y$", {
   noremap = true,
 })
--- Japanese character key mappings
-map("n", "あ", "a", {
-  noremap = true,
-})
-map("n", "い", "i", {
-  noremap = true,
-})
-map("n", "う", "u", {
-  noremap = true,
-})
-map("n", "お", "o", {
-  noremap = true,
-})
-map("n", "ｒ", "r", {
-  noremap = true,
-})
-map("n", "ｘ", "x", {
-  noremap = true,
-})
-map("n", "ｄｄ", "dd", {
-  noremap = true,
-  silent = true,
-})
-map("n", "ｙｙ", "yy", {
-  noremap = true,
-  silent = true,
-})
 -- Insert mode cursor movement
 map("i", "<c-b>", "<Left>", {
   noremap = true,
@@ -84,14 +57,6 @@ map("i", "<c-h>", "<BS>", {
   noremap = true,
   silent = true,
 })
-
--- Terminal mode cursor movement
-map("t", "<C-b>", "<C-b>", { noremap = true, silent = true })
-map("t", "<C-f>", "<C-f>", { noremap = true, silent = true })
-
--- Terminal mode delete and backspace
-map("t", "<C-d>", "<C-d>", { noremap = true, silent = true })
-map("t", "<C-h>", "<C-h>", { noremap = true, silent = true })
 
 -- Yank and paste with automatic adjustment of cursor position
 map("n", "p", "p`]", {
