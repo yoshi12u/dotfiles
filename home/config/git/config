@@ -14,12 +14,23 @@
 	name = yoshi12u
 	email = ysmsuehr@gmail.com
 [merge]
+    tool = nvimdiff
     conflictstyle = diff3
     ff = false
 [diff]
     colorMoved = default
+    tool = nvimdiff
+[difftool]
+    prompt = false
 [commit]
     template = ~/.config/git/commit-template.txt
     verbose = true
 [core]
     editor = nvim
+[log]
+    decorate = short
+[format]
+    pretty = format:%C(auto)%h %C(blue)%>(12)%ar%C(reset) %s %C(green)(%an)%C(reset)
+[alias]
+    lg = log --oneline --graph --decorate --all
+
