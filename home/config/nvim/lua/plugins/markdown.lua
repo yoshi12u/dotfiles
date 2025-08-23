@@ -13,6 +13,8 @@ return {
       custom_surroundings = {
         -- **bold**
         b = { output = { left = "**", right = "**" } },
+        -- ==highlight===
+        h = { output = { left = "==", right = "==" } },
         -- [text](url)
         k = {
           output = function()

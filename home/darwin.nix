@@ -15,6 +15,7 @@
     pkgs.kustomize
     pkgs.qmk
     pkgs.gcc-arm-embedded
+    pkgs.tailscale
   ];
   xdg.configFile = {
     karabiner = {
