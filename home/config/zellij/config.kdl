@@ -1,43 +1,118 @@
-default_mode "locked"
-simplified_ui true
-theme "tokyo-night"
-default_shell "nu"
+// General Settings
+default_mode "locked"        // Start in locked mode for safety
+simplified_ui true           // Use simplified UI for cleaner appearance
+theme "tokyo-night"          // Tokyo Night color scheme
+default_shell "nu"           // Use Nushell as default shell
+on_force_close "quit"        // Quit on force close
+scrollback_editor "nvim"     // Use Neovim for scrollback editing
 
+// Plugin Configuration
+plugins {
+    tab-bar location="zellij:tab-bar"
+    status-bar location="zellij:status-bar"
+    compact-bar location="zellij:compact-bar" { 
+        tooltip "F1"
+    }
+    session-manager location="zellij:session-manager"
+}
+
+// Keybinding Configuration
 keybinds {
+    // Locked Mode - Minimal keybindings for safety
     locked {
         unbind "Ctrl g"
-        bind "Ctrl s" { SwitchToMode "Normal"; }
+        bind "Ctrl s" { SwitchToMode "Normal"; }  // Enter normal mode with Ctrl+s
     }
+    
+    // Normal Mode - Main command mode with vim-like bindings
     normal {
-        bind "v" {NewPane "Down"; SwitchToMode "Locked";}
-        bind "s" {NewPane "Right"; SwitchToMode "Locked";}
-        bind "c" {NewTab; SwitchToMode "Locked";}
-        bind "h" {MoveFocus "Left"; SwitchToMode "Locked";}
-        bind "j" "Enter" {MoveFocus "Down"; SwitchToMode "Locked";}
-        bind "k" {MoveFocus "Up"; SwitchToMode "Locked";}
-        bind "l" {MoveFocus "Right"; SwitchToMode "Locked";}
-        bind "]" {GoToNextTab; SwitchToMode "Locked";}
-        bind "[" {GoToPreviousTab; SwitchToMode "Locked";}
-        bind ";" {ToggleFloatingPanes; SwitchToMode "Locked";}
-        bind "r" {SwitchToMode "RenameTab"; TabNameInput 0;}
+        // Unbind default keybindings
+        unbind "Ctrl g"
+        unbind "Ctrl p"
+        unbind "Ctrl t"
+        unbind "Ctrl n"
+        unbind "Ctrl h"
+        unbind "Ctrl o"
+        unbind "Ctrl q"
+        
+        // Mode switching
+        bind "Ctrl s" { SwitchToMode "Locked"; }  // Return to locked mode
+        bind "Ctrl c" { SwitchToMode "Locked"; }  // Alternative: use Esc
+        bind "Esc" { SwitchToMode "Locked"; }     // Alternative: use Esc
+        
+        // Pane management (vim-like)
+        bind "v" { NewPane "Down"; SwitchToMode "Locked"; }    // Vertical split
+        bind "s" { NewPane "Right"; SwitchToMode "Locked"; }   // Horizontal split (side)
+        bind "-" { NewPane "stacked"; SwitchToMode "Locked"; } // Horizontal split (stacked)
+        bind "x" { CloseFocus; SwitchToMode "Locked"; }        // Close current pane
+        
+        // Tab management
+        bind "c" { NewTab; SwitchToMode "Locked"; }            // Create new tab
+        bind "q" { CloseTab; SwitchToMode "Locked"; }          // Close current tab
+        bind "]" { GoToNextTab; SwitchToMode "Locked"; }       // Next tab
+        bind "[" { GoToPreviousTab; SwitchToMode "Locked"; }   // Previous tab
+        
+        // Navigation (vim-style hjkl)
+        bind "h" { MoveFocus "Left"; SwitchToMode "Locked"; }
+        bind "j" "Enter" { MoveFocus "Down"; SwitchToMode "Locked"; }
+        bind "k" { MoveFocus "Up"; SwitchToMode "Locked"; }
+        bind "l" { MoveFocus "Right"; SwitchToMode "Locked"; }
+        
+        // Direct tab switching (1-9)
+        bind "1" { GoToTab 1; SwitchToMode "Locked"; }
+        bind "2" { GoToTab 2; SwitchToMode "Locked"; }
+        bind "3" { GoToTab 3; SwitchToMode "Locked"; }
+        bind "4" { GoToTab 4; SwitchToMode "Locked"; }
+        bind "5" { GoToTab 5; SwitchToMode "Locked"; }
+        bind "6" { GoToTab 6; SwitchToMode "Locked"; }
+        bind "7" { GoToTab 7; SwitchToMode "Locked"; }
+        bind "8" { GoToTab 8; SwitchToMode "Locked"; }
+        bind "9" { GoToTab 9; SwitchToMode "Locked"; }
+        
+        // Floating panes
+        bind ";" { ToggleFloatingPanes; SwitchToMode "Locked"; }
+        
+        // Mode switches for advanced operations
+        bind "p" { SwitchToMode "Pane"; }      // Pane mode
+        bind "t" { SwitchToMode "Tab"; }       // Tab mode
+        bind "n" { SwitchToMode "Resize"; }    // Resize mode
+        bind "o" { SwitchToMode "Session"; }   // Session mode
+        bind "m" { SwitchToMode "Move"; }      // Move mode
+        bind "r" { SwitchToMode "RenameTab"; } // Rename tab mode
+        
+        // Session management
+        bind "d" { Detach; }  // Detach from session
+        bind "Q" { Quit; }    // Quit Zellij completely
     }
-    shared_except "locked" {
-        bind "Ctrl s" { SwitchToMode "Locked"; }
-        bind "Esc" {SwitchToMode "Locked";}
-        bind "Ctrl t" {
-          LaunchOrFocusPlugin "https://github.com/rvcas/room/releases/latest/download/room.wasm" {
-            floating true
-            ignore_case true
-            quick_jump true
-          }; 
-          SwitchToMode "Locked";
-        }
-        bind "Ctrl y" {
-          LaunchOrFocusPlugin "https://github.com/karimould/zellij-forgot/releases/download/0.4.1/zellij_forgot.wasm" {
-            "LOAD_ZELLIJ_BINDINGS" "true"
-            floating true
-          };
-          SwitchToMode "Locked";
-      }
+    
+    // Resize Mode - For adjusting pane sizes
+    resize {
+        // Increase pane size in direction
+        bind "h" "Left" { Resize "Increase Left"; }
+        bind "j" "Down" { Resize "Increase Down"; }
+        bind "k" "Up" { Resize "Increase Up"; }
+        bind "l" "Right" { Resize "Increase Right"; }
+        
+        // Decrease pane size in direction (Shift + hjkl)
+        bind "H" { Resize "Decrease Left"; }
+        bind "J" { Resize "Decrease Down"; }
+        bind "K" { Resize "Decrease Up"; }
+        bind "L" { Resize "Decrease Right"; }
+        
+        // General resize
+        bind "=" { Resize "Increase"; }
+        bind "-" { Resize "Decrease"; }
+    }
+
+    // Shared keybindings across modes except Locked and Normal
+    shared_except "Locked" "Normal" {
+        bind "Esc" { SwitchToMode "Normal"; }
+    }
+}
+
+// UI Configuration
+ui {
+    pane_frames {
+        hide_session_name true  // Hide session name for cleaner UI
     }
 }

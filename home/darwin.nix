@@ -32,10 +32,6 @@
       source = ./config/nushell/config.darwin.nu;
     };
   };
-  home.file.".hammerspoon" = {
-    recursive = true;
-    source = ./config/hammerspoon;
-  };
   programs.wezterm = {
     enable = true;
     extraConfig = builtins.readFile ./config/wezterm/wezterm.lua;
