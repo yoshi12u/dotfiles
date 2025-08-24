@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(npm run dev)",
+      "Bash(npm run build)",
+      "Bash(npm test)",
+      "mcp__serena",
+      "mcp__context7"
+    ],
+    "deny": ["Bash(rm -rf:*)", "Bash(sudo:*)", "Read(.env)"]
+  },
+  "model": "opus",
+  "includeCoAuthoredBy": false
+}

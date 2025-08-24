@@ -27,6 +27,7 @@
     verbose = true
 [core]
     editor = nvim
+    excludesfile = ~/.config/git/ignore
 [log]
     decorate = short
 [format]

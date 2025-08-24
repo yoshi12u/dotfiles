@@ -29,6 +29,9 @@
     "git/commit-template.txt" = {
       source = ./config/git/commit-template.txt;
     };
+    "git/ignore" = {
+      source = ./config/git/gitignore;
+    };
     "git/config.include" = {
       source = ./config/git/config;
     };

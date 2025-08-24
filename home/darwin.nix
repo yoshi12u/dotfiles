@@ -17,6 +17,10 @@
     pkgs.gcc-arm-embedded
     pkgs.tailscale
   ];
+  home.file.".claude" = {
+    source = ./config/claude;
+    recursive = true;
+  };
   xdg.configFile = {
     karabiner = {
       source = ./config/karabiner;
