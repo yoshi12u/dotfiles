@@ -13,6 +13,7 @@ return {
         compat = { "codeium" },
         per_filetype = {
           gitcommit = { "aicommits" },
+          codecompanion = { "codecompanion" },
         },
         providers = {
           copilot = {

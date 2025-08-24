@@ -23,3 +23,5 @@ bindkey '^F' forward-char
 bindkey '^B' backward-char
 bindkey -r '^D'
 bindkey '^D' exit
+
+export PATH="$HOME/.local/bin:$PATH"
