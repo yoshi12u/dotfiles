@@ -8,7 +8,8 @@ config.set_environment_variables = {
 config.color_scheme = "Catppuccin Mocha"
 
 config.font = wezterm.font_with_fallback({
-	{ family = "Lilex Nerd Font", weight = "Regular" },
+	{ family = "Lilex Nerd Font" },
+	{ family = "IBM Plex Sans JP" },
 })
 config.font_size = 16.0
 
