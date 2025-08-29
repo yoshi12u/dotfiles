@@ -11,6 +11,5 @@
     ],
     "deny": ["Bash(rm -rf:*)", "Bash(sudo:*)", "Read(.env)"]
   },
-  "model": "opus",
   "includeCoAuthoredBy": false
 }

@@ -5,7 +5,7 @@ config.set_environment_variables = {
 	PATH = wezterm.home_dir .. "/.nix-profile/bin:" .. os.getenv("PATH"),
 }
 
-config.color_scheme = "Tokyo Night"
+config.color_scheme = "Catppuccin Mocha"
 
 config.font = wezterm.font_with_fallback({
 	{ family = "Hack Nerd Font", weight = "Regular" },

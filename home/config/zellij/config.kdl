@@ -1,7 +1,7 @@
 // General Settings
 default_mode "locked"        // Start in locked mode for safety
 simplified_ui true           // Use simplified UI for cleaner appearance
-theme "tokyo-night"          // Tokyo Night color scheme
+theme "catppuccin-mocha"     // Set theme to Catppuccin Mocha
 default_shell "nu"           // Use Nushell as default shell
 on_force_close "quit"        // Quit on force close
 scrollback_editor "nvim"     // Use Neovim for scrollback editing
@@ -80,6 +80,7 @@ keybinds {
         bind "o" { SwitchToMode "Session"; }   // Session mode
         bind "m" { SwitchToMode "Move"; }      // Move mode
         bind "r" { SwitchToMode "RenameTab"; } // Rename tab mode
+        bind "k" { SwitchToMode "Scroll"; } // Scroll mode
         
         // Session management
         bind "d" { Detach; }  // Detach from session
