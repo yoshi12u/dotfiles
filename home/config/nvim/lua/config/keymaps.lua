@@ -1,4 +1,4 @@
-local map = LazyVim.safe_keymap_set
+local map = vim.keymap.set
 
 -- Swap ; and :
 map("n", ";", ":", {
@@ -67,31 +67,3 @@ map("n", "<c-w><c-j>", "<c-w>j")
 map("n", "<c-w><CR>", "<c-w>j")
 map("n", "<c-w><c-k>", "<c-w>k")
 map("n", "<c-w><c-l>", "<c-w>l")
-
-if vim.g.vscode then
-	local vscode = require("vscode")
-	map("n", "<leader>ff", function()
-		vscode.action("workbench.action.quickOpen")
-	end)
-	map("n", "<leader>/", function()
-		vscode.action("workbench.action.findInFiles")
-	end)
-	map("n", "gd", function()
-		vscode.action("editor.action.revealDefinition")
-	end)
-	map("n", "gD", function()
-		vscode.action("editor.action.goToTypeDefinition")
-	end)
-	map("n", "gI", function()
-		vscode.action("editor.action.goToImplementation")
-	end)
-	map("n", "gr", function()
-		vscode.action("editor.action.goToReferences")
-	end)
-	map("n", "K", function()
-		vscode.action("editor.action.showHover")
-	end)
-	map("n", "<leader>cr", function()
-		vscode.action("editor.action.rename")
-	end)
-end
