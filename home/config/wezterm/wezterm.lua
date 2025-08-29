@@ -8,9 +8,9 @@ config.set_environment_variables = {
 config.color_scheme = "Catppuccin Mocha"
 
 config.font = wezterm.font_with_fallback({
-	{ family = "Hack Nerd Font", weight = "Regular" },
+	{ family = "Lilex Nerd Font", weight = "Regular" },
 })
-config.font_size = 14.0
+config.font_size = 16.0
 
 config.window_padding = {
 	left = 10,
