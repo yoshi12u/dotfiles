@@ -1,134 +1,77 @@
 [
   {
+    "context": "Editor && vim_mode == normal && !VimWaiting",
+    "bindings": {
+      ";": ["workspace::SendKeystrokes", ":"],
+      "L": ["workspace::SendKeystrokes", "$"],
+      "H": ["workspace::SendKeystrokes", "^"],
+      "-": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "L": ["workspace::SendKeystrokes", "$"],
+      "H": ["workspace::SendKeystrokes", "^"]
+    }
+  },
+  {
     "context": "Editor && vim_mode == normal",
     "bindings": {
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-j": "workspace::ActivatePaneDown",
       "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-l": "workspace::ActivatePaneRight",
-
-      "[ b": "pane::ActivatePreviousItem",
-      "] b": "pane::ActivateNextItem",
-
-      "alt-j": "editor::MoveLineDown",
-      "alt-k": "editor::MoveLineUp"
+      "ctrl-l": "workspace::ActivatePaneRight"
     }
   },
-
-  {
-    "context": "Editor && vim_mode == normal",
-    "bindings": {
-      "space -": "pane::SplitDown",
-      "space |": "pane::SplitRight",
-      "space w d": "pane::JoinAll",
-      "space w m": "workspace::ToggleZoom"
-    }
-  },
-
-  {
-    "context": "Workspace && vim_mode == normal",
-    "bindings": {
-      "space e": "workspace::ToggleLeftDock",
-      "space E": "project_panel::ToggleFocus"
-    }
-  },
-
-  {
-    "context": "Editor && vim_mode == normal",
-    "bindings": {
-      "space ,": "tab_switcher::Toggle",
-      "space f b": "tab_switcher::Toggle",
-
-      "space f f": "file_finder::Toggle",
-      "space f g": "file_finder::Toggle",
-      "space f r": "pane::ReopenClosedItem",
-      "space f p": "projects::OpenRecent"
-    }
-  },
-
-  {
-    "context": "Editor && vim_mode == normal",
-    "bindings": {
-      "space b b": "pane::AlternateFile",
-      "space b d": "pane::CloseActiveItem",
-      "space b o": "pane::CloseOtherItems",
-      "space b D": "pane::CloseActiveItem"
-    }
-  },
-
-  {
-    "context": "Workspace && vim_mode == normal",
-    "bindings": {
-      "space /": "workspace::NewSearch",
-      "space :": "command_palette::Toggle",
-      "space s l": "go_to_line::Toggle",
-      "space s s": "project_symbols::Toggle",
-      "space s g": "workspace::NewSearch",
-      "space s d": "editor::ToggleDiagnostics"
-    }
-  },
-
-  {
-    "context": "Editor && vim_mode == normal",
-    "bindings": {
-      "space g s": "git_panel::ToggleFocus",
-      "space g d": "git::Diff",
-      "space g b": "git::Blame",
-      "space g B": "editor::OpenPermalinkToLine"
-    }
-  },
-
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
       "space c a": "editor::ToggleCodeActions",
       "space c r": "editor::Rename",
-      "space c f": "editor::Format",
       "space c d": "editor::ToggleInlineDiagnostics"
     }
   },
-
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
-      "] d": "editor::GoToDiagnostic",
-      "[ d": "editor::GoToPreviousDiagnostic"
+      "space g g": "git_panel::ToggleFocus",
+      "space g d": "git::Diff",
+      "space g b": "git::Blame"
     }
   },
-
-  {
-    "context": "Workspace && vim_mode == normal",
-    "bindings": {
-      "space f t": "workspace::NewTerminal"
-    }
-  },
-
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
-      "space u w": "editor::ToggleSoftWrap",
-      "space u l": "editor::ToggleLineNumbers",
-      "space u L": "editor::ToggleRelativeLineNumbers",
-      "space u i": "editor::ToggleInlayHints",
-      "space u g": "editor::ToggleIndentGuides",
-      "space u m": "editor::ToggleMinimap",
-      "space u d": "editor::ToggleInlineDiagnostics",
-      "space u z": "workspace::ToggleCenteredLayout",
-      "space u Z": "workspace::ToggleZoom"
+      "space ,": "tab_switcher::Toggle",
+      "space f b": "tab_switcher::Toggle",
+      "space f f": "file_finder::Toggle",
+      "space f p": "projects::OpenRecent"
     }
   },
-
   {
-    "context": "Editor",
+    "context": "Editor && vim_mode == normal",
     "bindings": {
-      "ctrl-s": "workspace::Save"
+      "space /": "pane::DeploySearch"
     }
   },
-
   {
-    "context": "Editor && vim_mode == insert",
+    "context": "Workspace",
     "bindings": {
-      "j k": ["workspace::SendKeystrokes", "<esc>"]
+      "ctrl-/": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "-": "workspace::ToggleLeftDock",
+      "a": "project_panel::NewFile",
+      "A": "project_panel::NewDirectory",
+      "r": "project_panel::Rename",
+      "y": "project_panel::Copy",
+      "x": "project_panel::Cut",
+      "p": "project_panel::Paste",
+      "d": "project_panel::Delete"
     }
   }
 ]

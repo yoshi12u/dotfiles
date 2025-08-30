@@ -5,20 +5,20 @@
     "file_icons": true,
     "git_status": true
   },
-  "vim_mode": true,
   "buffer_font_size": 16,
-  "file_scan_exclusions": [
-    "**/node_modules/**",
-    "**/dist/**"
-  ],
+  "file_scan_exclusions": ["**/node_modules/**", "**/dist/**"],
+  "terminal": {
+    "shell": {
+      "program": "nu"
+    }
+  },
+  "vim_mode": true,
   "context_servers": {
     "Context7": {
       "source": "custom",
       "command": "npx",
-      "args": [
-        "-y",
-        "@upstash/context7-mcp"
-      ]
+      "args": ["-y", "@upstash/context7-mcp"]
     }
   }
 }
+

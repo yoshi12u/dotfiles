@@ -32,6 +32,10 @@
       source = ./config/zed;
       recursive = true;
     };
+    helix = {
+      source = ./config/helix;
+      recursive = true;
+    };
     "git/commit-template.txt" = {
       source = ./config/git/commit-template.txt;
     };
@@ -110,6 +114,9 @@
     extraLuaConfig = ''
       require("config.lazy")
     '';
+  };
+  programs.helix = {
+    enable = true;
   };
   programs.less = {
     enable = true;

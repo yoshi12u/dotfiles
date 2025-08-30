@@ -1,0 +1,85 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+auto-format = true
+true-color = true
+color-modes = true
+cursorline = true
+rulers = [100]
+scrolloff = 5
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"
+
+[editor.statusline]
+left = [
+    "mode",
+    "spinner",
+    "file-name",
+    "read-only-indicator",
+    "file-modification-indicator",
+]
+center = []
+right = ["diagnostics", "selections", "position", "file-encoding", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.indent-guides]
+render = true
+character = "▏"
+
+[editor.lsp]
+display-inlay-hints = true
+
+[keys.normal]
+"K" = "hover"
+";" = "command_mode"
+
+"H" = "goto_line_start"
+"L" = "goto_line_end"
+
+"Y" = ["extend_to_line_end", "yank", "collapse_selection"]
+
+[keys.select]
+"K" = "hover"
+
+
+"H" = "goto_line_start"
+"L" = "goto_line_end"
+
+[keys.insert]
+"C-b" = "move_char_left"
+"C-f" = "move_char_right"
+"C-d" = "delete_char_forward"
+"C-h" = "delete_char_backward"
+
+# Nested key-sequences for normal mode
+[keys.normal.g]
+d = "goto_definition"
+r = "goto_reference"
+I = "goto_implementation"
+
+[keys.normal."space".c]
+a = "code_action"
+r = "rename_symbol"
+
+[keys.normal."C-w"]
+h = "jump_view_left"
+j = "jump_view_down"
+k = "jump_view_up"
+l = "jump_view_right"
+
+# Nested key-sequences for select mode
+[keys.select.g]
+d = "goto_definition"
+r = "goto_reference"
+I = "goto_implementation"
+
+[keys.select."space".c]
+a = "code_action"
+r = "rename_symbol"
