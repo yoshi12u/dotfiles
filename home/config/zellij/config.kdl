@@ -6,6 +6,7 @@ default_shell "nu"           // Use Nushell as default shell
 on_force_close "quit"        // Quit on force close
 scrollback_editor "nvim"     // Use Neovim for scrollback editing
 web_server true              // Enable web server for remote access
+show_startup_tips false      // Disable startup tips
 
 // Plugin Configuration
 plugins {

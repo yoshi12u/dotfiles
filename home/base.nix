@@ -11,6 +11,8 @@
     pkgs.procs
     pkgs.ghq
     pkgs.viddy
+    pkgs.nixd
+    pkgs.nil
   ];
   home.sessionVariables = {
     LANG = "ja_JP.UTF-8";
@@ -24,6 +26,10 @@
     };
     nvim = {
       source = ./config/nvim;
+      recursive = true;
+    };
+    zed = {
+      source = ./config/zed;
       recursive = true;
     };
     "git/commit-template.txt" = {

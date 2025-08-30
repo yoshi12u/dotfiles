@@ -1,0 +1,24 @@
+{
+  "icon_theme": "Catppuccin Mocha",
+  "theme": "Catppuccin Mocha",
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "vim_mode": true,
+  "buffer_font_size": 16,
+  "file_scan_exclusions": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "context_servers": {
+    "Context7": {
+      "source": "custom",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ]
+    }
+  }
+}
