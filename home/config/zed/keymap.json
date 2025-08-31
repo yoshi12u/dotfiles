@@ -2,7 +2,12 @@
   {
     "context": "Editor && vim_mode == normal && !VimWaiting",
     "bindings": {
-      ";": ["workspace::SendKeystrokes", ":"],
+      ";": ["workspace::SendKeystrokes", ":"]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting",
+    "bindings": {
       "L": ["workspace::SendKeystrokes", "$"],
       "H": ["workspace::SendKeystrokes", "^"],
       "-": "workspace::ToggleLeftDock"
@@ -13,6 +18,18 @@
     "bindings": {
       "L": ["workspace::SendKeystrokes", "$"],
       "H": ["workspace::SendKeystrokes", "^"]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "shift-r": "vim::PushReplaceWithRegister"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "shift-r": "vim::PushReplaceWithRegister"
     }
   },
   {
@@ -30,14 +47,6 @@
       "space c a": "editor::ToggleCodeActions",
       "space c r": "editor::Rename",
       "space c d": "editor::ToggleInlineDiagnostics"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == normal",
-    "bindings": {
-      "space g g": "git_panel::ToggleFocus",
-      "space g d": "git::Diff",
-      "space g b": "git::Blame"
     }
   },
   {
@@ -62,6 +71,12 @@
     }
   },
   {
+    "context": "Editor && vim_mode == normal && !VimWaiting",
+    "bindings": {
+      "-": "workspace::ToggleLeftDock"
+    }
+  },
+  {
     "context": "ProjectPanel && not_editing",
     "bindings": {
       "-": "workspace::ToggleLeftDock",
@@ -72,6 +87,20 @@
       "x": "project_panel::Cut",
       "p": "project_panel::Paste",
       "d": "project_panel::Delete"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !menu && !modal",
+    "bindings": {
+      "space g g": "git_panel::ToggleFocus",
+      "space g d": "git::Diff",
+      "space g b": "git::Blame"
+    }
+  },
+  {
+    "context": "GitPanel && not_editing",
+    "bindings": {
+      "q": "git_panel::Close"
     }
   }
 ]
