@@ -71,9 +71,9 @@
     }
   },
   {
-    "context": "Editor && vim_mode == normal && !VimWaiting",
+    "context": "Editor && vim_mode == normal",
     "bindings": {
-      "-": "workspace::ToggleLeftDock"
+      "-": "pane::RevealInProjectPanel"
     }
   },
   {
