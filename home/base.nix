@@ -13,6 +13,13 @@
     pkgs.viddy
     pkgs.nixd
     pkgs.nil
+    pkgs.imagemagick
+    pkgs.ghostscript
+    pkgs.tectonic
+    pkgs.mermaid-cli
+    pkgs.tree-sitter
+    pkgs.luajit
+    pkgs.luajitPackages.luarocks
   ];
   home.sessionVariables = {
     LANG = "ja_JP.UTF-8";
