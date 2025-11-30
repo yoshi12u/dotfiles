@@ -21,6 +21,7 @@ require("lazy").setup({
 			import = "lazyvim.plugins",
 		},
 		{ import = "lazyvim.plugins.extras.ai.copilot" },
+		{ import = "lazyvim.plugins.extras.ai.sidekick" },
 		{ import = "lazyvim.plugins.extras.coding.blink" },
 		{ import = "lazyvim.plugins.extras.coding.mini-surround" },
 		{ import = "lazyvim.plugins.extras.coding.neogen" },
@@ -50,7 +51,6 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.linting.eslint" },
 		{ import = "lazyvim.plugins.extras.test.core" },
 		{ import = "lazyvim.plugins.extras.ui.treesitter-context" },
-		{ import = "lazyvim.plugins.extras.util.project" },
 		{ import = "lazyvim.plugins.extras.vscode" },
 		-- import/override with your plugins
 		{ import = "plugins" },
