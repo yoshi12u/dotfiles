@@ -1,4 +1,4 @@
----@module 'ai.git_status_codex'
+---@module 'ai.git_codex'
 local M = {}
 
 local types = require("blink.cmp.types")
