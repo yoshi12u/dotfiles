@@ -13,6 +13,7 @@ return {
 				compat = { "codeium" },
 				per_filetype = {
 					codecompanion = { "codecompanion" },
+					gitcommit = { "git_codex", "copilot" },
 				},
 				providers = {
 					copilot = {
@@ -39,6 +40,14 @@ return {
 							end
 							return items
 						end,
+					},
+					git_codex = {
+						name = "git_codex",
+						module = "ai.git_codex",
+						kind = "AI",
+						score_offset = 110,
+						async = true,
+						min_keyword_length = 0,
 					},
 				},
 			},
