@@ -58,6 +58,7 @@
         node = "lts";
         pnpm = "latest";
         aws-cli = "2";
+        codex = "latest";
         claude = "latest";
         gemini-cli = "latest";
       };

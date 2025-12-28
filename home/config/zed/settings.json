@@ -13,12 +13,5 @@
       "program": "nu"
     }
   },
-  "vim_mode": true,
-  "context_servers": {
-    "Context7": {
-      "source": "custom",
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"]
-    }
-  }
+  "vim_mode": true
 }

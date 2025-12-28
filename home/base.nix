@@ -112,8 +112,7 @@
   };
   programs.git = {
     enable = true;
-    delta.enable = true;
-    extraConfig.include.path = "${config.xdg.configHome}/git/config.include";
+    settings.include.path = "${config.xdg.configHome}/git/config.include";
   };
   programs.neovim = {
     enable = true;
@@ -121,6 +120,10 @@
     extraLuaConfig = ''
       require("config.lazy")
     '';
+  };
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
   };
   programs.helix = {
     enable = true;
