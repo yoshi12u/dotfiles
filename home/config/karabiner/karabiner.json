@@ -1,13 +1,20 @@
 {
   "profiles": [
     {
+      "name": "Default profile",
+      "selected": true,
+      "virtual_hid_keyboard": {
+        "country_code": 0,
+        "keyboard_type_v2": "ansi"
+      },
       "complex_modifications": {
         "rules": [
           {
-            "description": "Emacs key bindings - Control key combinations for text navigation and editing",
+            "description": "Emacs keybindings",
             "manipulators": [
               {
-                "description": "Ctrl+[: Send Escape key (ANSI/ISO keyboards)",
+                "description": "Ctrl+[ → Escape",
+                "type": "basic",
                 "from": {
                   "key_code": "open_bracket",
                   "modifiers": {
@@ -15,11 +22,11 @@
                     "optional": ["caps_lock"]
                   }
                 },
-                "to": [{ "key_code": "escape" }],
-                "type": "basic"
+                "to": [{ "key_code": "escape" }]
               },
               {
-                "description": "Ctrl+J: Send Return/Enter key",
+                "description": "Ctrl+J → Enter",
+                "type": "basic",
                 "from": {
                   "key_code": "j",
                   "modifiers": {
@@ -27,16 +34,16 @@
                     "optional": ["caps_lock", "shift", "option"]
                   }
                 },
-                "to": [{ "key_code": "return_or_enter" }],
-                "type": "basic"
+                "to": [{ "key_code": "return_or_enter" }]
               }
             ]
           },
           {
-            "description": "Command key language switching - Single press sends language keys (Left Cmd = Eisuu/English, Right Cmd = Kana/Japanese)",
+            "description": "Command単押しでIME切替 (左=英数, 右=かな)",
             "manipulators": [
               {
-                "description": "Left Command key: English/Eisuu when pressed alone, Command when held",
+                "description": "Left Cmd → 英数 / Hold → Cmd",
+                "type": "basic",
                 "from": {
                   "key_code": "left_command",
                   "modifiers": { "optional": ["any"] }
@@ -44,18 +51,13 @@
                 "parameters": {
                   "basic.to_if_held_down_threshold_milliseconds": 100
                 },
-                "to": [
-                  {
-                    "key_code": "left_command",
-                    "lazy": true
-                  }
-                ],
+                "to": [{ "key_code": "left_command", "lazy": true }],
                 "to_if_alone": [{ "key_code": "japanese_eisuu" }],
-                "to_if_held_down": [{ "key_code": "left_command" }],
-                "type": "basic"
+                "to_if_held_down": [{ "key_code": "left_command" }]
               },
               {
-                "description": "Right Command key: Japanese/Kana when pressed alone, Command when held",
+                "description": "Right Cmd → かな / Hold → Cmd",
+                "type": "basic",
                 "from": {
                   "key_code": "right_command",
                   "modifiers": { "optional": ["any"] }
@@ -63,15 +65,9 @@
                 "parameters": {
                   "basic.to_if_held_down_threshold_milliseconds": 100
                 },
-                "to": [
-                  {
-                    "key_code": "right_command",
-                    "lazy": true
-                  }
-                ],
+                "to": [{ "key_code": "right_command", "lazy": true }],
                 "to_if_alone": [{ "key_code": "japanese_kana" }],
-                "to_if_held_down": [{ "key_code": "right_command" }],
-                "type": "basic"
+                "to_if_held_down": [{ "key_code": "right_command" }]
               }
             ]
           }
@@ -79,11 +75,11 @@
       },
       "devices": [
         {
-          "description": "Apple Internal Keyboard (Product ID: 641) - Caps Lock ↔ Control swap",
+          "description": "Apple Internal Keyboard",
           "identifiers": {
-            "is_keyboard": true,
+            "vendor_id": 1452,
             "product_id": 641,
-            "vendor_id": 1452
+            "is_keyboard": true
           },
           "simple_modifications": [
             {
@@ -97,11 +93,11 @@
           ]
         },
         {
-          "description": "External Keyboard (Vendor ID: 76, Product ID: 615) - Caps Lock ↔ Control swap",
+          "description": "External Keyboard",
           "identifiers": {
-            "is_keyboard": true,
+            "vendor_id": 76,
             "product_id": 615,
-            "vendor_id": 76
+            "is_keyboard": true
           },
           "simple_modifications": [
             {
@@ -114,13 +110,7 @@
             }
           ]
         }
-      ],
-      "name": "Default profile",
-      "selected": true,
-      "virtual_hid_keyboard": {
-        "country_code": 0,
-        "keyboard_type_v2": "ansi"
-      }
+      ]
     }
   ]
 }

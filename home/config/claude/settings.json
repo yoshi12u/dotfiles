@@ -1,13 +1,7 @@
 {
   "permissions": {
-    "allow": [
-      "Bash(ls:*)",
-      "Bash(cat:*)",
-      "Bash(npm run dev)",
-      "Bash(npm run build)",
-      "Bash(npm test)"
-    ],
-    "deny": ["Bash(rm -rf:*)", "Bash(sudo:*)", "Read(.env)"]
+    "deny": ["Bash(rm -rf:*)", "Bash(sudo:*)", "Read(.env)", "Read(./.env.*)"],
+    "ask": ["Bash(git push:*)", "Bash(git pull:*)", "Bash(git checkout:*)"]
   },
   "includeCoAuthoredBy": false
 }
