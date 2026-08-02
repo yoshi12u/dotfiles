@@ -12,7 +12,6 @@ return {
 				default = { "copilot" },
 				compat = { "codeium" },
 				per_filetype = {
-					codecompanion = { "codecompanion" },
 					gitcommit = { "git_codex", "copilot" },
 				},
 				providers = {

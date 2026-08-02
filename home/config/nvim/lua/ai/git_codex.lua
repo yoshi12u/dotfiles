@@ -16,11 +16,17 @@ local function repo_root(bufnr)
 		return nil
 	end
 
-	if vim.fn.isdirectory(marker) == 1 then
-		return vim.fs.dirname(marker)
-	end
-
+	-- `.git` is a directory in a normal checkout and a file in worktrees
+	-- and submodules; either way, its parent is the repository root.
 	return vim.fs.dirname(marker)
+end
+
+local function empty_response()
+	return {
+		items = {},
+		is_incomplete_forward = false,
+		is_incomplete_backward = false,
+	}
 end
 
 local function with_defaults(opts)
@@ -66,21 +72,13 @@ function M:get_completions(ctx, done)
 	-- first line of the commit message and still empty.
 	local row = ctx.cursor[1]
 	if row ~= 1 then
-		done({
-			items = {},
-			is_incomplete_forward = false,
-			is_incomplete_backward = false,
-		})
+		done(empty_response())
 		return function() end
 	end
 
 	local line = vim.api.nvim_get_current_line()
 	if vim.trim(line) ~= "" then
-		done({
-			items = {},
-			is_incomplete_forward = false,
-			is_incomplete_backward = false,
-		})
+		done(empty_response())
 		return function() end
 	end
 
@@ -121,11 +119,7 @@ function M:get_completions(ctx, done)
 					msg = msg .. ": " .. stderr
 				end
 				vim.notify(msg, vim.log.levels.WARN, { title = "AI-Git" })
-				done({
-					items = {},
-					is_incomplete_forward = false,
-					is_incomplete_backward = false,
-				})
+				done(empty_response())
 				return
 			end
 
@@ -142,11 +136,7 @@ function M:get_completions(ctx, done)
 
 			if #lines == 0 then
 				vim.notify("AI-Git: Codex returned no text", vim.log.levels.WARN, { title = "AI-Git" })
-				done({
-					items = {},
-					is_incomplete_forward = false,
-					is_incomplete_backward = false,
-				})
+				done(empty_response())
 				return
 			end
 
