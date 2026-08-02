@@ -1,7 +1,6 @@
 alias e="$EDITOR"
 alias vim="nvim"
 alias cat="bat"
-alias ls="lsd"
 alias grep="rg"
 alias ps="procs"
 alias find="fd"
