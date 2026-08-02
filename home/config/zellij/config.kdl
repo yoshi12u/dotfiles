@@ -12,7 +12,7 @@ show_startup_tips false      // Disable startup tips
 plugins {
     tab-bar location="zellij:tab-bar"
     status-bar location="zellij:status-bar"
-    compact-bar location="zellij:compact-bar" { 
+    compact-bar location="zellij:compact-bar" {
         tooltip "F1"
     }
     session-manager location="zellij:session-manager"
@@ -25,7 +25,7 @@ keybinds {
         unbind "Ctrl g"
         bind "Ctrl s" { SwitchToMode "Normal"; }  // Enter normal mode with Ctrl+s
     }
-    
+
     // Normal Mode - Main command mode with vim-like bindings
     normal {
         // Unbind default keybindings
@@ -36,30 +36,30 @@ keybinds {
         unbind "Ctrl h"
         unbind "Ctrl o"
         unbind "Ctrl q"
-        
+
         // Mode switching
         bind "Ctrl s" { SwitchToMode "Locked"; }  // Return to locked mode
-        bind "Ctrl c" { SwitchToMode "Locked"; }  // Alternative: use Esc
-        bind "Esc" { SwitchToMode "Locked"; }     // Alternative: use Esc
-        
+        bind "Ctrl c" { SwitchToMode "Locked"; }  // Alternative: Ctrl+c
+        bind "Esc" { SwitchToMode "Locked"; }     // Alternative: Esc
+
         // Pane management (vim-like)
         bind "v" { NewPane "Down"; SwitchToMode "Locked"; }    // Vertical split
         bind "s" { NewPane "Right"; SwitchToMode "Locked"; }   // Horizontal split (side)
         bind "-" { NewPane "stacked"; SwitchToMode "Locked"; } // Horizontal split (stacked)
         bind "x" { CloseFocus; SwitchToMode "Locked"; }        // Close current pane
-        
+
         // Tab management
         bind "c" { NewTab; SwitchToMode "Locked"; }            // Create new tab
         bind "q" { CloseTab; SwitchToMode "Locked"; }          // Close current tab
         bind "]" { GoToNextTab; SwitchToMode "Locked"; }       // Next tab
         bind "[" { GoToPreviousTab; SwitchToMode "Locked"; }   // Previous tab
-        
+
         // Navigation (vim-style hjkl)
         bind "h" { MoveFocus "Left"; SwitchToMode "Locked"; }
         bind "j" "Enter" { MoveFocus "Down"; SwitchToMode "Locked"; }
         bind "k" { MoveFocus "Up"; SwitchToMode "Locked"; }
         bind "l" { MoveFocus "Right"; SwitchToMode "Locked"; }
-        
+
         // Direct tab switching (1-9)
         bind "1" { GoToTab 1; SwitchToMode "Locked"; }
         bind "2" { GoToTab 2; SwitchToMode "Locked"; }
@@ -70,10 +70,10 @@ keybinds {
         bind "7" { GoToTab 7; SwitchToMode "Locked"; }
         bind "8" { GoToTab 8; SwitchToMode "Locked"; }
         bind "9" { GoToTab 9; SwitchToMode "Locked"; }
-        
+
         // Floating panes
         bind ";" { ToggleFloatingPanes; SwitchToMode "Locked"; }
-        
+
         // Mode switches for advanced operations
         bind "p" { SwitchToMode "Pane"; }      // Pane mode
         bind "t" { SwitchToMode "Tab"; }       // Tab mode
@@ -81,13 +81,13 @@ keybinds {
         bind "o" { SwitchToMode "Session"; }   // Session mode
         bind "m" { SwitchToMode "Move"; }      // Move mode
         bind "r" { SwitchToMode "RenameTab"; } // Rename tab mode
-        bind "k" { SwitchToMode "Scroll"; } // Scroll mode
-        
+        bind "e" { SwitchToMode "Scroll"; }    // Scroll mode ("e" as in scrollback editor; "k" is taken by focus-up)
+
         // Session management
         bind "d" { Detach; }  // Detach from session
         bind "Q" { Quit; }    // Quit Zellij completely
     }
-    
+
     // Resize Mode - For adjusting pane sizes
     resize {
         // Increase pane size in direction
@@ -95,13 +95,13 @@ keybinds {
         bind "j" "Down" { Resize "Increase Down"; }
         bind "k" "Up" { Resize "Increase Up"; }
         bind "l" "Right" { Resize "Increase Right"; }
-        
+
         // Decrease pane size in direction (Shift + hjkl)
         bind "H" { Resize "Decrease Left"; }
         bind "J" { Resize "Decrease Down"; }
         bind "K" { Resize "Decrease Up"; }
         bind "L" { Resize "Decrease Right"; }
-        
+
         // General resize
         bind "=" { Resize "Increase"; }
         bind "-" { Resize "Decrease"; }
