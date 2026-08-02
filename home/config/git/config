@@ -1,36 +1,35 @@
 [init]
 	defaultBranch = main
 [push]
-  default = current
+	default = current
 [color]
-  ui = auto
+	ui = auto
 [pull]
-  ff = only
+	ff = only
 [fetch]
-  prune = true
+	prune = true
 [rebase]
-  autosquash = true
+	autosquash = true
 [user]
 	name = yoshi12u
 	email = ysmsuehr@gmail.com
 [merge]
-    tool = nvimdiff
-    conflictstyle = diff3
-    ff = false
+	tool = nvimdiff
+	conflictstyle = diff3
+	ff = false
 [diff]
-    colorMoved = default
-    tool = nvimdiff
+	colorMoved = default
+	tool = nvimdiff
 [difftool]
-    prompt = false
+	prompt = false
 [commit]
-    template = ~/.config/git/commit-template.txt
+	template = ~/.config/git/commit-template.txt
 [core]
-    editor = nvim
-    excludesfile = ~/.config/git/ignore
+	editor = nvim
+	excludesfile = ~/.config/git/ignore
 [log]
-    decorate = short
+	decorate = short
 [format]
-    pretty = format:%C(auto)%h %C(blue)%>(12)%ar%C(reset) %s %C(green)(%an)%C(reset)
+	pretty = format:%C(auto)%h %C(blue)%>(12)%ar%C(reset) %s %C(green)(%an)%C(reset)
 [alias]
-    lg = log --oneline --graph --decorate --all
-
+	lg = log --oneline --graph --decorate --all
