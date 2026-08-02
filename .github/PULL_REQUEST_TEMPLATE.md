@@ -1,14 +1,14 @@
 ## Description
 
-<\!-- Provide a summary of the changes made and the issue that is being addressed -->
+<!-- Provide a summary of the changes made and the issue that is being addressed -->
 
 ## Related Issues
 
-<\!-- List the issues related to this PR using the format: "Fixes #123" or "Related to #123" -->
+<!-- List the issues related to this PR using the format: "Fixes #123" or "Related to #123" -->
 
 ## Type of Change
 
-<\!-- Mark the appropriate option with an "x" -->
+<!-- Mark the appropriate option with an "x" -->
 
 - [ ] Bug fix
 - [ ] New feature
@@ -19,11 +19,11 @@
 
 ## Testing Performed
 
-<\!-- Describe the testing that you did to verify your changes -->
+<!-- Describe the testing that you did to verify your changes -->
 
 ## Checklist
 
-<\!-- Mark the items with an "x" that apply to your PR -->
+<!-- Mark the items with an "x" that apply to your PR -->
 
 - [ ] Code follows project coding standards
 - [ ] Self-review of code performed
@@ -35,4 +35,4 @@
 
 ## Additional Notes
 
-<\!-- Any additional information that might be helpful for reviewers -->
+<!-- Any additional information that might be helpful for reviewers -->
